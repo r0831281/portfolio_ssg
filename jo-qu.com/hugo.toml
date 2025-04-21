@@ -1,0 +1,25 @@
+baseURL = 'https://jo-qu.com'
+languageCode = 'en-us'
+title = 'jo-qu.com'
+theme = 'hugo-blog-awesome'
+
+[menu]
+  [[menu.main]]
+    identifier = 'home'
+    name = 'Home'
+    url = '/'
+    weight = 1
+  [[menu.main]]
+    identifier = 'about'
+    name = 'About Myself'
+    url = '/about/'
+    weight = 2
+  [[menu.main]]
+    identifier = 'internship'
+    name = 'Internship'
+    url = '/internship/'
+    weight = 3
+  [[menu.main]]
+    name = 'Other Projects'
+    url = '/other-projects/'
+    weight = 4
