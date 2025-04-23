@@ -7,11 +7,11 @@ title = 'Other Projects'
 <h2> My Projects </h2>
 
 - **Gladioforce**: Ledenbeheer voor festival.
-- **andro!dz**: Short description of your project. [Visit the project](https://r0831281.github.io/jo-qu/)
-- **Smart Mouse Trap**: Short description of your project. [Visit the project](https://www.youtube.com/watch?v=7RVyvhLRBDM)
-- **Github faces website**: Short description of your project. [Visit the project](https://r0831281.github.io/GithubsFaces/)
-- **Flutter AR APP**: Short description of your project. [Visit the project](https://github.com/r0831281/APFront)
-- **Tool to scrape massive amounts of data from the SilverPages WebApp**: Short description of your project. [Visit the project](https://github.com/r0831281/silverScraper)
+- **andro!dz**: Short description of your project. <a href="https://jo-qu.pages.dev/" target="_blank">Visit the project</a>
+- **Smart Mouse Trap**: Short description of your project. <a href="https://www.youtube.com/watch?v=7RVyvhLRBDM" target="_blank">Visit the project</a>
+- **Github faces website**: Short description of your project. <a href="https://r0831281.github.io/GithubsFaces/" target="_blank">Visit the project</a>
+- **Flutter AR APP**: Short description of your project. <a href="https://github.com/r0831281/APFront" target="_blank">Visit the project</a>
+- **Tool to scrape massive amounts of data from the SilverPages WebApp**: Short description of your project. <a href="https://github.com/r0831281/silverScraper" target="_blank">Visit the project</a>
 
 <!-- <h2>My Projects</h2>
 <div class="project-tiles">
