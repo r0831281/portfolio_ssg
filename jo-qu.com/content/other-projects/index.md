@@ -6,7 +6,7 @@ title = 'Other Projects'
 
 <h2> My Projects </h2>
 
-- **Gladioforce**: Short description of your project.
+- **Gladioforce**: Ledenbeheer voor festival.
 - **andro!dz**: Short description of your project. [Visit the project](https://r0831281.github.io/jo-qu/)
 - **Smart Mouse Trap**: Short description of your project. [Visit the project](https://www.youtube.com/watch?v=7RVyvhLRBDM)
 - **Github faces website**: Short description of your project. [Visit the project](https://r0831281.github.io/GithubsFaces/)
