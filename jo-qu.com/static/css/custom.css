@@ -1,0 +1,17 @@
+.project-tiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+.tile {
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 250px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+.tile:hover {
+  transform: translateY(-5px) scale(1.03);
+}

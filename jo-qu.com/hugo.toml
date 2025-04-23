@@ -23,3 +23,7 @@ theme = 'hugo-blog-awesome'
     name = 'Other Projects'
     url = '/other-projects/'
     weight = 4
+  [markup]
+    [markup.goldmark]
+      [markup.goldmark.renderer]
+        unsafe = true
