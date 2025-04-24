@@ -1,5 +1,5 @@
 .hugo_build.lock
 .hvm
-exampleSite/public/
-exampleSite/resources/
-exampleSite/.hugo_build.lock
+jo-qu.com/public/
+jo-qu.com/resources/
+jo-qu.com/.hugo_build.lock

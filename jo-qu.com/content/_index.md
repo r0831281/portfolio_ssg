@@ -11,6 +11,6 @@ I'm a passionate developer exploring the world of software engineering. This sit
 - Software Development
 - Web Development
 - System Architecture
-- Problem Solving
+
 
 Feel free to explore my blog posts and projects!
