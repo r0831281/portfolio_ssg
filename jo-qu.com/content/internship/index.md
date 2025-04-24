@@ -8,7 +8,8 @@ title = 'Internship'
 I did my internship at [Ordolio](https://ordolio.com). Ordolio is a free platform that allows you to manage your entire club operations, association, extracurricular activities, and more.
 
 ## Summary
-<!-- Write a summary of your internship here. Describe your role, responsibilities, and what you learned. -->
+
+During my internship at Ordolio, I contributed to both project-based assignments and the daily workflow of the company. My main tasks included developing a waitlist functionality and performing a security test on the web application. I worked within a Scrum team using Jira for task management, which gave me valuable experience in agile methodologies and team collaboration.
 
 ### Internship Assignments
 
