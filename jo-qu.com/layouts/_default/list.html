@@ -1,0 +1,21 @@
+{{- define "main" -}}
+<div class="wrapper list-page">
+    <header class="header">
+        <h1 class="header-title center">{{ .Title }}</h1>
+    </header>
+    <main class="page-content" aria-label="Content">
+        {{ .Content }}
+        {{ $groups := slice "school" "personal" "fun" }}
+        {{ $allPages := .Pages }}
+        {{ range $group := $groups }}
+            {{ $pages := where $allPages "Params.type" $group }}
+            {{ if gt (len $pages) 0 }}
+                <h2 class="post-year">{{ $group | title }}</h2>
+                {{ range $pages }}
+                    {{ partial "postCard" . }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+    </main>
+</div>
+{{- end -}}

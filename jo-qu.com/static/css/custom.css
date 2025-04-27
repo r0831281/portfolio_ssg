@@ -15,3 +15,46 @@
 .tile:hover {
   transform: translateY(-5px) scale(1.03);
 }
+
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: flex-start;
+  margin-top: 2rem;
+}
+.project-item {
+  background: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 1.5rem 1.2rem;
+  width: 270px;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+.project-item:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.13);
+}
+.project-item h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+.project-item p {
+  margin-bottom: 0;
+  color: #444;
+}
+@media (max-width: 700px) {
+  .project-list {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .project-item {
+    width: 100%;
+    min-width: 0;
+  }
+}
