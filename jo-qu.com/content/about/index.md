@@ -31,4 +31,4 @@ I decided to explore whether tech could be more than a hobby, and enrolled in th
 ## 🤝 Collaborate?
 
 Interested in collaborating?  
-Feel free to send me a message at [jonas.quintiens@gmail.com](mailto:jonas.quintiens@gmail.com) or connect via [LinkedIn](www.linkedin.com/in/jonas-quintiens-5838a01aa).
+Feel free to send me a message at [jonas.quintiens@gmail.com](mailto:jonas.quintiens@gmail.com) or connect via [LinkedIn](https://www.linkedin.com/in/jonas-quintiens-5838a01aa).
