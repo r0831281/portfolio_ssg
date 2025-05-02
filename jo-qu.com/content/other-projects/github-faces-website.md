@@ -7,6 +7,10 @@ draft = false
 
 # Github faces website
 
-Short description of your project.
+This project creatively leverages the same-origin policy in GitHub's Content Security Policy (CSP) to load millions of GitHub avatars onto a single webpage hosted on GitHub Pages. 
+
+## Stack
+- Html
+- Javascript
 
 [Visit the project](https://r0831281.github.io/GithubsFaces/)

@@ -1,0 +1,12 @@
+<article class="post-card">
+  <h3 class="post-title">
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+  </h3>
+  {{ with .Params.description }}
+    <p class="post-summary">{{ . }}</p>
+  {{ else }}
+    {{ with .Summary }}
+      <p class="post-summary">{{ . }}</p>
+    {{ end }}
+  {{ end }}
+</article>

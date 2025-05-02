@@ -7,6 +7,14 @@ type = "school"
 
 # Gladioforce
 
-Ledenbeheer voor festival.
+Membership management for a festival. Group project for a real client.
+
+## Stack
+- Django (Django-ninja)
+- Angular
+- Mysql
+- Docker
+
+
 
 [Visit the project on GitHub](https://github.com/GladioForce-Org/GladioForce)
