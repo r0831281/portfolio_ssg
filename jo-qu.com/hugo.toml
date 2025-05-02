@@ -1,29 +1,62 @@
 baseURL = 'https://jo-qu.com'
 languageCode = 'en-us'
+defaultContentLanguage = 'en'
 title = 'jo-qu.com'
 theme = 'hugo-blog-awesome'
 
-[menu]
-  [[menu.main]]
-    identifier = 'home'
-    name = 'Home'
-    url = '/'
+[languages]
+  [languages.en]
+    languageName = 'English'
     weight = 1
-  [[menu.main]]
-    identifier = 'about'
-    name = 'About Myself'
-    url = '/about/'
+    contentDir = 'content'
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = 'home'
+        name = 'Home'
+        url = '/'
+        weight = 1
+      [[languages.en.menu.main]]
+        identifier = 'about'
+        name = 'About Myself'
+        url = '/about/'
+        weight = 2
+      [[languages.en.menu.main]]
+        identifier = 'internship'
+        name = 'Internship'
+        url = '/internship/'
+        weight = 3
+      [[languages.en.menu.main]]
+        identifier = 'other-projects'
+        name = 'Other Projects'
+        url = '/other-projects/'
+        weight = 4
+  [languages.nl]
+    languageName = 'Nederlands'
     weight = 2
-  [[menu.main]]
-    identifier = 'internship'
-    name = 'Internship'
-    url = '/internship/'
-    weight = 3
-  [[menu.main]]
-    name = 'Other Projects'
-    url = '/other-projects/'
-    weight = 4
-  [markup]
-    [markup.goldmark]
-      [markup.goldmark.renderer]
-        unsafe = true
+    contentDir = 'content'
+    [languages.nl.menu]
+      [[languages.nl.menu.main]]
+        identifier = 'home'
+        name = 'Home'
+        url = '/nl/'
+        weight = 1
+      [[languages.nl.menu.main]]
+        identifier = 'about'
+        name = 'Over Mij'
+        url = '/nl/about/'
+        weight = 2
+      [[languages.nl.menu.main]]
+        identifier = 'internship'
+        name = 'Stage'
+        url = '/nl/internship/'
+        weight = 3
+      [[languages.nl.menu.main]]
+        identifier = 'other-projects'
+        name = 'Andere Projecten'
+        url = '/nl/other-projects/'
+        weight = 4
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
