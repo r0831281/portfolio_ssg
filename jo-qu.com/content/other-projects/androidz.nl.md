@@ -14,7 +14,10 @@ Een website voor een band, met een custom admin pagina
 - React voor de frontend
 
 ## Admin pagina Screenshots
-![Admin Login met Google Oauth](../../photos/admin_page_login.png)
-![Admin Content Beheer](../../photos/admin_page.png)
+![Admin Login met Google Oauth](../../../photos/admin_page_login.png)
+
+<hr>
+
+![Admin Content Beheer](../../../photos/admin_page.png)
 
 [Bekijk het project](https://androidz.be/)

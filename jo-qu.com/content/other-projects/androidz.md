@@ -15,6 +15,9 @@ A website for a band, with custom admin page
 
 ## Admin page Screenshots
 ![Admin Login using Google Oauth](../../photos/admin_page_login.png)
+
+<hr>
+ 
 ![Admin Content Management](../../photos/admin_page.png)
 
 [Visit the project](https://androidz.be/)
