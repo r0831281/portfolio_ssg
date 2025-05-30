@@ -11,11 +11,6 @@ theme = 'hugo-blog-awesome'
     contentDir = 'content'
     [languages.en.menu]
       [[languages.en.menu.main]]
-        identifier = 'home'
-        name = 'Home'
-        url = '/'
-        weight = 1
-      [[languages.en.menu.main]]
         identifier = 'about'
         name = 'About Myself'
         url = '/about/'
@@ -35,11 +30,6 @@ theme = 'hugo-blog-awesome'
     weight = 2
     contentDir = 'content'
     [languages.nl.menu]
-      [[languages.nl.menu.main]]
-        identifier = 'home'
-        name = 'Home'
-        url = '/nl/'
-        weight = 1
       [[languages.nl.menu.main]]
         identifier = 'about'
         name = 'Over Mij'

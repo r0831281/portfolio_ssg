@@ -22,4 +22,4 @@ Ik ben een gepassioneerde ontwikkelaar die de wereld van software engineering ve
 - Webontwikkeling & Security
 - Systeemarchitectuur
 
-Bekijk gerust mijn blogposts en projecten!
+Voel je vrij om mijn projecten te bekijken en meer te weten te komen over mijn werk!

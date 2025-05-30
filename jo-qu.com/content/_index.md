@@ -22,5 +22,5 @@ I'm a passionate developer exploring the world of software engineering. This sit
 - Web Development & Security
 - System Architecture
 
-Feel free to explore my blog posts and projects!
+Feel free to explore my projects and learn more about my work!
 
