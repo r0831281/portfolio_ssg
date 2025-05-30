@@ -2,7 +2,7 @@
 title = "andro!dz"
 type = "personal"
 draft = false
-description = "Modern band website with custom CMS, featuring Firebase backend, React frontend, and Google OAuth authentication for content management."
+description = "Modern band website with custom CMS, featuring Firebase backend."
 +++
 
 # andro!dz

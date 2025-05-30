@@ -2,7 +2,7 @@
 title = "FPV interactive Portfolio Poc"
 type = "fun"
 draft = false
-description = "Een innovatieve 3D first-person portfolio ervaring waar bezoekers op doelen schieten om projecten te ontdekken, gebouwd met Three.js en WebGL."
+description = "Een innovatieve 3D first-person portfolio ervaring."
 +++
 
 # FPV Interactive Portfolio PoC

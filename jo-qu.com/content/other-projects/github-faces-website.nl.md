@@ -3,7 +3,7 @@ title = "Github faces website"
 type = "fun"
 date = "2025-04-27"
 draft = false
-description = "Creatieve exploitatie van GitHub's CSP om miljoenen gebruiker avatars weer te geven in een oneindige scrollende mozaïek, waarbij web security concepten worden getoond."
+description = "Creatieve exploitatie van GitHub's CSP om miljoenen gebruiker avatars te tonen."
 +++
 
 # GitHub Faces Website

@@ -3,7 +3,7 @@ title = "Flutter AR APP"
 type = "school"
 date = "2023-11-01"
 draft = false
-description = "Geavanceerde AR mobiele applicatie voor albumhoes herkenning met microservices backend architectuur, gebouwd met Flutter en computer vision."
+description = "Geavanceerde AR mobiele applicatie voor albumhoes herkenning met microservices."
 +++
 
 # Flutter AR APP

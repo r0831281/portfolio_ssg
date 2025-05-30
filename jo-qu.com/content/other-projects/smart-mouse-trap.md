@@ -2,7 +2,7 @@
 title = "Smart Mouse Trap"
 type = "school"
 draft = false
-description = "A humane, IoT-enabled mouse trap that uses sensors, motors, and live data streaming to safely catch and monitor mice, controlled by an Orange Pi."
+description = "A humane, IoT-enabled mouse trap , controlled by an Orange Pi."
 +++
 
 # Smart Mouse Trap

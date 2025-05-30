@@ -3,19 +3,19 @@ title = "Gladioforce"
 date = "2024-04-27"
 draft = false
 type = "school"
-description = "Full-stack ledenbeheer systeem voor een middeleeuws festival, gebouwd voor een echte klant met een team van 4 ontwikkelaars."
+description = "Full-stack ledenbeheer systeem voor een festival."
 +++
 
 # Gladioforce
 
-Een uitgebreid ledenbeheer systeem ontwikkeld voor een middeleeuws festival organisatie. Dit was een echt klantproject waarbij ons team van 4 ontwikkelaars een complete oplossing leverde voor het beheren van festival lidmaatschappen, evenementen en administratieve taken.
+Een uitgebreid ledenbeheer systeem ontwikkeld voor een festival organisatie. Dit was een echt klantproject waarbij ons team van 4 ontwikkelaars een complete oplossing leverde voor het beheren van festival lidmaatschappen, evenementen en administratieve taken.
 
 ## Project Overzicht
 
 **Duur:** 3 maanden (februari - april 2024)  
 **Teamgrootte:** 4 ontwikkelaars  
 **Rol:** Full-stack ontwikkelaar  
-**Klant:** Middeleeuws festival organisatie
+**Klant:** Gladiolen festival organisatie
 
 ## Belangrijkste Functies
 

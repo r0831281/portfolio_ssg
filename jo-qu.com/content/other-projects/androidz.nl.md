@@ -2,7 +2,7 @@
 title = "andro!dz"
 type = "personal"
 draft = false
-description = "Moderne band website met aangepast CMS, met Firebase backend, React frontend en Google OAuth authenticatie voor content beheer."
+description = "Moderne band website met aangepast CMS, met Firebase backend."
 +++
 
 # andro!dz

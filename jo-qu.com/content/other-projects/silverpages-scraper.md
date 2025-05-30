@@ -2,7 +2,7 @@
 title = "SilverPages Scraper"
 type = "personal"
 draft = false
-description = "High-performance web scraper for extracting healthcare provider data from SilverPages, processing thousands of records efficiently."
+description = "High-performance web scraper for extracting healthcare provider data."
 +++
 
 # SilverPages Scraper

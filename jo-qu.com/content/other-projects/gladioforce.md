@@ -3,19 +3,19 @@ title = "Gladioforce"
 date = "2024-04-27"
 draft = false
 type = "school"
-description = "Full-stack membership management system for a medieval festival, built for a real client with a team of 4 developers."
+description = "Full-stack membership management system for a festival."
 +++
 
 # Gladioforce
 
-A comprehensive membership management system developed for a medieval festival organization. This was a real-world client project where our team of 4 developers delivered a complete solution for managing festival memberships, events, and administrative tasks.
+A comprehensive membership management system developed for a festival organization. This was a real-world client project where our team of 4 developers delivered a complete solution for managing festival memberships, events, and administrative tasks.
 
 ## Project Overview
 
 **Duration:** 3 months (February - April 2024)  
 **Team Size:** 4 developers  
 **Role:** Full-stack developer  
-**Client:** Medieval festival organization
+**Client:** Gladiolen festival organization
 
 ## Key Features
 
