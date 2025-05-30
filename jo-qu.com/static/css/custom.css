@@ -1,3 +1,75 @@
+/* Import cool font for site title */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+/* Site title styling */
+.site-title {
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-left: 0.75rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.logo:hover .site-title {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+}
+
+/* Dark mode support for site title */
+@media (prefers-color-scheme: dark) {
+  .site-title {
+    background: linear-gradient(135deg, #00d4ff 0%, #ff00ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .logo:hover .site-title {
+    background: linear-gradient(135deg, #ff00ff 0%, #00d4ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+  }
+}
+
+/* Responsive adjustments for site title */
+@media (max-width: 768px) {
+  .site-title {
+    font-size: 1.1rem;
+    margin-left: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-title {
+    font-size: 0.9rem;
+    margin-left: 0.4rem;
+    letter-spacing: 0.2px;
+  }
+}
+
 .project-tiles {
   display: flex;
   flex-wrap: wrap;
@@ -244,5 +316,161 @@ a, .post-item-summary a, li a {
   
   .stat-label {
     font-size: 0.8rem;
+  }
+}
+
+/* Enhanced Language Selector */
+.language-selector {
+  position: relative;
+  display: inline-block;
+}
+
+.lang-toggle {
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.current-lang {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  min-width: 70px;
+  justify-content: space-between;
+}
+
+.lang-toggle:hover .current-lang {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.flag-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.lang-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.dropdown-arrow {
+  font-size: 0.7rem;
+  transition: transform 0.2s ease;
+  opacity: 0.7;
+}
+
+.lang-toggle[aria-expanded="true"] .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.lang-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.2s ease;
+  z-index: 1000;
+  min-width: 140px;
+  overflow: hidden;
+}
+
+.lang-toggle[aria-expanded="true"] .lang-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.lang-option {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1rem;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.lang-option:last-child {
+  border-bottom: none;
+}
+
+.lang-option:hover {
+  background-color: #f8f9fa;
+  color: #2563eb;
+}
+
+.lang-option .lang-text {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .language-selector {
+    order: -1;
+  }
+  
+  .current-lang {
+    padding: 0.3rem 0.6rem;
+    min-width: 60px;
+  }
+  
+  .lang-text {
+    font-size: 0.8rem;
+  }
+  
+  .lang-dropdown {
+    right: -10px;
+    min-width: 120px;
+  }
+  
+  .lang-option {
+    padding: 0.6rem 0.8rem;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .current-lang {
+    background: rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+  }
+  
+  .lang-toggle:hover .current-lang {
+    background: rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  .lang-dropdown {
+    background: #2d3748;
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .lang-option {
+    color: #e2e8f0;
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .lang-option:hover {
+    background-color: #4a5568;
+    color: #90cdf4;
   }
 }

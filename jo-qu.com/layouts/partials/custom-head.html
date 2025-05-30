@@ -1,0 +1,56 @@
+<!-- Custom CSS for site title styling -->
+<link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
+
+<!-- Language Selector JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const langToggle = document.querySelector('.lang-toggle');
+    
+    if (langToggle) {
+        // Toggle dropdown on click (but only on the current language part, not the dropdown)
+        const currentLang = langToggle.querySelector('.current-lang');
+        currentLang.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const isExpanded = langToggle.getAttribute('aria-expanded') === 'true';
+            langToggle.setAttribute('aria-expanded', !isExpanded);
+        });
+        
+        // Handle keyboard navigation
+        langToggle.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !isExpanded);
+            } else if (e.key === 'Escape') {
+                this.setAttribute('aria-expanded', 'false');
+            }
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!langToggle.contains(e.target)) {
+                langToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+        
+        // Handle dropdown option keyboard navigation
+        const langOptions = document.querySelectorAll('.lang-option');
+        langOptions.forEach(option => {
+            option.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    window.location.href = this.href;
+                }
+            });
+            
+            // Ensure clicks on language options work properly
+            option.addEventListener('click', function(e) {
+                // Allow the default link behavior
+                langToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+    }
+});
+</script>

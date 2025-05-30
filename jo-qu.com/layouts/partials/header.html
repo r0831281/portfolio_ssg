@@ -1,0 +1,90 @@
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="{{ .Site.Home.Permalink }}" class="logo">
+            {{ partial "svgs/home.svg" (dict "height" 25 "width" 25) . }}
+            <span class="site-title">{{ .Site.Title }}</span>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                {{ partial "svgs/menu.svg" (dict "height" 25 "width" 25) . }}
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                {{ $currentPage := . }}
+                {{ range .Site.Menus.main }}
+                <li>
+                    <a class="menu-link {{ if or ($currentPage.IsMenuCurrent "main" .)
+                        ($currentPage.HasMenuCurrent "main" .) }}active{{ end }}" href="{{ .URL }}">
+                        {{ .Name }}
+                    </a>
+                    {{ if .HasChildren }}
+                    <ul>
+                        {{ range .Children }}
+                        <li>
+                            <a class="menu-link {{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}"
+                                href="{{ .URL }}">
+                                {{ .Name }}
+                            </a>
+                        </li>
+                        {{ end }}
+                    </ul>
+                    {{ end }}
+                </li>
+                {{ end }}
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                <!-- Language Selector -->
+                {{ if .IsTranslated }}
+                    <li class="language-selector">
+                        <div class="lang-toggle" role="button" tabindex="0" aria-label="Language selector" aria-expanded="false">
+                            <div class="current-lang">
+                                {{ $currentLang := .Page.Lang }}
+                                {{ if eq $currentLang "en" }}
+                                    <span class="flag-icon">🇺🇸</span>
+                                    <span class="lang-text">EN</span>
+                                {{ else if eq $currentLang "nl" }}
+                                    <span class="flag-icon">🇳🇱</span>
+                                    <span class="lang-text">NL</span>
+                                {{ end }}
+                                <span class="dropdown-arrow">▼</span>
+                            </div>
+                            <div class="lang-dropdown">
+                                {{ $siteLanguages := .Site.Languages}}
+                                {{ $pageLang := .Page.Lang}}
+                                {{ range .Page.AllTranslations }}
+                                    {{ $translation := .}}
+                                    {{ range $siteLanguages }}
+                                        {{ if eq $translation.Lang .Lang }}
+                                            {{ if ne $pageLang .Lang}}
+                                                <a href="{{ $translation.Permalink }}" class="lang-option" aria-label="Switch to {{ .LanguageName }}">
+                                                    {{ if eq .Lang "en" }}
+                                                        <span class="flag-icon">🇺🇸</span>
+                                                        <span class="lang-text">English</span>
+                                                    {{ else if eq .Lang "nl" }}
+                                                        <span class="flag-icon">🇳🇱</span>
+                                                        <span class="lang-text">Nederlands</span>
+                                                    {{ end }}
+                                                </a>
+                                            {{ end }}
+                                        {{ end }}
+                                    {{ end }}
+                                {{ end }}
+                            </div>
+                        </div>
+                    </li>
+                    <li class="menu-separator">
+                        <span>|</span>
+                    </li>
+                {{ end }}
+            </ul>
+            <a id="mode" href="#">
+                {{ partial "svgs/sun.svg" (dict "height" 21 "width" 21 "class" "mode-sunny" "title" "LIGHT") . }}
+                {{ partial "svgs/sun.svg" (dict "height" 21 "width" 21 "class" "mode-moon" "title" "DARK") . }}
+            </a>
+        </div>
+    </nav>
+</div>
