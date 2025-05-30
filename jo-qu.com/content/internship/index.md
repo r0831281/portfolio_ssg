@@ -51,14 +51,14 @@ Following the discovery of an XSS vulnerability, I performed a full pentest on t
 
 Besides my main assignments, I resolved 26 Jira tickets, ranging from UX improvements to new features and bug fixes.
 
-### 🌱 Examples of Resolved Tickets
+###  Examples of Resolved Tickets
 - **OV-1488:** Unlimited number of tickets configurable
 - **OV-1487:** Login prompt for member tickets
 - **OV-1486:** 'Copy link' button on event page
 - **OV-1259:** Attachments added to emails
 - **OV-1495:** Visual feedback for low member counts
 
-🧩 These tickets improved the user experience and gave me insight into maintaining a large codebase.
+These tickets improved the user experience and gave me insight into maintaining a large codebase.
 
 ---
 

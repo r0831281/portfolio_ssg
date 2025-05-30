@@ -51,14 +51,14 @@ Naar aanleiding van een gevonden XSS-kwetsbaarheid, voerde ik een volledige pent
 
 Naast mijn hoofdopdrachten loste ik 26 Jira-tickets op. Deze varieerden van UX-verbeteringen tot nieuwe features en bugfixes.
 
-### 🌱 Voorbeelden van opgeloste tickets
+###  Voorbeelden van opgeloste tickets
 - **OV-1488:** Onbeperkt aantal tickets instelbaar
 - **OV-1487:** Login prompt bij leden-tickets
 - **OV-1486:** ‘Kopieer link’-knop op eventpagina
 - **OV-1259:** Bijlagen toevoegen aan e-mails
 - **OV-1495:** Visuele feedback bij lage ledenaantallen
 
-🧩 Deze tickets verbeterden de gebruikservaring en gaven me inzicht in het onderhouden van een grote codebase.
+ Deze tickets verbeterden de gebruikservaring en gaven me inzicht in het onderhouden van een grote codebase.
 
 ---
 
