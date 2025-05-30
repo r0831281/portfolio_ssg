@@ -1,9 +1,10 @@
 /* Import Orbitron font for site title */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
 /* Apply Orbitron font to all text elements */
 body, html, input, textarea, button, select {
-  font-family: 'Orbitron', monospace !important;
+  font-family: "Space Grotesk", monospace !important;
 }
 
 /* Site title styling */
@@ -12,7 +13,7 @@ body, html, input, textarea, button, select {
   font-weight: 700;
   font-size: 1.4rem;
   margin-left: 0.75rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0074e0 0%, #5f1bbf 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -20,6 +21,7 @@ body, html, input, textarea, button, select {
   letter-spacing: 0.5px;
   transition: all 0.3s ease;
   text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(30, 40, 80, 0.18);
 }
 
 .logo {
