@@ -87,6 +87,34 @@ $on-widescreen: 1152px;
 @import "listpage";
 @import "custom";
 
-{{ with .Site.Params.goToTop }}
 @import "goToTop";
-{{ end }}
+
+
+body {
+  background: linear-gradient(135deg, #b0c8f8 0%, #e5e7eb 100%);
+  // fallback for old browsers
+  background-color: #f3f4f6;
+}
+
+.site-title, .header-title {
+  background: linear-gradient(135deg, #3a5de8 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 8px rgba(58, 93, 232, 0.18), 0 1px 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: linear-gradient(135deg, #c2f0fe 0%, #d0a9ff 100%);
+    background-color: #1e222b;
+  }
+  .site-title, .header-title {
+    background: linear-gradient(135deg, #45bae8 0%, #ff00ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+}

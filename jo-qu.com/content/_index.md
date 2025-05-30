@@ -3,7 +3,7 @@ title = "Home"
 draft = false
 +++
 
-## Welcome to my Portfolio
+<h2 class="site-title">Welcome to my Portfolio</h2>
 
 <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
   <blockquote class="main-quote" style="margin: 0; flex: 1;">

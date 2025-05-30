@@ -1,7 +1,8 @@
 @mixin dark-mode {
   body {
     color: $dark-text-base-color;
-    background-color: $dark-black;
+    background: linear-gradient(135deg, #021b26 0%, #35143f 100%);
+    background-color: #232526;
   }
 
   // Headings
