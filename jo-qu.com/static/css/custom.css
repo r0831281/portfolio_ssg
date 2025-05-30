@@ -1,5 +1,10 @@
-/* Import cool font for site title */
+/* Import Orbitron font for site title */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+/* Apply Orbitron font to all text elements */
+body, html, input, textarea, button, select {
+  font-family: 'Orbitron', monospace !important;
+}
 
 /* Site title styling */
 .site-title {
