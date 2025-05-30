@@ -22,17 +22,11 @@ Een uitgebreide website en content management systeem gebouwd voor de Belgische 
 - **Band Informatie**: Biografie, lid profielen en band geschiedenis
 - **Muziek Integratie**: Ingebedde Spotify/YouTube spelers voor laatste releases
 - **Evenement Kalender**: Komende concerten en festival optredens
-- **Foto Galerij**: Hoogkwaliteit band foto's en concert beelden
-- **Nieuws & Updates**: Laatste band nieuws en aankondigingen
 - **Contact & Boekingen**: Professionele contact formulieren voor boekingsaanvragen
 
 ### Admin Dashboard
 - **Content Management**: Gebruiksvriendelijke interface voor het updaten van alle website content
 - **Evenement Beheer**: Toevoegen, bewerken en beheren van komende shows en evenementen
-- **Media Upload**: Drag-and-drop foto en video uploads met automatische optimalisatie
-- **Nieuws Publiceren**: Rich text editor voor het creëren en publiceren van nieuws artikelen
-- **Analytics Dashboard**: Website verkeer en engagement metrieken
-- **Gebruiker Beheer**: Rol-gebaseerde toegang voor verschillende bandleden
 
 ## Technische Implementatie
 
