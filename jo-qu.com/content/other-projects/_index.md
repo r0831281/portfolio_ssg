@@ -6,14 +6,21 @@ title = 'Other Projects'
 
 <link rel="stylesheet" href="/css/custom.css">
 
-<h2> My Projects </h2>
+<div class="projects-intro">
+  <p>A collection of diverse projects spanning web development, IoT, mobile apps, and creative experiments. Each project represents a unique challenge and learning opportunity, from real-world client work to innovative proof-of-concepts.</p>
+</div>
 
-- **Gladioforce**: Membership management for a festival. <a href="https://github.com/GladioForce-Org/GladioForce" target="_blank">Visit the project</a>
-- **FPV Interactive Portfolio PoC**: FPV portfolio experience. <a href="https://jo-qu.pages.dev/" target="_blank">Visit the project</a>
-- **andro!dz**: Website for a band, with custom admin page. <a href="https://androidz.be/" target="_blank">Visit the project</a>
-- **Smart Mouse Trap**: A Mouse trap, but smarter <a href="https://www.youtube.com/watch?v=7RVyvhLRBDM" target="_blank">Visit the project</a>
-- **GitHub Faces**: See millions of GitHub user faces. <a href="https://r0831281.github.io/GithubsFaces/" target="_blank">Visit the project</a>
-- **Flutter AR App**: AR to scan album covers. <a href="https://github.com/r0831281/APFront" target="_blank">Visit the project</a>
-- **SilverScraper**: Scrapes the silverpages webapp fordata about Doctors. <a href="https://github.com/r0831281/silverScraper" target="_blank">Visit the project</a>
-
-
+<div class="projects-stats">
+  <div class="stat-item">
+    <span class="stat-number">7</span>
+    <span class="stat-label">Projects</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number">12+</span>
+    <span class="stat-label">Technologies</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number">3</span>
+    <span class="stat-label">Categories</span>
+  </div>
+</div>

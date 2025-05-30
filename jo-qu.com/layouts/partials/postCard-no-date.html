@@ -1,12 +1,34 @@
-<article class="post-card">
-  <h3 class="post-title">
-    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-  </h3>
-  {{ with .Params.description }}
-    <p class="post-summary">{{ . }}</p>
-  {{ else }}
-    {{ with .Summary }}
-      <p class="post-summary">{{ . }}</p>
-    {{ end }}
-  {{ end }}
-</article>
+<a href="{{ .RelPermalink }}" class="project-card-link">
+  <article class="project-card">
+    <div class="project-header">
+      <div class="project-meta">
+        <span class="project-type">{{ .Params.type | title }}</span>
+        {{ with .Date }}
+          <span class="project-date">{{ .Format "2006" }}</span>
+        {{ end }}
+      </div>
+      <h3 class="project-title">
+        {{ .Title }}
+        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14"></path>
+          <path d="M12 5l7 7-7 7"></path>
+        </svg>
+      </h3>
+    </div>
+    <div class="project-description">
+      {{ with .Params.description }}
+        <p class="project-summary">{{ . }}</p>
+      {{ else }}
+        {{ with .Summary }}
+          <p class="project-summary">{{ . | truncate 200 "..." }}</p>
+        {{ else }}
+          {{ $content := .Content | plainify }}
+          {{ $firstParagraph := index (split $content "\n\n") 1 }}
+          {{ if $firstParagraph }}
+            <p class="project-summary">{{ $firstParagraph | truncate 200 "..." }}</p>
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    </div>
+  </article>
+</a>
