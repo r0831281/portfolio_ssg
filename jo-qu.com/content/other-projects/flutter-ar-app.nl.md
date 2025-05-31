@@ -94,7 +94,7 @@ Een innovatieve mobiele applicatie die augmented reality (AR) technologie gebrui
 - **Schaalbaarheid**: Horizontale schaling mogelijkheden voor hoog verkeer
 
 ## Back-end Services Architectuur
-![Backend architectuur](../../photos/backend_arapp.jpg)
+![Backend architectuur](/photos/backend_arapp.jpg)
 
 ## Uitdagingen & Oplossingen
 
