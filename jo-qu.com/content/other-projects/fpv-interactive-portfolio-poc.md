@@ -27,7 +27,7 @@ The portfolio reimagines how visitors interact with project showcases by gamifyi
 
 ### 3D Environment
 - **Immersive 3D Scene**: Fully navigable 3D space with atmospheric lighting
-- **FPS Controls**: WASD movement with mouse look for familiar gaming experience
+- **FPS Controls**: mouse view controls for familiar gaming experience
 - **Dynamic Lighting**: Real-time shadows and lighting effects for visual appeal
 - **Particle Systems**: Visual feedback for interactions and ambient effects
 

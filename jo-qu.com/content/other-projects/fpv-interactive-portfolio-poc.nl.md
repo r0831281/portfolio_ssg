@@ -27,7 +27,7 @@ Het portfolio herdenkt hoe bezoekers interacteren met project showcases door de 
 
 ### 3D Omgeving
 - **Immersieve 3D Scène**: Volledig navigeerbare 3D ruimte met atmosferische verlichting
-- **FPS Besturing**: WASD beweging met muis look voor vertrouwde gaming ervaring
+- **FPS Besturing**: muis gestuurde gezichtsveld controle voor vertrouwde gaming ervaring
 - **Dynamische Verlichting**: Real-time schaduwen en lichteffecten voor visuele aantrekkingskracht
 - **Particle Systemen**: Visuele feedback voor interacties en ambient effecten
 
