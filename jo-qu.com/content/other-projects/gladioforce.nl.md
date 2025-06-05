@@ -85,4 +85,6 @@ Een uitgebreid ledenbeheer systeem ontwikkeld voor het Gladiolen festival, beken
 - Gestroomlijnde processen voor vrijwilligers- en ledenbeheer
 - Schaalbare en onderhoudbare codebase voor toekomstige uitbreidingen
 
+![GitHub Contributions](/photos/contribs.png)
+
 [Bezoek het project op GitHub](https://github.com/GladioForce-Org/GladioForce)
