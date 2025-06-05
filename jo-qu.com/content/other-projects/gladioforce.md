@@ -3,63 +3,86 @@ title = "Gladioforce"
 date = "2024-04-27"
 draft = false
 type = "school"
-description = "Full-stack membership management system for a festival."
+description = "Full-stack membership management system for the best small festival in Europe."
 +++
 
 # Gladioforce
 
-A comprehensive membership management system developed for a festival organization. This was a real-world client project where our team of 4 developers delivered a complete solution for managing festival memberships, events, and administrative tasks.
+A comprehensive membership management system developed for the Gladiolen festival, known as the best small festival in Europe. This was a real-world client project where our team of 6 developers delivered a complete solution for managing festival memberships, events, and administrative tasks.
 
 ## Project Overview
 
 **Duration:** 3 months (February - April 2024)  
-**Team Size:** 4 developers  
+**Team Size:** 6 developers (Tommy, Dennis, Pieter, Yordi, Jonas, Dries)  
 **Role:** Full-stack developer  
 **Client:** Gladiolen festival organization
 
 ## Key Features
 
-- **Member Registration & Management**: Complete member lifecycle management with profile creation, updates, and status tracking
-- **Event Management**: Create and manage festival events with registration capabilities
-- **Payment Processing**: Integrated payment system for membership fees and event tickets
-- **Admin Dashboard**: Comprehensive administrative interface for festival organizers
-- **Reporting System**: Generate detailed reports on membership statistics and event attendance
-- **Role-based Access Control**: Different permission levels for admins, organizers, and members
+- **Administration**: Complete administrative management of the festival
+- **Editions**: Management of different festival editions
+- **T-shirts**: Management of festival merchandise
+- **Core Members**: Registration and management of core members
+- **Volunteers**: Registration and management of volunteers
+- **Associations**: Management of participating associations
+- **Time Clock**: Time registration system for staff
 
 ## Technical Implementation
 
-### Backend (Django + Django Ninja)
-- RESTful API design with Django Ninja for fast, type-safe endpoints
-- PostgreSQL database with optimized queries for large member datasets
-- JWT authentication with role-based permissions
-- Automated email notifications for membership renewals and events
+### Backend
+- Django Python with Django Ninja for fast, type-safe API endpoints
+- MySQL database for data storage
+- Swagger according to openAPI specifications for API documentation
+- Firebase integration for additional functionalities
 
-### Frontend (Angular)
-- Responsive single-page application with Angular 15+
+### Frontend
+- Angular framework for a responsive single-page application
+- SASS for advanced styling capabilities
 - Material Design components for consistent UI/UX
-- Real-time updates using WebSocket connections
-- Progressive Web App (PWA) capabilities for mobile access
 
 ### Infrastructure
-- Dockerized application for consistent deployment
-- CI/CD pipeline with automated testing
-- Production deployment on cloud infrastructure
+- Docker Compose for containerization and deployment
+- Terraform for infrastructure as code
+- AWS hosting with separate production and lab environments
+- Web Tier and App & DB Tier architecture for optimal scalability and security
+
+## Documentation
+
+- **Installation Guide**: Detailed instructions for local installation
+- **Host Installation Guide**: Manual for deployment on production servers
+- **User Manual**: Comprehensive user guide for end users
 
 ## Challenges & Solutions
 
-**Challenge:** Managing complex membership hierarchies and permissions  
-**Solution:** Implemented a flexible role-based access control system with inheritance
+**Challenge:** Running multiple frontends on one large API with different sub-APIs  
+**Solution:** Modular API architecture with clear separation of responsibilities
 
+**Challenge:** Time management and planning  
+**Solution:** Improved communication and realistic time schedules
+
+## Skills Learned
+
+### Soft Skills
+- **Communication**: Clear and frequent alignment, preventing misunderstandings
+- **Collaboration**: Dividing roles, supporting each other, providing feedback
+- **Time Management**: Setting priorities, planning tasks, monitoring progress
+- **Problem-solving**: Quickly devising solutions when obstacles arise
+
+### Technical Skills
+- Firebase implementation and integration
+- Swagger according to openAPI specifications
+- Running multiple frontends on one large API with different sub-APIs
+- Understanding the difference between production and lab environments in AWS
 
 ## Stack
-- **Backend:** Django, Django Ninja, PostgreSQL
-- **Frontend:** Angular, TypeScript, Angular Material
-- **Infrastructure:** Docker, Docker Compose
-- **Testing:** Pytest, Jasmine, Karma
+- **Backend:** Django, Django Ninja, MySQL
+- **Frontend:** Angular, TypeScript, SASS
+- **Infrastructure:** Docker Compose, Terraform, AWS
+- **Additional Technologies:** Firebase, Swagger
 
 ## Outcomes
-- Reduced administrative workload through automation
-- Improved member satisfaction with streamlined registration process
-- Client renewed contract for ongoing maintenance and feature development
+- Fully functional administration system for the Gladiolen festival
+- Streamlined processes for volunteer and member management
+- Scalable and maintainable codebase for future extensions
 
 [Visit the project on GitHub](https://github.com/GladioForce-Org/GladioForce)
