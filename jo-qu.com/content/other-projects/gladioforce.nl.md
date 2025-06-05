@@ -50,7 +50,7 @@ Een uitgebreid ledenbeheer systeem ontwikkeld voor het Gladiolen festival, beken
 
 - **Installation Guide**: Gedetailleerde instructies voor lokale installatie
 - **Host Installation Guide**: Handleiding voor deployment op productie servers
-- **User Manual**: Uitgebreide gebruikershandleiding voor eindgebruikers
+- **User Manual**: Uitgebreide gebruikershandleiding voor eindgebruikers ([PDF downloaden](/files/User_manual_gladio.pdf))
 
 ## Uitdagingen & Oplossingen
 

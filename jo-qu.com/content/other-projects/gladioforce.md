@@ -50,7 +50,7 @@ A comprehensive membership management system developed for the Gladiolen festiva
 
 - **Installation Guide**: Detailed instructions for local installation
 - **Host Installation Guide**: Manual for deployment on production servers
-- **User Manual**: Comprehensive user guide for end users
+- **User Manual**: Comprehensive user guide for end users [Download the pdf](/files/User_manual_gladio.pdf)
 
 ## Challenges & Solutions
 
