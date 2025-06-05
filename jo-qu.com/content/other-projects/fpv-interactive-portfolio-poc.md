@@ -69,13 +69,6 @@ The portfolio reimagines how visitors interact with project showcases by gamifyi
 **Challenge:** Loading 3D assets efficiently  
 **Solution:** Implemented progressive loading with visual feedback
 
-## Technical Metrics
-
-- **Performance**: Consistent 60fps on mid-range devices
-- **Load Time**: Initial scene loads in under 3 seconds
-- **Bundle Size**: Optimized to under 2MB total assets
-- **Browser Support**: 95%+ compatibility with modern browsers
-
 ## Stack
 - **3D Engine:** Three.js (WebGL)
 - **Languages:** JavaScript ES6+, HTML5, CSS3

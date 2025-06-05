@@ -112,8 +112,8 @@ Een geavanceerde IoT-enabled humane muizenval die hardware engineering, embedded
 
 ## Technische Prestaties
 
-- **Detectie Nauwkeurigheid**: 95% nauwkeurigheid in het onderscheiden van doeldieren
 - **Responstijd**: Sub-seconde trigger respons voor onmiddellijke vangst
+- **Proof of Concept**: Werkend prototype succesvol getest in gecontroleerde omgeving, met betrouwbare detectie, vangst en live data streaming naar het cloud dashboard.
 
 ## Leerresultaten
 

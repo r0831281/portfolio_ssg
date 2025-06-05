@@ -50,8 +50,6 @@ Een uitgebreid ledenbeheer systeem ontwikkeld voor een festival organisatie. Dit
 **Uitdaging:** Beheren van complexe lidmaatschap hiërarchieën en permissies  
 **Oplossing:** Implementatie van een flexibel rol-gebaseerd toegangscontrole systeem met overerving
 
-**Uitdaging:** Omgaan met hoog verkeer tijdens festival registratie periodes  
-**Oplossing:** Geoptimaliseerde database queries en implementatie van caching strategieën
 
 ## Stack
 - **Backend:** Django, Django Ninja, PostgreSQL
@@ -60,8 +58,7 @@ Een uitgebreid ledenbeheer systeem ontwikkeld voor een festival organisatie. Dit
 - **Testing:** Pytest, Jasmine, Karma
 
 ## Resultaten
-- Succesvol gedeployed en gebruikt door 500+ festival leden
-- Administratieve werklast verminderd met 60% door automatisering
+- Administratieve werklast verminderd door automatisering
 - Verbeterde leden tevredenheid met gestroomlijnde registratie proces
 - Klant verlengde contract voor doorlopend onderhoud en feature ontwikkeling
 

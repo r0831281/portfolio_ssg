@@ -89,8 +89,7 @@ Een innovatieve mobiele applicatie die augmented reality (AR) technologie gebrui
 
 ### DevOps & Deployment
 - **Docker Containerisatie**: Consistente deployment over omgevingen
-- **CI/CD Pipeline**: Geautomatiseerde testing en deployment
-- **Monitoring**: Real-time service gezondheid en prestatie monitoring
+- **API Beveiliging**: Authenticatie en autorisatie met OAuth2 en JWT
 - **Schaalbaarheid**: Horizontale schaling mogelijkheden voor hoog verkeer
 
 ## Back-end Services Architectuur
@@ -109,9 +108,6 @@ Een innovatieve mobiele applicatie die augmented reality (AR) technologie gebrui
 
 ## Technische Prestaties
 
-- **Herkenningsnauwkeurigheid**: 92% nauwkeurigheidspercentage over 10.000+ albumhoezen
-- **Responstijd**: Sub-seconde herkenning voor gecachte albums
-- **Schaalbaarheid**: Handelt 1000+ gelijktijdige gebruikers af
 - **Cross-platform**: Consistente ervaring over iOS en Android
 
 ## Leerresultaten

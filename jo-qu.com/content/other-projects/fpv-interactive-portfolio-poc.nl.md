@@ -57,18 +57,6 @@ Het portfolio herdenkt hoe bezoekers interacteren met project showcases door de 
 - **Geometry Instancing**: Efficiënte rendering van herhaalde elementen
 - **Geheugen Beheer**: Juiste disposal van 3D resources
 
-## Gebruikerservaring Ontwerp
-
-### Onboarding
-- **Tutorial Overlay**: Duidelijke instructies voor eerste bezoekers
-- **Progressieve Onthulling**: Geleidelijk introduceren van functies en besturing
-- **Visuele Aanwijzingen**: Intuïtieve visuele indicatoren voor interactieve elementen
-
-### Toegankelijkheid
-- **Toetsenbord Navigatie**: Alternatieve besturing voor gebruikers die alleen toetsenbord prefereren
-- **Bewegingsgevoeligheid**: Opties om beweging te verminderen voor gebruikers met vestibulaire stoornissen
-- **Screen Reader Ondersteuning**: Semantische HTML structuur voor assistieve technologieën
-
 ## Uitdagingen & Oplossingen
 
 **Uitdaging:** 60fps prestaties behouden op verschillende apparaten  
@@ -80,12 +68,6 @@ Het portfolio herdenkt hoe bezoekers interacteren met project showcases door de 
 **Uitdaging:** 3D assets efficiënt laden  
 **Oplossing:** Progressieve laden geïmplementeerd met visuele feedback
 
-## Technische Metrieken
-
-- **Prestaties**: Consistente 60fps op mid-range apparaten
-- **Laadtijd**: Initiële scène laadt in onder 3 seconden
-- **Bundle Grootte**: Geoptimaliseerd tot onder 2MB totale assets
-- **Browser Ondersteuning**: 95%+ compatibiliteit met moderne browsers
 
 ## Stack
 - **3D Engine:** Three.js (WebGL)

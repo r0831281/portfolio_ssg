@@ -89,8 +89,7 @@ An innovative mobile application that leverages augmented reality (AR) technolog
 
 ### DevOps & Deployment
 - **Docker Containerization**: Consistent deployment across environments
-- **CI/CD Pipeline**: Automated testing and deployment
-- **Monitoring**: Real-time service health and performance monitoring
+- **API Security**: Authentication and authorization using OAuth2 and JWT
 - **Scalability**: Horizontal scaling capabilities for high traffic
 
 ## Back-end Services Architecture
@@ -109,9 +108,6 @@ An innovative mobile application that leverages augmented reality (AR) technolog
 
 ## Technical Achievements
 
-- **Recognition Accuracy**: 92% accuracy rate across 10,000+ album covers
-- **Response Time**: Sub-second recognition for cached albums
-- **Scalability**: Handles 1000+ concurrent users
 - **Cross-platform**: Consistent experience across iOS and Android
 
 ## Learning Outcomes

@@ -20,19 +20,13 @@ A comprehensive website and content management system built for the Belgian band
 
 ### Public Website
 - **Band Information**: Biography, member profiles, and band history
-- **Music Integration**: Embedded Spotify/YouTube players for latest releases
+- **Music Integration**: Embedded YouTube player for latest releases
 - **Event Calendar**: Upcoming concerts and festival appearances
-- **Photo Gallery**: High-quality band photos and concert images
-- **News & Updates**: Latest band news and announcements
 - **Contact & Booking**: Professional contact forms for booking inquiries
 
 ### Admin Dashboard
 - **Content Management**: Easy-to-use interface for updating all website content
 - **Event Management**: Add, edit, and manage upcoming shows and events
-- **Media Upload**: Drag-and-drop photo and video uploads with automatic optimization
-- **News Publishing**: Rich text editor for creating and publishing news articles
-- **Analytics Dashboard**: Website traffic and engagement metrics
-- **User Management**: Role-based access for different band members
 
 ## Technical Implementation
 
@@ -51,10 +45,11 @@ A comprehensive website and content management system built for the Belgian band
 - **Cloud Functions**: Serverless functions for email notifications and data processing
 
 ### Admin Interface Features
-- **Content Management**: Manage the sites content
-- **Rich Text Editor**: WYSIWYG editor for content creation
-- **Image Management**: Automatic resizing and format optimization
-- **Bulk Operations**: Efficient management of multiple items
+- **Show Management**: Create, edit, delete, and paginate shows
+- **Song Management**: Add, edit, delete, and paginate songs
+- **Login/Logout**: Google OAuth login and secure logout functionality
+- **Direct Content Updates**: All changes are instantly visible on the public website
+- **User-friendly UI**: Large action buttons, clear tables, and fast navigation
 
 ## Design & User Experience
 
@@ -77,12 +72,11 @@ A comprehensive website and content management system built for the Belgian band
 - **Data Validation**: Client and server-side input validation
 - **HTTPS Enforcement**: SSL certificates and secure data transmission
 - **Rate Limiting**: Protection against abuse and spam
-- **Cloudflare Web Application Firewall (WAF)**: Protects the website from common web threats such as SQL injection, cross-site scripting (XSS), and DDoS attacks by filtering and monitoring HTTP traffic in real time.
+- **Cloudflare WAF**: Web Application Firewall (WAF) via Cloudflare protects against DDoS attacks, SQL injection, and other common web threats
 
 ### Performance Optimization
 - **Image Optimization**: WebP format with fallbacks for older browsers
 - **Caching Strategy**: Browser and CDN caching for static assets
-- **Bundle Optimization**: Tree shaking and code splitting
 - **Lighthouse Score**: 95+ performance score across all metrics
 
 ## Admin page Screenshots
@@ -94,7 +88,7 @@ A comprehensive website and content management system built for the Belgian band
 
 ## Challenges & Solutions
 
-**Challenge:** Managing large media files efficiently  
+**Challenge:** Efficiently managing large media files  
 **Solution:** Implemented automatic image compression and progressive loading
 
 **Challenge:** Ensuring content updates are immediate  
@@ -112,10 +106,9 @@ A comprehensive website and content management system built for the Belgian band
 
 ## Technical Metrics
 
-- **Performance**: 95+ Lighthouse score across all categories
+- **Performance**: 90+ Lighthouse score across all categories
 - **Uptime**: 99.9% availability with Firebase hosting
 - **Load Time**: Under 2 seconds for initial page load
-- **Mobile Score**: 98/100 mobile usability score
 
 ## Stack
 - **Frontend:** React 18, React Router, Styled Components

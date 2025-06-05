@@ -50,8 +50,6 @@ A comprehensive membership management system developed for a festival organizati
 **Challenge:** Managing complex membership hierarchies and permissions  
 **Solution:** Implemented a flexible role-based access control system with inheritance
 
-**Challenge:** Handling high traffic during festival registration periods  
-**Solution:** Optimized database queries and implemented caching strategies
 
 ## Stack
 - **Backend:** Django, Django Ninja, PostgreSQL
@@ -60,8 +58,7 @@ A comprehensive membership management system developed for a festival organizati
 - **Testing:** Pytest, Jasmine, Karma
 
 ## Outcomes
-- Successfully deployed and used by 500+ festival members
-- Reduced administrative workload by 60% through automation
+- Reduced administrative workload through automation
 - Improved member satisfaction with streamlined registration process
 - Client renewed contract for ongoing maintenance and feature development
 

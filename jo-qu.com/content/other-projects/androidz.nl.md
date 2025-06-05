@@ -20,7 +20,7 @@ Een uitgebreide website en content management systeem gebouwd voor de Belgische 
 
 ### Publieke Website
 - **Band Informatie**: Biografie, lid profielen en band geschiedenis
-- **Muziek Integratie**: Ingebedde Spotify/YouTube spelers voor laatste releases
+- **Muziek Integratie**: Ingebedde YouTube speler voor laatste releases
 - **Evenement Kalender**: Komende concerten en festival optredens
 - **Contact & Boekingen**: Professionele contact formulieren voor boekingsaanvragen
 
@@ -45,11 +45,11 @@ Een uitgebreide website en content management systeem gebouwd voor de Belgische 
 - **Cloud Functions**: Serverless functies voor email notificaties en data verwerking
 
 ### Admin Interface Functies
-- **Rich Text Editor**: WYSIWYG editor voor content creatie
-- **Afbeelding Beheer**: Automatische resizing en formaat optimalisatie
-- **Preview Modus**: Live preview van wijzigingen voor publicatie
-- **Versie Controle**: Content versioning en rollback mogelijkheden
-- **Bulk Operaties**: Efficiënt beheer van meerdere items
+- **Show Management**: Shows aanmaken, bewerken, verwijderen en paginatie van shows
+- **Song Management**: Songs toevoegen, bewerken, verwijderen en paginatie van songs
+- **Inloggen/Uitloggen**: Google OAuth login en veilige logout functionaliteit
+- **Directe Content Updates**: Alle wijzigingen zijn direct zichtbaar op de publieke website
+- **Gebruiksvriendelijke UI**: Grote knoppen voor acties, overzichtelijke tabellen en snelle navigatie
 
 ## Ontwerp & Gebruikerservaring
 
@@ -77,7 +77,6 @@ Een uitgebreide website en content management systeem gebouwd voor de Belgische 
 ### Prestatie Optimalisatie
 - **Afbeelding Optimalisatie**: WebP formaat met fallbacks voor oudere browsers
 - **Caching Strategie**: Browser en CDN caching voor statische assets
-- **Bundle Optimalisatie**: Tree shaking en code splitting
 - **Lighthouse Score**: 95+ prestatie score over alle metrieken
 
 ## Admin pagina Screenshots
@@ -107,10 +106,9 @@ Een uitgebreide website en content management systeem gebouwd voor de Belgische 
 
 ## Technische Metrieken
 
-- **Prestaties**: 95+ Lighthouse score over alle categorieën
+- **Prestaties**: 90+ Lighthouse score over alle categorieën
 - **Uptime**: 99.9% beschikbaarheid met Firebase hosting
 - **Laadtijd**: Onder 2 seconden voor initiële pagina load
-- **Mobiele Score**: 98/100 mobiele bruikbaarheid score
 
 ## Stack
 - **Frontend:** React 18, React Router, Styled Components
