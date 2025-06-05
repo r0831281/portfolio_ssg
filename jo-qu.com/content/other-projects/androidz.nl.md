@@ -80,11 +80,11 @@ Een uitgebreide website en content management systeem gebouwd voor de Belgische 
 - **Lighthouse Score**: 95+ prestatie score over alle metrieken
 
 ## Admin pagina Screenshots
-![Admin Login met Google Oauth](/files/photos/admin_page_login.png)
+![Admin Login met Google Oauth](/photos/admin_page_login.png)
 
 <hr>
  
-![Admin Content Management](/files/photos/admin_page.png)
+![Admin Content Management](/photos/admin_page.png)
 
 ## Uitdagingen & Oplossingen
 

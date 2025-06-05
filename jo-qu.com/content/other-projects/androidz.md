@@ -80,11 +80,11 @@ A comprehensive website and content management system built for the Belgian band
 - **Lighthouse Score**: 95+ performance score across all metrics
 
 ## Admin page Screenshots
-![Admin Login using Google Oauth](/files/photos/admin_page_login.png)
+![Admin Login using Google Oauth](/photos/admin_page_login.png)
 
 <hr>
  
-![Admin Content Management](/files/photos/admin_page.png)
+![Admin Content Management](/photos/admin_page.png)
 
 ## Challenges & Solutions
 
