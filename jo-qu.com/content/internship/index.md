@@ -3,7 +3,11 @@ title = 'Internship'
 +++
 
 # My Internship at Ordolio
-I interned at [Ordolio](https://ordolio.com), a Belgian platform for clubs and associations to manage their operations. During my internship, I contributed to both project-based assignments and the daily development of the platform.
+From January 31st to May 30th, I completed my internship at ![Ordolio](https://ordolio.com), a Belgian platform that helps clubs and associations efficiently manage their operations — including memberships, events, payments, and communication. The platform is designed to streamline administrative tasks, enabling organizations to focus more on their core mission and community engagement.
+
+During my internship, I contributed to both project-based assignments and the ongoing development of the platform. My responsibilities included implementing new features, resolving bugs, and improving various aspects of the user interface and overall user experience. I collaborated closely with the development team, took part in daily stand-ups, and participated in code reviews.
+
+This internship provided me with valuable practical experience in a real-world development environment. I strengthened my technical skills in web development and gained insight into agile methodologies, version control (Git), and modern development tools. Additionally, I learned how to communicate effectively within a professional software team and contribute to a fast-evolving product.
 
 ## Summary
 

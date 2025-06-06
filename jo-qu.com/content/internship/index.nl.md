@@ -3,7 +3,11 @@ title = 'Stage'
 +++
 
 # Mijn stage bij Ordolio
-Ik liep stage bij [Ordolio](https://ordolio.com), een Belgisch platform waarmee clubs en verenigingen hun werking kunnen beheren. Tijdens mijn stage werkte ik mee aan zowel projectmatige opdrachten als de dagelijkse ontwikkeling van het platform.
+Van 31 januari tot 30 mei liep ik stage bij ![Ordolio](https://ordolio.com), een Belgisch platform dat clubs en verenigingen helpt bij het efficiënt beheren van hun werking — waaronder ledenbeheer, evenementen, betalingen en communicatie. Het platform is erop gericht om administratieve taken te vereenvoudigen, zodat organisaties zich meer kunnen focussen op hun kerntaken en hun gemeenschap.
+
+Tijdens mijn stage werkte ik mee aan zowel projectmatige opdrachten als de dagelijkse ontwikkeling van het platform. Mijn taken bestonden onder andere uit het implementeren van nieuwe functionaliteiten, het oplossen van bugs en het verbeteren van de gebruikersinterface en algemene gebruikerservaring. Ik werkte nauw samen met het developmentteam, nam deel aan dagelijkse stand-ups en deed mee aan code reviews.
+
+Deze stage bood mij waardevolle praktijkervaring in een professionele ontwikkelomgeving. Ik heb mijn technische vaardigheden in webontwikkeling versterkt en leerde werken met agile methodologieën, versiebeheer (Git) en moderne developmenttools. Daarnaast ontwikkelde ik mijn communicatieve vaardigheden binnen een team en leerde ik hoe ik effectief kon bijdragen aan een snel evoluerend softwareproduct.
 
 ## Samenvatting
 
