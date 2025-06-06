@@ -5,12 +5,22 @@
     </header>
     <main class="page-content" aria-label="Content">
         {{ .Content }}
-        {{ $groups := slice "Opleiding" "personal" "fun" }}
+        {{ $groups := slice "opleiding" "Opleiding" "personal" "Personal" "fun" "Fun" }}
         {{ $allPages := .Pages }}
         {{ range $group := $groups }}
-            {{ $pages := where $allPages "Params.type" $group }}
+            {{ $pages := where $allPages "Params.type" "==" $group }}
             {{ if gt (len $pages) 0 }}
-                <h2 class="post-year">{{ $group | title }}</h2>
+                <h2 class="post-year">
+                    {{- if or (eq $group "opleiding") (eq $group "Opleiding") -}}
+                        {{- if eq $.Site.Language.Lang "nl" -}}Opleiding{{- else -}}Education{{- end -}}
+                    {{- else if or (eq $group "fun") (eq $group "Fun") -}}
+                        {{- if eq $.Site.Language.Lang "nl" -}}Plezier{{- else -}}Fun{{- end -}}
+                    {{- else if or (eq $group "personal") (eq $group "Personal") -}}
+                        {{- if eq $.Site.Language.Lang "nl" -}}Persoonlijk{{- else -}}Personal{{- end -}}
+                    {{- else -}}
+                        {{- $group | title -}}
+                    {{- end -}}
+                </h2>
                 {{ range $pages }}
                     {{ partial "postCard-no-date" . }}
                 {{ end }}

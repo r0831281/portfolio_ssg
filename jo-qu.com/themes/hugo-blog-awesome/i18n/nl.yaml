@@ -32,3 +32,17 @@
 
 - id: "errors.404_description"
   translation: "Je hebt zojuist een route geraakt die niet bestaat."
+
+## PROJECT TYPES ##
+- id: "project_type.opleiding"
+  translation: "Opleiding"
+- id: "project_type.Opleiding"
+  translation: "Opleiding"
+- id: "project_type.fun"
+  translation: "Plezier"
+- id: "project_type.Fun"
+  translation: "Plezier"
+- id: "project_type.personal"
+  translation: "Persoonlijk"
+- id: "project_type.Personal"
+  translation: "Persoonlijk"

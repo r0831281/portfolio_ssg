@@ -2,7 +2,23 @@
   <article class="project-card">
     <div class="project-header">
       <div class="project-meta">
-        <span class="project-type">{{ .Params.type | title }}</span>
+        <span class="project-type">
+          {{- if eq .Params.type "Opleiding" -}}
+            {{- if eq $.Site.Language.Lang "nl" -}}Opleiding{{- else -}}Education{{- end -}}
+          {{- else if eq .Params.type "opleiding" -}}
+            {{- if eq $.Site.Language.Lang "nl" -}}Opleiding{{- else -}}Education{{- end -}}
+          {{- else if eq .Params.type "fun" -}}
+            {{- if eq $.Site.Language.Lang "nl" -}}Plezier{{- else -}}Fun{{- end -}}
+          {{- else if eq .Params.type "Fun" -}}
+            {{- if eq $.Site.Language.Lang "nl" -}}Plezier{{- else -}}Fun{{- end -}}
+          {{- else if eq .Params.type "personal" -}}
+            {{- if eq $.Site.Language.Lang "nl" -}}Persoonlijk{{- else -}}Personal{{- end -}}
+          {{- else if eq .Params.type "Personal" -}}
+            {{- if eq $.Site.Language.Lang "nl" -}}Persoonlijk{{- else -}}Personal{{- end -}}
+          {{- else -}}
+            {{- .Params.type | title -}}
+          {{- end -}}
+        </span>
         {{ with .Date }}
           <span class="project-date">{{ .Format "2006" }}</span>
         {{ end }}
