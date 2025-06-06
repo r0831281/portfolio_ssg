@@ -90,7 +90,7 @@ I look back on a successful internship in which I not only refined my technical 
   <a href="/files/Onderzoek_wachtlijsten.docx" download style="flex: 1 1 200px; text-align: center; background: #007acc; color: #fff; padding: 1.2em 0; border-radius: 8px; font-size: 1.2em; text-decoration: none; font-weight: bold; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: background 0.2s;">
     📄 Waitlist Functionality Research
   </a>
-  <a href="/files/Realisatiedocument__Jonas_Quintiens.docx" download style="flex: 1 1 200px; text-align: center; background: #007acc; color: #fff; padding: 1.2em 0; border-radius: 8px; font-size: 1.2em; text-decoration: none; font-weight: bold; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: background 0.2s;">
+  <a href="/files/Realisatiedocument__Jonas_Quintiens.pdf" download style="flex: 1 1 200px; text-align: center; background: #007acc; color: #fff; padding: 1.2em 0; border-radius: 8px; font-size: 1.2em; text-decoration: none; font-weight: bold; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: background 0.2s;">
     📄 Realization Document
   </a>
 </div>

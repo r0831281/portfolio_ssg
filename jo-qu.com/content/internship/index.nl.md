@@ -90,7 +90,7 @@ Ik kijk terug op een geslaagde stage waarin ik niet alleen technische skills heb
   <a href="/files/Onderzoek_wachtlijsten.docx" download style="flex: 1 1 200px; text-align: center; background: #007acc; color: #fff; padding: 1.2em 0; border-radius: 8px; font-size: 1.2em; text-decoration: none; font-weight: bold; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: background 0.2s;">
     📄 Onderzoek Wachtlijst functionaliteit
   </a>
-  <a href="/files/Realisatiedocument__Jonas_Quintiens.docx" download style="flex: 1 1 200px; text-align: center; background: #007acc; color: #fff; padding: 1.2em 0; border-radius: 8px; font-size: 1.2em; text-decoration: none; font-weight: bold; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: background 0.2s;">
+  <a href="/files/Realisatiedocument__Jonas_Quintiens.pdf" download style="flex: 1 1 200px; text-align: center; background: #007acc; color: #fff; padding: 1.2em 0; border-radius: 8px; font-size: 1.2em; text-decoration: none; font-weight: bold; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: background 0.2s;">
     📄 Realisatie Document
   </a>
 </div>
