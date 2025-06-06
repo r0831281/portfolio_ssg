@@ -2,7 +2,7 @@
 title = "Gladioforce"
 date = "2024-04-27"
 draft = false
-type = Opleiding
+type = "Opleiding"
 description = "Full-stack membership management system for the best small festival in Europe."
 +++
 

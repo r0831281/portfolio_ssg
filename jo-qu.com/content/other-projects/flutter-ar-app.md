@@ -1,6 +1,6 @@
 +++
 title = "Flutter AR APP"
-type = Opleiding
+type = "Opleiding"
 date = "2023-11-01"
 draft = false
 description = "Advanced AR mobile application for album cover recognition with microservices."
