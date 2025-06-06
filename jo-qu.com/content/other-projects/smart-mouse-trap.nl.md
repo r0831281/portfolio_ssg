@@ -1,6 +1,6 @@
 +++
 title = "Smart Mouse Trap"
-type = "school"
+type = Opleiding
 draft = false
 description = "Een humane, IoT-enabled muizenval, bestuurd door een Orange Pi."
 +++

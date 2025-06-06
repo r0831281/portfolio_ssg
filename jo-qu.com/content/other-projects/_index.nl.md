@@ -7,7 +7,7 @@ title = 'Andere Projecten'
 <link rel="stylesheet" href="/css/custom.css">
 
 <div class="projects-intro">
-  <p>Een verzameling van diverse projecten die webontwikkeling, IoT, mobiele apps en creatieve experimenten omspannen. Elk project vertegenwoordigt een unieke uitdaging en leerervaring, van echte klantprojecten tot innovatieve proof-of-concepts.</p>
+  <p>Een verzameling van diverse projecten die webontwikkeling, IoT, mobiele apps en creatieve experimenten omvatten. Elk project vertegenwoordigt een unieke uitdaging en leerervaring, van echte klantprojecten tot innovatieve proof-of-concepts.</p>
 </div>
 
 <div class="projects-stats">

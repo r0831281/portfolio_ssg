@@ -5,7 +5,7 @@
     </header>
     <main class="page-content" aria-label="Content">
         {{ .Content }}
-        {{ $groups := slice "school" "personal" "fun" }}
+        {{ $groups := slice Opleiding "personal" "fun" }}
         {{ $allPages := .Pages }}
         {{ range $group := $groups }}
             {{ $pages := where $allPages "Params.type" $group }}
