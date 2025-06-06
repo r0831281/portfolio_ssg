@@ -45,9 +45,6 @@ This allows GitHub Pages sites to load user avatars, which this project exploits
 
 ### Visual Design
 - **Mosaic Layout**: Grid-based layout showcasing avatar diversity
-- **Hover Effects**: Interactive feedback on avatar hover
-- **Loading States**: Visual indicators for loading progress
-- **Dark/Light Themes**: Adaptive theming for better viewing
 
 ## Technical Implementation
 

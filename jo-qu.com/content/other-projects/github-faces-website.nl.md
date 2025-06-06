@@ -8,7 +8,7 @@ description = "Creatieve exploitatie van GitHub's CSP om miljoenen gebruiker ava
 
 # GitHub Faces Website
 
-Een creatief web experiment dat GitHub's Content Security Policy (CSP) same-origin policy exploiteert om miljoenen GitHub gebruiker avatars weer te geven in een oneindige scrollende mozaïek. Dit project demonstreert geavanceerde web security concepten terwijl het een visueel opvallende representatie van de GitHub gemeenschap creëert.
+Een creatief web experiment dat GitHub's Content Security Policy (CSP) same-origin policy en IDOR exploiteert om miljoenen GitHub gebruiker avatars weer te geven in een oneindige scrollende mozaïek. Dit project demonstreert geavanceerde web security concepten terwijl het een visueel opvallende representatie van de GitHub gemeenschap creëert.
 
 ## Project Overzicht
 
@@ -27,7 +27,7 @@ GitHub's Content Security Policy bevat:
 img-src 'self' data: avatars.githubusercontent.com *.gravatar.com
 ```
 
-Dit staat GitHub Pages sites toe om gebruiker avatars te laden, wat dit project exploiteert om een massieve avatar galerij te creëren.
+Dit samen met een Indirect Object Reference zwakte staat GitHub Pages sites toe om gebruiker avatars te laden, wat dit project exploiteert om een massieve avatar galerij te creëren.
 
 ## Belangrijkste Functies
 
@@ -45,9 +45,7 @@ Dit staat GitHub Pages sites toe om gebruiker avatars te laden, wat dit project 
 
 ### Visueel Ontwerp
 - **Mozaïek Layout**: Grid-gebaseerde layout die avatar diversiteit toont
-- **Hover Effecten**: Interactieve feedback bij avatar hover
-- **Loading States**: Visuele indicatoren voor loading voortgang
-- **Dark/Light Themes**: Adaptieve theming voor betere weergave
+
 
 ## Technische Implementatie
 
@@ -121,7 +119,7 @@ const avatarUrl = `https://avatars.githubusercontent.com/u/${userId}?v=4&s=80`;
 
 ## Impact & Ontvangst
 
-- **Educatieve Tool**: Gebruikt in web security workshops en cursussen
+- **Educatieve Tool**: Gebruik in web security workshops en cursussen
 - **Community Interesse**: Uitgelicht in web development gemeenschappen
 - **Security Awareness**: Demonstreert real-world CSP implicaties
 - **Artistieke Waarde**: Visuele representatie van GitHub's massieve gebruikersbasis
