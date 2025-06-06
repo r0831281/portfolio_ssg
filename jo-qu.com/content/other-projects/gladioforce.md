@@ -17,6 +17,9 @@ A comprehensive membership management system developed for the Gladiolen festiva
 **Role:** Full-stack developer  
 **Client:** Gladiolen festival organization
 
+
+![GitHub Contributions](/photos/contribs.png)
+
 ## Key Features
 
 - **Administration**: Complete administrative management of the festival
@@ -85,6 +88,5 @@ A comprehensive membership management system developed for the Gladiolen festiva
 - Streamlined processes for volunteer and member management
 - Scalable and maintainable codebase for future extensions
 
-![GitHub Contributions](/photos/contribs.png)
 
 [Visit the project on GitHub](https://github.com/GladioForce-Org/GladioForce)

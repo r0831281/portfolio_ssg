@@ -17,6 +17,10 @@ Een uitgebreid ledenbeheer systeem ontwikkeld voor het Gladiolen festival, beken
 **Rol:** Full-stack ontwikkelaar  
 **Klant:** Gladiolen festival organisatie
 
+
+![GitHub Contributions](/photos/contribs.png)
+
+
 ## Belangrijkste Functies
 
 - **Beheer**: Compleet administratief beheer van het festival
@@ -84,7 +88,5 @@ Een uitgebreid ledenbeheer systeem ontwikkeld voor het Gladiolen festival, beken
 - Volledig functioneel administratiesysteem voor het Gladiolen festival
 - Gestroomlijnde processen voor vrijwilligers- en ledenbeheer
 - Schaalbare en onderhoudbare codebase voor toekomstige uitbreidingen
-
-![GitHub Contributions](/photos/contribs.png)
 
 [Bezoek het project op GitHub](https://github.com/GladioForce-Org/GladioForce)
