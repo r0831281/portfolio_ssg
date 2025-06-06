@@ -75,7 +75,6 @@ Een uitgebreide website en content management systeem gebouwd voor de Belgische 
 - **Cloudflare WAF**: Web Application Firewall (WAF) via Cloudflare beschermt tegen DDoS-aanvallen, SQL-injecties en andere veelvoorkomende webdreigingen
 
 ### Prestatie Optimalisatie
-- **Afbeelding Optimalisatie**: WebP formaat met fallbacks voor oudere browsers
 - **Caching Strategie**: Browser en CDN caching voor statische assets
 - **Lighthouse Score**: 95+ prestatie score over alle metrieken
 
@@ -104,11 +103,6 @@ Een uitgebreide website en content management systeem gebouwd voor de Belgische 
 - **Content Onafhankelijkheid**: Bandleden kunnen nu content updaten zonder technische assistentie
 - **Professioneel Imago**: Verbeterde band geloofwaardigheid met professionele web aanwezigheid
 
-## Technische Metrieken
-
-- **Prestaties**: 90+ Lighthouse score over alle categorieën
-- **Uptime**: 99.9% beschikbaarheid met Firebase hosting
-- **Laadtijd**: Onder 2 seconden voor initiële pagina load
 
 ## Stack
 - **Frontend:** React 18, React Router, Styled Components

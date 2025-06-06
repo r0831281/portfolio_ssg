@@ -120,8 +120,8 @@ Een innovatieve mobiele applicatie die augmented reality (AR) technologie gebrui
 ## Stack
 - **Frontend:** Flutter (Dart), AR Foundation, Unity
 - **Backend:** Java Spring Boot, Node.js
-- **Databases:** MySQL, MongoDB, Redis
-- **Infrastructuur:** Docker, Kubernetes, AWS
+- **Databases:** MySQL, MongoDB
+- **Infrastructuur:** Docker, AWS
 - **Computer Vision:** OpenCV, TensorFlow Lite
 - **APIs:** Spotify Web API, Last.fm API
 

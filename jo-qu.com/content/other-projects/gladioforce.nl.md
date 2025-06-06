@@ -8,7 +8,7 @@ description = "Full-stack ledenbeheer systeem voor het beste kleine festival van
 
 # Gladioforce
 
-Een uitgebreid ledenbeheer systeem ontwikkeld voor het Gladiolen festival, bekend als het beste kleine festival van Europa. Dit was een echt klantproject waarbij ons team van 6 ontwikkelaars een complete oplossing leverde voor het beheren van festival lidmaatschappen, evenementen en administratieve taken.
+Een uitgebreid ledenbeheer systeem ontwikkeld voor het Gladiolen festival, bekend als het beste kleine festival van Europa. Dit was een echt klantproject waarbij ons team van 6 studenten een complete oplossing leverde voor het beheren van festival lidmaatschappen, evenementen en administratieve taken.
 
 ## Project Overzicht
 

@@ -74,8 +74,7 @@ A comprehensive website and content management system built for the Belgian band
 - **Rate Limiting**: Protection against abuse and spam
 - **Cloudflare WAF**: Web Application Firewall (WAF) via Cloudflare protects against DDoS attacks, SQL injection, and other common web threats
 
-### Performance Optimization
-- **Image Optimization**: WebP format with fallbacks for older browsers
+### Performance Optimizations
 - **Caching Strategy**: Browser and CDN caching for static assets
 - **Lighthouse Score**: 95+ performance score across all metrics
 
@@ -103,12 +102,6 @@ A comprehensive website and content management system built for the Belgian band
 - **Improved Booking Efficiency**: Streamlined contact process leading to more gig opportunities
 - **Content Independence**: Band members can now update content without technical assistance
 - **Professional Image**: Enhanced band credibility with professional web presence
-
-## Technical Metrics
-
-- **Performance**: 90+ Lighthouse score across all categories
-- **Uptime**: 99.9% availability with Firebase hosting
-- **Load Time**: Under 2 seconds for initial page load
 
 ## Stack
 - **Frontend:** React 18, React Router, Styled Components
