@@ -3,7 +3,7 @@ title = 'Internship'
 +++
 
 # My Internship at Ordolio
-From January 31st to May 30th, I completed my internship at ![Ordolio](https://ordolio.com), a Belgian platform that helps clubs and associations efficiently manage their operations — including memberships, events, payments, and communication. The platform is designed to streamline administrative tasks, enabling organizations to focus more on their core mission and community engagement.
+From January 31st to May 30th, I completed my internship at [Ordolio](https://ordolio.com), a Belgian platform that helps clubs and associations efficiently manage their operations — including memberships, events, payments, and communication. The platform is designed to streamline administrative tasks, enabling organizations to focus more on their core mission and community engagement.
 
 During my internship, I contributed to both project-based assignments and the ongoing development of the platform. My responsibilities included implementing new features, resolving bugs, and improving various aspects of the user interface and overall user experience. I collaborated closely with the development team, took part in daily stand-ups, and participated in code reviews.
 
@@ -15,7 +15,7 @@ My internship focused on two main assignments:
 1. **Developing a waitlist feature** for events
 2. **Conducting a penetration test** on the application
 
-Additionally, I actively participated in the development team and resolved 26 tickets related to bug fixes and new features. I worked in a Scrum environment, using tools like Jira and Git.
+Additionally, I actively participated in the development team and resolved 28 tickets related to bug fixes and new features. I worked in a Scrum environment, using tools like Jira and Git.
 
 ---
 
