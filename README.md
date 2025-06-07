@@ -30,14 +30,14 @@ This repository contains the source code for the personal portfolio website of J
 
 ### Prerequisites
 
-- [Hugo](https://gohugo.io/getting-started/install/) (version 0.87.0 or higher recommended)
+- [Hugo](https://gohugo.io/documentation/) (version 0.87.0 or higher recommended)
 - [Git](https://git-scm.com/)
 
 ### Installation
 
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/YOUR_USERNAME/portfolio_ssg.git
+   git clone https://github.com/r0831281/portfolio_ssg.git
    cd portfolio_ssg/jo-qu.com
    ```
 
@@ -62,7 +62,7 @@ This repository contains the source code for the personal portfolio website of J
 
 - **Layouts:** Modify HTML templates in `jo-qu.com/layouts/`.
 - **Styling:** Edit CSS in `jo-qu.com/static/css/custom.css`.
-- **Theme:** The site uses the [hugo-blog-awesome](https://github.com/janraasch/hugo-blog-awesome) theme (included as a submodule).
+- **Theme:** The site uses the [hugo-blog-awesome](https://github.com/hugo-sid/hugo-blog-awesome) theme (included as a submodule).
 
 ### Deployment
 
@@ -76,9 +76,9 @@ The output will be in `jo-qu.com/public/`.
 
 ## License
 
-This project is for personal use. The [hugo-blog-awesome](https://github.com/janraasch/hugo-blog-awesome) theme is MIT licensed.
+This project is for personal use. The [hugo-blog-awesome](https://github.com/hugo-sid/hugo-blog-awesome) theme is MIT licensed.
 
 ## Author
 
 Jonas Quintiens  
-[CV](jo-qu.com/static/files/CV_Jonas_Quintiens.pdf)
+[Website](jo-qu.com)
