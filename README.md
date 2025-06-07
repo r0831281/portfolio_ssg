@@ -81,4 +81,4 @@ This project is for personal use. The [hugo-blog-awesome](https://github.com/hug
 ## Author
 
 Jonas Quintiens  
-[Website](jo-qu.com)
+[Website](https://jo-qu.com)
