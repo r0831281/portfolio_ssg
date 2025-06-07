@@ -66,13 +66,23 @@ This repository contains the source code for the personal portfolio website of J
 
 ### Deployment
 
-You can deploy the generated static site to any static hosting provider (e.g., Netlify, Vercel, GitHub Pages).
+This site is deployed for free using a CI/CD pipeline on **Cloudflare Pages**. The build output is served via Cloudflare's global CDN, and a **Cloudflare Worker** is used for additional edge logic if needed. A custom domain is configured using a **CNAME record** to point to Cloudflare Pages, ensuring zero hosting costs.
 
-To build the site for production:
-```sh
-hugo
-```
-The output will be in `jo-qu.com/public/`.
+#### Deploying to Cloudflare Pages
+
+1. **Push your changes to the main branch** of your GitHub (or GitLab) repository.
+2. **Connect your repository to Cloudflare Pages** via the Cloudflare dashboard.
+3. **Set the build command** to:
+   ```sh
+   hugo --minify
+   ```
+   and the output directory to:
+   ```
+   jo-qu.com/public
+   ```
+4. **Configure your custom domain** by adding a CNAME record in your DNS settings to point to the Cloudflare Pages subdomain.
+
+For more details, see [Cloudflare Pages documentation](https://developers.cloudflare.com/pages/).
 
 ## License
 
