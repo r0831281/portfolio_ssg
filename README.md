@@ -1,6 +1,6 @@
 # Portfolio Website – Jonas Quintiens
 
-This repository contains the source code for the personal portfolio website of Jonas Quintiens, built using [Hugo](https://gohugo.io/) (a fast static site generator) and the [hugo-blog-awesome](https://github.com/janraasch/hugo-blog-awesome) theme. The site showcases projects, experience, and documents in both English and Dutch.
+This repository contains the source code for the personal portfolio website of Jonas Quintiens, built using [Hugo](https://gohugo.io/) (a fast static site generator) and the [hugo-blog-awesome](https://github.com/hugo-sid/hugo-blog-awesome) theme. The site showcases projects, experience, and documents in both English and Dutch.
 
 ## Features
 
