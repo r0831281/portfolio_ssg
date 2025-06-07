@@ -613,3 +613,11 @@ a, .post-item-summary a, li a {
     font-size: 1rem;
   }
 }
+
+@media (max-width: 700px) {
+  nav ul li, .mobile-menu li, .mobile-menu a {
+    margin: 1.2rem 0 !important;
+    display: block;
+    text-align: center;
+  }
+}
