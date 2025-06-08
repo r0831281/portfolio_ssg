@@ -47,7 +47,7 @@ An innovative mobile application that leverages augmented reality (AR) technolog
 
 ### Backend Architecture (Microservices)
 - **Service-Oriented Design**: Modular microservices for scalability
-- **Image Processing Service**: Dedicated service for computer vision tasks
+- **Image Processing Service**: Dedicated service for processing album images
 - **User Management Service**: Authentication and user profile management
 - **Music Data Service**: Integration with music APIs and metadata management
 - **Notification Service**: Push notifications for new features and updates
@@ -99,7 +99,6 @@ An innovative mobile application that leverages augmented reality (AR) technolog
 
 - **Mobile AR Development**: Hands-on experience with AR frameworks and mobile development
 - **Microservices Architecture**: Understanding of distributed systems design patterns
-- **Computer Vision**: Practical application of image processing and recognition algorithms
 - **DevOps Practices**: Experience with containerization and CI/CD pipelines
 
 ## Stack
@@ -107,7 +106,6 @@ An innovative mobile application that leverages augmented reality (AR) technolog
 - **Backend:** Java Spring Boot, Node.js
 - **Databases:** MySQL, MongoDB
 - **Infrastructure:** Docker, AWS
-- **Computer Vision:** OpenCV, TensorFlow Lite
 - **APIs:** Spotify Web API, Last.fm API
 
 ## Future Enhancements

@@ -47,7 +47,7 @@ Een innovatieve mobiele applicatie die augmented reality (AR) technologie gebrui
 
 ### Backend Architectuur (Microservices)
 - **Service-Georiënteerd Ontwerp**: Modulaire microservices voor schaalbaarheid
-- **Beeldverwerking Service**: Toegewijde service voor computer vision taken
+- **Beeldverwerking Service**: Toegewijde service voor het verwerken van afbeeldingen
 - **Gebruikersbeheer Service**: Authenticatie en gebruikersprofiel beheer
 - **Muziekdata Service**: Integratie met muziek APIs en metadata beheer
 - **Notificatie Service**: Push notificaties voor nieuwe functies en updates
@@ -99,7 +99,6 @@ Een innovatieve mobiele applicatie die augmented reality (AR) technologie gebrui
 
 - **Mobiele AR Ontwikkeling**: Hands-on ervaring met AR frameworks en mobiele ontwikkeling
 - **Microservices Architectuur**: Begrip van gedistribueerde systeem ontwerp patronen
-- **Computer Vision**: Praktische toepassing van beeldverwerking en herkenningsalgoritmen
 - **DevOps Praktijken**: Ervaring met containerisatie en CI/CD pipelines
 
 ## Stack
@@ -107,7 +106,6 @@ Een innovatieve mobiele applicatie die augmented reality (AR) technologie gebrui
 - **Backend:** Java Spring Boot, Node.js
 - **Databases:** MySQL, MongoDB
 - **Infrastructuur:** Docker, AWS
-- **Computer Vision:** OpenCV, TensorFlow Lite
 - **APIs:** Spotify Web API, Last.fm API
 
 ## Toekomstige Verbeteringen
