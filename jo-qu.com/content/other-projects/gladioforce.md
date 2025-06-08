@@ -8,7 +8,7 @@ description = "Full-stack membership management system for the best small festiv
 
 # Gladioforce
 
-A comprehensive membership management system developed for the Gladiolen festival, known as the best small festival in Europe. This was a real-world client project where our team of 6 developers delivered a complete solution for managing festival memberships, events, and administrative tasks.
+A comprehensive membership management system developed for the Gladiolen festival, known as the best small festival in Europe. This was a real-world client project where our team of 6 developers delivered a complete solution for managing festival and all its administrative tasks.
 
 ## Project Overview
 
