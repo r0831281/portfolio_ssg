@@ -98,14 +98,14 @@ A comprehensive website and content management system built for the Belgian band
 
 ## Results & Impact
 
-- **Increased Online Presence**: 300% increase in website traffic after launch
-- **Improved Booking Efficiency**: Streamlined contact process leading to more gig opportunities
+- **Expanded Online Reach**: Significant growth in website visitors and fan engagement following launch
+- **Simplified Booking Process**: Easy-to-use contact form enables quick and hassle-free booking requests
 - **Content Independence**: Band members can now update content without technical assistance
 - **Professional Image**: Enhanced band credibility with professional web presence
 
 ## Stack
 - **Frontend:** React 18, React Router, Styled Components
-- **Backend:** Firebase (Firestore, Authentication, Storage, Hosting)
+- **Backend:** Firebase (Firestore, Authentication)
 - **Authentication:** Google OAuth 2.0
 - **Media Processing:** Firebase Cloud Functions, Sharp.js
 - **Deployment:** Firebase Hosting with custom domain

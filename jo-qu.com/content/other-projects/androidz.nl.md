@@ -59,12 +59,6 @@ Een uitgebreide website en content management systeem gebouwd voor de Belgische 
 - **Typografie**: Aangepaste font selectie die leesbaarheid en stijl verbetert
 - **Kleur Palet**: Zorgvuldig gekozen kleuren die visuele hiërarchie creëren
 
-### Gebruiker Journey
-- **Intuïtieve Navigatie**: Duidelijke menu structuur en breadcrumbs
-- **Snel Laden**: Geoptimaliseerde afbeeldingen en efficiënte caching strategieën
-- **Mobiele Ervaring**: Touch-vriendelijke interface met swipe gebaren
-- **Toegankelijkheid**: Hoge contrast ratio's en toetsenbord navigatie
-
 ## Security & Prestaties
 
 ### Security Maatregelen
@@ -98,10 +92,10 @@ Een uitgebreide website en content management systeem gebouwd voor de Belgische 
 
 ## Resultaten & Impact
 
-- **Verhoogde Online Aanwezigheid**: 300% toename in website verkeer na lancering
-- **Verbeterde Boekings Efficiëntie**: Gestroomlijnd contact proces leidend tot meer gig mogelijkheden
-- **Content Onafhankelijkheid**: Bandleden kunnen nu content updaten zonder technische assistentie
-- **Professioneel Imago**: Verbeterde band geloofwaardigheid met professionele web aanwezigheid
+- **Succesvolle Lancering**: Sinds de livegang is er een duidelijke toename in bezoekers en interactie op de website.
+- **Verbeterde Boekings Efficiëntie**: Gestroomlijnd contact proces leidend tot meer gig mogelijkheden.
+- **Content Onafhankelijkheid**: Bandleden kunnen nu content updaten zonder technische assistentie.
+- **Professioneel Imago**: Verbeterde band geloofwaardigheid met professionele web aanwezigheid.
 
 
 ## Stack
