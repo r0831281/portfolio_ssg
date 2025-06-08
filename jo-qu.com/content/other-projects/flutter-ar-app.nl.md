@@ -8,20 +8,19 @@ description = "Geavanceerde AR mobiele applicatie voor albumhoes herkenning met 
 
 # Flutter AR APP
 
-Een innovatieve mobiele applicatie die augmented reality (AR) technologie gebruikt om albumhoezen te scannen en herkennen, waardoor gebruikers een interactieve en meeslepende muziekontdekking ervaring krijgen. Het project beschikt over een geavanceerde microservices backend architectuur en demonstreert geavanceerde mobiele ontwikkeling en computer vision technieken.
+Een innovatieve mobiele applicatie die augmented reality (AR) technologie gebruikt om albumhoezen te scannen en herkennen, waardoor gebruikers een interactieve en meeslepende muziekontdekking ervaring krijgen. Het project beschikt over een geavanceerde microservices backend architectuur en demonstreert geavanceerde mobiele ontwikkeling.
 
 ## Project Overzicht
 
 **Duur:** 3 maanden (september - december 2023)  
 **Teamgrootte:** 3 ontwikkelaars  
 **Type:** Schoolproject (Geavanceerd Programmeren)  
-**Technologieën:** Flutter, Java, Computer Vision, Microservices
+**Technologieën:** Flutter, Java, Microservices
 
 ## Belangrijkste Functies
 
 ### AR Herkenningssysteem
 - **Real-time Album Scannen**: Camera-gebaseerde albumhoes detectie en herkenning
-- **Computer Vision Verwerking**: Geavanceerde beeldverwerkingsalgoritmen voor nauwkeurige herkenning
 - **3D AR Overlays**: Interactieve 3D elementen weergegeven over herkende albums
 - **Multi-hoek Herkenning**: Robuuste herkenning vanuit verschillende kijkhoeken en lichtomstandigheden
 
@@ -53,11 +52,6 @@ Een innovatieve mobiele applicatie die augmented reality (AR) technologie gebrui
 - **Muziekdata Service**: Integratie met muziek APIs en metadata beheer
 - **Notificatie Service**: Push notificaties voor nieuwe functies en updates
 
-### Computer Vision Pipeline
-- **Feature Extractie**: SIFT/ORB algoritmen voor keypoint detectie
-- **Beeld Matching**: Robuuste matching algoritmen voor album herkenning
-- **Database Optimalisatie**: Efficiënte opslag en ophaling van beeld features
-
 
 ## Demo
 
@@ -79,13 +73,10 @@ Een innovatieve mobiele applicatie die augmented reality (AR) technologie gebrui
 - **API Gateway**: Gecentraliseerd ingangspunt voor alle client requests
 - **Service Discovery**: Automatische service registratie en ontdekking
 - **Load Balancing**: Gedistribueerde verkeer afhandeling over service instances
-- **Circuit Breaker**: Fouttolerantie en graceful degradation
 
 ### Data Beheer
 - **MySQL**: Relationele data voor gebruikersaccounts en gestructureerde metadata
 - **MongoDB**: Document opslag voor flexibele album en artiest informatie
-- **Redis**: Caching laag voor frequent toegankelijke data
-- **Afbeelding Opslag**: Geoptimaliseerde opslag voor albumhoes afbeeldingen en features
 
 ### DevOps & Deployment
 - **Docker Containerisatie**: Consistente deployment over omgevingen
@@ -96,12 +87,6 @@ Een innovatieve mobiele applicatie die augmented reality (AR) technologie gebrui
 ![Backend architectuur](/photos/backend_arapp.jpg)
 
 ## Uitdagingen & Oplossingen
-
-**Uitdaging:** Nauwkeurige album herkenning in variërende lichtomstandigheden  
-**Oplossing:** Adaptieve beeldvoorverwerking en meerdere feature extractie algoritmen geïmplementeerd
-
-**Uitdaging:** Real-time prestaties op mobiele apparaten  
-**Oplossing:** Computer vision pipeline geoptimaliseerd en efficiënte caching strategieën geïmplementeerd
 
 **Uitdaging:** Schaalbare microservices communicatie  
 **Oplossing:** Event-driven architectuur met message queues geïmplementeerd

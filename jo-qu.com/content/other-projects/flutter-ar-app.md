@@ -8,20 +8,19 @@ description = "Advanced AR mobile application for album cover recognition with m
 
 # Flutter AR APP
 
-An innovative mobile application that leverages augmented reality (AR) technology to scan and recognize album covers, providing users with an interactive and immersive music discovery experience. The project features a sophisticated microservices backend architecture and demonstrates advanced mobile development and computer vision techniques.
+An innovative mobile application that leverages augmented reality (AR) technology to scan and recognize album covers, providing users with an interactive and immersive music discovery experience. The project features a sophisticated microservices backend architecture and demonstrates advanced mobile development.
 
 ## Project Overview
 
 **Duration:** 3 months (September - December 2023)  
 **Team Size:** 3 developers  
 **Type:** School project (Advanced Programming)  
-**Technologies:** Flutter, Java, Computer Vision, Microservices
+**Technologies:** Flutter, Java, Microservices
 
 ## Key Features
 
 ### AR Recognition System
 - **Real-time Album Scanning**: Camera-based album cover detection and recognition
-- **Computer Vision Processing**: Advanced image processing algorithms for accurate recognition
 - **3D AR Overlays**: Interactive 3D elements displayed over recognized albums
 - **Multi-angle Recognition**: Robust recognition from various viewing angles and lighting conditions
 
@@ -53,11 +52,6 @@ An innovative mobile application that leverages augmented reality (AR) technolog
 - **Music Data Service**: Integration with music APIs and metadata management
 - **Notification Service**: Push notifications for new features and updates
 
-### Computer Vision Pipeline
-- **Feature Extraction**: SIFT/ORB algorithms for keypoint detection
-- **Image Matching**: Robust matching algorithms for album recognition
-- **Database Optimization**: Efficient storage and retrieval of image features
-
 
 ## Demo
 
@@ -79,13 +73,10 @@ An innovative mobile application that leverages augmented reality (AR) technolog
 - **API Gateway**: Centralized entry point for all client requests
 - **Service Discovery**: Automatic service registration and discovery
 - **Load Balancing**: Distributed traffic handling across service instances
-- **Circuit Breaker**: Fault tolerance and graceful degradation
 
 ### Data Management
 - **MySQL**: Relational data for user accounts and structured metadata
 - **MongoDB**: Document storage for flexible album and artist information
-- **Redis**: Caching layer for frequently accessed data
-- **Image Storage**: Optimized storage for album cover images and features
 
 ### DevOps & Deployment
 - **Docker Containerization**: Consistent deployment across environments
@@ -93,15 +84,9 @@ An innovative mobile application that leverages augmented reality (AR) technolog
 - **Scalability**: Horizontal scaling capabilities for high traffic
 
 ## Back-end Services Architecture
-![Backend architecture](../../photos/backend_arapp.jpg)
+![Backend architecture](/photos/backend_arapp.jpg)
 
 ## Challenges & Solutions
-
-**Challenge:** Accurate album recognition in varying lighting conditions  
-**Solution:** Implemented adaptive image preprocessing and multiple feature extraction algorithms
-
-**Challenge:** Real-time performance on mobile devices  
-**Solution:** Optimized computer vision pipeline and implemented efficient caching strategies
 
 **Challenge:** Scalable microservices communication  
 **Solution:** Implemented event-driven architecture with message queues
