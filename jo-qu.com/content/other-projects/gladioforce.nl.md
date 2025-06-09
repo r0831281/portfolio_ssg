@@ -31,6 +31,11 @@ Een uitgebreid ledenbeheersysteem ontwikkeld voor het Gladiolen festival, bekend
 - **Verenigingen**: Beheer van deelnemende verenigingen
 - **Prikklok**: Tijdsregistratie systeem voor medewerkers
 
+
+![Administratie pagina](/photos/gladio.png)
+![Tijdsregistratie systeem](/photos/gladio_time.png)
+
+
 ## Technische Implementatie
 
 ### Backend

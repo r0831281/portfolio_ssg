@@ -30,6 +30,9 @@ A comprehensive membership management system developed for the Gladiolen festiva
 - **Associations**: Management of participating associations
 - **Time Clock**: Time registration system for staff
 
+![Administration console](/photos/gladio.png)
+![Time registration system](/photos/gladio_time.png)
+
 ## Technical Implementation
 
 ### Backend
