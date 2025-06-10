@@ -9,6 +9,8 @@ description = "High-performance web scraper for extracting healthcare provider d
 
 A robust web scraping tool designed to extract comprehensive healthcare provider information from the SilverPages web application. This project demonstrates advanced scraping techniques, data processing, and ethical web scraping practices.
 
+![Compilated python tool](/photos/scraper.png)
+
 ## Project Overview
 
 **Duration:** 2 weeks  

@@ -9,6 +9,8 @@ description = "Hoogperformante web scraper voor het extraheren van zorgverlener 
 
 Een robuuste web scraping tool ontworpen om uitgebreide zorgverlener informatie te extraheren van de SilverPages web applicatie. Dit project demonstreert geavanceerde scraping technieken, data verwerking en ethische web scraping praktijken.
 
+![Gecompileerde python tool](/photos/scraper.png)
+
 ## Project Overzicht
 
 **Duur:** 2 weken  
