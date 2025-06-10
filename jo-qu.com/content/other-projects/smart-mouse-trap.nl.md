@@ -12,7 +12,7 @@ Een geavanceerde IoT-enabled humane muizenval die hardware engineering, embedded
 ## Project Overzicht
 
 **Duur:** 6 weken  
-**Teamgrootte:** 2 ontwikkelaars  
+**Teamgrootte:** Solo project
 **Type:** Schoolproject (IoT Systemen)  
 **Platform:** Orange Pi single-board computer
 

@@ -12,7 +12,7 @@ A sophisticated IoT-enabled humane mouse trap that combines hardware engineering
 ## Project Overview
 
 **Duration:** 6 weeks  
-**Team Size:** 2 developers  
+**Team Size:** Solo project  
 **Type:** School project (IoT Systems)  
 **Platform:** Orange Pi single-board computer
 

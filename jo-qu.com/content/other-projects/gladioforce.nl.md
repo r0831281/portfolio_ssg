@@ -13,7 +13,7 @@ Een uitgebreid ledenbeheersysteem ontwikkeld voor het Gladiolen festival, bekend
 ## Project Overzicht
 
 **Duur:** 3 maanden (februari - april 2024)  
-**Teamgrootte:** 6 ontwikkelaars (Tommy, Dennis, Pieter, Yordi, Jonas, Dries)  
+**Teamgrootte:** 6 ontwikkelaars (3 studentent Cloud and Cybersecurity & 3 studenten applicatie ontwikkeling)  
 **Rol:** Full-stack ontwikkelaar  
 **Klant:** Gladiolen festival organisatie
 
@@ -88,6 +88,15 @@ Een uitgebreid ledenbeheersysteem ontwikkeld voor het Gladiolen festival, bekend
 - **Frontend:** Angular, TypeScript, SASS
 - **Infrastructuur:** Docker Compose, Terraform, AWS
 - **Extra Technologieën:** Firebase, Swagger
+
+## Mijn aandeel
+Binnen dit project heb ik de volledige verantwoordelijkheid genomen voor de back-end, zowel qua architectuur als ontwikkeling. Ik ontwierp en implementeerde de API, de database en de integratie met externe diensten zoals Firebase. Daarnaast heb ik de codebase modulair en schaalbaar opgezet, zodat deze eenvoudig uit te breiden en te onderhouden is.
+
+Naar het einde van het traject heb ik ook actief bijgedragen aan de front-end ontwikkeling, onder meer door het oplossen van complexe issues, het optimaliseren van de gebruikerservaring en het implementeren van belangrijke functionaliteiten in Angular.
+
+Naast mijn technische bijdrage heb ik regelmatig het team ondersteund met kennisdeling, code reviews en technische coördinatie, zodat de kwaliteit en voortgang van het project gewaarborgd bleven.
+
+Hoewel het project in teamverband werd uitgevoerd, heb ik veruit het grootste deel van het werk op mij genomen. Mijn inzet, technische expertise en coördinerende rol waren doorslaggevend voor het succes en de kwaliteit van het eindresultaat.
 
 ## Resultaten
 - Volledig functioneel administratiesysteem voor het Gladiolen festival

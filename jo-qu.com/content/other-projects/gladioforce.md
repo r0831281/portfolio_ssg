@@ -86,6 +86,16 @@ A comprehensive membership management system developed for the Gladiolen festiva
 - **Infrastructure:** Docker Compose, Terraform, AWS
 - **Additional Technologies:** Firebase, Swagger
 
+## My contribution
+
+Within this project, I took full responsibility for the back-end, both in terms of architecture and development. I designed and implemented the API, the database, and the integration with external services such as Firebase. Additionally, I set up the codebase to be modular and scalable, making it easy to extend and maintain.
+
+Towards the end of the project, I also actively contributed to the front-end development, including solving complex issues, optimizing the user experience, and implementing key functionalities in Angular.
+
+In addition to my technical contributions, I regularly supported the team with knowledge sharing, code reviews, and technical coordination to ensure the quality and progress of the project.
+
+Although the project was a team effort, I took on by far the largest share of the work. My commitment, technical expertise, and coordinating role were decisive for the success and quality of the final result.
+
 ## Outcomes
 - Fully functional administration system for the Gladiolen festival
 - Streamlined processes for volunteer and member management
