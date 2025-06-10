@@ -85,7 +85,7 @@ I look back on a successful internship in which I not only refined my technical 
 
 ---
 
-## Verified Documents
+## Internship related Documents
 
 <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1.5rem;">
   <a href="/files/PVA.pdf" download style="flex: 1 1 55%; text-align: center; background: #007acc; color: #fff; padding: 1.2em 0; border-radius: 8px; font-size: 1.2em; text-decoration: none; font-weight: bold; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: background 0.2s;">
