@@ -108,6 +108,12 @@ Een innovatieve mobiele applicatie die augmented reality (AR) technologie gebrui
 - **Infrastructuur:** Docker, AWS
 - **APIs:** Spotify Web API, Last.fm API
 
+## Mijn aandeel
+
+Voor dit project was ik primair verantwoordelijk voor de ontwikkeling van de Flutter front-end applicatie. Ik focuste op de implementatie van de AR-functionaliteiten, het ontwerpen en bouwen van de gebruikersinterface, en het waarborgen van een soepele en intuïtieve gebruikerservaring. Gedurende het project werkte ik nauw samen met mijn teamgenoten, die instonden voor de back-end services en infrastructuur, om een naadloze integratie tussen de app en de onderliggende microservices te realiseren.
+
+Mijn werk omvatte de integratie van AR Foundation, het ontwikkelen van aangepaste widgets en het optimaliseren van de app voor zowel iOS als Android. Door effectief samen te werken met het team heb ik bijgedragen aan een robuuste en innovatieve AR muziek-app.
+
 ## Toekomstige Verbeteringen
 
 - **Machine Learning**: Deep learning modellen voor verbeterde herkenningsnauwkeurigheid

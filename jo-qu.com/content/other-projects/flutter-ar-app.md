@@ -108,6 +108,12 @@ An innovative mobile application that leverages augmented reality (AR) technolog
 - **Infrastructure:** Docker, AWS
 - **APIs:** Spotify Web API, Last.fm API
 
+## My contribution
+
+For this project, I was primarily responsible for the development of the Flutter front-end application. I focused on implementing the AR features, designing and building the user interface, and ensuring a smooth and intuitive user experience. Throughout the project, I worked closely with my teammates, who handled most off the back-end services and infrastructure, to ensure seamless integration between the app and the underlying microservices.
+
+My work included integrating AR Foundation, developing custom widgets, and optimizing the app for both iOS and Android platforms. By collaborating effectively with the team, I contributed to delivering a robust and innovative AR music discovery app.
+
 ## Future Enhancements
 
 - **Machine Learning**: Deep learning models for improved recognition accuracy
