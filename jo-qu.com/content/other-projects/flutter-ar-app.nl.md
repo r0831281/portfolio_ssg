@@ -7,6 +7,7 @@ description = "Geavanceerde AR mobiele applicatie voor albumhoes herkenning met 
 +++
 
 # Flutter AR APP
+## Advanced programming topics & Mobile Development
 
 Een innovatieve mobiele applicatie die augmented reality (AR) technologie gebruikt om albumhoezen te scannen en herkennen, waardoor gebruikers een interactieve en meeslepende muziekontdekking ervaring krijgen. Het project beschikt over een geavanceerde microservices backend architectuur en demonstreert geavanceerde mobiele ontwikkeling.
 
