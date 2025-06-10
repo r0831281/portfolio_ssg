@@ -88,7 +88,7 @@ A comprehensive membership management system developed for the Gladiolen festiva
 
 ## My contribution
 
-Within this project, I took full responsibility for the back-end, both in terms of architecture and development. I designed and implemented the API, the database, and the integration with external services such as Firebase. Additionally, I set up the codebase to be modular and scalable, making it easy to extend and maintain.
+Within this project, I took full responsibility for the back-end, both in terms of architecture and development. I designed and implemented the API, the database, and the integration with external services such as Firebase. I also played a leading role in making decisions regarding the technologies used and the composition of the stack. Additionally, I set up the codebase to be modular and scalable, making it easy to extend and maintain.
 
 Towards the end of the project, I also actively contributed to the front-end development, including solving complex issues, optimizing the user experience, and implementing key functionalities in Angular.
 

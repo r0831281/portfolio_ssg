@@ -90,7 +90,7 @@ Een uitgebreid ledenbeheersysteem ontwikkeld voor het Gladiolen festival, bekend
 - **Extra Technologieën:** Firebase, Swagger
 
 ## Mijn aandeel
-Binnen dit project heb ik de volledige verantwoordelijkheid genomen voor de back-end, zowel qua architectuur als ontwikkeling. Ik ontwierp en implementeerde de API, de database en de integratie met externe diensten zoals Firebase. Daarnaast heb ik de codebase modulair en schaalbaar opgezet, zodat deze eenvoudig uit te breiden en te onderhouden is.
+Binnen dit project heb ik de volledige verantwoordelijkheid genomen voor de back-end, zowel qua architectuur als ontwikkeling. Ik ontwierp en implementeerde de API, de database en de integratie met externe diensten zoals Firebase. Ook heb ik een leidende rol gespeeld in de keuzes voor de gebruikte technologieën en de samenstelling van de stack. Daarnaast heb ik de codebase modulair en schaalbaar opgezet, zodat deze eenvoudig uit te breiden en te onderhouden is.
 
 Naar het einde van het traject heb ik ook actief bijgedragen aan de front-end ontwikkeling, onder meer door het oplossen van complexe issues, het optimaliseren van de gebruikerservaring en het implementeren van belangrijke functionaliteiten in Angular.
 
