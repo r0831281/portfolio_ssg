@@ -64,8 +64,6 @@ const avatarUrl = `https://avatars.githubusercontent.com/u/${userId}?v=4&s=80`;
 ### Error Handling
 - **404 Detectie**: Identificeert niet-bestaande gebruikers
 - **Netwerk Failures**: Retry logica voor gefaalde requests
-- **CSP Violations**: Graceful degradation als CSP verandert
-- **Browser Compatibiliteit**: Fallbacks voor oudere browsers
 
 ## Security & Ethiek
 
