@@ -41,7 +41,6 @@ This allows GitHub Pages sites to load user avatars, which this project exploits
 - **Sequential Loading**: Systematically loads avatars by user ID
 - **Error Handling**: Gracefully handles missing or private avatars
 - **Caching Strategy**: Browser caching for improved performance
-- **Fallback System**: Default placeholder for failed loads
 
 ### Visual Design
 - **Mosaic Layout**: Grid-based layout showcasing avatar diversity
