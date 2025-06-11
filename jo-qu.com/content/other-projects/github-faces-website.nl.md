@@ -90,7 +90,6 @@ const avatarUrl = `https://avatars.githubusercontent.com/u/${userId}?v=4&s=80`;
 **Oplossing:** Geoptimaliseerde rendering pipeline met requestAnimationFrame
 
 ## Prestatie Metrieken
-
 - **Laadtijd**: Initiële pagina laadt in onder 1 seconde
 - **Geheugen Gebruik**: Houdt onder 100MB RAM gebruik
 - **Scroll Prestaties**: Consistente 60fps scrolling
@@ -116,14 +115,12 @@ const avatarUrl = `https://avatars.githubusercontent.com/u/${userId}?v=4&s=80`;
 - **Tools:** Browser DevTools voor prestatie analyse
 
 ## Impact & Ontvangst
-
 - **Educatieve Tool**: Gebruik in web security workshops en cursussen
 - **Community Interesse**: Uitgelicht in web development gemeenschappen
 - **Security Awareness**: Demonstreert real-world CSP implicaties
 - **Artistieke Waarde**: Visuele representatie van GitHub's massieve gebruikersbasis
 
 ## Toekomstige Verbeteringen
-
 - **Gebruiker Zoeken**: Specifieke gebruikers vinden binnen de mozaïek
 - **Statistieken Dashboard**: Real-time stats over geladen avatars
 - **Interactieve Functies**: Klik om gebruiker profielen te bekijken

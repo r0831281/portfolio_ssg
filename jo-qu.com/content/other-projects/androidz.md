@@ -60,7 +60,6 @@ A comprehensive website and content management system built for the Belgian band
 - **Color Palette**: Carefully chosen colors creating visual hierarchy
 
 ### User Journey
-- **Intuitive Navigation**: Clear menu structure and breadcrumbs
 - **Fast Loading**: Optimized images and efficient caching strategies
 - **Mobile Experience**: Touch-friendly interface with swipe gestures
 - **Accessibility**: High contrast ratios and keyboard navigation

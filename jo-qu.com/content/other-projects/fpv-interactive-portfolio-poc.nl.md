@@ -73,7 +73,6 @@ Het portfolio herdenkt hoe bezoekers interacteren met project showcases door de 
 - **Talen:** JavaScript ES6+, HTML5, CSS3
 - **Build Tools:** Vite voor ontwikkeling en bundeling
 - **Hosting:** Cloudflare Pages voor globale CDN levering
-- **Assets:** Blender voor 3D modellering, Audacity voor geluidseffecten
 
 ## Toekomstige Verbeteringen
 

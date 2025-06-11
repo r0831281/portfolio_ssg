@@ -73,7 +73,6 @@ The portfolio reimagines how visitors interact with project showcases by gamifyi
 - **Languages:** JavaScript ES6+, HTML5, CSS3
 - **Build Tools:** Vite for development and bundling
 - **Hosting:** Cloudflare Pages for global CDN delivery
-- **Assets:** Blender for 3D modeling, Audacity for sound effects
 
 ## Future Enhancements
 

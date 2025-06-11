@@ -6,7 +6,7 @@ description = "A humane, IoT-enabled mouse trap , controlled by an Orange Pi."
 +++
 
 # Smart Mouse Trap
-## IOT Essentials
+## OPO: IOT Essentials
 
 A sophisticated IoT-enabled humane mouse trap that combines hardware engineering, embedded programming, and cloud connectivity to create an intelligent pest control solution. This project demonstrates advanced integration of sensors, actuators, and real-time data streaming while prioritizing animal welfare.
 

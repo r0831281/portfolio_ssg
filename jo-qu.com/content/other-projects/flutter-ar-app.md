@@ -7,7 +7,7 @@ description = "Advanced AR mobile app for album cover recognition with microserv
 +++
 
 # Flutter AR APP
-## Advanced programming topics & Mobile Development
+## OPO: Advanced programming topics & Mobile Development
 
 An innovative mobile application that leverages augmented reality (AR) technology to scan and recognize album covers, providing users with an interactive and immersive music discovery experience. The project features a sophisticated microservices backend architecture and demonstrates advanced mobile development.
 

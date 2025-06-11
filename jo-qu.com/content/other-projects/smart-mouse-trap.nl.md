@@ -6,7 +6,7 @@ description = "Een humane, IoT-enabled muizenval, bestuurd door een Orange Pi."
 +++
 
 # Smart Mouse Trap
-## IOT Essentials
+## OPO: IOT Essentials
 
 Een geavanceerde IoT-enabled humane muizenval die hardware engineering, embedded programmering en cloud connectiviteit combineert om een intelligente ongediertebestrijding oplossing te creëren. Dit project demonstreert geavanceerde integratie van sensoren, actuatoren en real-time data streaming terwijl dierenwelzijn prioriteit heeft.
 

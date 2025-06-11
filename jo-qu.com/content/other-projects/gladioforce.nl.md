@@ -7,7 +7,7 @@ description = "Full-stack ledenbeheer systeem voor het beste kleine festival van
 +++
 
 # Gladioforce
-## Project 4.0 
+## OPO: Project 4.0 
 
 Een uitgebreid ledenbeheersysteem ontwikkeld voor het Gladiolen festival, bekend als het beste kleine festival van Europa. Dit was een echt klantproject waarbij ons team van zes studenten een complete oplossing leverde voor het beheren van het festival en het automatiseren van de meest tijdrovende administratieve taken.
 

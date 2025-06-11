@@ -34,7 +34,6 @@ Een uitgebreide website en content management systeem gebouwd voor de Belgische 
 - **Modern React**: Hooks-gebaseerde architectuur met functionele componenten
 - **Responsief Ontwerp**: Mobile-first aanpak die geweldige ervaring op alle apparaten garandeert
 - **Prestatie Optimalisatie**: Code splitting en lazy loading voor snelle laadtijden
-- **SEO Optimalisatie**: Server-side rendering overwegingen en meta tag beheer
 - **Toegankelijkheid**: WCAG 2.1 compliant met toetsenbord navigatie en screen reader ondersteuning
 
 ### Backend (Firebase)
