@@ -26,7 +26,7 @@ The portfolio reimagines how visitors interact with project showcases by gamifyi
 ## Key Features
 
 ### 3D Environment
-- **Immersive 3D Scene**: Fully navigable 3D space with atmospheric lighting
+- **Immersive 3D Scene**: Fully navigatable 3D space with atmospheric lighting
 - **FPS Controls**: mouse view controls for familiar gaming experience
 - **Dynamic Lighting**: Real-time shadows and lighting effects for visual appeal
 - **Particle Systems**: Visual feedback for interactions and ambient effects
@@ -35,7 +35,6 @@ The portfolio reimagines how visitors interact with project showcases by gamifyi
 - **Target System**: Floating project boxes that respond to mouse interaction
 - **Hit Detection**: Precise raycasting for accurate shooting mechanics
 - **Information Panels**: Animated UI panels that appear when targets are hit
-- **Sound Effects**: Audio feedback for shots, hits, and UI interactions
 
 
 ## Technical Implementation

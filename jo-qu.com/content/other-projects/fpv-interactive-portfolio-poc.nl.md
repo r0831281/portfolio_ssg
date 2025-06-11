@@ -35,7 +35,6 @@ Het portfolio herdenkt hoe bezoekers interacteren met project showcases door de 
 - **Doel Systeem**: Zwevende project boxen die reageren op muis interactie
 - **Hit Detectie**: Precieze raycasting voor nauwkeurige schiet mechanica
 - **Informatie Panelen**: Geanimeerde UI panelen die verschijnen wanneer doelen geraakt worden
-- **Geluidseffecten**: Audio feedback voor schoten, hits en UI interacties
 
 ## Technische Implementatie
 
