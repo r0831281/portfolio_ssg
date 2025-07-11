@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Keuzewijzer | Jouw Avondje Uit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1A1A1A;
+            color: #F5F5F5;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .section-card {
+            background-color: #2D2D2D;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .number-highlight {
+            font-weight: 900;
+            font-size: 4rem;
+            line-height: 1;
+            color: #FF5733;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center my-12">
+            <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-4">Restaurant Keuzewijzer</h1>
+            <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">Een visuele gids om de perfecte eetplek voor jou en je vrienden te vinden in en rond Leuven.</p>
+        </header>
+
+        <main class="space-y-12">
+            
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                <div class="md:col-span-1 section-card flex flex-col items-center justify-center text-center h-full">
+                     <h2 class="text-2xl font-bold mb-2">Totaal Aantal Opties</h2>
+                    <p class="number-highlight">9</p>
+                    <p class="text-gray-400 mt-2">diverse restaurants om uit te kiezen, van casual tot fine dining.</p>
+                </div>
+                <div class="md:col-span-2 section-card">
+                    <h2 class="text-2xl font-bold text-center mb-4">Het Culinaire Landschap</h2>
+                    <p class="text-center text-gray-400 mb-6">Deze visualisatie geeft een snel overzicht van de geselecteerde restaurants, ingedeeld op basis van keuken en de geschatte minimumprijs voor een menu. Het helpt je de verdeling en het aanbod in één oogopslag te begrijpen.</p>
+                    <div class="chart-container">
+                        <canvas id="bubbleChart"></canvas>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section-card">
+                <h2 class="text-2xl font-bold text-center mb-4">Vergelijking per Prijscategorie</h2>
+                <p class="text-center text-gray-400 mb-6">Budget is een belangrijke factor. Deze grafiek rangschikt de restaurants van het meest betaalbaar tot het meest exclusief, gebaseerd op de laagste menuprijs of een geschatte prijs per persoon. Dit maakt het eenvoudig om opties te filteren die binnen het budget van de groep passen.</p>
+                <div class="chart-container h-[500px] md:h-[600px] max-h-[700px]">
+                    <canvas id="barChart"></canvas>
+                </div>
+            </section>
+            
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="section-card">
+                    <h2 class="text-2xl font-bold text-center mb-4">Een Kwestie van Smaak</h2>
+                    <p class="text-center text-gray-400 mb-6">Wat voor soort keuken heeft de voorkeur? Deze donut-grafiek toont de verdeling van de keukentypes binnen de shortlist. Je ziet direct dat er een sterke vertegenwoordiging is van Italiaanse en Belgisch-geïnspireerde restaurants.</p>
+                    <div class="chart-container">
+                        <canvas id="doughnutChart"></canvas>
+                    </div>
+                </div>
+                 <div class="section-card">
+                    <h2 class="text-2xl font-bold text-center mb-4">De "Vibe" Check</h2>
+                    <p class="text-center text-gray-400 mb-6">Naast eten en prijs is de sfeer cruciaal. Hier zijn de restaurants gegroepeerd op basis van de ideale gelegenheid, zodat je een plek kunt kiezen die perfect past bij de gewenste sfeer van de avond.</p>
+                    <div class="space-y-4 pt-4">
+                        <div class="p-4 rounded-lg border-2 border-dashed border-gray-600">
+                            <h3 class="font-bold text-lg text-amber-400">🥂 Speciale Gelegenheid & Fine Dining</h3>
+                            <p class="text-gray-300">Louvain d'Anvers, Ristorante ROSSI, Atelier Noun</p>
+                        </div>
+                        <div class="p-4 rounded-lg border-2 border-dashed border-gray-600">
+                            <h3 class="font-bold text-lg text-orange-400">🥩 Voor de Liefhebbers</h3>
+                            <p class="text-gray-300">Bistro Tribunal (Vlees), SUSURU (Authentiek Japans)</p>
+                        </div>
+                        <div class="p-4 rounded-lg border-2 border-dashed border-gray-600">
+                            <h3 class="font-bold text-lg text-lime-400">🍝 Sociaal & Delen</h3>
+                            <p class="text-gray-300">Furbetto, Barba, Ristorante GUZZI (Pizza's)</p>
+                        </div>
+                        <div class="p-4 rounded-lg border-2 border-dashed border-gray-600">
+                            <h3 class="font-bold text-lg text-cyan-400">🍻 Casual & Budgetvriendelijk</h3>
+                            <p class="text-gray-300">De Werf</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section-card overflow-x-auto">
+                <h2 class="text-2xl font-bold text-center mb-4">Jouw Keuze: Stemmen Maar!</h2>
+                <p class="text-center text-gray-400 mb-6">Alle details op een rij. Gebruik deze tabel als de ultieme poll voor je vriendengroep. Vergelijk de restaurants op alle belangrijke punten en kies jullie favoriet voor een onvergetelijke avond.</p>
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="border-b border-gray-600">
+                            <th class="p-3 md:p-4 text-sm font-semibold uppercase">Restaurant</th>
+                            <th class="p-3 md:p-4 text-sm font-semibold uppercase">Keuken</th>
+                            <th class="p-3 md:p-4 text-sm font-semibold uppercase">Prijs</th>
+                            <th class="p-3 md:p-4 text-sm font-semibold uppercase">Locatie</th>
+                            <th class="p-3 md:p-4 text-sm font-semibold uppercase">Website</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-700">
+                        <tr class="hover:bg-gray-800 transition-colors">
+                            <td class="p-3 md:p-4 font-semibold">Louvain d'Anvers</td>
+                            <td class="p-3 md:p-4">Moderne Europees</td>
+                            <td class="p-3 md:p-4">€€€€ (vanaf €79)</td>
+                            <td class="p-3 md:p-4">Leuven</td>
+                            <td class="p-3 md:p-4"><a href="https://louvaindanvers.com/menu" target="_blank" class="text-orange-400 hover:underline">Bezoek</a></td>
+                        </tr>
+                        <tr class="hover:bg-gray-800 transition-colors">
+                            <td class="p-3 md:p-4 font-semibold">Ristorante ROSSI</td>
+                            <td class="p-3 md:p-4">Italiaans (Verfijnd)</td>
+                            <td class="p-3 md:p-4">€€€€ (vanaf €49)</td>
+                            <td class="p-3 md:p-4">Leuven</td>
+                            <td class="p-3 md:p-4"><a href="https://www.ristoranterossi.be/menu-nl" target="_blank" class="text-orange-400 hover:underline">Bezoek</a></td>
+                        </tr>
+                        <tr class="hover:bg-gray-800 transition-colors">
+                            <td class="p-3 md:p-4 font-semibold">Atelier Noun</td>
+                            <td class="p-3 md:p-4">Moderne/Creatief</td>
+                            <td class="p-3 md:p-4">€€€€ (vanaf €85)</td>
+                            <td class="p-3 md:p-4">Leuven</td>
+                            <td class="p-3 md:p-4"><a href="https://www.ateliernoun.be/nl/menu" target="_blank" class="text-orange-400 hover:underline">Bezoek</a></td>
+                        </tr>
+                        <tr class="hover:bg-gray-800 transition-colors">
+                            <td class="p-3 md:p-4 font-semibold">Bistro Tribunal</td>
+                            <td class="p-3 md:p-4">Vlees & Klassiek</td>
+                            <td class="p-3 md:p-4">€€€</td>
+                            <td class="p-3 md:p-4">Leuven</td>
+                            <td class="p-3 md:p-4"><a href="https://www.bistrotribunal.be/" target="_blank" class="text-orange-400 hover:underline">Bezoek</a></td>
+                        </tr>
+                        <tr class="hover:bg-gray-800 transition-colors">
+                            <td class="p-3 md:p-4 font-semibold">Ristorante GUZZI</td>
+                            <td class="p-3 md:p-4">Italiaans</td>
+                            <td class="p-3 md:p-4">€€€ (vanaf €39)</td>
+                            <td class="p-3 md:p-4">Leuven</td>
+                            <td class="p-3 md:p-4"><a href="https://www.ristoranteguzzi.be/nl/menu" target="_blank" class="text-orange-400 hover:underline">Bezoek</a></td>
+                        </tr>
+                        <tr class="hover:bg-gray-800 transition-colors">
+                            <td class="p-3 md:p-4 font-semibold">Furbetto</td>
+                            <td class="p-3 md:p-4">Italiaans (Delen)</td>
+                            <td class="p-3 md:p-4">€€€ (~€65)</td>
+                            <td class="p-3 md:p-4">Heverlee</td>
+                            <td class="p-3 md:p-4"><a href="https://www.furbetto.be/" target="_blank" class="text-orange-400 hover:underline">Bezoek</a></td>
+                        </tr>
+                        <tr class="hover:bg-gray-800 transition-colors">
+                            <td class="p-3 md:p-4 font-semibold">De Werf</td>
+                            <td class="p-3 md:p-4">Belgisch Eetcafé</td>
+                            <td class="p-3 md:p-4">€€ (vanaf €9.50)</td>
+                            <td class="p-3 md:p-4">Leuven</td>
+                            <td class="p-3 md:p-4"><a href="https://www.brasserie-dewerf.be/" target="_blank" class="text-orange-400 hover:underline">Bezoek</a></td>
+                        </tr>
+                         <tr class="hover:bg-gray-800 transition-colors">
+                            <td class="p-3 md:p-4 font-semibold">SUSURU</td>
+                            <td class="p-3 md:p-4">Japans (Ramen)</td>
+                            <td class="p-3 md:p-4">€€ (~€18)</td>
+                            <td class="p-3 md:p-4">Leuven</td>
+                            <td class="p-3 md:p-4"><a href="https://susuruleuven.be/" target="_blank" class="text-orange-400 hover:underline">Bezoek</a></td>
+                        </tr>
+                        <tr class="hover:bg-gray-800 transition-colors">
+                            <td class="p-3 md:p-4 font-semibold">Barba</td>
+                            <td class="p-3 md:p-4">Internationaal</td>
+                            <td class="p-3 md:p-4">€€€ (vanaf €40)</td>
+                            <td class="p-3 md:p-4">Leuven</td>
+                            <td class="p-3 md:p-4"><a href="https://www.barbaleuven.be/menu" target="_blank" class="text-orange-400 hover:underline">Bezoek</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+        </main>
+        
+        <footer class="text-center mt-16 py-8 border-t border-gray-800">
+            <p class="text-gray-500">Gemaakt om de keuze makkelijker te maken. Eet smakelijk!</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const energeticPlayfulPalette = ['#FF5733', '#FFC300', '#DAF7A6', '#C70039', '#900C3F', '#581845'];
+        const softPalette = ['#FFC300', '#DAF7A6', '#FF5733', '#C7003990', '#900C3F90', '#58184590'];
+
+        const wrapLabel = (label) => {
+            if (label.length > 16) {
+                const words = label.split(' ');
+                let currentLine = '';
+                const lines = [];
+                words.forEach(word => {
+                    if ((currentLine + word).length > 16) {
+                        lines.push(currentLine.trim());
+                        currentLine = '';
+                    }
+                    currentLine += word + ' ';
+                });
+                lines.push(currentLine.trim());
+                return lines;
+            }
+            return label;
+        };
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+        
+        const commonOptions = {
+            maintainAspectRatio: false,
+            responsive: true,
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#F5F5F5',
+                        font: {
+                            size: 14
+                        }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    },
+                    backgroundColor: '#0D0D0D',
+                    titleFont: { size: 16 },
+                    bodyFont: { size: 14 },
+                    padding: 12,
+                    cornerRadius: 6
+                }
+            },
+        };
+
+        const restaurantData = [
+            { name: "De Werf", price: 9.5, cuisine: 'Belgisch Eetcafé' },
+            { name: "SUSURU", price: 18, cuisine: 'Japans (Ramen)' },
+            { name: "Ristorante GUZZI", price: 39, cuisine: 'Italiaans' },
+            { name: "Barba", price: 40, cuisine: 'Internationaal' },
+            { name: "Bistro Tribunal", price: 55, cuisine: 'Vlees & Klassiek' },
+            { name: "Ristorante ROSSI", price: 49, cuisine: 'Italiaans (Verfijnd)' },
+            { name: "Furbetto", price: 65, cuisine: 'Italiaans (Delen)' },
+            { name: "Louvain d'Anvers", price: 79, cuisine: 'Moderne Europees' },
+            { name: "Atelier Noun", price: 85, cuisine: 'Moderne/Creatief' }
+        ];
+
+        new Chart(document.getElementById('bubbleChart'), {
+            type: 'bubble',
+            data: {
+                datasets: restaurantData.map((r, i) => ({
+                    label: r.name,
+                    data: [{ x: r.price, y: i + 1, r: 15 }],
+                    backgroundColor: energeticPlayfulPalette[i % energeticPlayfulPalette.length] + 'BF',
+                    borderColor: energeticPlayfulPalette[i % energeticPlayfulPalette.length],
+                    borderWidth: 2
+                }))
+            },
+            options: {
+                ...commonOptions,
+                scales: {
+                    x: {
+                        title: { display: true, text: 'Geschatte Prijs (€)', color: '#9CA3AF', font: {size: 14} },
+                        grid: { color: '#4B5563' },
+                        ticks: { color: '#D1D5DB' }
+                    },
+                    y: {
+                        grid: { color: '#4B5563' },
+                        ticks: { 
+                            color: '#D1D5DB',
+                            callback: (value, index) => restaurantData[index] ? wrapLabel(restaurantData[index].cuisine) : ''
+                        }
+                    }
+                },
+                plugins: {
+                     ...commonOptions.plugins,
+                     tooltip: {
+                         ...commonOptions.plugins.tooltip,
+                         callbacks: {
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': €' + context.parsed.x;
+                                }
+                                return label;
+                            }
+                         }
+                     }
+                }
+            }
+        });
+        
+        const sortedByPrice = [...restaurantData].sort((a, b) => a.price - b.price);
+        new Chart(document.getElementById('barChart'), {
+            type: 'bar',
+            data: {
+                labels: sortedByPrice.map(r => r.name),
+                datasets: [{
+                    label: 'Minimale Geschatte Prijs (€)',
+                    data: sortedByPrice.map(r => r.price),
+                    backgroundColor: sortedByPrice.map((_, i) => energeticPlayfulPalette[i % energeticPlayfulPalette.length]),
+                    borderColor: sortedByPrice.map((_, i) => energeticPlayfulPalette[i % energeticPlayfulPalette.length]),
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                ...commonOptions,
+                indexAxis: 'y',
+                 scales: {
+                    x: {
+                        grid: { color: '#4B5563' },
+                        ticks: { color: '#D1D5DB' }
+                    },
+                    y: {
+                        grid: { display: false },
+                        ticks: { color: '#D1D5DB' }
+                    }
+                },
+                plugins: { ...commonOptions.plugins, legend: { display: false } }
+            }
+        });
+
+        const cuisineCounts = restaurantData.reduce((acc, r) => {
+            const baseCuisine = r.cuisine.split('(')[0].trim().replace("Eetcafé", "").replace("/Bistro", "").replace("& Klassiek", "").replace("/Creatief", "").trim();
+            acc[baseCuisine] = (acc[baseCuisine] || 0) + 1;
+            return acc;
+        }, {});
+        new Chart(document.getElementById('doughnutChart'), {
+            type: 'doughnut',
+            data: {
+                labels: Object.keys(cuisineCounts).map(wrapLabel),
+                datasets: [{
+                    label: 'Aantal Restaurants',
+                    data: Object.values(cuisineCounts),
+                    backgroundColor: softPalette,
+                    borderColor: '#2D2D2D',
+                    borderWidth: 4
+                }]
+            },
+            options: {
+                ...commonOptions,
+                plugins: {
+                     ...commonOptions.plugins,
+                     tooltip: {
+                         ...commonOptions.plugins.tooltip,
+                         callbacks: {
+                            title: tooltipTitleCallback,
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ' + context.parsed;
+                                }
+                                return label;
+                            }
+                         }
+                     }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
