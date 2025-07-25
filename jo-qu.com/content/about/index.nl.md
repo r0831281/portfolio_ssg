@@ -6,7 +6,7 @@ title = 'About Me'
 
 <p>Ik ben een student aan Thomas More, gespecialiseerd in Toegepaste Informatica met een focus op Applicatiebeheer. Daarnaast werk ik als systeembeheerder bij het <a href="https://mchinfo.be" target="_blank">Medisch Centrum voor Huisartsen</a>, waar ik dagelijks betrokken ben bij het opzetten en ondersteunen van diverse hardware en software. Samen met mijn collega's ben ik ook verantwoordelijk voor het onderhoud van het interne netwerk, VPN's, virtuele machines, firewalls en meer.</p>
 
-<p>Je kan mijn CV hier downloaden: <a href="/files/CV_Jonas_Quintiens.pdf" target="_blank">Download CV</a></p>
+<p>Je kan mijn CV hier downloaden: <a href="/files/CV_Jonas_Quintiens1.pdf" target="_blank">Download CV</a></p>
 
 ## Mijn traject
 

@@ -7,7 +7,7 @@ title = 'About Me'
 
 <p>I am a student at Thomas More, specializing in Applied Computer Science with a focus on Application Management. Additionally, I work as a system administrator at the <a href="https://mchinfo.be" target="_blank">Medical Center for General Practitioners</a>, where I am involved daily in setting up and supporting a wide range of hardware and software. Together with my colleagues, I am also responsible for maintaining the internal network, VPNs, virtual machines, firewalls, and more.</p>
 
-<p>You can download my CV here: <a href="/files/CV_Jonas_Quintiens.pdf" target="_blank">Download CV</a></p>
+<p>You can download my CV here: <a href="/files/CV_Jonas_Quintiens1.pdf" target="_blank">Download CV</a></p>
 
 ## My Journey
 
