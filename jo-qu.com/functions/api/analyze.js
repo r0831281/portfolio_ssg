@@ -2,6 +2,7 @@
 // This file will be deployed as a Cloudflare Pages Function
 
 // Define the definitions for the AI model to use
+// This object and the generatePrompt function are now located here in the backend.
 const definitions = {
   "Common Bad-Faith Tactics": {
     "Well Actually": {
@@ -108,7 +109,7 @@ const definitions = {
     },
     "Clickbait Titles": {
       description: "Headlines designed to provoke a strong emotional reaction and get clicks, often at the expense of accuracy.",
-      example: '"You Won\'t BELIEVE What Scientists Just Discovered!" instead of a simple, informative headline."',
+      example: "You Won't BELIEVE What Scientists Just Discovered!\" instead of a simple, informative headline.",
       response: "If a headline feels sensational or exaggerated, read the actual article carefully before reacting or sharing."
     }
   }
@@ -170,9 +171,12 @@ export async function onRequest(context) {
   }
 
   try {
-    const { prompt: userPrompt } = await context.request.json(); // Get the prompt from the frontend
+    const { inputText } = await context.request.json(); // Get only the inputText from the frontend
 
-    const chatHistory = [{ role: "user", parts: [{ text: userPrompt }] }];
+    // Generate the full prompt here in the backend
+    const fullPrompt = generatePrompt(inputText);
+
+    const chatHistory = [{ role: "user", parts: [{ text: fullPrompt }] }];
 
     const payload = {
       contents: chatHistory,
@@ -254,4 +258,3 @@ export async function onRequest(context) {
     });
   }
 }
-
