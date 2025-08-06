@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disinfo Defense Kit</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    :root {
+      --primary-color: #2563eb;
+      --primary-hover: #1d4ed8;
+      --secondary-color: #f1f5f9;
+      --text-primary: #0f172a;
+      --text-secondary: #64748b;
+      --text-muted: #94a3b8;
+      --border-color: #e2e8f0;
+      --bg-color: #ffffff;
+      --bg-subtle: #f8fafc;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --radius: 8px;
+      --radius-lg: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.7;
+      color: var(--text-primary);
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .container {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      text-align: center;
+      color: var(--text-primary);
+      margin: 0 0 1rem 0;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 3rem 0 1.5rem 0;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 2rem 0 1rem 0;
+      line-height: 1.3;
+    }
+
+    .hero-section {
+      text-align: center;
+      margin-bottom: 4rem;
+      padding: 3rem 2rem;
+      background: white;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+    }
+
+    .intro {
+      font-size: 1.125rem;
+      font-weight: 400;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .bot-section {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin: 2rem 0 4rem 0;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-color);
+    }
+
+    .content-section {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 3rem 2rem;
+      margin: 2rem 0;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+    }
+
+    .tactics-grid {
+      display: grid;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .tactic-card {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: all 0.2s ease;
+    }
+
+    .tactic-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary-color);
+    }
+
+    .tactic-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--primary-color);
+      margin: 0 0 0.75rem 0;
+    }
+
+    .tactic-description {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .example-text {
+      background: #fef3c7;
+      border-left: 4px solid #f59e0b;
+      padding: 0.75rem 1rem;
+      margin: 1rem 0;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-style: italic;
+      color: #92400e;
+    }
+
+    .response-text {
+      background: #d1fae5;
+      border-left: 4px solid #10b981;
+      padding: 0.75rem 1rem;
+      margin: 1rem 0 0 0;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      color: #047857;
+      font-weight: 500;
+    }
+
+    .divider {
+      border: none;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+      margin: 4rem 0;
+    }
+
+    #disinfo-bot-container {
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+      
+      h1 {
+        font-size: 2.25rem;
+      }
+      
+      h2 {
+        font-size: 1.75rem;
+      }
+      
+      .hero-section, .content-section {
+        padding: 2rem 1.5rem;
+      }
+      
+      .bot-section {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+      --bg-subtle: #f8fafc;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --radius: 8px;
+      --radius-lg: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.7;
+      color: var(--text-primary);
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .container {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      text-align: center;
+      color: var(--text-primary);
+      margin: 0 0 1rem 0;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 3rem 0 1.5rem 0;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 2rem 0 1rem 0;
+      line-height: 1.3;
+    }
+
+    .hero-section {
+      text-align: center;
+      margin-bottom: 4rem;
+      padding: 3rem 2rem;
+      background: white;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+    }
+
+    .intro {
+      font-size: 1.125rem;
+      font-weight: 400;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .bot-section {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin: 2rem 0 4rem 0;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-color);
+    }
+
+    .content-section {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 3rem 2rem;
+      margin: 2rem 0;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+    }
+
+    .tactics-grid {
+      display: grid;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .tactic-card {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: all 0.2s ease;
+    }
+
+    .tactic-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary-color);
+    }
+
+    .tactic-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--primary-color);
+      margin: 0 0 0.75rem 0;
+    }
+
+    .tactic-description {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .example-text {
+      background: #fef3c7;
+      border-left: 4px solid #f59e0b;
+      padding: 0.75rem 1rem;
+      margin: 1rem 0;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-style: italic;
+      color: #92400e;
+    }
+
+    .response-text {
+      background: #d1fae5;
+      border-left: 4px solid #10b981;
+      padding: 0.75rem 1rem;
+      margin: 1rem 0 0 0;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      color: #047857;
+      font-weight: 500;
+    }
+
+    .divider {
+      border: none;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+      margin: 4rem 0;
+    }
+
+    #disinfo-bot-container {
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+      
+      h1 {
+        font-size: 2.25rem;
+      }
+      
+      h2 {
+        font-size: 1.75rem;
+      }
+      
+      .hero-section, .content-section {
+        padding: 2rem 1.5rem;
+      }
+      
+      .bot-section {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Hero Section -->
+    <div class="hero-section">
+      <h1>The Disinfo Defense Kit</h1>
+      <p class="intro">
+        In an age of endless information, the quality of our conversations has been in decline. Rather than seeking to understand, too many debates have become contests of ego and performance. This guide is a toolkit for recognizing and responding to bad-faith tactics that poison honest discourse.
+      </p>
+    </div>
+
+    <!-- Bot Section -->
+    <div class="bot-section">
+      <div id="disinfo-bot-container"></div>
+    </div>
+
+    <!-- Common Bad-Faith Tactics Section -->
+    <div class="content-section">
+      <h2>Common Bad-Faith Tactics</h2>
+      <div class="tactics-grid">
+      <li>
+        <strong>Well Actually</strong>
+        <p>
+          Correcting a minor, often irrelevant, detail to feel superior or derail the main point. This tactic avoids engaging with the substance of an argument by fixating on a technicality. It’s a form of intellectual nitpicking.
+        </p>
+        <p class="example-text"><em>Example:</em> "You said the new policy would help people in the city, but you used the wrong fiscal year data. Therefore, your whole argument is invalid."</p>
+        <em>Response:</em> "That doesn’t change the core argument. Let's focus on the main point."
+      </li>
+
+      <li>
+        <strong>Gish Gallop</strong>
+        <p>
+          Overwhelming a conversation with a rapid-fire series of shallow, often misleading, arguments. The goal is to flood the other person with so many points that they can't possibly respond to all of them, creating the illusion of a win.
+        </p>
+        <p class="example-text"><em>Example:</em> "You want to talk about climate change? Well, what about the sun's cycles, and the volcanoes, and the polar bear population isn't actually shrinking, and the ice caps are growing in one place, and also, what about the economic impact on developing nations?"</p>
+        <em>Response:</em> "You’ve made many points quickly. Let’s slow down. Pick the strongest one, and we'll discuss that properly."
+      </li>
+
+      <li>
+        <strong>Whataboutism</strong>
+        <p>
+          Deflecting a criticism by accusing the other party of a different, unrelated wrongdoing. It's a way of avoiding responsibility and shifting the focus away from the original topic.
+        </p>
+        <p class="example-text"><em>Example:</em> "You're criticizing our country's human rights record? What about the human rights abuses in [another country]?"</p>
+        <em>Response:</em> "That's an entirely different issue. We can discuss that after we finish this conversation, but it doesn't excuse what we're talking about now."
+      </li>
+
+      <li>
+        <strong>Straw Man</strong>
+        <p>
+          Misrepresenting or exaggerating an opponent's argument to make it easier to attack. Instead of debating the actual point, the person attacks a weaker, distorted version they’ve created themselves.
+        </p>
+        <p class="example-text"><em>Example:</em> "I think we should invest more in renewable energy."<br>"So you want to bankrupt our economy and leave millions without jobs by immediately shutting down all fossil fuel plants? That’s an irresponsible position."</p>
+        <em>Response:</em> "That’s not what I said. My point was to invest more in renewables, not to shut everything down immediately. Please respond to the actual point I made."
+      </li>
+
+      <li>
+        <strong>Mocking or Sarcasm</strong>
+        <p>
+          Using mockery, sarcasm, or ridicule to dismiss an argument without engaging it. This tactic is aimed at ego defense and emotional manipulation, not dialogue. It's a way to belittle the other person instead of addressing their ideas.
+        </p>
+        <p class="example-text"><em>Example:</em> "Oh, I'm so sorry, did my perfectly logical argument hurt your feelings? Maybe you should go back to your safe space."</p>
+        <em>Response:</em> "If you have a real point to make, please make it without the sarcasm."
+      </li>
+
+      <li>
+        <strong>Condescension</strong>
+        <p>
+          Pretending to "educate" someone from a position of intellectual superiority rather than engaging in a respectful discussion. This is a status game that undermines genuine exchange.
+        </p>
+        <p class="example-text"><em>Example:</em> "You clearly don't understand the intricacies of economic policy, so let me break it down for you..."</p>
+        <em>Response:</em> "Instead of talking down to me, explain what you disagree with in a straightforward way."
+      </li>
+
+      <li>
+        <strong>Shifting the Burden of Proof</strong>
+        <p>
+          Making a claim but demanding that others disprove it, rather than providing evidence to support it. The person making an extraordinary claim is responsible for backing it up.
+        </p>
+        <p class="example-text"><em>Example:</em> "I'm telling you, this new supplement cures cancer. Prove that it doesn't work."</p>
+        <em>Response:</em> "You made the claim — the burden of proof is on you to back it up with evidence."
+      </li>
+
+      <li>
+        <strong>False Equivalence</strong>
+        <p>
+          Pretending that two things are the same or equally serious when they are not. This tactic is used to minimize a serious issue by comparing it to a minor one.
+        </p>
+        <p class="example-text"><em>Example:</em> "You think my minor exaggeration is a lie? That's just as bad as the time that politician lied to the whole country!"</p>
+        <em>Response:</em> "That comparison doesn't hold up. These two things are not the same."
+      </li>
+
+      <li>
+        <strong>Motte and Bailey</strong>
+        <p>
+          Defending an extreme, controversial claim ("motte") by retreating to a more modest, easily defensible claim ("bailey") when challenged. They then return to the extreme claim once the heat is off.
+        </p>
+        <p class="example-text"><em>Example:</em> "All art created after 1900 is garbage." When challenged, they might retreat: "Well, I just mean that some modern art is a bit silly." Then later they'll return to the original extreme claim. </p>
+        <em>Response:</em> "Pick one position and defend it. Are you arguing [extreme claim] or [modest claim]?"
+      </li>
+
+      <li>
+        <strong>Tone Policing</strong>
+        <p>
+          Dismissing a person's argument based on the tone they used to express it, rather than the content of the argument itself. This tactic is used to silence a valid point by labeling it as aggressive or emotional.
+        </p>
+        <p class="example-text"><em>Example:</em> "I hear what you're saying about the systemic issue, but you're being so angry about it that I can't take you seriously."</p>
+        <em>Response:</em> "The tone doesn't change the facts I'm presenting. Can you address the substance of my argument?"
+      </li>
+
+      <li>
+        <strong>Cherry Picking</strong>
+        <p>
+          Only presenting selective data or examples that support their own side while ignoring everything that contradicts it. This creates a distorted and incomplete picture.
+        </p>
+        <p class="example-text"><em>Example:</em> "This new drug is amazing! The company's study shows it works for 25% of patients!" (Ignoring that it has severe side effects for the other 75%).</p>
+        <em>Response:</em> "You're leaving out important context. Let's look at the full picture, not just the parts that support your view."
+      </li>
+
+      <li>
+        <strong>Slippery Slope</strong>
+        <p>
+          Asserting that a single step will inevitably lead to a chain of catastrophic or extreme outcomes, without providing evidence for that chain reaction.
+        </p>
+        <p class="example-text"><em>Example:</em> "If we allow students to have phones in class, they'll become distracted, their grades will drop, they'll never learn to focus, and society will collapse!"</p>
+        <em>Response:</em> "Let’s focus on what’s actually being proposed, not an imagined worst-case scenario that may never happen."
+      </li>
+
+      <li>
+        <strong>Appeal to Hypocrisy (Tu quoque)</strong>
+        <p>
+          Rejecting an argument by pointing out that the person making the argument is a hypocrite. This avoids the topic at hand by attacking the person's character.
+        </p>
+        <p class="example-text"><em>Example:</em> "You're telling me to stop smoking? But you used to be a smoker yourself!"</p>
+        <em>Response:</em> "My personal actions don’t invalidate the facts I’m bringing up. Let's stick to the issue."
+      </li>
+
+      <li>
+        <strong>Red Herring</strong>
+        <p>
+          Introducing an unrelated or misleading topic to distract from the original subject. This is a classic diversion tactic to avoid an inconvenient argument.
+        </p>
+        <p class="example-text"><em>Example:</em> "We need to address the city's crumbling infrastructure."<br>"But have you seen the crime rate lately? That's the real problem here."</p>
+        <em>Response:</em> "That's a different issue. Let's stick to the topic at hand."
+      </li>
+    </ul>
+
+    <h2>How to Spot Biased Reporting and Propaganda</h2>
+    <p>
+      Beyond individual debates, we must also be vigilant about the media we consume. These tactics are often used to shape narratives and create a biased worldview.
+    </p>
+    <ul>
+      <li>
+        <strong>Loaded Language</strong>
+        <p>
+          The use of sensational or emotionally charged words to provoke a reaction rather than to inform. This aims to bypass rational thought and go straight for the gut.
+        </p>
+        <p class="example-text"><em>Example:</em> "A headline that reads 'Government's DISASTROUS new spending plan' instead of 'Government proposes new spending plan.'"</p>
+        <em>Tip:</em> Watch for words like "disaster," "traitor," "miracle," or "stunning" that indicate a strong opinion or emotion over a neutral fact.
+      </li>
+
+      <li>
+        <strong>False Balance</strong>
+        <p>
+          Giving fringe or disproven views equal weight to expert consensus. This creates the illusion of a legitimate debate where there isn't one.
+        </p>
+        <p class="example-text"><em>Example:</em> "A news segment about climate change that pits a climate scientist against a random person who claims it's a hoax, as if their opinions have equal validity."</p>
+        <em>Tip:</em> Just because a news story presents "both sides" doesn't mean both are equally valid or supported by evidence.
+      </li>
+
+      <li>
+        <strong>Missing Context</strong>
+        <p>
+          Presenting a fact or statistic without the crucial background information that makes it meaningful. This allows the information to be framed in a misleading way.
+        </p>
+        <p class="example-text"><em>Example:</em> "A report states that a city's violent crime rate increased by 20% this year, but fails to mention the crime rate was at an all-time low last year and is still well below historical averages."</p>
+        <em>Response:</em> "Ask yourself: 'What's not being said?' or 'What critical information is being left out of this story?'"
+      </li>
+
+      <li>
+        <strong>Anonymous Sources Abuse</strong>
+        <p>
+          Over-relying on unnamed "insiders" or "officials" without corroborating their claims with other evidence. While anonymous sources can be necessary, an over-reliance on them is a red flag.
+        </p>
+        <p class="example-text"><em>Example:</em> "A high-ranking official who wished to remain anonymous told us that the President is planning a secret military action."</p>
+        <em>Response:</em> "Be skeptical of a report where every major claim comes from a vague, unnamed source."
+      </li>
+
+      <li>
+        <strong>Agenda Framing</strong>
+        <p>
+          Repeatedly focusing on certain topics while ignoring others. This shapes the public's perception of what is important or newsworthy.
+        </p>
+        <p class="example-text"><em>Example:</em> "A news channel that dedicates 24/7 coverage to one particular scandal while completely ignoring a major economic event or natural disaster."</p>
+        <em>Response:</em> "Pay attention to what a news outlet consistently focuses on—and what they consistently ignore."
+      </li>
+
+      <li>
+        <strong>Image Manipulation</strong>
+        <p>
+          Using emotionally charged photos or graphics to create a bias, even if the text itself is neutral. The image can tell a story that the words don't.
+        </p>
+        <p class="example-text"><em>Example:</em> "A story about a political protest uses a photo of a single, aggressive-looking protestor, even though the vast majority of participants were peaceful."</p>
+        <em>Response:</em> "A photo of one protester yelling doesn't necessarily represent the mood or actions of the entire protest."
+      </li>
+
+      <li>
+        <strong>Clickbait Titles</strong>
+        <p>
+          Headlines designed to provoke a strong emotional reaction and get clicks, often at the expense of accuracy.
+        </p>
+        <p class="example-text"><em>Example:</em> "You Won't BELIEVE What Scientists Just Discovered!\" instead of a simple, informative headline."</p>
+        <em>Response:</em> "If a headline feels sensational or exaggerated, read the actual article carefully before reacting or sharing."
+      </li>
+    </ul>
+
+    <hr style="margin: 3rem 0; border: none; border-top: 1px solid var(--secondary-color);">
+
+    <h2>Why This Matters</h2>
+    <p>
+      These tactics don't just make conversations frustrating; they actively encourage misinformation, tribalism, and intellectual laziness. If you care about truth, clarity, and building a healthier society, it's essential to recognize and name these patterns when they appear. The goal isn't to "win" every debate, but to ensure that when we do engage, we're engaging honestly.
+    </p>
+
+  </div> <!-- End of main content wrapper -->
+
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script type="text/babel">
+    function App() {
+      const [inputText, setInputText] = React.useState('');
+      const [analysisResult, setAnalysisResult] = React.useState(null);
+      const [loading, setLoading] = React.useState(false);
+      const [error, setError] = React.useState(null);
+
+      const analyzeText = async () => {
+        if (!inputText.trim()) {
+          setError("Please enter some text to analyze.");
+          setAnalysisResult(null);
+          return;
+        }
+
+        setLoading(true);
+        setError(null);
+        setAnalysisResult(null);
+
+        // The frontend now only sends the raw input text to the Pages Function
+        const workerEndpoint = '/api/analyze'; // Relative path to your Pages Function
+
+        try {
+          const response = await fetch(workerEndpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ inputText: inputText }) // Send only the input text
+          });
+
+          if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(`API Error: ${errorData.error || response.statusText}`);
+          }
+
+          const result = await response.json();
+          setAnalysisResult(result);
+
+        } catch (e) {
+          console.error("Error analyzing text:", e);
+          setError(`Failed to analyze text: ${e.message}. Please try again.`);
+        } finally {
+          setLoading(false);
+        }
+      };
+
+      return (
+        <div className="font-inter">
+          {/* Tailwind CSS configuration for Inter font */}
+          <style>{`
+            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+            .font-inter {
+              font-family: 'Inter', sans-serif;
+            }
+          `}</style>
+
+          <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-2xl mx-auto">
+            <h1 className="text-3xl font-bold text-center text-blue-600 mb-6">Disinfo Defense Bot</h1>
+            <p className="text-gray-700 text-center mb-8">
+              Paste any text below to analyze it for common bad-faith tactics and biased reporting.
+              The bot supports both <strong>English and Dutch</strong> text and will identify tactics while suggesting responses.
+            </p>
+
+            <textarea
+              className="w-full p-4 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 mb-6 text-gray-800 resize-y min-h-[150px]"
+              placeholder="Enter text here to analyze for disinfo tactics... (English/Nederlands)"
+              value={inputText}
+              onChange={(e) => setInputText(e.target.value)}
+            ></textarea>
+
+            <button
+              onClick={analyzeText}
+              disabled={loading}
+              className={`w-full py-3 px-6 rounded-lg text-white font-semibold transition-colors duration-200 ${
+                loading ? 'bg-blue-300 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2'
+              }`}
+            >
+              {loading ? 'Analyzing...' : 'Analyze Text'}
+            </button>
+
+            {error && (
+              <div className="mt-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
+                <p className="font-medium">Error:</p>
+                <p>{error}</p>
+              </div>
+            )}
+
+            {analysisResult && (
+              <div className="mt-8">
+                <h2 className="text-2xl font-semibold text-gray-800 mb-4 border-b-2 border-gray-200 pb-2">Analysis Results</h2>
+                
+                {/* Overall Assessment */}
+                {analysisResult.overallAssessment && (
+                  <div className="bg-blue-50 p-5 rounded-lg border border-blue-200 mb-6 shadow-sm">
+                    <h3 className="text-xl font-bold text-blue-600 mb-3">Overall Assessment</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
+                      <div>
+                        <span className="font-semibold text-gray-700">Tone:</span> 
+                        <span className={`ml-2 px-2 py-1 rounded text-sm font-medium ${
+                          analysisResult.overallAssessment.tone === 'hostile' ? 'bg-red-100 text-red-800' :
+                          analysisResult.overallAssessment.tone === 'adversarial' ? 'bg-orange-100 text-orange-800' :
+                          analysisResult.overallAssessment.tone === 'neutral' ? 'bg-gray-100 text-gray-800' :
+                          'bg-green-100 text-green-800'
+                        }`}>
+                          {analysisResult.overallAssessment.tone}
+                        </span>
+                      </div>
+                      <div>
+                        <span className="font-semibold text-gray-700">Severity:</span> 
+                        <span className={`ml-2 px-2 py-1 rounded text-sm font-medium ${
+                          analysisResult.overallAssessment.severity === 'high' ? 'bg-red-100 text-red-800' :
+                          analysisResult.overallAssessment.severity === 'medium' ? 'bg-yellow-100 text-yellow-800' :
+                          'bg-green-100 text-green-800'
+                        }`}>
+                          {analysisResult.overallAssessment.severity}
+                        </span>
+                      </div>
+                    </div>
+                    <p className="text-gray-700 mb-2">
+                      <span className="font-semibold">Context:</span> {analysisResult.overallAssessment.context}
+                    </p>
+                    <p className="text-gray-700">
+                      <span className="font-semibold">Quality Assessment:</span> {analysisResult.overallAssessment.generalQuality}
+                    </p>
+                  </div>
+                )}
+
+                {/* Identified Tactics */}
+                {analysisResult.identifiedTactics && analysisResult.identifiedTactics.length === 0 ? (
+                  <p className="text-gray-600 bg-green-50 p-4 rounded-lg border border-green-200">No specific bad-faith tactics or biased reporting signs were identified in the text.</p>
+                ) : (
+                  <div className="mb-6">
+                    <h3 className="text-xl font-semibold text-gray-800 mb-4">Identified Issues ({analysisResult.identifiedTactics?.length || 0})</h3>
+                    {analysisResult.identifiedTactics?.map((tactic, index) => (
+                      <div key={index} className="bg-gray-50 p-5 rounded-lg border border-gray-200 mb-4 shadow-sm">
+                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2 gap-2">
+                          <h4 className="text-lg font-bold text-red-600 flex-1">{tactic.tacticName}</h4>
+                          <div className="flex flex-wrap gap-1 sm:gap-2 flex-shrink-0">
+                            <span className={`px-2 py-1 rounded text-xs font-medium whitespace-nowrap ${
+                              tactic.severity === 'high' ? 'bg-red-100 text-red-800' :
+                              tactic.severity === 'medium' ? 'bg-yellow-100 text-yellow-800' :
+                              'bg-green-100 text-green-800'
+                            }`}>
+                              {tactic.severity}
+                            </span>
+                            {tactic.confidenceScore && (
+                              <span className="px-2 py-1 rounded text-xs font-medium bg-blue-100 text-blue-800 whitespace-nowrap">
+                                {Math.round(tactic.confidenceScore * 100)}% confidence
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                        
+                        <p className="text-gray-700 mb-2">
+                          <span className="font-semibold">Explanation:</span> {tactic.explanation}
+                        </p>
+                        
+                        {tactic.exampleFromInput && (
+                          <p className="text-gray-700 mb-2">
+                            <span className="font-semibold">Example from Input:</span> 
+                            <span className="italic bg-yellow-100 px-2 py-1 rounded ml-1">"{tactic.exampleFromInput}"</span>
+                          </p>
+                        )}
+                        
+                        <p className="text-gray-700 mb-2">
+                          <span className="font-semibold">Suggested Response:</span> 
+                          <span className="text-green-700 font-medium">"{tactic.suggestedResponse}"</span>
+                        </p>
+                        
+                        {tactic.impact && (
+                          <p className="text-gray-600 text-sm">
+                            <span className="font-semibold">Impact on Discourse:</span> {tactic.impact}
+                          </p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {/* Constructive Feedback */}
+                {analysisResult.constructiveFeedback && (
+                  <div className="bg-green-50 p-5 rounded-lg border border-green-200 mb-6 shadow-sm">
+                    <h3 className="text-xl font-bold text-green-600 mb-3">Constructive Feedback</h3>
+                    
+                    {analysisResult.constructiveFeedback.strengths?.length > 0 && (
+                      <div className="mb-4">
+                        <h4 className="font-semibold text-gray-700 mb-2">Strengths:</h4>
+                        <ul className="list-disc list-inside text-gray-700 space-y-1">
+                          {analysisResult.constructiveFeedback.strengths.map((strength, index) => (
+                            <li key={index}>{strength}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                    
+                    {analysisResult.constructiveFeedback.improvements?.length > 0 && (
+                      <div className="mb-4">
+                        <h4 className="font-semibold text-gray-700 mb-2">Suggestions for Improvement:</h4>
+                        <ul className="list-disc list-inside text-gray-700 space-y-1">
+                          {analysisResult.constructiveFeedback.improvements.map((improvement, index) => (
+                            <li key={index}>{improvement}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                    
+                    {analysisResult.constructiveFeedback.alternatives?.length > 0 && (
+                      <div className="mb-4">
+                        <h4 className="font-semibold text-gray-700 mb-2">Alternative Phrasings:</h4>
+                        <ul className="list-disc list-inside text-gray-700 space-y-1">
+                          {analysisResult.constructiveFeedback.alternatives.map((alternative, index) => (
+                            <li key={index} className="text-sm">{alternative}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                    
+                    {analysisResult.constructiveFeedback.contextualNotes?.length > 0 && (
+                      <div>
+                        <h4 className="font-semibold text-gray-700 mb-2">Contextual Notes:</h4>
+                        <ul className="list-disc list-inside text-gray-600 text-sm space-y-1">
+                          {analysisResult.constructiveFeedback.contextualNotes.map((note, index) => (
+                            <li key={index}>{note}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {/* Summary */}
+                {analysisResult.summary && (
+                  <div className="bg-blue-50 p-5 rounded-lg border border-blue-200 shadow-sm">
+                    <h3 className="text-xl font-bold text-blue-600 mb-3">Summary</h3>
+                    <p className="text-gray-700">{analysisResult.summary}</p>
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+      );
+    }
+
+    // Mount the React component
+    ReactDOM.render(<App />, document.getElementById('disinfo-bot-container'));
+  </script>
+
+</body>
+</html>
