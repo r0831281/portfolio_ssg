@@ -103,6 +103,13 @@
       border-radius: 4px;
       color: var(--heading-color);
     }
+
+    /* Styles for the React App container */
+    #disinfo-bot-container {
+        margin-top: 4rem;
+        padding-top: 2rem;
+        border-top: 2px solid var(--primary-color);
+    }
   </style>
 </head>
 <body>
@@ -194,7 +201,7 @@
         Defending an extreme, controversial claim ("motte") by retreating to a more modest, easily defensible claim ("bailey") when challenged. They then return to the extreme claim once the heat is off.
       </p>
       <p class="example-text"><em>Example:</em> "All art created after 1900 is garbage." When challenged, they might retreat: "Well, I just mean that some modern art is a bit silly." Then later they'll return to the original extreme claim. </p>
-      <em>Response:</em> "Pick one position and defend it. Are you arguing that all art after 1900 is garbage or just that some is silly?"
+      <em>Response:</em> "Pick one position and defend it. Are you arguing [extreme claim] or [modest claim]?"
     </li>
 
     <li>
@@ -253,7 +260,7 @@
       <p>
         The use of sensational or emotionally charged words to provoke a reaction rather than to inform. This aims to bypass rational thought and go straight for the gut.
       </p>
-      <p class="example-text"><em>Example:</em> A headline that reads "Government's DISASTROUS new spending plan" instead of "Government proposes new spending plan."</p>
+      <p class="example-text"><em>Example:</em> A headline that reads 'Government's DISASTROUS new spending plan' instead of 'Government proposes new spending plan.'"</p>
       <em>Tip:</em> Watch for words like "disaster," "traitor," "miracle," or "stunning" that indicate a strong opinion or emotion over a neutral fact.
     </li>
 
@@ -272,7 +279,7 @@
         Presenting a fact or statistic without the crucial background information that makes it meaningful. This allows the information to be framed in a misleading way.
       </p>
       <p class="example-text"><em>Example:</em> A report states that a city's violent crime rate increased by 20% this year, but fails to mention the crime rate was at an all-time low last year and is still well below historical averages.</p>
-      <em>Tip:</em> Ask yourself: "What's not being said?" or "What critical information is being left out of this story?"
+      <em>Response:</em> "Ask yourself: 'What's not being said?' or 'What critical information is being left out of this story?'"
     </li>
 
     <li>
@@ -281,7 +288,7 @@
         Over-relying on unnamed "insiders" or "officials" without corroborating their claims with other evidence. While anonymous sources can be necessary, an over-reliance on them is a red flag.
       </p>
       <p class="example-text"><em>Example:</em> "A high-ranking official who wished to remain anonymous told us that the President is planning a secret military action."</p>
-      <em>Tip:</em> Be skeptical of a report where every major claim comes from a vague, unnamed source.
+      <em>Response:</em> "Be skeptical of a report where every major claim comes from a vague, unnamed source."
     </li>
 
     <li>
@@ -289,8 +296,8 @@
       <p>
         Repeatedly focusing on certain topics while ignoring others. This shapes the public's perception of what is important or newsworthy.
       </p>
-      <p class="example-text"><em>Example:</em> A news channel that dedicates 24/7 coverage to one particular scandal while completely ignoring a major economic event or natural disaster.</p>
-      <em>Tip:</em> Pay attention to what a news outlet consistently focuses on—and what they consistently ignore.
+      <p class="example-text"><em>Example:</em> "A news channel that dedicates 24/7 coverage to one particular scandal while completely ignoring a major economic event or natural disaster."</p>
+      <em>Response:</em> "Pay attention to what a news outlet consistently focuses on—and what they consistently ignore."
     </li>
 
     <li>
@@ -298,8 +305,8 @@
       <p>
         Using emotionally charged photos or graphics to create a bias, even if the text itself is neutral. The image can tell a story that the words don't.
       </p>
-      <p class="example-text"><em>Example:</em> A story about a political protest uses a photo of a single, aggressive-looking protestor, even though the vast majority of participants were peaceful.</p>
-      <em>Tip:</em> A photo of one protester yelling doesn't necessarily represent the mood or actions of the entire protest.
+      <p class="example-text"><em>Example:</em> "A story about a political protest uses a photo of a single, aggressive-looking protestor, even though the vast majority of participants were peaceful."</p>
+      <em>Response:</em> "A photo of one protester yelling doesn't necessarily represent the mood or actions of the entire protest."
     </li>
 
     <li>
@@ -307,8 +314,8 @@
       <p>
         Headlines designed to provoke a strong emotional reaction and get clicks, often at the expense of accuracy.
       </p>
-      <p class="example-text"><em>Example:</em> "You Won't BELIEVE What Scientists Just Discovered!" instead of a simple, informative headline.</p>
-      <em>Tip:</em> If a headline feels sensational or exaggerated, read the actual article carefully before reacting or sharing.
+      <p class="example-text"><em>Example:</em> "You Won't BELIEVE What Scientists Just Discovered!" instead of a simple, informative headline."</p>
+      <em>Response:</em> "If a headline feels sensational or exaggerated, read the actual article carefully before reacting or sharing."
     </li>
   </ul>
 
@@ -318,6 +325,251 @@
   <p>
     These tactics don't just make conversations frustrating; they actively encourage misinformation, tribalism, and intellectual laziness. If you care about truth, clarity, and building a healthier society, it's essential to recognize and name these patterns when they appear. The goal isn't to "win" every debate, but to ensure that when we do engage, we're engaging honestly.
   </p>
+
+  <div id="disinfo-bot-container">
+    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Try the Disinfo Defense Bot!</h2>
+    <p class="text-gray-700 mb-6">
+      Paste any text below to analyze it for common bad-faith tactics and biased reporting.
+      The bot will identify the tactic and suggest a response from the Disinfo Defense Kit.
+    </p>
+  </div>
+
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script type="text/babel">
+    function App() {
+      const [inputText, setInputText] = React.useState('');
+      const [analysisResult, setAnalysisResult] = React.useState(null);
+      const [loading, setLoading] = React.useState(false);
+      const [error, setError] = React.useState(null);
+
+      const definitions = {
+        "Common Bad-Faith Tactics": {
+          "Well Actually": {
+            description: "Correcting a minor, often irrelevant, detail to feel superior or derail the main point. This tactic avoids engaging with the substance of an argument by fixating on a technicality. It’s a form of intellectual nitpicking.",
+            example: "You said the new policy would help people in the city, but you used the wrong fiscal year data. Therefore, your whole argument is invalid.",
+            response: "That doesn’t change the core argument. Let's focus on the main point."
+          },
+          "Gish Gallop": {
+            description: "Overwhelming a conversation with a rapid-fire series of shallow, often misleading, arguments. The goal is to flood the other person with so many points that they can't possibly respond to all of them, creating the illusion of a win.",
+            example: "You want to talk about climate change? Well, what about the sun's cycles, and the volcanoes, and the polar bear population isn't actually shrinking, and the ice caps are growing in one place, and also, what about the economic impact on developing nations?",
+            response: "You’ve made many points quickly. Let’s slow down. Pick the strongest one, and we'll discuss that properly."
+          },
+          "Whataboutism": {
+            description: "Deflecting a criticism by accusing the other party of a different, unrelated wrongdoing. It's a way of avoiding responsibility and shifting the focus away from the original topic.",
+            example: "You're criticizing our country's human rights record? What about the human rights abuses in [another country]?",
+            response: "That's an entirely different issue. We can discuss that after we finish this conversation, but it doesn't excuse what we're talking about now."
+          },
+          "Straw Man": {
+            description: "Misrepresenting or exaggerating an opponent's argument to make it easier to attack. Instead of debating the actual point, the person attacks a weaker, distorted version they’ve created themselves.",
+            example: "I think we should invest more in renewable energy. -> So you want to bankrupt our economy and leave millions without jobs by immediately shutting down all fossil fuel plants? That’s an irresponsible position.",
+            response: "That’s not what I said. My point was to invest more in renewables, not to shut everything down immediately. Please respond to the actual point I made."
+          },
+          "Mocking or Sarcasm": {
+            description: "Using mockery, sarcasm, or ridicule to dismiss an argument without engaging it. This tactic is aimed at ego defense and emotional manipulation, not dialogue. It's a way to belittle the other person instead of addressing their ideas.",
+            example: "Oh, I'm so sorry, did my perfectly logical argument hurt your feelings? Maybe you should go back to your safe space.",
+            response: "If you have a real point to make, please make it without the sarcasm."
+          },
+          "Condescension": {
+            description: "Pretending to 'educate' someone from a position of intellectual superiority rather than engaging in a respectful discussion. This is a status game that undermines genuine exchange.",
+            example: "You clearly don't understand the intricacies of economic policy, so let me break it down for you...",
+            response: "Instead of talking down to me, explain what you disagree with in a straightforward way."
+          },
+          "Shifting the Burden of Proof": {
+            description: "Making a claim but demanding that others disprove it, rather than providing evidence to support it. The person making an extraordinary claim is responsible for backing it up.",
+            example: "I'm telling you, this new supplement cures cancer. Prove that it doesn't work.",
+            response: "You made the claim — the burden of proof is on you to back it up with evidence."
+          },
+          "False Equivalence": {
+            description: "Pretending that two two things are the same or equally serious when they are not. This tactic is used to minimize a serious issue by comparing it to a minor one.",
+            example: "You think my minor exaggeration is a lie? That's just as bad as the time that politician lied to the whole country!",
+            response: "That comparison doesn't hold up. These two things are not the same."
+          },
+          "Motte and Bailey": {
+            description: "Defending an extreme, controversial claim ('motte') by retreating to a more modest, easily defensible claim ('bailey') when challenged. They then return to the extreme claim once the heat is off.",
+            example: "All art created after 1900 is garbage. -> Well, I just mean that some modern art is a bit silly. (Then later returns to original extreme claim).",
+            response: "Pick one position and defend it. Are you arguing [extreme claim] or [modest claim]?"
+          },
+          "Tone Policing": {
+            description: "Dismissing a person's argument based on the tone they used to express it, rather than the content of the argument itself. This tactic is used to silence a valid point by labeling it as aggressive or emotional.",
+            example: "I hear what you're saying about the systemic issue, but you're being so angry about it that I can't take you seriously.",
+            response: "The tone doesn't change the facts I'm presenting. Can you address the substance of my argument?"
+          },
+          "Cherry Picking": {
+            description: "Only presenting selective data or examples that support their own side while ignoring everything that contradicts it. This creates a distorted and incomplete picture.",
+            example: "This new drug is amazing! The company's study shows it works for 25% of patients! (Ignoring that it has severe side effects for the other 75%).",
+            response: "You're leaving out important context. Lets look at the full picture, not just the parts that support your view."
+          },
+          "Slippery Slope": {
+            description: "Asserting that a single step will inevitably lead to a chain of catastrophic or extreme outcomes, without providing evidence for that chain reaction.",
+            example: "If we allow students to have phones in class, they'll become distracted, their grades will drop, they'll never learn to focus, and society will collapse!",
+            response: "Let’s focus on what’s actually being proposed, not an imagined worst-case scenario that may never happen."
+          },
+          "Appeal to Hypocrisy (Tu quoque)": {
+            description: "Rejecting an argument by pointing out that the person making the argument is a hypocrite. This avoids the topic at hand by attacking the person's character.",
+            example: "You're telling me to stop smoking? But you used to be a smoker yourself!",
+            response: "My personal actions don’t invalidate the facts I’m bringing up. Let's stick to the issue."
+          },
+          "Red Herring": {
+            description: "Introducing an unrelated or misleading topic to distract from the original subject. This is a classic diversion tactic to avoid an inconvenient argument.",
+            example: "We need to address the city's crumbling infrastructure. -> But have you seen the crime rate lately? That's the real problem here.",
+            response: "That's a different issue. Let's stick to the topic at hand."
+          }
+        },
+        "How to Spot Biased Reporting and Propaganda": {
+          "Loaded Language": {
+            description: "The use of sensational or emotionally charged words to provoke a reaction rather than to inform. This aims to bypass rational thought and go straight for the gut.",
+            example: "A headline that reads 'Government's DISASTROUS new spending plan' instead of 'Government proposes new spending plan.'",
+            response: "Watch for words like 'disaster,' 'traitor,' 'miracle,' or 'stunning' that indicate a strong opinion or emotion over a neutral fact."
+          },
+          "False Balance": {
+            description: "Giving fringe or disproven views equal weight to expert consensus. This creates the illusion of a legitimate debate where there isn't one.",
+            example: "A news segment about climate change that pits a climate scientist against a random person who claims it's a hoax, as if their opinions have equal validity.",
+            response: "Just because a news story presents 'both sides' doesn't mean both are equally valid or supported by evidence."
+          },
+          "Missing Context": {
+            description: "Presenting a fact or statistic without the crucial background information that makes it meaningful. This allows the information to be framed in a misleading way.",
+            example: "A report states that a city's violent crime rate increased by 20% this year, but fails to mention the crime rate was at an all-time low last year and is still well below historical averages.",
+            response: "Ask yourself: 'What's not being said?' or 'What critical information is being left out of this story?'"
+          },
+          "Anonymous Sources Abuse": {
+            description: "Over-relying on unnamed 'insiders' or 'officials' without corroborating their claims with other evidence. While anonymous sources can be necessary, an over-reliance on them is a red flag.",
+            example: "A high-ranking official who wished to remain anonymous told us that the President is planning a secret military action.",
+            response: "Be skeptical of a report where every major claim comes from a vague, unnamed source."
+          },
+          "Agenda Framing": {
+            description: "Repeatedly focusing on certain topics while ignoring others. This shapes the public's perception of what is important or newsworthy.",
+            example: "A news channel that dedicates 24/7 coverage to one particular scandal while completely ignoring a major economic event or natural disaster.",
+            response: "Pay attention to what a news outlet consistently focuses on—and what they consistently ignore."
+          },
+          "Image Manipulation": {
+            description: "Using emotionally charged photos or graphics to create a bias, even if the text itself is neutral. The image can tell a story that the words don't.",
+            example: "A story about a political protest uses a photo of a single, aggressive-looking protestor, even though the vast majority of participants were peaceful.",
+            response: "A photo of one protester yelling doesn't necessarily represent the mood or actions of the entire protest."
+          },
+          "Clickbait Titles": {
+            description: "Headlines designed to provoke a strong emotional reaction and get clicks, often at the expense of accuracy.",
+            example: "You Won't BELIEVE What Scientists Just Discovered!\" instead of a simple, informative headline.",
+            response: "If a headline feels sensational or exaggerated, read the actual article carefully before reacting or sharing."
+          }
+        }
+      };
+
+      const analyzeText = async () => {
+        if (!inputText.trim()) {
+          setError("Please enter some text to analyze.");
+          setAnalysisResult(null);
+          return;
+        }
+
+        setLoading(true);
+        setError(null);
+        setAnalysisResult(null);
+
+        const prompt = generatePrompt(inputText);
+        // The frontend now calls the Cloudflare Pages Function endpoint
+        const workerEndpoint = '/api/analyze'; // Relative path to your Pages Function
+
+        try {
+          const response = await fetch(workerEndpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ prompt: prompt }) // Send the full prompt to the Pages Function
+          });
+
+          if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(`API Error: ${errorData.error || response.statusText}`);
+          }
+
+          const result = await response.json();
+          setAnalysisResult(result);
+
+        } catch (e) {
+          console.error("Error analyzing text:", e);
+          setError(`Failed to analyze text: ${e.message}. Please try again.`);
+        } finally {
+          setLoading(false);
+        }
+      };
+
+      return (
+        <div className="font-inter">
+          {/* Tailwind CSS configuration for Inter font */}
+          <style>{`
+            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+            .font-inter {
+              font-family: 'Inter', sans-serif;
+            }
+          `}</style>
+
+          <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-2xl mx-auto">
+            <h1 className="text-3xl font-bold text-center text-blue-600 mb-6">Disinfo Defense Bot</h1>
+            <p className="text-gray-700 text-center mb-8">
+              Paste any text below to analyze it for common bad-faith tactics and biased reporting.
+              The bot will identify the tactic and suggest a response from the Disinfo Defense Kit.
+            </p>
+
+            <textarea
+              className="w-full p-4 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 mb-6 text-gray-800 resize-y min-h-[150px]"
+              placeholder="Enter text here to analyze for disinfo tactics..."
+              value={inputText}
+              onChange={(e) => setInputText(e.target.value)}
+            ></textarea>
+
+            <button
+              onClick={analyzeText}
+              disabled={loading}
+              className={`w-full py-3 px-6 rounded-lg text-white font-semibold transition-colors duration-200 ${
+                loading ? 'bg-blue-300 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2'
+              }`}
+            >
+              {loading ? 'Analyzing...' : 'Analyze Text'}
+            </button>
+
+            {error && (
+              <div className="mt-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
+                <p className="font-medium">Error:</p>
+                <p>{error}</p>
+              </div>
+            )}
+
+            {analysisResult && (
+              <div className="mt-8">
+                <h2 className="text-2xl font-semibold text-gray-800 mb-4 border-b-2 border-gray-200 pb-2">Analysis Results</h2>
+                {analysisResult.length === 0 ? (
+                  <p className="text-gray-600">No specific bad-faith tactics or biased reporting signs were identified in the text.</p>
+                ) : (
+                  analysisResult.map((tactic, index) => (
+                    <div key={index} className="bg-gray-50 p-5 rounded-lg border border-gray-200 mb-4 shadow-sm">
+                      <h3 className="text-xl font-bold text-blue-600 mb-2">{tactic.tacticName}</h3>
+                      <p className="text-gray-700 mb-2">
+                        <span className="font-semibold">Explanation:</span> {tactic.explanation}
+                      </p>
+                      {tactic.exampleFromInput && (
+                        <p className="text-gray-700 mb-2">
+                          <span className="font-semibold">Example from Input:</span> <span className="italic">"{tactic.exampleFromInput}"</span>
+                        </p>
+                      )}
+                      <p className="text-gray-700">
+                        <span className="font-semibold">Suggested Response:</span> <span className="text-green-700">"{tactic.suggestedResponse}"</span>
+                      </p>
+                    </div>
+                  ))
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+      );
+    }
+
+    // Mount the React component
+    ReactDOM.render(<App />, document.getElementById('disinfo-bot-container'));
+  </script>
 
 </body>
 </html>
