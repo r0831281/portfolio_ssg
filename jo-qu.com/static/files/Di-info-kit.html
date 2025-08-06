@@ -48,21 +48,36 @@
     }
 
     h1 {
-      font-size: 4.5rem;
-      font-weight: 800;
+      font-size: 4.5rem !important;
+      font-weight: 800 !important;
       text-align: center;
-      background: linear-gradient(135deg, var(--primary-color) 0%, #1d4ed8 50%, #7c3aed 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin: 0 0 1.5rem 0;
-      letter-spacing: -0.03em;
-      line-height: 1;
-      text-shadow: 0 4px 8px rgba(37, 99, 235, 0.15);
+      background: linear-gradient(135deg, var(--primary-color) 0%, #1d4ed8 50%, #7c3aed 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-clip: text !important;
+      margin: 0 0 1.5rem 0 !important;
+      letter-spacing: -0.03em !important;
+      line-height: 1 !important;
+      text-shadow: 0 4px 8px rgba(37, 99, 235, 0.15) !important;
       position: relative;
     }
     
-    h1::after {
+    .hero-section h1 {
+      font-size: 4.5rem !important;
+      font-weight: 800 !important;
+      text-align: center;
+      background: linear-gradient(135deg, var(--primary-color) 0%, #1d4ed8 50%, #7c3aed 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-clip: text !important;
+      margin: 0 0 1.5rem 0 !important;
+      letter-spacing: -0.03em !important;
+      line-height: 1 !important;
+      text-shadow: 0 4px 8px rgba(37, 99, 235, 0.15) !important;
+      position: relative;
+    }
+    
+    h1::after, .hero-section h1::after {
       content: '';
       position: absolute;
       bottom: -10px;
@@ -211,14 +226,14 @@
         padding: 1rem;
       }
       
-      h1 {
-        font-size: 4rem;
-        margin-bottom: 1rem;
+      h1, .hero-section h1 {
+        font-size: 3rem !important;
+        margin-bottom: 1rem !important;
       }
       
-      h1::after {
-        width: 80px;
-        height: 3px;
+      h1::after, .hero-section h1::after {
+        width: 80px !important;
+        height: 3px !important;
       }
       
       h2 {
@@ -238,10 +253,8 @@
 <body>
   <div class="container">
     <!-- Hero Section -->
-    <h1>The Disinfo Defense Kit</h1>
-    <br>
     <div class="hero-section">
-      <h2>Disinfo Defense Kit</h2>
+      <h1>The Disinfo Defense Kit</h1>
       <p class="intro">
         In an age of endless information, the quality of our conversations has been in decline. Rather than seeking to understand, too many debates have become contests of ego and performance. This guide is a toolkit for recognizing and responding to bad-faith tactics that poison honest discourse.
       </p>
