@@ -70,7 +70,6 @@
       box-shadow: var(--shadow);
       transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     }
-
     li:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -260,7 +259,7 @@
       <p>
         The use of sensational or emotionally charged words to provoke a reaction rather than to inform. This aims to bypass rational thought and go straight for the gut.
       </p>
-      <p class="example-text"><em>Example:</em> A headline that reads 'Government's DISASTROUS new spending plan' instead of 'Government proposes new spending plan.'"</p>
+      <p class="example-text"><em>Example:</em> "A headline that reads 'Government's DISASTROUS new spending plan' instead of 'Government proposes new spending plan.'"</p>
       <em>Tip:</em> Watch for words like "disaster," "traitor," "miracle," or "stunning" that indicate a strong opinion or emotion over a neutral fact.
     </li>
 
@@ -269,7 +268,7 @@
       <p>
         Giving fringe or disproven views equal weight to expert consensus. This creates the illusion of a legitimate debate where there isn't one.
       </p>
-      <p class="example-text"><em>Example:</em> A news segment about climate change that pits a climate scientist against a random person who claims it's a hoax, as if their opinions have equal validity.</p>
+      <p class="example-text"><em>Example:</em> "A news segment about climate change that pits a climate scientist against a random person who claims it's a hoax, as if their opinions have equal validity."</p>
       <em>Tip:</em> Just because a news story presents "both sides" doesn't mean both are equally valid or supported by evidence.
     </li>
 
@@ -278,7 +277,7 @@
       <p>
         Presenting a fact or statistic without the crucial background information that makes it meaningful. This allows the information to be framed in a misleading way.
       </p>
-      <p class="example-text"><em>Example:</em> A report states that a city's violent crime rate increased by 20% this year, but fails to mention the crime rate was at an all-time low last year and is still well below historical averages.</p>
+      <p class="example-text"><em>Example:</em> "A report states that a city's violent crime rate increased by 20% this year, but fails to mention the crime rate was at an all-time low last year and is still well below historical averages."</p>
       <em>Response:</em> "Ask yourself: 'What's not being said?' or 'What critical information is being left out of this story?'"
     </li>
 
@@ -314,7 +313,7 @@
       <p>
         Headlines designed to provoke a strong emotional reaction and get clicks, often at the expense of accuracy.
       </p>
-      <p class="example-text"><em>Example:</em> "You Won't BELIEVE What Scientists Just Discovered!" instead of a simple, informative headline."</p>
+      <p class="example-text"><em>Example:</em> "You Won't BELIEVE What Scientists Just Discovered!\" instead of a simple, informative headline."</p>
       <em>Response:</em> "If a headline feels sensational or exaggerated, read the actual article carefully before reacting or sharing."
     </li>
   </ul>
@@ -346,6 +345,7 @@
       const [loading, setLoading] = React.useState(false);
       const [error, setError] = React.useState(null);
 
+      // Moved definitions and generatePrompt back into the React component
       const definitions = {
         "Common Bad-Faith Tactics": {
           "Well Actually": {
@@ -456,6 +456,45 @@
             response: "If a headline feels sensational or exaggerated, read the actual article carefully before reacting or sharing."
           }
         }
+      };
+
+      // Function to generate the prompt for the Gemini API
+      const generatePrompt = (text) => {
+        let prompt = `Analyze the following text for bad-faith tactics and biased reporting. Identify any of the following tactics and provide the specific part of the input text that exemplifies it. For each identified tactic, provide its name, a brief explanation, the specific example from the input text, and the suggested response from the list below. If no tactics are found, state that clearly.
+
+Here are the definitions of the tactics and suggested responses:
+
+`;
+
+        for (const category in definitions) {
+          prompt += `Category: ${category}\n`;
+          for (const tacticName in definitions[category]) {
+            const tactic = definitions[category][tacticName];
+            prompt += `  - Tactic: ${tacticName}\n`;
+            prompt += `    Description: ${tactic.description}\n`;
+            prompt += `    Example: "${tactic.example}"\n`;
+            prompt += `    Suggested Response: "${tactic.response}"\n`;
+          }
+          prompt += "\n";
+        }
+
+        prompt += `
+Input Text to Analyze:
+"${text}"
+
+Please provide your analysis in a JSON array format. Each object in the array should have 'tacticName', 'explanation', 'exampleFromInput', and 'suggestedResponse' fields. If no tactics are found, return an empty array.
+
+Example JSON structure for a found tactic:
+[
+  {
+    "tacticName": "Straw Man",
+    "explanation": "Misrepresenting or exaggerating an opponent's argument to make it easier to attack.",
+    "exampleFromInput": "So you want to bankrupt our economy and leave millions without jobs by immediately shutting down all fossil fuel plants?",
+    "suggestedResponse": "That’s not what I said. My point was to invest more in renewables, not to shut everything down immediately. Please respond to the actual point I made."
+  }
+]
+`;
+        return prompt;
       };
 
       const analyzeText = async () => {
