@@ -234,7 +234,10 @@ IMPORTANT GUIDELINES:
 - Be proportionate - minor rhetorical flourishes shouldn't be flagged as serious bad-faith tactics
 - Consider cultural and contextual differences in communication styles
 - Focus on tactics that genuinely harm productive discourse
-- Provide actionable, specific feedback rather than generic advice`;
+- Provide actionable, specific feedback rather than generic advice
+- Use the predefined tactics as a guide, but be flexible in your analysis
+- If you identify a tactic not in the predefined list, include it as a "Custom" tactic with a detailed explanation of its relevance.
+`;
 
   return prompt;
 };
