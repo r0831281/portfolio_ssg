@@ -699,31 +699,6 @@
           .replace(/\s+/g, '-');
       };
 
-      // Function to handle tactic click
-      const handleTacticClick = (tacticName) => {
-        console.log('Clicking tactic:', tacticName); // Debug log
-        const id = tacticNameToId(tacticName);
-        console.log('Mapped to ID:', id); // Debug log
-        const element = document.getElementById(id);
-        console.log('Found element:', element); // Debug log
-        if (element) {
-          element.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'center'
-          });
-          // Add a temporary highlight effect
-          element.style.boxShadow = '0 0 0 3px #3b82f6';
-          element.style.transform = 'scale(1.02)';
-          element.style.transition = 'all 0.3s ease';
-          setTimeout(() => {
-            element.style.boxShadow = '';
-            element.style.transform = '';
-          }, 2000);
-        } else {
-          console.log('Element not found for ID:', id);
-        }
-      };
-
       const analyzeText = async () => {
         if (!inputText.trim()) {
           setError("Please enter some text to analyze.");
@@ -821,8 +796,7 @@
                 cursor: loading ? 'not-allowed' : 'pointer',
                 background: loading ? '#94a3b8' : '#2563eb',
                 transition: 'all 0.2s ease',
-                fontFamily: 'Inter, sans-serif',
-                marginBottom: '1rem'
+                fontFamily: 'Inter, sans-serif'
               }}
               onMouseOver={(e) => {
                 if (!loading) e.target.style.background = '#1d4ed8';
@@ -832,32 +806,6 @@
               }}
             >
               {loading ? '🔍 Analyzing...' : '🚀 Analyze Text'}
-            </button>
-
-            {/* Test link functionality */}
-            <button
-              onClick={() => handleTacticClick('Oversimplification')}
-              style={{
-                width: '100%',
-                padding: '0.5rem 1rem',
-                borderRadius: '6px',
-                color: '#2563eb',
-                fontWeight: '500',
-                fontSize: '0.875rem',
-                border: '1px solid #2563eb',
-                cursor: 'pointer',
-                background: 'white',
-                transition: 'all 0.2s ease',
-                fontFamily: 'Inter, sans-serif'
-              }}
-              onMouseOver={(e) => {
-                e.target.style.background = '#eff6ff';
-              }}
-              onMouseOut={(e) => {
-                e.target.style.background = 'white';
-              }}
-            >
-              🔗 Test Link to Oversimplification
             </button>
 
             {error && (
@@ -990,30 +938,28 @@
                           gap: '0.5rem',
                           marginBottom: '0.5rem'
                         }}>
-                          <h5 style={{
+                          <a href={`#${tacticNameToId(tactic.tacticName)}`} style={{
                             fontSize: '1.125rem',
                             fontWeight: '600',
                             color: '#dc2626',
                             margin: 0,
                             flex: 1,
-                            cursor: 'pointer',
-                            textDecoration: 'underline',
-                            textDecorationColor: 'transparent',
-                            transition: 'all 0.2s ease'
+                            textDecoration: 'none',
+                            transition: 'all 0.2s ease',
+                            display: 'block'
                           }}
-                          onClick={() => handleTacticClick(tactic.tacticName)}
                           onMouseOver={(e) => {
-                            e.target.style.textDecorationColor = '#dc2626';
+                            e.target.style.textDecoration = 'underline';
                             e.target.style.color = '#b91c1c';
                           }}
                           onMouseOut={(e) => {
-                            e.target.style.textDecorationColor = 'transparent';
+                            e.target.style.textDecoration = 'none';
                             e.target.style.color = '#dc2626';
                           }}
                           title="Click to view explanation on page"
                           >
                             🔗 {tactic.tacticName}
-                          </h5>
+                          </a>
                           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                             <span style={{
                               padding: '0.25rem 0.5rem',
