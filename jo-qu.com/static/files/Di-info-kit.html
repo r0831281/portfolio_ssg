@@ -539,7 +539,7 @@
           </div>
         </div>
 
-        <div class="tactic-card">
+        <div class="tactic-card" id="clickbait-titles">
           <h3 class="tactic-title">Clickbait Titles</h3>
           <p class="tactic-description">
             Headlines designed to provoke a strong emotional reaction and get clicks, often at the expense of accuracy.
@@ -549,6 +549,77 @@
           </div>
           <div class="response-text">
             <strong>Response:</strong> If a headline feels sensational or exaggerated, read the actual article carefully before reacting or sharing.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional Tactics Section -->
+    <div class="content-section">
+      <h2>Additional Bad-Faith Tactics</h2>
+      <div class="tactics-grid">
+        <div class="tactic-card" id="selective-quoting">
+          <h3 class="tactic-title">Selective Quoting</h3>
+          <p class="tactic-description">
+            Taking quotes out of context or only using partial quotes that distort the speaker's intended meaning.
+          </p>
+          <div class="example-text">
+            <strong>Example:</strong> Taking "I think in some cases, this policy could work" and reporting it as "I think... this policy could work" to show stronger support.
+          </div>
+          <div class="response-text">
+            <strong>Response:</strong> Always look for the full context of quotes and be suspicious of partial quotes with ellipses.
+          </div>
+        </div>
+
+        <div class="tactic-card" id="appeal-to-emotion">
+          <h3 class="tactic-title">Appeal to Emotion</h3>
+          <p class="tactic-description">
+            Using emotional manipulation instead of logical reasoning to win an argument. This includes fear-mongering, guilt-tripping, or appeals to anger rather than facts.
+          </p>
+          <div class="example-text">
+            <strong>Example:</strong> "If you don't support this policy, you clearly don't care about the children who will suffer!"
+          </div>
+          <div class="response-text">
+            <strong>Response:</strong> "I do care about the welfare of children. Let's look at the evidence about whether this policy will actually help them."
+          </div>
+        </div>
+
+        <div class="tactic-card" id="bandwagon-appeal">
+          <h3 class="tactic-title">Bandwagon Appeal</h3>
+          <p class="tactic-description">
+            Arguing that something is correct or good because many people believe it or do it, without providing actual evidence for the claim.
+          </p>
+          <div class="example-text">
+            <strong>Example:</strong> "Everyone knows that this new diet works. Millions of people can't be wrong!"
+          </div>
+          <div class="response-text">
+            <strong>Response:</strong> "Popular opinion doesn't determine truth. What does the scientific evidence say about this diet's effectiveness?"
+          </div>
+        </div>
+
+        <div class="tactic-card" id="lie">
+          <h3 class="tactic-title">Lie</h3>
+          <p class="tactic-description">
+            A statement that is demonstrably false and often intended to deceive. The bot will attempt to detect factual inaccuracies based on context and general knowledge.
+          </p>
+          <div class="example-text">
+            <strong>Example:</strong> "The Earth is flat, that's scientifically proven."
+          </div>
+          <div class="response-text">
+            <strong>Response:</strong> "That is factually incorrect. There is overwhelming evidence to the contrary."
+          </div>
+        </div>
+
+        <div class="tactic-card" id="oversimplification">
+          <h3 class="tactic-title">Oversimplification</h3>
+          <p class="tactic-description">
+            Reducing a complex topic to an overly simple explanation, omitting important nuances, context, or factors to make a point. This can lead to a misleading representation of reality.
+          </p>
+          <div class="example-text">
+            <strong>Example:</strong> "Unemployment is just a matter of people not looking hard enough for a job."
+          </div>
+          <div class="response-text">
+            <strong>Response:</strong> "That's an oversimplification. The reality is more complex, and multiple factors are at play."
           </div>
         </div>
       </div>
@@ -583,21 +654,30 @@
           'Whataboutism': 'whataboutism',
           'Straw Man': 'straw-man',
           'Mocking/Sarcasm': 'mocking-sarcasm',
+          'Mocking or Sarcasm': 'mocking-sarcasm',
           'Condescension': 'condescension',
           'Burden of Proof Shifting': 'burden-of-proof',
+          'Shifting the Burden of Proof': 'burden-of-proof',
           'False Equivalence': 'false-equivalence',
           'Motte and Bailey': 'motte-bailey',
           'Tone Policing': 'tone-policing',
           'Cherry Picking': 'cherry-picking',
           'Slippery Slope': 'slippery-slope',
           'Appeal to Hypocrisy': 'appeal-to-hypocrisy',
+          'Appeal to Hypocrisy (Tu quoque)': 'appeal-to-hypocrisy',
           'Red Herring': 'red-herring',
           'Loaded Language': 'loaded-language',
           'False Balance': 'false-balance',
           'Missing Context': 'missing-context',
           'Anonymous Sources Abuse': 'anonymous-sources-abuse',
           'Agenda Framing': 'agenda-framing',
-          'Image Manipulation': 'image-manipulation'
+          'Image Manipulation': 'image-manipulation',
+          'Clickbait Titles': 'clickbait-titles',
+          'Selective Quoting': 'selective-quoting',
+          'Appeal to Emotion': 'appeal-to-emotion',
+          'Bandwagon Appeal': 'bandwagon-appeal',
+          'Lie': 'lie',
+          'Oversimplification': 'oversimplification'
         };
         
         // Direct match
