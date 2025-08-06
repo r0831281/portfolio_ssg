@@ -701,8 +701,11 @@
 
       // Function to handle tactic click
       const handleTacticClick = (tacticName) => {
+        console.log('Clicking tactic:', tacticName); // Debug log
         const id = tacticNameToId(tacticName);
+        console.log('Mapped to ID:', id); // Debug log
         const element = document.getElementById(id);
+        console.log('Found element:', element); // Debug log
         if (element) {
           element.scrollIntoView({ 
             behavior: 'smooth',
@@ -716,6 +719,8 @@
             element.style.boxShadow = '';
             element.style.transform = '';
           }, 2000);
+        } else {
+          console.log('Element not found for ID:', id);
         }
       };
 
@@ -816,7 +821,8 @@
                 cursor: loading ? 'not-allowed' : 'pointer',
                 background: loading ? '#94a3b8' : '#2563eb',
                 transition: 'all 0.2s ease',
-                fontFamily: 'Inter, sans-serif'
+                fontFamily: 'Inter, sans-serif',
+                marginBottom: '1rem'
               }}
               onMouseOver={(e) => {
                 if (!loading) e.target.style.background = '#1d4ed8';
@@ -826,6 +832,32 @@
               }}
             >
               {loading ? '🔍 Analyzing...' : '🚀 Analyze Text'}
+            </button>
+
+            {/* Test link functionality */}
+            <button
+              onClick={() => handleTacticClick('Oversimplification')}
+              style={{
+                width: '100%',
+                padding: '0.5rem 1rem',
+                borderRadius: '6px',
+                color: '#2563eb',
+                fontWeight: '500',
+                fontSize: '0.875rem',
+                border: '1px solid #2563eb',
+                cursor: 'pointer',
+                background: 'white',
+                transition: 'all 0.2s ease',
+                fontFamily: 'Inter, sans-serif'
+              }}
+              onMouseOver={(e) => {
+                e.target.style.background = '#eff6ff';
+              }}
+              onMouseOut={(e) => {
+                e.target.style.background = 'white';
+              }}
+            >
+              🔗 Test Link to Oversimplification
             </button>
 
             {error && (
