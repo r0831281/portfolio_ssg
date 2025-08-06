@@ -84,16 +84,6 @@ const definitions = {
       description: "Arguing that something is correct or good because many people believe it or do it, without providing actual evidence for the claim.",
       example: "Everyone knows that this new diet works. Millions of people can't be wrong!",
       response: "Popular opinion doesn't determine truth. What does the scientific evidence say about this diet's effectiveness?"
-    },
-    "Lie": {
-      description: "A statement that is demonstrably false and often intended to deceive. The bot will attempt to detect factual inaccuracies based on context and general knowledge.",
-      example: "The Earth is flat, that's scientifically proven.",
-      response: "That is factually incorrect. There is overwhelming evidence to the contrary."
-    },
-    "Oversimplification": {
-      description: "Reducing a complex topic to an overly simple explanation, omitting important nuances, context, or factors to make a point. This can lead to a misleading representation of reality.",
-      example: "Unemployment is just a matter of people not looking hard enough for a job.",
-      response: "That's an oversimplification. The reality is more complex, and multiple factors are at play."
     }
   },
   "How to Spot Biased Reporting and Propaganda": {
@@ -165,8 +155,6 @@ INSTRUCTIONS:
 - Consider whether apparent "tactics" might be unintentional or cultural differences
 - Focus on the most significant issues rather than minor infractions
 - Be nuanced - not every strong statement is a bad-faith tactic
-- Check for factual inaccuracies and oversimplifications that may mislead readers
-- Identify statements that present complex issues in overly simple terms
 
 PREDEFINED TACTICS AND RESPONSES:
 

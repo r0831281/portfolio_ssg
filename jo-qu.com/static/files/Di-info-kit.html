@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Disinfo Defense Kit</title>
   <style>
+    /* Base CSS for consistent styling */
     :root {
       --primary-color: #3b82f6; /* A nice, friendly blue */
       --secondary-color: #e5e7eb; /* Light gray */
@@ -16,12 +17,16 @@
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2rem;
       line-height: 1.6;
       color: var(--text-color);
       background-color: var(--bg-color);
+      /* Tailwind classes for centering and full height */
+      min-height: 100vh; /* Ensure body takes full viewport height */
+      display: flex;
+      flex-direction: column; /* Allow content to stack vertically */
+      align-items: center; /* Center horizontally */
+      justify-content: flex-start; /* Align to start vertically, allowing scroll if content is long */
+      padding: 2rem; /* Responsive padding */
     }
 
     h1, h2, h3 {
@@ -108,230 +113,236 @@
         margin-top: 4rem;
         padding-top: 2rem;
         border-top: 2px solid var(--primary-color);
+        /* Ensure the bot container itself is responsive within the main flow */
+        width: 100%;
+        max-width: 900px; /* Match overall page width */
     }
   </style>
 </head>
 <body>
 
-  <h1>The Disinfo Defense Kit</h1>
+  <!-- Main content wrapper to ensure proper centering and responsiveness -->
+  <div class="w-full max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h1>The Disinfo Defense Kit</h1>
 
-  <p class="intro">
-    In an age of endless information, the quality of our conversations has been in decline. Rather than seeking to understand, too many debates have become contests of ego and performance. This guide is a toolkit for recognizing and responding to bad-faith tactics that poison honest discourse.
-  </p>
-
-  <h2>Common Bad-Faith Tactics</h2>
-
-  <ul>
-    <li>
-      <strong>Well Actually</strong>
-      <p>
-        Correcting a minor, often irrelevant, detail to feel superior or derail the main point. This tactic avoids engaging with the substance of an argument by fixating on a technicality. It’s a form of intellectual nitpicking.
-      </p>
-      <p class="example-text"><em>Example:</em> "You said the new policy would help people in the city, but you used the wrong fiscal year data. Therefore, your whole argument is invalid."</p>
-      <em>Response:</em> "That doesn’t change the core argument. Let's focus on the main point."
-    </li>
-
-    <li>
-      <strong>Gish Gallop</strong>
-      <p>
-        Overwhelming a conversation with a rapid-fire series of shallow, often misleading, arguments. The goal is to flood the other person with so many points that they can't possibly respond to all of them, creating the illusion of a win.
-      </p>
-      <p class="example-text"><em>Example:</em> "You want to talk about climate change? Well, what about the sun's cycles, and the volcanoes, and the polar bear population isn't actually shrinking, and the ice caps are growing in one place, and also, what about the economic impact on developing nations?"</p>
-      <em>Response:</em> "You’ve made many points quickly. Let’s slow down. Pick the strongest one, and we'll discuss that properly."
-    </li>
-
-    <li>
-      <strong>Whataboutism</strong>
-      <p>
-        Deflecting a criticism by accusing the other party of a different, unrelated wrongdoing. It's a way of avoiding responsibility and shifting the focus away from the original topic.
-      </p>
-      <p class="example-text"><em>Example:</em> "You're criticizing our country's human rights record? What about the human rights abuses in [another country]?"</p>
-      <em>Response:</em> "That's an entirely different issue. We can discuss that after we finish this conversation, but it doesn't excuse what we're talking about now."
-    </li>
-
-    <li>
-      <strong>Straw Man</strong>
-      <p>
-        Misrepresenting or exaggerating an opponent's argument to make it easier to attack. Instead of debating the actual point, the person attacks a weaker, distorted version they’ve created themselves.
-      </p>
-      <p class="example-text"><em>Example:</em> "I think we should invest more in renewable energy."<br>"So you want to bankrupt our economy and leave millions without jobs by immediately shutting down all fossil fuel plants? That’s an irresponsible position."</p>
-      <em>Response:</em> "That’s not what I said. My point was to invest more in renewables, not to shut everything down immediately. Please respond to the actual point I made."
-    </li>
-
-    <li>
-      <strong>Mocking or Sarcasm</strong>
-      <p>
-        Using mockery, sarcasm, or ridicule to dismiss an argument without engaging it. This tactic is aimed at ego defense and emotional manipulation, not dialogue. It's a way to belittle the other person instead of addressing their ideas.
-      </p>
-      <p class="example-text"><em>Example:</em> "Oh, I'm so sorry, did my perfectly logical argument hurt your feelings? Maybe you should go back to your safe space."</p>
-      <em>Response:</em> "If you have a real point to make, please make it without the sarcasm."
-    </li>
-
-    <li>
-      <strong>Condescension</strong>
-      <p>
-        Pretending to "educate" someone from a position of intellectual superiority rather than engaging in a respectful discussion. This is a status game that undermines genuine exchange.
-      </p>
-      <p class="example-text"><em>Example:</em> "You clearly don't understand the intricacies of economic policy, so let me break it down for you..."</p>
-      <em>Response:</em> "Instead of talking down to me, explain what you disagree with in a straightforward way."
-    </li>
-
-    <li>
-      <strong>Shifting the Burden of Proof</strong>
-      <p>
-        Making a claim but demanding that others disprove it, rather than providing evidence to support it. The person making an extraordinary claim is responsible for backing it up.
-      </p>
-      <p class="example-text"><em>Example:</em> "I'm telling you, this new supplement cures cancer. Prove that it doesn't work."</p>
-      <em>Response:</em> "You made the claim — the burden of proof is on you to back it up with evidence."
-    </li>
-
-    <li>
-      <strong>False Equivalence</strong>
-      <p>
-        Pretending that two things are the same or equally serious when they are not. This tactic is used to minimize a serious issue by comparing it to a minor one.
-      </p>
-      <p class="example-text"><em>Example:</em> "You think my minor exaggeration is a lie? That's just as bad as the time that politician lied to the whole country!"</p>
-      <em>Response:</em> "That comparison doesn't hold up. These two things are not the same."
-    </li>
-
-    <li>
-      <strong>Motte and Bailey</strong>
-      <p>
-        Defending an extreme, controversial claim ("motte") by retreating to a more modest, easily defensible claim ("bailey") when challenged. They then return to the extreme claim once the heat is off.
-      </p>
-      <p class="example-text"><em>Example:</em> "All art created after 1900 is garbage." When challenged, they might retreat: "Well, I just mean that some modern art is a bit silly." Then later they'll return to the original extreme claim. </p>
-      <em>Response:</em> "Pick one position and defend it. Are you arguing [extreme claim] or [modest claim]?"
-    </li>
-
-    <li>
-      <strong>Tone Policing</strong>
-      <p>
-        Dismissing a person's argument based on the tone they used to express it, rather than the content of the argument itself. This tactic is used to silence a valid point by labeling it as aggressive or emotional.
-      </p>
-      <p class="example-text"><em>Example:</em> "I hear what you're saying about the systemic issue, but you're being so angry about it that I can't take you seriously."</p>
-      <em>Response:</em> "The tone doesn't change the facts I'm presenting. Can you address the substance of my argument?"
-    </li>
-
-    <li>
-      <strong>Cherry Picking</strong>
-      <p>
-        Only presenting selective data or examples that support their own side while ignoring everything that contradicts it. This creates a distorted and incomplete picture.
-      </p>
-      <p class="example-text"><em>Example:</em> "This new drug is amazing! The company's study shows it works for 25% of patients!" (Ignoring that it has severe side effects for the other 75%).</p>
-      <em>Response:</em> "You're leaving out important context. Let's look at the full picture, not just the parts that support your view."
-    </li>
-
-    <li>
-      <strong>Slippery Slope</strong>
-      <p>
-        Asserting that a single step will inevitably lead to a chain of catastrophic or extreme outcomes, without providing evidence for that chain reaction.
-      </p>
-      <p class="example-text"><em>Example:</em> "If we allow students to have phones in class, they'll become distracted, their grades will drop, they'll never learn to focus, and society will collapse!"</p>
-      <em>Response:</em> "Let’s focus on what’s actually being proposed, not an imagined worst-case scenario that may never happen."
-    </li>
-
-    <li>
-      <strong>Appeal to Hypocrisy (Tu quoque)</strong>
-      <p>
-        Rejecting an argument by pointing out that the person making the argument is a hypocrite. This avoids the topic at hand by attacking the person's character.
-      </p>
-      <p class="example-text"><em>Example:</em> "You're telling me to stop smoking? But you used to be a smoker yourself!"</p>
-      <em>Response:</em> "My personal actions don’t invalidate the facts I’m bringing up. Let's stick to the issue."
-    </li>
-
-    <li>
-      <strong>Red Herring</strong>
-      <p>
-        Introducing an unrelated or misleading topic to distract from the original subject. This is a classic diversion tactic to avoid an inconvenient argument.
-      </p>
-      <p class="example-text"><em>Example:</em> "We need to address the city's crumbling infrastructure."<br>"But have you seen the crime rate lately? That's the real problem here."</p>
-      <em>Response:</em> "That's a different issue. Let's stick to the topic at hand."
-    </li>
-  </ul>
-
-  <h2>How to Spot Biased Reporting and Propaganda</h2>
-  <p>
-    Beyond individual debates, we must also be vigilant about the media we consume. These tactics are often used to shape narratives and create a biased worldview.
-  </p>
-  <ul>
-    <li>
-      <strong>Loaded Language</strong>
-      <p>
-        The use of sensational or emotionally charged words to provoke a reaction rather than to inform. This aims to bypass rational thought and go straight for the gut.
-      </p>
-      <p class="example-text"><em>Example:</em> "A headline that reads 'Government's DISASTROUS new spending plan' instead of 'Government proposes new spending plan.'"</p>
-      <em>Tip:</em> Watch for words like "disaster," "traitor," "miracle," or "stunning" that indicate a strong opinion or emotion over a neutral fact.
-    </li>
-
-    <li>
-      <strong>False Balance</strong>
-      <p>
-        Giving fringe or disproven views equal weight to expert consensus. This creates the illusion of a legitimate debate where there isn't one.
-      </p>
-      <p class="example-text"><em>Example:</em> "A news segment about climate change that pits a climate scientist against a random person who claims it's a hoax, as if their opinions have equal validity."</p>
-      <em>Tip:</em> Just because a news story presents "both sides" doesn't mean both are equally valid or supported by evidence.
-    </li>
-
-    <li>
-      <strong>Missing Context</strong>
-      <p>
-        Presenting a fact or statistic without the crucial background information that makes it meaningful. This allows the information to be framed in a misleading way.
-      </p>
-      <p class="example-text"><em>Example:</em> "A report states that a city's violent crime rate increased by 20% this year, but fails to mention the crime rate was at an all-time low last year and is still well below historical averages."</p>
-      <em>Response:</em> "Ask yourself: 'What's not being said?' or 'What critical information is being left out of this story?'"
-    </li>
-
-    <li>
-      <strong>Anonymous Sources Abuse</strong>
-      <p>
-        Over-relying on unnamed "insiders" or "officials" without corroborating their claims with other evidence. While anonymous sources can be necessary, an over-reliance on them is a red flag.
-      </p>
-      <p class="example-text"><em>Example:</em> "A high-ranking official who wished to remain anonymous told us that the President is planning a secret military action."</p>
-      <em>Response:</em> "Be skeptical of a report where every major claim comes from a vague, unnamed source."
-    </li>
-
-    <li>
-      <strong>Agenda Framing</strong>
-      <p>
-        Repeatedly focusing on certain topics while ignoring others. This shapes the public's perception of what is important or newsworthy.
-      </p>
-      <p class="example-text"><em>Example:</em> "A news channel that dedicates 24/7 coverage to one particular scandal while completely ignoring a major economic event or natural disaster."</p>
-      <em>Response:</em> "Pay attention to what a news outlet consistently focuses on—and what they consistently ignore."
-    </li>
-
-    <li>
-      <strong>Image Manipulation</strong>
-      <p>
-        Using emotionally charged photos or graphics to create a bias, even if the text itself is neutral. The image can tell a story that the words don't.
-      </p>
-      <p class="example-text"><em>Example:</em> "A story about a political protest uses a photo of a single, aggressive-looking protestor, even though the vast majority of participants were peaceful."</p>
-      <em>Response:</em> "A photo of one protester yelling doesn't necessarily represent the mood or actions of the entire protest."
-    </li>
-
-    <li>
-      <strong>Clickbait Titles</strong>
-      <p>
-        Headlines designed to provoke a strong emotional reaction and get clicks, often at the expense of accuracy.
-      </p>
-      <p class="example-text"><em>Example:</em> "You Won't BELIEVE What Scientists Just Discovered!\" instead of a simple, informative headline."</p>
-      <em>Response:</em> "If a headline feels sensational or exaggerated, read the actual article carefully before reacting or sharing."
-    </li>
-  </ul>
-
-  <hr style="margin: 3rem 0; border: none; border-top: 1px solid var(--secondary-color);">
-
-  <h2>Why This Matters</h2>
-  <p>
-    These tactics don't just make conversations frustrating; they actively encourage misinformation, tribalism, and intellectual laziness. If you care about truth, clarity, and building a healthier society, it's essential to recognize and name these patterns when they appear. The goal isn't to "win" every debate, but to ensure that when we do engage, we're engaging honestly.
-  </p>
-
-  <div id="disinfo-bot-container">
-    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Try the Disinfo Defense Bot!</h2>
-    <p class="text-gray-700 mb-6">
-      Paste any text below to analyze it for common bad-faith tactics and biased reporting.
-      The bot will identify the tactic and suggest a response from the Disinfo Defense Kit.
+    <p class="intro">
+      In an age of endless information, the quality of our conversations has been in decline. Rather than seeking to understand, too many debates have become contests of ego and performance. This guide is a toolkit for recognizing and responding to bad-faith tactics that poison honest discourse.
     </p>
-  </div>
+
+    <h2>Common Bad-Faith Tactics</h2>
+
+    <ul>
+      <li>
+        <strong>Well Actually</strong>
+        <p>
+          Correcting a minor, often irrelevant, detail to feel superior or derail the main point. This tactic avoids engaging with the substance of an argument by fixating on a technicality. It’s a form of intellectual nitpicking.
+        </p>
+        <p class="example-text"><em>Example:</em> "You said the new policy would help people in the city, but you used the wrong fiscal year data. Therefore, your whole argument is invalid."</p>
+        <em>Response:</em> "That doesn’t change the core argument. Let's focus on the main point."
+      </li>
+
+      <li>
+        <strong>Gish Gallop</strong>
+        <p>
+          Overwhelming a conversation with a rapid-fire series of shallow, often misleading, arguments. The goal is to flood the other person with so many points that they can't possibly respond to all of them, creating the illusion of a win.
+        </p>
+        <p class="example-text"><em>Example:</em> "You want to talk about climate change? Well, what about the sun's cycles, and the volcanoes, and the polar bear population isn't actually shrinking, and the ice caps are growing in one place, and also, what about the economic impact on developing nations?"</p>
+        <em>Response:</em> "You’ve made many points quickly. Let’s slow down. Pick the strongest one, and we'll discuss that properly."
+      </li>
+
+      <li>
+        <strong>Whataboutism</strong>
+        <p>
+          Deflecting a criticism by accusing the other party of a different, unrelated wrongdoing. It's a way of avoiding responsibility and shifting the focus away from the original topic.
+        </p>
+        <p class="example-text"><em>Example:</em> "You're criticizing our country's human rights record? What about the human rights abuses in [another country]?"</p>
+        <em>Response:</em> "That's an entirely different issue. We can discuss that after we finish this conversation, but it doesn't excuse what we're talking about now."
+      </li>
+
+      <li>
+        <strong>Straw Man</strong>
+        <p>
+          Misrepresenting or exaggerating an opponent's argument to make it easier to attack. Instead of debating the actual point, the person attacks a weaker, distorted version they’ve created themselves.
+        </p>
+        <p class="example-text"><em>Example:</em> "I think we should invest more in renewable energy."<br>"So you want to bankrupt our economy and leave millions without jobs by immediately shutting down all fossil fuel plants? That’s an irresponsible position."</p>
+        <em>Response:</em> "That’s not what I said. My point was to invest more in renewables, not to shut everything down immediately. Please respond to the actual point I made."
+      </li>
+
+      <li>
+        <strong>Mocking or Sarcasm</strong>
+        <p>
+          Using mockery, sarcasm, or ridicule to dismiss an argument without engaging it. This tactic is aimed at ego defense and emotional manipulation, not dialogue. It's a way to belittle the other person instead of addressing their ideas.
+        </p>
+        <p class="example-text"><em>Example:</em> "Oh, I'm so sorry, did my perfectly logical argument hurt your feelings? Maybe you should go back to your safe space."</p>
+        <em>Response:</em> "If you have a real point to make, please make it without the sarcasm."
+      </li>
+
+      <li>
+        <strong>Condescension</strong>
+        <p>
+          Pretending to "educate" someone from a position of intellectual superiority rather than engaging in a respectful discussion. This is a status game that undermines genuine exchange.
+        </p>
+        <p class="example-text"><em>Example:</em> "You clearly don't understand the intricacies of economic policy, so let me break it down for you..."</p>
+        <em>Response:</em> "Instead of talking down to me, explain what you disagree with in a straightforward way."
+      </li>
+
+      <li>
+        <strong>Shifting the Burden of Proof</strong>
+        <p>
+          Making a claim but demanding that others disprove it, rather than providing evidence to support it. The person making an extraordinary claim is responsible for backing it up.
+        </p>
+        <p class="example-text"><em>Example:</em> "I'm telling you, this new supplement cures cancer. Prove that it doesn't work."</p>
+        <em>Response:</em> "You made the claim — the burden of proof is on you to back it up with evidence."
+      </li>
+
+      <li>
+        <strong>False Equivalence</strong>
+        <p>
+          Pretending that two things are the same or equally serious when they are not. This tactic is used to minimize a serious issue by comparing it to a minor one.
+        </p>
+        <p class="example-text"><em>Example:</em> "You think my minor exaggeration is a lie? That's just as bad as the time that politician lied to the whole country!"</p>
+        <em>Response:</em> "That comparison doesn't hold up. These two things are not the same."
+      </li>
+
+      <li>
+        <strong>Motte and Bailey</strong>
+        <p>
+          Defending an extreme, controversial claim ("motte") by retreating to a more modest, easily defensible claim ("bailey") when challenged. They then return to the extreme claim once the heat is off.
+        </p>
+        <p class="example-text"><em>Example:</em> "All art created after 1900 is garbage." When challenged, they might retreat: "Well, I just mean that some modern art is a bit silly." Then later they'll return to the original extreme claim. </p>
+        <em>Response:</em> "Pick one position and defend it. Are you arguing [extreme claim] or [modest claim]?"
+      </li>
+
+      <li>
+        <strong>Tone Policing</strong>
+        <p>
+          Dismissing a person's argument based on the tone they used to express it, rather than the content of the argument itself. This tactic is used to silence a valid point by labeling it as aggressive or emotional.
+        </p>
+        <p class="example-text"><em>Example:</em> "I hear what you're saying about the systemic issue, but you're being so angry about it that I can't take you seriously."</p>
+        <em>Response:</em> "The tone doesn't change the facts I'm presenting. Can you address the substance of my argument?"
+      </li>
+
+      <li>
+        <strong>Cherry Picking</strong>
+        <p>
+          Only presenting selective data or examples that support their own side while ignoring everything that contradicts it. This creates a distorted and incomplete picture.
+        </p>
+        <p class="example-text"><em>Example:</em> "This new drug is amazing! The company's study shows it works for 25% of patients!" (Ignoring that it has severe side effects for the other 75%).</p>
+        <em>Response:</em> "You're leaving out important context. Let's look at the full picture, not just the parts that support your view."
+      </li>
+
+      <li>
+        <strong>Slippery Slope</strong>
+        <p>
+          Asserting that a single step will inevitably lead to a chain of catastrophic or extreme outcomes, without providing evidence for that chain reaction.
+        </p>
+        <p class="example-text"><em>Example:</em> "If we allow students to have phones in class, they'll become distracted, their grades will drop, they'll never learn to focus, and society will collapse!"</p>
+        <em>Response:</em> "Let’s focus on what’s actually being proposed, not an imagined worst-case scenario that may never happen."
+      </li>
+
+      <li>
+        <strong>Appeal to Hypocrisy (Tu quoque)</strong>
+        <p>
+          Rejecting an argument by pointing out that the person making the argument is a hypocrite. This avoids the topic at hand by attacking the person's character.
+        </p>
+        <p class="example-text"><em>Example:</em> "You're telling me to stop smoking? But you used to be a smoker yourself!"</p>
+        <em>Response:</em> "My personal actions don’t invalidate the facts I’m bringing up. Let's stick to the issue."
+      </li>
+
+      <li>
+        <strong>Red Herring</strong>
+        <p>
+          Introducing an unrelated or misleading topic to distract from the original subject. This is a classic diversion tactic to avoid an inconvenient argument.
+        </p>
+        <p class="example-text"><em>Example:</em> "We need to address the city's crumbling infrastructure."<br>"But have you seen the crime rate lately? That's the real problem here."</p>
+        <em>Response:</em> "That's a different issue. Let's stick to the topic at hand."
+      </li>
+    </ul>
+
+    <h2>How to Spot Biased Reporting and Propaganda</h2>
+    <p>
+      Beyond individual debates, we must also be vigilant about the media we consume. These tactics are often used to shape narratives and create a biased worldview.
+    </p>
+    <ul>
+      <li>
+        <strong>Loaded Language</strong>
+        <p>
+          The use of sensational or emotionally charged words to provoke a reaction rather than to inform. This aims to bypass rational thought and go straight for the gut.
+        </p>
+        <p class="example-text"><em>Example:</em> "A headline that reads 'Government's DISASTROUS new spending plan' instead of 'Government proposes new spending plan.'"</p>
+        <em>Tip:</em> Watch for words like "disaster," "traitor," "miracle," or "stunning" that indicate a strong opinion or emotion over a neutral fact.
+      </li>
+
+      <li>
+        <strong>False Balance</strong>
+        <p>
+          Giving fringe or disproven views equal weight to expert consensus. This creates the illusion of a legitimate debate where there isn't one.
+        </p>
+        <p class="example-text"><em>Example:</em> "A news segment about climate change that pits a climate scientist against a random person who claims it's a hoax, as if their opinions have equal validity."</p>
+        <em>Tip:</em> Just because a news story presents "both sides" doesn't mean both are equally valid or supported by evidence.
+      </li>
+
+      <li>
+        <strong>Missing Context</strong>
+        <p>
+          Presenting a fact or statistic without the crucial background information that makes it meaningful. This allows the information to be framed in a misleading way.
+        </p>
+        <p class="example-text"><em>Example:</em> "A report states that a city's violent crime rate increased by 20% this year, but fails to mention the crime rate was at an all-time low last year and is still well below historical averages."</p>
+        <em>Response:</em> "Ask yourself: 'What's not being said?' or 'What critical information is being left out of this story?'"
+      </li>
+
+      <li>
+        <strong>Anonymous Sources Abuse</strong>
+        <p>
+          Over-relying on unnamed "insiders" or "officials" without corroborating their claims with other evidence. While anonymous sources can be necessary, an over-reliance on them is a red flag.
+        </p>
+        <p class="example-text"><em>Example:</em> "A high-ranking official who wished to remain anonymous told us that the President is planning a secret military action."</p>
+        <em>Response:</em> "Be skeptical of a report where every major claim comes from a vague, unnamed source."
+      </li>
+
+      <li>
+        <strong>Agenda Framing</strong>
+        <p>
+          Repeatedly focusing on certain topics while ignoring others. This shapes the public's perception of what is important or newsworthy.
+        </p>
+        <p class="example-text"><em>Example:</em> "A news channel that dedicates 24/7 coverage to one particular scandal while completely ignoring a major economic event or natural disaster."</p>
+        <em>Response:</em> "Pay attention to what a news outlet consistently focuses on—and what they consistently ignore."
+      </li>
+
+      <li>
+        <strong>Image Manipulation</strong>
+        <p>
+          Using emotionally charged photos or graphics to create a bias, even if the text itself is neutral. The image can tell a story that the words don't.
+        </p>
+        <p class="example-text"><em>Example:</em> "A story about a political protest uses a photo of a single, aggressive-looking protestor, even though the vast majority of participants were peaceful."</p>
+        <em>Response:</em> "A photo of one protester yelling doesn't necessarily represent the mood or actions of the entire protest."
+      </li>
+
+      <li>
+        <strong>Clickbait Titles</strong>
+        <p>
+          Headlines designed to provoke a strong emotional reaction and get clicks, often at the expense of accuracy.
+        </p>
+        <p class="example-text"><em>Example:</em> "You Won't BELIEVE What Scientists Just Discovered!\" instead of a simple, informative headline."</p>
+        <em>Response:</em> "If a headline feels sensational or exaggerated, read the actual article carefully before reacting or sharing."
+      </li>
+    </ul>
+
+    <hr style="margin: 3rem 0; border: none; border-top: 1px solid var(--secondary-color);">
+
+    <h2>Why This Matters</h2>
+    <p>
+      These tactics don't just make conversations frustrating; they actively encourage misinformation, tribalism, and intellectual laziness. If you care about truth, clarity, and building a healthier society, it's essential to recognize and name these patterns when they appear. The goal isn't to "win" every debate, but to ensure that when we do engage, we're engaging honestly.
+    </p>
+
+    <div id="disinfo-bot-container">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">Try the Disinfo Defense Bot!</h2>
+      <p class="text-gray-700 mb-6">
+        Paste any text below to analyze it for common bad-faith tactics and biased reporting.
+        The bot will identify the tactic and suggest a response from the Disinfo Defense Kit.
+      </p>
+    </div>
+  </div> <!-- End of main content wrapper -->
 
   <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>

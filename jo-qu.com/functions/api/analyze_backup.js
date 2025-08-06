@@ -2,18 +2,59 @@
 // This file will be deployed as a Cloudflare Pages Function
 
 // Define the definitions for the AI model to use
-// This object and the generatePrompt function are now located here in the backend.
+// This object  prompt += `
+INPUT TEXT TO ANALYZE:
+"${text}"
+
+ANALYSIS APPROACH:
+1. Read the entire text for context and overall tone
+2. Identify specific instances of problematic rhetoric
+3. Assess the intent behind each instance (malicious vs. unintentional)
+4. Consider the potential impact on productive discourse
+5. Provide balanced, constructive feedback
+
+RESPONSE FORMAT:
+Return a JSON object with the following structure:
+
+{
+  "overallAssessment": {
+    "tone": "constructive|neutral|adversarial|hostile",
+    "primaryIssues": ["list of main problems"],
+    "context": "brief context about the communication style",
+    "severity": "low|medium|high"
+  },
+  "identifiedTactics": [
+    {
+      "tacticName": "Name from predefined list or 'Custom: [description]'",
+      "category": "Common Bad-Faith Tactics|How to Spot Biased Reporting and Propaganda|Custom",
+      "explanation": "Detailed explanation of why this qualifies as the tactic",
+      "exampleFromInput": "Exact quote from the input text",
+      "suggestedResponse": "Contextual response suggestion",
+      "confidenceScore": 0.1-1.0,
+      "severity": "low|medium|high",
+      "intent": "likely_intentional|possibly_unintentional|unclear",
+      "impact": "Description of how this affects discourse"
+    }
+  ],
+  "constructiveFeedback": {
+    "strengths": ["positive aspects of the communication"],
+    "improvements": ["specific suggestions for better discourse"],
+    "alternatives": ["better ways to express the same points"]
+  }
+}
+
+If no significant tactics are found, still provide the overallAssessment and constructiveFeedback sections.`;ePrompt function are now located here in the backend.
 const definitions = {
   "Common Bad-Faith Tactics": {
     "Well Actually": {
-      description: "Correcting a minor, often irrelevant, detail to feel superior or derail the main point. This tactic avoids engaging with the substance of an argument by fixating on a technicality. It's a form of intellectual nitpicking.",
+      description: "Correcting a minor, often irrelevant, detail to feel superior or derail the main point. This tactic avoids engaging with the substance of an argument by fixating on a technicality. It’s a form of intellectual nitpicking.",
       example: "You said the new policy would help people in the city, but you used the wrong fiscal year data. Therefore, your whole argument is invalid.",
-      response: "That doesn't change the core argument. Let's focus on the main point."
+      response: "That doesn’t change the core argument. Let's focus on the main point."
     },
     "Gish Gallop": {
       description: "Overwhelming a conversation with a rapid-fire series of shallow, often misleading, arguments. The goal is to flood the other person with so many points that they can't possibly respond to all of them, creating the illusion of a win.",
       example: "You want to talk about climate change? Well, what about the sun's cycles, and the volcanoes, and the polar bear population isn't actually shrinking, and the ice caps are growing in one place, and also, what about the economic impact on developing nations?",
-      response: "You've made many points quickly. Let's slow down. Pick the strongest one, and we'll discuss that properly."
+      response: "You’ve made many points quickly. Let’s slow down. Pick the strongest one, and we'll discuss that properly."
     },
     "Whataboutism": {
       description: "Deflecting a criticism by accusing the other party of a different, unrelated wrongdoing. It's a way of avoiding responsibility and shifting the focus away from the original topic.",
@@ -21,9 +62,9 @@ const definitions = {
       response: "That's an entirely different issue. We can discuss that after we finish this conversation, but it doesn't excuse what we're talking about now."
     },
     "Straw Man": {
-      description: "Misrepresenting or exaggerating an opponent's argument to make it easier to attack. Instead of debating the actual point, the person attacks a weaker, distorted version they've created themselves.",
-      example: "I think we should invest more in renewable energy. -> So you want to bankrupt our economy and leave millions without jobs by immediately shutting down all fossil fuel plants? That's an irresponsible position.",
-      response: "That's not what I said. My point was to invest more in renewables, not to shut everything down immediately. Please respond to the actual point I made."
+      description: "Misrepresenting or exaggerating an opponent's argument to make it easier to attack. Instead of debating the actual point, the person attacks a weaker, distorted version they’ve created themselves.",
+      example: "I think we should invest more in renewable energy. -> So you want to bankrupt our economy and leave millions without jobs by immediately shutting down all fossil fuel plants? That’s an irresponsible position.",
+      response: "That’s not what I said. My point was to invest more in renewables, not to shut everything down immediately. Please respond to the actual point I made."
     },
     "Mocking or Sarcasm": {
       description: "Using mockery, sarcasm, or ridicule to dismiss an argument without engaging it. This tactic is aimed at ego defense and emotional manipulation, not dialogue. It's a way to belittle the other person instead of addressing their ideas.",
@@ -63,37 +104,17 @@ const definitions = {
     "Slippery Slope": {
       description: "Asserting that a single step will inevitably lead to a chain of catastrophic or extreme outcomes, without providing evidence for that chain reaction.",
       example: "If we allow students to have phones in class, they'll become distracted, their grades will drop, they'll never learn to focus, and society will collapse!",
-      response: "Let's focus on what's actually being proposed, not an imagined worst-case scenario that may never happen."
+      response: "Let’s focus on what’s actually being proposed, not an imagined worst-case scenario that may never happen."
     },
     "Appeal to Hypocrisy (Tu quoque)": {
       description: "Rejecting an argument by pointing out that the person making the argument is a hypocrite. This avoids the topic at hand by attacking the person's character.",
       example: "You're telling me to stop smoking? But you used to be a smoker yourself!",
-      response: "My personal actions don't invalidate the facts I'm bringing up. Let's stick to the issue."
+      response: "My personal actions don’t invalidate the facts I’m bringing up. Let's stick to the issue."
     },
     "Red Herring": {
       description: "Introducing an unrelated or misleading topic to distract from the original subject. This is a classic diversion tactic to avoid an inconvenient argument.",
       example: "We need to address the city's crumbling infrastructure. -> But have you seen the crime rate lately? That's the real problem here.",
       response: "That's a different issue. Let's stick to the topic at hand."
-    },
-    "Appeal to Emotion": {
-      description: "Using emotional manipulation instead of logical reasoning to win an argument. This includes fear-mongering, guilt-tripping, or appeals to anger rather than facts.",
-      example: "If you don't support this policy, you clearly don't care about the children who will suffer!",
-      response: "I do care about the welfare of children. Let's look at the evidence about whether this policy will actually help them."
-    },
-    "Bandwagon Appeal": {
-      description: "Arguing that something is correct or good because many people believe it or do it, without providing actual evidence for the claim.",
-      example: "Everyone knows that this new diet works. Millions of people can't be wrong!",
-      response: "Popular opinion doesn't determine truth. What does the scientific evidence say about this diet's effectiveness?"
-    },
-    "Lie": {
-      description: "A statement that is demonstrably false and often intended to deceive. The bot will attempt to detect factual inaccuracies based on context and general knowledge.",
-      example: "The Earth is flat, that's scientifically proven.",
-      response: "That is factually incorrect. There is overwhelming evidence to the contrary."
-    },
-    "Oversimplification": {
-      description: "Reducing a complex topic to an overly simple explanation, omitting important nuances, context, or factors to make a point. This can lead to a misleading representation of reality.",
-      example: "Unemployment is just a matter of people not looking hard enough for a job.",
-      response: "That's an oversimplification. The reality is more complex, and multiple factors are at play."
     }
   },
   "How to Spot Biased Reporting and Propaganda": {
@@ -131,11 +152,6 @@ const definitions = {
       description: "Headlines designed to provoke a strong emotional reaction and get clicks, often at the expense of accuracy.",
       example: "You Won't BELIEVE What Scientists Just Discovered!\" instead of a simple, informative headline.",
       response: "If a headline feels sensational or exaggerated, read the actual article carefully before reacting or sharing."
-    },
-    "Selective Quoting": {
-      description: "Taking quotes out of context or only using partial quotes that distort the speaker's intended meaning.",
-      example: "Taking 'I think in some cases, this policy could work' and reporting it as 'I think... this policy could work' to show stronger support.",
-      response: "Always look for the full context of quotes and be suspicious of partial quotes with ellipses."
     }
   }
 };
@@ -164,9 +180,6 @@ INSTRUCTIONS:
 - Provide confidence scores for your assessments
 - Consider whether apparent "tactics" might be unintentional or cultural differences
 - Focus on the most significant issues rather than minor infractions
-- Be nuanced - not every strong statement is a bad-faith tactic
-- Check for factual inaccuracies and oversimplifications that may mislead readers
-- Identify statements that present complex issues in overly simple terms
 
 PREDEFINED TACTICS AND RESPONSES:
 
@@ -185,124 +198,22 @@ PREDEFINED TACTICS AND RESPONSES:
   }
 
   prompt += `
-INPUT TEXT TO ANALYZE:
+Input Text to Analyze:
 "${text}"
 
-ANALYSIS APPROACH:
-1. Read the entire text for context and overall tone
-2. Identify specific instances of problematic rhetoric
-3. Assess the intent behind each instance (malicious vs. unintentional)
-4. Consider the potential impact on productive discourse
-5. Provide balanced, constructive feedback
+Please provide your analysis in a JSON array format. Each object in the array should have 'tacticName', 'explanation', 'exampleFromInput', and 'suggestedResponse' fields. If no tactics are found, return an empty array.
 
-RESPONSE FORMAT:
-Return a JSON object with the following structure:
-
-{
-  "overallAssessment": {
-    "tone": "constructive|neutral|adversarial|hostile",
-    "primaryIssues": ["list of main problems identified"],
-    "context": "brief analysis of the communication style and intent",
-    "severity": "low|medium|high",
-    "generalQuality": "Description of the overall discourse quality"
-  },
-  "identifiedTactics": [
-    {
-      "tacticName": "Name from predefined list or 'Custom: [description]'",
-      "category": "Common Bad-Faith Tactics|How to Spot Biased Reporting and Propaganda|Custom",
-      "explanation": "Detailed explanation of why this qualifies as the tactic",
-      "exampleFromInput": "Exact quote from the input text",
-      "suggestedResponse": "Contextual response suggestion adapted to this specific case",
-      "confidenceScore": 0.85,
-      "severity": "low|medium|high",
-      "intent": "likely_intentional|possibly_unintentional|unclear",
-      "impact": "Description of how this affects productive discourse",
-      "startPosition": "approximate character position where this occurs (optional)"
-    }
-  ],
-  "constructiveFeedback": {
-    "strengths": ["positive aspects of the communication"],
-    "improvements": ["specific suggestions for better discourse"],
-    "alternatives": ["better ways to express the same points"],
-    "contextualNotes": ["any important context that affects the analysis"]
-  },
-  "summary": "Brief overall assessment of the text's discourse quality and main recommendations"
-}
-
-IMPORTANT GUIDELINES:
-- If no significant tactics are found, still provide the overallAssessment and constructiveFeedback sections
-- Be proportionate - minor rhetorical flourishes shouldn't be flagged as serious bad-faith tactics
-- Consider cultural and contextual differences in communication styles
-- Focus on tactics that genuinely harm productive discourse
-- Provide actionable, specific feedback rather than generic advice`;
-
+Example JSON structure for a found tactic:
+[
+  {
+    "tacticName": "Straw Man",
+    "explanation": "Misrepresenting or exaggerating an opponent's argument to make it easier to attack.",
+    "exampleFromInput": "So you want to bankrupt our economy and leave millions without jobs by immediately shutting down all fossil fuel plants?",
+    "suggestedResponse": "That’s not what I said. My point was to invest more in renewables, not to shut everything down immediately. Please respond to the actual point I made."
+  }
+]
+`;
   return prompt;
-};
-
-// Enhanced error handling and response processing
-const processGeminiResponse = (result) => {
-  if (!result.candidates || result.candidates.length === 0) {
-    return {
-      overallAssessment: {
-        tone: "neutral",
-        primaryIssues: [],
-        context: "Unable to analyze text due to API limitations",
-        severity: "low",
-        generalQuality: "Analysis could not be completed"
-      },
-      identifiedTactics: [],
-      constructiveFeedback: {
-        strengths: [],
-        improvements: ["Text could not be analyzed - please try again"],
-        alternatives: [],
-        contextualNotes: ["API response was incomplete"]
-      },
-      summary: "Analysis could not be completed due to technical issues"
-    };
-  }
-
-  const candidate = result.candidates[0];
-  if (!candidate.content || !candidate.content.parts || candidate.content.parts.length === 0) {
-    return processGeminiResponse({ candidates: [] }); // Use fallback
-  }
-
-  try {
-    const jsonString = candidate.content.parts[0].text;
-    const parsedJson = JSON.parse(jsonString);
-    
-    // Validate the response structure
-    if (!parsedJson.overallAssessment) {
-      parsedJson.overallAssessment = {
-        tone: "neutral",
-        primaryIssues: [],
-        context: "Response structure was incomplete",
-        severity: "low",
-        generalQuality: "Analysis was partial"
-      };
-    }
-    
-    if (!parsedJson.identifiedTactics) {
-      parsedJson.identifiedTactics = [];
-    }
-    
-    if (!parsedJson.constructiveFeedback) {
-      parsedJson.constructiveFeedback = {
-        strengths: [],
-        improvements: [],
-        alternatives: [],
-        contextualNotes: []
-      };
-    }
-    
-    if (!parsedJson.summary) {
-      parsedJson.summary = "Analysis completed with limited information";
-    }
-    
-    return parsedJson;
-  } catch (parseError) {
-    console.error("JSON parsing error:", parseError);
-    return processGeminiResponse({ candidates: [] }); // Use fallback
-  }
 };
 
 // Cloudflare Pages Function handler
@@ -322,20 +233,10 @@ export async function onRequest(context) {
   }
 
   try {
-    const requestBody = await context.request.json();
-    const { inputText, options = {} } = requestBody;
-
-    if (!inputText || inputText.trim().length === 0) {
-      return new Response(JSON.stringify({ 
-        error: "Input text is required and cannot be empty." 
-      }), {
-        status: 400,
-        headers: { 'Content-Type': 'application/json' },
-      });
-    }
+    const { inputText } = await context.request.json(); // Get only the inputText from the frontend
 
     // Generate the full prompt here in the backend
-    const fullPrompt = generatePrompt(inputText, options);
+    const fullPrompt = generatePrompt(inputText);
 
     const chatHistory = [{ role: "user", parts: [{ text: fullPrompt }] }];
 
@@ -344,54 +245,18 @@ export async function onRequest(context) {
       generationConfig: {
         responseMimeType: "application/json",
         responseSchema: {
-          type: "OBJECT",
-          properties: {
-            overallAssessment: {
-              type: "OBJECT",
-              properties: {
-                tone: { type: "STRING" },
-                primaryIssues: { type: "ARRAY", items: { type: "STRING" } },
-                context: { type: "STRING" },
-                severity: { type: "STRING" },
-                generalQuality: { type: "STRING" }
-              },
-              required: ["tone", "primaryIssues", "context", "severity"]
+          type: "ARRAY",
+          items: {
+            type: "OBJECT",
+            properties: {
+              tacticName: { type: "STRING" },
+              explanation: { type: "STRING" },
+              exampleFromInput: { type: "STRING" },
+              suggestedResponse: { type: "STRING" }
             },
-            identifiedTactics: {
-              type: "ARRAY",
-              items: {
-                type: "OBJECT",
-                properties: {
-                  tacticName: { type: "STRING" },
-                  category: { type: "STRING" },
-                  explanation: { type: "STRING" },
-                  exampleFromInput: { type: "STRING" },
-                  suggestedResponse: { type: "STRING" },
-                  confidenceScore: { type: "NUMBER" },
-                  severity: { type: "STRING" },
-                  intent: { type: "STRING" },
-                  impact: { type: "STRING" },
-                  startPosition: { type: "STRING" }
-                },
-                required: ["tacticName", "explanation", "suggestedResponse", "confidenceScore", "severity"]
-              }
-            },
-            constructiveFeedback: {
-              type: "OBJECT",
-              properties: {
-                strengths: { type: "ARRAY", items: { type: "STRING" } },
-                improvements: { type: "ARRAY", items: { type: "STRING" } },
-                alternatives: { type: "ARRAY", items: { type: "STRING" } },
-                contextualNotes: { type: "ARRAY", items: { type: "STRING" } }
-              },
-              required: ["strengths", "improvements", "alternatives"]
-            },
-            summary: { type: "STRING" }
-          },
-          required: ["overallAssessment", "identifiedTactics", "constructiveFeedback", "summary"]
-        },
-        temperature: 0.3, // Lower temperature for more consistent analysis
-        maxOutputTokens: 8192 // Allow for detailed responses
+            required: ["tacticName", "explanation", "suggestedResponse"]
+          }
+        }
       }
     };
 
@@ -418,10 +283,7 @@ export async function onRequest(context) {
         } else {
           const errorText = await response.text();
           console.error(`Gemini API error: ${response.status} - ${errorText}`);
-          return new Response(JSON.stringify({ 
-            error: `Gemini API error: ${response.status}`,
-            details: errorText.substring(0, 200) // Limit error details
-          }), {
+          return new Response(JSON.stringify({ error: `Gemini API error: ${response.status} - ${errorText}` }), {
             status: response.status,
             headers: { 'Content-Type': 'application/json' },
           });
@@ -429,29 +291,30 @@ export async function onRequest(context) {
       }
 
       const result = await response.json();
-      const processedResponse = processGeminiResponse(result);
-      
-      return new Response(JSON.stringify(processedResponse), {
-        headers: { 
-          'Content-Type': 'application/json',
-          'Cache-Control': 'no-cache' // Prevent caching of analysis results
-        },
-      });
+
+      if (result.candidates && result.candidates.length > 0 &&
+          result.candidates[0].content && result.candidates[0].content.parts &&
+          result.candidates[0].content.parts.length > 0) {
+        const jsonString = result.candidates[0].content.parts[0].text;
+        const parsedJson = JSON.parse(jsonString);
+        return new Response(JSON.stringify(parsedJson), {
+          headers: { 'Content-Type': 'application/json' },
+        });
+      } else {
+        return new Response(JSON.stringify([]), { // Return empty array if no tactics found or unexpected structure
+          headers: { 'Content-Type': 'application/json' },
+        });
+      }
     }
 
-    return new Response(JSON.stringify({ 
-      error: "Failed to analyze text after multiple retries due to rate limiting or network issues." 
-    }), {
+    return new Response(JSON.stringify({ error: "Failed to analyze text after multiple retries due to rate limiting or network issues." }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },
     });
 
   } catch (e) {
     console.error("Pages Function error:", e);
-    return new Response(JSON.stringify({ 
-      error: `Internal server error: ${e.message}`,
-      timestamp: new Date().toISOString()
-    }), {
+    return new Response(JSON.stringify({ error: `Internal server error: ${e.message}` }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },
     });
