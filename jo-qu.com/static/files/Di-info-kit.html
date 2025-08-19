@@ -849,76 +849,17 @@
             body: JSON.stringify({ inputText: inputText })
           });
 
-          // Helper: simple offline heuristic if API unavailable
-          const offlineHeuristic = (text) => {
-            const patterns = [
-              { name: 'Well Actually', re: /well actually/i, explanation: 'Pedantic correction tone detected.' },
-              { name: 'Whataboutism', re: /what about|and (you|your)/i, explanation: 'Possible deflection phrase.' },
-              { name: 'Gish Gallop', re: /(\?|!|\.)\s+\w+.*?(,\s+\w+){4,}/i, explanation: 'Many points in rapid succession.' },
-              { name: 'Tone Policing', re: /calm down|too (angry|emotional)/i, explanation: 'Possible dismissal based on tone.' },
-              { name: 'Straw Man', re: /so you (want|think)/i, explanation: 'Potential reframing of position.' }
-            ];
-            const identified = patterns.filter(p=>p.re.test(text)).map(p=>({
-              tacticName: p.name,
-              severity: 'low',
-              explanation: p.explanation,
-              suggestedResponse: 'Let’s return to the precise claim and address that directly.',
-              impact: 'Can derail nuance if unaddressed.'
-            }));
-            return {
-              overallAssessment: {
-                tone: 'unknown',
-                severity: identified.length > 2 ? 'medium' : 'low',
-                context: 'Offline heuristic (API unavailable).',
-                generalQuality: identified.length ? 'Some potential tactics flagged heuristically.' : 'No obvious heuristic flags.'
-              },
-              identifiedTactics: identified,
-              constructiveFeedback: {
-                strengths: ['You can refine detection by enabling the hosted API.'],
-                improvements: ['Deploy the analyze function to get richer analysis.']
-              },
-              summary: 'Heuristic offline scan complete.'
-            };
-          };
-
-          const contentType = response.headers.get('content-type') || '';
           if (!response.ok) {
-            if (contentType.includes('application/json')) {
-              const errorData = await response.json();
-              throw new Error(`API Error: ${errorData.error || response.statusText}`);
-            } else {
-              // Likely HTML 404; fall back
-              const text = await response.text();
-              console.warn('Non-JSON response from /api/analyze. Falling back to offline heuristic. Raw snippet:', text.slice(0,120));
-              pushToast('API unavailable – using offline heuristic', 'warn');
-              setAnalysisResult(offlineHeuristic(inputText));
-              return;
-            }
+            const errorData = await response.json();
+            throw new Error(`API Error: ${errorData.error || response.statusText}`);
           }
 
-          if (!contentType.includes('application/json')) {
-            // Unexpected (maybe reverse proxy) -> fallback
-            pushToast('Unexpected response – offline heuristic used', 'warn');
-            setAnalysisResult(offlineHeuristic(inputText));
-            return;
-          }
-
-            const result = await response.json();
-            setAnalysisResult(result);
+          const result = await response.json();
+          setAnalysisResult(result);
 
         } catch (e) {
           console.error("Error analyzing text:", e);
-          setError(`Failed to analyze text: ${e.message}. Using offline heuristic.`);
-          // Provide heuristic fallback if not already set
-          if (!analysisResult) {
-            try {
-              setAnalysisResult({
-                summary: 'No server response. Enable functions to get full analysis.',
-                identifiedTactics: [],
-                overallAssessment: { tone: 'neutral', severity: 'low', context: 'No API', generalQuality: 'N/A' }
-              });
-            } catch {}
-          }
+          setError(`Failed to analyze text: ${e.message}. Please try again.`);
         } finally {
           setLoading(false);
         }
