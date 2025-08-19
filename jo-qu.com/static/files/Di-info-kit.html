@@ -195,6 +195,81 @@
       font-weight: 500;
     }
 
+    /* Share / copy buttons */
+    .tactic-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+    .share-btn {
+      background: #2563eb;
+      color: #fff;
+      border: 1px solid #1d4ed8;
+      padding: 0.4rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: .25px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: background .18s ease, box-shadow .18s ease;
+    }
+    .share-btn:hover {
+      background: #1d4ed8;
+      box-shadow: 0 2px 4px rgba(0,0,0,.12);
+    }
+    .share-btn.secondary {
+      background: #f1f5f9;
+      color: #0f172a;
+      border: 1px solid #cbd5e1;
+    }
+    .share-btn.secondary:hover {
+      background: #e2e8f0;
+    }
+    .share-btn.outline {
+      background: #fff;
+      color: #2563eb;
+      border: 1px solid #93c5fd;
+    }
+    .share-btn.outline:hover {
+      background: #eff6ff;
+    }
+
+    /* Toast */
+    .toast-container {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+      z-index: 9999;
+      pointer-events: none;
+    }
+    .toast {
+      background: #0f172a;
+      color: #fff;
+      padding: .65rem .9rem;
+      font-size: .8rem;
+      border-radius: 6px;
+      box-shadow: var(--shadow-lg);
+      opacity: 0;
+      transform: translateY(-6px);
+      animation: toast-in .35s ease forwards, toast-out .4s ease 3.4s forwards;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-weight: 500;
+    }
+    .toast.success { background: #059669; }
+    .toast.warn { background: #d97706; }
+    .toast.error { background: #dc2626; }
+    @keyframes toast-in { to { opacity: 1; transform: translateY(0);} }
+    @keyframes toast-out { to { opacity: 0; transform: translateY(-6px);} }
+
     .conclusion-section {
       background: linear-gradient(135deg, var(--primary-color) 0%, #1d4ed8 100%);
       color: white;
@@ -281,6 +356,10 @@
           <div class="response-text">
             <strong>Response:</strong> "That doesn't change the core argument. Let's focus on the main point."
           </div>
+          <div class="tactic-actions" data-static-tactic="Well Actually" data-response="That doesn't change the core argument. Let's focus on the main point." data-explanation="Correcting a minor, irrelevant detail to derail the main point.">
+            <button class="share-btn" onclick="window.__copyStatic(this)">Copy</button>
+            <button class="share-btn secondary" onclick="window.__shareStatic(this)">Share</button>
+          </div>
         </div>
 
         <div class="tactic-card" id="gish-gallop">
@@ -293,6 +372,10 @@
           </div>
           <div class="response-text">
             <strong>Response:</strong> "You've made many points quickly. Let's slow down. Pick the strongest one, and we'll discuss that properly."
+          </div>
+          <div class="tactic-actions" data-static-tactic="Gish Gallop" data-response="You've made many points quickly. Let's slow down. Pick the strongest one, and we'll discuss that properly." data-explanation="Rapid-fire shallow points to overwhelm response capacity.">
+            <button class="share-btn" onclick="window.__copyStatic(this)">Copy</button>
+            <button class="share-btn secondary" onclick="window.__shareStatic(this)">Share</button>
           </div>
         </div>
 
@@ -307,6 +390,10 @@
           <div class="response-text">
             <strong>Response:</strong> "That's an entirely different issue. We can discuss that after we finish this conversation, but it doesn't excuse what we're talking about now."
           </div>
+          <div class="tactic-actions" data-static-tactic="Whataboutism" data-response="That's an entirely different issue. We can discuss that after we finish this conversation, but it doesn't excuse what we're talking about now." data-explanation="Deflects criticism by raising unrelated wrongdoing.">
+            <button class="share-btn" onclick="window.__copyStatic(this)">Copy</button>
+            <button class="share-btn secondary" onclick="window.__shareStatic(this)">Share</button>
+          </div>
         </div>
 
         <div class="tactic-card" id="straw-man">
@@ -319,6 +406,10 @@
           </div>
           <div class="response-text">
             <strong>Response:</strong> "That's not what I said. My point was to invest more in renewables, not to shut everything down immediately. Please respond to the actual point I made."
+          </div>
+          <div class="tactic-actions" data-static-tactic="Straw Man" data-response="That's not what I said. My point was to invest more in renewables, not to shut everything down immediately. Please respond to the actual point I made." data-explanation="Misrepresents argument to attack weaker version.">
+            <button class="share-btn" onclick="window.__copyStatic(this)">Copy</button>
+            <button class="share-btn secondary" onclick="window.__shareStatic(this)">Share</button>
           </div>
         </div>
 
@@ -333,6 +424,10 @@
           <div class="response-text">
             <strong>Response:</strong> "If you have a real point to make, please make it without the sarcasm."
           </div>
+          <div class="tactic-actions" data-static-tactic="Mocking/Sarcasm" data-response="If you have a real point to make, please make it without the sarcasm." data-explanation="Uses ridicule to dismiss instead of addressing content.">
+            <button class="share-btn" onclick="window.__copyStatic(this)">Copy</button>
+            <button class="share-btn secondary" onclick="window.__shareStatic(this)">Share</button>
+          </div>
         </div>
 
         <div class="tactic-card" id="condescension">
@@ -345,6 +440,10 @@
           </div>
           <div class="response-text">
             <strong>Response:</strong> "Instead of talking down to me, explain what you disagree with in a straightforward way."
+          </div>
+          <div class="tactic-actions" data-static-tactic="Condescension" data-response="Instead of talking down to me, explain what you disagree with in a straightforward way." data-explanation="Patronizing instruction framed as superior knowledge.">
+            <button class="share-btn" onclick="window.__copyStatic(this)">Copy</button>
+            <button class="share-btn secondary" onclick="window.__shareStatic(this)">Share</button>
           </div>
         </div>
 
@@ -359,6 +458,10 @@
           <div class="response-text">
             <strong>Response:</strong> "You made the claim — the burden of proof is on you to back it up with evidence."
           </div>
+          <div class="tactic-actions" data-static-tactic="Burden of Proof Shifting" data-response="You made the claim — the burden of proof is on you to back it up with evidence." data-explanation="Demands others disprove unsupported assertion.">
+            <button class="share-btn" onclick="window.__copyStatic(this)">Copy</button>
+            <button class="share-btn secondary" onclick="window.__shareStatic(this)">Share</button>
+          </div>
         </div>
 
         <div class="tactic-card" id="false-equivalence">
@@ -371,6 +474,10 @@
           </div>
           <div class="response-text">
             <strong>Response:</strong> "That comparison doesn't hold up. These two things are not the same."
+          </div>
+          <div class="tactic-actions" data-static-tactic="False Equivalence" data-response="That comparison doesn't hold up. These two things are not the same." data-explanation="Treats two unequal things as equivalent to minimize issue.">
+            <button class="share-btn" onclick="window.__copyStatic(this)">Copy</button>
+            <button class="share-btn secondary" onclick="window.__shareStatic(this)">Share</button>
           </div>
         </div>
 
@@ -385,6 +492,10 @@
           <div class="response-text">
             <strong>Response:</strong> "Pick one position and defend it. Are you arguing [extreme claim] or [modest claim]?"
           </div>
+          <div class="tactic-actions" data-static-tactic="Motte and Bailey" data-response="Pick one position and defend it. Are you arguing [extreme claim] or [modest claim]?" data-explanation="Retreats to defensible claim when challenged, then returns to extreme one.">
+            <button class="share-btn" onclick="window.__copyStatic(this)">Copy</button>
+            <button class="share-btn secondary" onclick="window.__shareStatic(this)">Share</button>
+          </div>
         </div>
 
         <div class="tactic-card" id="tone-policing">
@@ -397,6 +508,10 @@
           </div>
           <div class="response-text">
             <strong>Response:</strong> "The tone doesn't change the facts I'm presenting. Can you address the substance of my argument?"
+          </div>
+          <div class="tactic-actions" data-static-tactic="Tone Policing" data-response="The tone doesn't change the facts I'm presenting. Can you address the substance of my argument?" data-explanation="Dismisses argument by focusing on emotional delivery.">
+            <button class="share-btn" onclick="window.__copyStatic(this)">Copy</button>
+            <button class="share-btn secondary" onclick="window.__shareStatic(this)">Share</button>
           </div>
         </div>
 
@@ -646,6 +761,21 @@
       const [loading, setLoading] = React.useState(false);
       const [error, setError] = React.useState(null);
 
+      // Toast utilities
+      const pushToast = (msg, variant = 'success') => {
+        const container = document.querySelector('.toast-container') || (() => {
+          const el = document.createElement('div');
+          el.className = 'toast-container';
+          document.body.appendChild(el);
+          return el;
+        })();
+        const toast = document.createElement('div');
+        toast.className = `toast ${variant}`;
+        toast.innerHTML = `<span>${msg}</span>`;
+        container.appendChild(toast);
+        setTimeout(() => { toast.remove(); }, 3800);
+      };
+
       // Function to convert tactic name to ID
       const tacticNameToId = (tacticName) => {
         const nameMap = {
@@ -719,20 +849,121 @@
             body: JSON.stringify({ inputText: inputText })
           });
 
+          // Helper: simple offline heuristic if API unavailable
+          const offlineHeuristic = (text) => {
+            const patterns = [
+              { name: 'Well Actually', re: /well actually/i, explanation: 'Pedantic correction tone detected.' },
+              { name: 'Whataboutism', re: /what about|and (you|your)/i, explanation: 'Possible deflection phrase.' },
+              { name: 'Gish Gallop', re: /(\?|!|\.)\s+\w+.*?(,\s+\w+){4,}/i, explanation: 'Many points in rapid succession.' },
+              { name: 'Tone Policing', re: /calm down|too (angry|emotional)/i, explanation: 'Possible dismissal based on tone.' },
+              { name: 'Straw Man', re: /so you (want|think)/i, explanation: 'Potential reframing of position.' }
+            ];
+            const identified = patterns.filter(p=>p.re.test(text)).map(p=>({
+              tacticName: p.name,
+              severity: 'low',
+              explanation: p.explanation,
+              suggestedResponse: 'Let’s return to the precise claim and address that directly.',
+              impact: 'Can derail nuance if unaddressed.'
+            }));
+            return {
+              overallAssessment: {
+                tone: 'unknown',
+                severity: identified.length > 2 ? 'medium' : 'low',
+                context: 'Offline heuristic (API unavailable).',
+                generalQuality: identified.length ? 'Some potential tactics flagged heuristically.' : 'No obvious heuristic flags.'
+              },
+              identifiedTactics: identified,
+              constructiveFeedback: {
+                strengths: ['You can refine detection by enabling the hosted API.'],
+                improvements: ['Deploy the analyze function to get richer analysis.']
+              },
+              summary: 'Heuristic offline scan complete.'
+            };
+          };
+
+          const contentType = response.headers.get('content-type') || '';
           if (!response.ok) {
-            const errorData = await response.json();
-            throw new Error(`API Error: ${errorData.error || response.statusText}`);
+            if (contentType.includes('application/json')) {
+              const errorData = await response.json();
+              throw new Error(`API Error: ${errorData.error || response.statusText}`);
+            } else {
+              // Likely HTML 404; fall back
+              const text = await response.text();
+              console.warn('Non-JSON response from /api/analyze. Falling back to offline heuristic. Raw snippet:', text.slice(0,120));
+              pushToast('API unavailable – using offline heuristic', 'warn');
+              setAnalysisResult(offlineHeuristic(inputText));
+              return;
+            }
           }
 
-          const result = await response.json();
-          setAnalysisResult(result);
+          if (!contentType.includes('application/json')) {
+            // Unexpected (maybe reverse proxy) -> fallback
+            pushToast('Unexpected response – offline heuristic used', 'warn');
+            setAnalysisResult(offlineHeuristic(inputText));
+            return;
+          }
+
+            const result = await response.json();
+            setAnalysisResult(result);
 
         } catch (e) {
           console.error("Error analyzing text:", e);
-          setError(`Failed to analyze text: ${e.message}. Please try again.`);
+          setError(`Failed to analyze text: ${e.message}. Using offline heuristic.`);
+          // Provide heuristic fallback if not already set
+          if (!analysisResult) {
+            try {
+              setAnalysisResult({
+                summary: 'No server response. Enable functions to get full analysis.',
+                identifiedTactics: [],
+                overallAssessment: { tone: 'neutral', severity: 'low', context: 'No API', generalQuality: 'N/A' }
+              });
+            } catch {}
+          }
         } finally {
           setLoading(false);
         }
+      };
+
+      const buildSharePayload = (tactic) => {
+        const id = tacticNameToId(tactic.tacticName);
+        const base = `${window.location.origin}${window.location.pathname}#${id}`;
+        return {
+          text: `${tactic.tacticName} – Suggested response:\n"${tactic.suggestedResponse}"\n\nExplanation: ${tactic.explanation}\n${base}`,
+          url: base,
+          title: `Disinfo Defense: ${tactic.tacticName}`
+        };
+      };
+
+      const copyResponse = (tactic) => {
+        const payload = buildSharePayload(tactic);
+        navigator.clipboard.writeText(payload.text).then(() => pushToast('Copied response', 'success'))
+          .catch(() => pushToast('Copy failed', 'error'));
+      };
+
+      const shareResponse = async (tactic) => {
+        const payload = buildSharePayload(tactic);
+        if (navigator.share) {
+          try {
+            await navigator.share(payload);
+            pushToast('Shared successfully', 'success');
+          } catch (e) {
+            if (e && e.name !== 'AbortError') pushToast('Share failed', 'error');
+          }
+        } else {
+          copyResponse(tactic);
+          pushToast('Share API unavailable – copied instead', 'warn');
+        }
+      };
+
+      const highlightTactic = (id) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        el.animate([
+          { boxShadow: '0 0 0 0 rgba(37,99,235,0.0)' },
+          { boxShadow: '0 0 0 4px rgba(37,99,235,0.35)' },
+          { boxShadow: '0 0 0 0 rgba(37,99,235,0.0)' }
+        ], { duration: 1800, easing: 'ease' });
       };
 
       return (
@@ -1019,6 +1250,11 @@
                             <span style={{ fontWeight: '500' }}>Impact on Discourse:</span> {tactic.impact}
                           </p>
                         )}
+                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '.5rem', marginTop: '.75rem' }}>
+                          <button onClick={() => copyResponse(tactic)} style={{ background:'#2563eb', color:'#fff', border:'1px solid #1d4ed8', padding:'.45rem .75rem', borderRadius: '6px', fontSize:'.7rem', fontWeight:600, cursor:'pointer' }}>Copy</button>
+                          <button onClick={() => shareResponse(tactic)} style={{ background:'#f1f5f9', color:'#0f172a', border:'1px solid #cbd5e1', padding:'.45rem .75rem', borderRadius: '6px', fontSize:'.7rem', fontWeight:600, cursor:'pointer' }}>Share</button>
+                          <button onClick={() => highlightTactic(tacticNameToId(tactic.tacticName))} style={{ background:'#fff', color:'#2563eb', border:'1px solid #93c5fd', padding:'.45rem .75rem', borderRadius: '6px', fontSize:'.7rem', fontWeight:600, cursor:'pointer' }}>Highlight</button>
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -1115,6 +1351,40 @@
     }
 
     ReactDOM.render(<App />, document.getElementById('disinfo-bot-container'));
+  </script>
+
+  <script>
+    // Static (non-analysis) tactic share helpers
+    (function(){
+      const ensureToast = () => document.querySelector('.toast-container') || (()=>{ const el=document.createElement('div'); el.className='toast-container'; document.body.appendChild(el); return el; })();
+      const toast = (msg, variant='success') => { const c=ensureToast(); const t=document.createElement('div'); t.className='toast '+variant; t.textContent=msg; c.appendChild(t); setTimeout(()=>t.remove(),3800); };
+      const build = (el) => {
+        const wrap = el.closest('.tactic-actions');
+        return {
+          tacticName: wrap.getAttribute('data-static-tactic'),
+          suggestedResponse: wrap.getAttribute('data-response'),
+          explanation: wrap.getAttribute('data-explanation')
+        };
+      };
+      window.__copyStatic = (btn) => {
+        const data = build(btn);
+        const id = data.tacticName.toLowerCase().replace(/[^a-z0-9\s]/g,'').replace(/\s+/g,'-');
+        const url = `${location.origin}${location.pathname}#${id}`;
+        const text = `${data.tacticName} – Suggested response:\n"${data.suggestedResponse}"\n\nExplanation: ${data.explanation}\n${url}`;
+        navigator.clipboard.writeText(text).then(()=>toast('Copied response')).catch(()=>toast('Copy failed','error'));
+      };
+      window.__shareStatic = async (btn) => {
+        const data = build(btn);
+        const id = data.tacticName.toLowerCase().replace(/[^a-z0-9\s]/g,'').replace(/\s+/g,'-');
+        const url = `${location.origin}${location.pathname}#${id}`;
+        const payload = { title: `Disinfo Defense: ${data.tacticName}`, text: `${data.tacticName} – ${data.suggestedResponse}`, url };
+        if (navigator.share) {
+          try { await navigator.share(payload); toast('Shared'); } catch(e){ if(e.name!=='AbortError') toast('Share failed','error'); }
+        } else {
+          window.__copyStatic(btn); toast('Share unsupported – copied','warn');
+        }
+      };
+    })();
   </script>
 
   <footer style="text-align:center; color:#64748b; font-size:1rem; margin-top:2rem; padding:2rem 0 1rem 0;">
