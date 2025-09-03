@@ -15,6 +15,9 @@
     {{ $desc = .Summary }}
 {{ end }}
 {{ if not $desc }}
+    {{ $desc = .Site.Params.description }}
+{{ end }}
+{{ if not $desc }}
     {{ $desc = "Portfolio of Jonas Quintiens: projects, internship, and more." }}
 {{ end }}
 <meta name="description" content="{{ $desc }}">
