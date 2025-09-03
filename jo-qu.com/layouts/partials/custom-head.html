@@ -1,6 +1,17 @@
 <!-- Custom CSS for site title styling -->
 <link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
 
+<!-- SEO Meta Tags -->
+{{ $desc := .Description }}
+{{ if not $desc }}
+    {{ $desc = .Summary }}
+{{ end }}
+{{ if not $desc }}
+    {{ $desc = "Portfolio of Jonas Quintiens: projects, internship, and more." }}
+{{ end }}
+<meta name="description" content="{{ $desc }}">
+<meta name="summary" content="{{ $desc }}">
+
 <!-- Language Selector JavaScript -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
