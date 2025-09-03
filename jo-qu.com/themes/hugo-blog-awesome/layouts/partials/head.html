@@ -1,12 +1,10 @@
 <head>
-    {{- partial "meta/main.html" . }}
-    {{- hugo.Generator }}
 
-    {{/* Open Graph tags */}}
-    {{ template "_internal/opengraph.html" . }}
-
-    {{/* Twitter Card tags */}}
-    {{ template "_internal/twitter_cards.html" . }}
+  {{/* Meta tags handled by custom-head.html for full control. Theme meta generation commented out. */}}
+  {{/* {{- partial "meta/main.html" . }} */}}
+  {{/* {{- hugo.Generator }} */}}
+  {{/* {{ template "_internal/opengraph.html" . }} */}}
+  {{/* {{ template "_internal/twitter_cards.html" . }} */}}
 
     {{/* Canonical link, RSS */}}
 
