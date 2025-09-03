@@ -12,7 +12,7 @@ title = 'Andere Projecten'
 
 <div class="projects-stats">
   <div class="stat-item">
-    <span class="stat-number">7</span>
+    <span class="stat-number">8</span>
     <span class="stat-label">Projecten</span>
   </div>
   <div class="stat-item">
