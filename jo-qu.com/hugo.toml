@@ -6,6 +6,8 @@ theme = 'hugo-blog-awesome'
 
 [params]
   goToTop = true
+  author = { name = "Jonas Quintiens" }
+  business = "Web development & security consulting"
 
 [languages]
   [languages.en]
@@ -15,14 +17,24 @@ theme = 'hugo-blog-awesome'
     [languages.en.menu]
       [[languages.en.menu.main]]
         identifier = 'about'
-        name = 'About Myself'
+        name = 'About'
         url = '/about/'
         weight = 2
+      [[languages.en.menu.main]]
+        identifier = 'services'
+        name = 'Services'
+        url = '/services/'
+        weight = 3
       [[languages.en.menu.main]]
         identifier = 'other-projects'
         name = 'Projects'
         url = '/other-projects/'
-        weight = 3
+        weight = 4
+      [[languages.en.menu.main]]
+        identifier = 'contact'
+        name = 'Contact'
+        url = '/contact/'
+        weight = 5
   [languages.nl]
     languageName = 'Nederlands'
     weight = 2
@@ -30,14 +42,24 @@ theme = 'hugo-blog-awesome'
     [languages.nl.menu]
       [[languages.nl.menu.main]]
         identifier = 'about'
-        name = 'Over Mij'
+        name = 'Over'
         url = '/nl/about/'
         weight = 2
+      [[languages.nl.menu.main]]
+        identifier = 'services'
+        name = 'Diensten'
+        url = '/nl/services/'
+        weight = 3
       [[languages.nl.menu.main]]
         identifier = 'other-projects'
         name = 'Projecten'
         url = '/nl/other-projects/'
-        weight = 3
+        weight = 4
+      [[languages.nl.menu.main]]
+        identifier = 'contact'
+        name = 'Contact'
+        url = '/nl/contact/'
+        weight = 5
 
 [markup]
   [markup.goldmark]

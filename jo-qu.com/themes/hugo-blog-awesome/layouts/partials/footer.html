@@ -11,11 +11,12 @@
         &nbsp;|&nbsp;
         <a href="https://www.linkedin.com/in/jonas-quintiens-5838a01aa" target="_blank" rel="noopener">LinkedIn</a>
         &nbsp;|&nbsp;
-        <a href="https://jo-qu.com" target="_blank" rel="noopener">Website</a>
+        <a href="/contact/">Contact form</a>
     </div>
     <small class="footer_copyright">
-        © {{ now.Format "2006" }} {{ .Site.Params.author.name }}.
+        © {{ now.Format "2006" }} {{ with .Site.Params.author.name }}{{ . }}{{ else }}Jonas Quintiens{{ end }}.
         {{ T "footer.disclaimer" | safeHTML }}
+        {{ with .Site.Params.business }}<br><span class="biz">{{ . }}</span>{{ end }}
     </small>
 </footer>
 
