@@ -3,7 +3,7 @@ title = "Home"
 draft = false
 +++
 
-<h2 class="site-title">Welcome to my Portfolio</h2>
+<h2 class="site-title">Jonas Quintiens — Secure & reliable web solutions</h2>
 
 <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
   <blockquote class="main-quote" style="margin: 0; flex: 1;">

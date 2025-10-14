@@ -685,3 +685,38 @@ a, .post-item-summary a, li a {
     text-align: center;
   }
 }
+
+/* Mobile form and overscroll fixes */
+@media (max-width: 700px) {
+  /* Ensure form grid stacks and uses full width on small screens */
+  .form-grid {
+    max-width: 100%;
+    padding: 0 1rem;
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid input,
+  .form-grid textarea,
+  .form-grid button,
+  .form-grid label {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .form-grid button.btn {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .hero-cta {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Reduce bounce / overscroll past page end on supporting browsers */
+html, body {
+  overscroll-behavior-y: contain;
+}

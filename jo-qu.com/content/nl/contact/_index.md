@@ -11,7 +11,7 @@ E‑mail kan altijd: jonas@jo-qu.com
 Of stuur een kort bericht — ik antwoord binnen 1–2 werkdagen.
 
 <form action="https://formspree.io/f/xbldvezz" method="POST">
-  <div style="display:grid; gap: 0.75rem; max-width: 680px">
+  <div class="form-grid">
     <label>
       Naam
       <input type="text" name="name" required>
@@ -24,7 +24,7 @@ Of stuur een kort bericht — ik antwoord binnen 1–2 werkdagen.
       Bericht
       <textarea name="message" rows="6" required></textarea>
     </label>
-    <input type="text" name="_gotcha" style="display:none" aria-hidden="true">
-    <button type="submit">Versturen</button>
+    <input type="text" name="_gotcha" class="hidden-field" aria-hidden="true">
+    <button type="submit" class="btn btn-primary">Versturen</button>
   </div>
 </form>
