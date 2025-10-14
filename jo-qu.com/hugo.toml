@@ -4,6 +4,9 @@ defaultContentLanguage = 'en'
 title = 'jo-qu.com'
 theme = 'hugo-blog-awesome'
 
+[params]
+  goToTop = true
+
 [languages]
   [languages.en]
     languageName = 'English'
