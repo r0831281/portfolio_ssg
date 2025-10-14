@@ -740,7 +740,44 @@ a, .post-item-summary a, li a {
   }
 }
 
-/* Reduce bounce / overscroll past page end on supporting browsers */
+/* Sticky footer and content-fill fixes
+   - Make body a column flex container so the main content grows and footer sits at the bottom
+   - Targets common main/content selectors used by the theme
+   - Keeps overscroll-behavior to reduce bounce where supported
+*/
 html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  /* Keep the overscroll behavior set earlier */
   overscroll-behavior-y: contain;
+}
+
+/* Ensure the central content area grows to fill available space */
+main[aria-label="Content"],
+main[role="main"],
+.page-content,
+.wrapper,
+.wrapper.list-page,
+.wrapper.post {
+  flex: 1 0 auto;
+}
+
+/* Reduce bottom margin on the footer to avoid extra space being reserved */
+.footer {
+  margin-bottom: 0 !important;
+}
+
+/* If a direct child wrapper exists, ensure it doesn't introduce extra bottom padding */
+body > .wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Small safeguard: if the page still bounces on some iOS devices, limiting body background painting reduces visual "gap" */
+html {
+  background-attachment: fixed;
 }
