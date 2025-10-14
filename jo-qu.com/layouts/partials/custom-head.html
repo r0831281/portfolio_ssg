@@ -30,6 +30,32 @@
 <meta name="description" content="{{ $desc }}">
 <meta name="summary" content="{{ $desc }}">
 
+<!-- Open Graph / Twitter -->
+{{ $title := cond (ne .Title "") (printf "%s | %s" .Title .Site.Title) .Site.Title }}
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ .Permalink }}">
+{{ with .Params.images }}<meta property="og:image" content="{{ (index . 0) | absURL }}">{{ end }}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $desc }}">
+{{ with .Params.images }}<meta name="twitter:image" content="{{ (index . 0) | absURL }}">{{ end }}
+
+<!-- JSON-LD Person -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "{{ with .Site.Params.author.name }}{{ . }}{{ else }}Jonas Quintiens{{ end }}",
+    "url": "{{ .Site.BaseURL }}",
+    "email": "mailto:jonas@jo-qu.com",
+    "sameAs": [
+        "https://www.linkedin.com/in/jonas-quintiens-5838a01aa"
+    ]
+}
+</script>
+
 <script defer>
 document.addEventListener('DOMContentLoaded', function() {
     const langToggle = document.querySelector('.lang-toggle');
