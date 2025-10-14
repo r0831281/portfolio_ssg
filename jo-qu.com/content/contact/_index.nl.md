@@ -10,7 +10,7 @@ E‑mail kan altijd: jonas@jo-qu.com
 
 Of stuur een kort bericht — ik antwoord binnen 1–2 werkdagen.
 
-<form action="https://formspree.io/f/xbldvezz" method="POST">
+<form action="https://formspree.io/f/mzzjknzr" method="POST">
   <div class="form-grid">
     <label>
       Naam

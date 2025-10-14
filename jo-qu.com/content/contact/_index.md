@@ -10,7 +10,7 @@ Prefer email? jonas@jo-qu.com
 
 Or send a quick message below—I'll reply within 1–2 business days.
 
-<form action="https://formspree.io/f/xbldvezz" method="POST">
+<form action="https://formspree.io/f/mzzjknzr" method="POST">
   <div class="form-grid">
     <label>
       Name
