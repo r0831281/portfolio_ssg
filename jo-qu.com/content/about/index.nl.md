@@ -4,7 +4,7 @@ title = 'About Me'
 
 # Hi! Mijn naam is Jonas
 
-<p>Ik ben een student aan Thomas More, gespecialiseerd in Toegepaste Informatica met een focus op Applicatiebeheer. Daarnaast werk ik als systeembeheerder bij het <a href="https://mchinfo.be" target="_blank">Medisch Centrum voor Huisartsen</a>, waar ik dagelijks betrokken ben bij het opzetten en ondersteunen van diverse hardware en software. Samen met mijn collega's ben ik ook verantwoordelijk voor het onderhoud van het interne netwerk, VPN's, virtuele machines, firewalls en meer.</p>
+<p>Ik ben recent afgestudeerd aan Thomas More met een bachelor in Toegepaste Informatica, gespecialiseerd in Applicatiebeheer. Daarnaast werk ik als systeembeheerder bij het <a href="https://mchinfo.be" target="_blank">Medisch Centrum voor Huisartsen</a>, waar ik dagelijks betrokken ben bij het opzetten en ondersteunen van diverse hardware en software. Samen met mijn collega's ben ik ook verantwoordelijk voor het onderhoud van het interne netwerk, VPN's, virtuele machines, firewalls en meer. Onlangs heb ik mijn eigen softwareontwikkelingsbedrijf opgestart, waar ik webontwikkeling, beveiligingsconsultancy en systeemarchitectuurdiensten aanbied.</p>
 
 <p>Je kan mijn CV hier downloaden: <a href="/files/CV_Jonas_Quintiens1.pdf" target="_blank">Download CV</a></p>
 
@@ -25,4 +25,4 @@ Ik besloot te onderzoeken of IT meer kon zijn dan een hobby, en schreef me in vo
 ## 🤝 Samenwerken?
 
 Interesse om samen te werken?
-Stuur gerust een bericht naar [jonas.quintiens@gmail.com](mailto:jonas.quintiens@gmail.com) of neem contact op via [LinkedIn](https://www.linkedin.com/in/jonas-quintiens-5838a01aa).
+Stuur gerust een bericht naar [jonas@jo-qu.com](mailto:jonas@jo-qu.com) of neem contact op via [LinkedIn](https://www.linkedin.com/in/jonas-quintiens-5838a01aa).

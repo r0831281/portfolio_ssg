@@ -5,7 +5,7 @@ title = 'About Me'
 
 # Hi! My name is Jonas
 
-<p>I am a student at Thomas More, specializing in Applied Computer Science with a focus on Application Management. Additionally, I work as a system administrator at the <a href="https://mchinfo.be" target="_blank">Medical Center for General Practitioners</a>, where I am involved daily in setting up and supporting a wide range of hardware and software. Together with my colleagues, I am also responsible for maintaining the internal network, VPNs, virtual machines, firewalls, and more.</p>
+<p>I recently graduated from Thomas More with a Bachelor's in Applied Computer Science, specializing in Application Management. Additionally, I work as a system administrator at the <a href="https://mchinfo.be" target="_blank">Medical Center for General Practitioners</a>, where I am involved daily in setting up and supporting a wide range of hardware and software. Together with my colleagues, I am also responsible for maintaining the internal network, VPNs, virtual machines, firewalls, and more. Recently, I've started my own software development business, offering web development, security consulting, and system architecture services.</p>
 
 <p>You can download my CV here: <a href="/files/CV_Jonas_Quintiens1.pdf" target="_blank">Download CV</a></p>
 
@@ -31,4 +31,4 @@ I decided to explore whether tech could be more than a hobby, and enrolled in th
 ## 🤝 Collaborate?
 
 Interested in collaborating?  
-Feel free to send me a message at [jonas.quintiens@gmail.com](mailto:jonas.quintiens@gmail.com) or connect via [LinkedIn](https://www.linkedin.com/in/jonas-quintiens-5838a01aa).
+Feel free to send me a message at [jonas@jo-qu.com](mailto:jonas@jo-qu.com) or connect via [LinkedIn](https://www.linkedin.com/in/jonas-quintiens-5838a01aa).

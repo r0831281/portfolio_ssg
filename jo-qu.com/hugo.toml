@@ -16,15 +16,10 @@ theme = 'hugo-blog-awesome'
         url = '/about/'
         weight = 2
       [[languages.en.menu.main]]
-        identifier = 'internship'
-        name = 'Internship'
-        url = '/internship/'
-        weight = 3
-      [[languages.en.menu.main]]
         identifier = 'other-projects'
-        name = 'Other Projects'
+        name = 'Projects'
         url = '/other-projects/'
-        weight = 4
+        weight = 3
   [languages.nl]
     languageName = 'Nederlands'
     weight = 2
@@ -36,15 +31,10 @@ theme = 'hugo-blog-awesome'
         url = '/nl/about/'
         weight = 2
       [[languages.nl.menu.main]]
-        identifier = 'internship'
-        name = 'Stage'
-        url = '/nl/internship/'
-        weight = 3
-      [[languages.nl.menu.main]]
         identifier = 'other-projects'
-        name = 'Andere Projecten'
+        name = 'Projecten'
         url = '/nl/other-projects/'
-        weight = 4
+        weight = 3
 
 [markup]
   [markup.goldmark]

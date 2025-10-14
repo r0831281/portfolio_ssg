@@ -14,7 +14,7 @@ draft = false
   <img src="/photos/portrait.jpg" alt="Portret" width="150" height="150" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
 </div>
 
-Ik ben een gepassioneerde ontwikkelaar die de wereld van software engineering verkent. Op deze site vind je mijn projecten en ervaringen.
+Ik ben een softwareontwikkelaar en ondernemer met een achtergrond in toegepaste informatica. Op deze site vind je mijn projecten, professionele ervaring en diensten.
 
 ---
 
