@@ -3,7 +3,8 @@ title = "Home"
 draft = false
 +++
 
-<h2 class="site-title">Jonas Quintiens — Secure & reliable web solutions</h2>
+<h1 class="site-title">Jonas Quintiens</h1>
+<p class="site-tagline">Secure & reliable web solutions for SMEs — clear scope, fast delivery, long‑term maintainability.</p>
 
 <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
   <blockquote class="main-quote" style="margin: 0; flex: 1;">

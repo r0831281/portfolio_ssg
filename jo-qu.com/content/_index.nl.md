@@ -4,7 +4,8 @@ draft = false
 +++
 
 
-<h2 class="site-title">Jonas Quintiens — Veilige en betrouwbare weboplossingen</h2>
+<h1 class="site-title">Jo - Qu</h1>
+<p class="site-tagline">Veilige en betrouwbare weboplossingen voor KMO’s — duidelijke scope, snelle oplevering en duurzame onderhoudbaarheid.</p>
 
 <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
   <blockquote class="main-quote" style="margin: 0; flex: 1;">
