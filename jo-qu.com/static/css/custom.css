@@ -9,19 +9,25 @@ body, html, input, textarea, button, select {
 
 /* Site title styling */
 .site-title {
-  font-family: 'Orbitron', monospace;
+  /* Use the main sans font for legibility instead of the display Orbitron font */
+  font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-weight: 700;
-  font-size: 1.4rem;
-  margin-left: 0.75rem;
+  font-size: 1.15rem; /* slightly reduced to avoid forced wrapping */
+  margin-left: 0.5rem;
   background: linear-gradient(135deg, #0074e0 0%, #5f1bbf 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-decoration: none;
-  letter-spacing: 0.5px;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  text-shadow: 0 2px 8px rgba(30, 40, 80, 0.18);
+  letter-spacing: normal !important;
+  transition: all 0.22s ease;
+  text-transform: none !important;
+  line-height: 1.12;
+  white-space: normal;
+  word-break: normal;
+  max-width: 100%;
+  text-shadow: none !important;
+  display: inline-block;
 }
 
 .logo {
@@ -64,16 +70,20 @@ body, html, input, textarea, button, select {
 /* Responsive adjustments for site title */
 @media (max-width: 768px) {
   .site-title {
-    font-size: 1.1rem;
+    font-size: 1.05rem !important;
     margin-left: 0.5rem;
+    letter-spacing: normal !important;
+    line-height: 1.08;
+    max-width: 100%;
   }
 }
 
 @media (max-width: 480px) {
   .site-title {
-    font-size: 0.9rem;
+    font-size: 0.98rem !important;
     margin-left: 0.4rem;
-    letter-spacing: 0.2px;
+    letter-spacing: normal !important;
+    line-height: 1.08;
   }
 }
 
@@ -291,37 +301,51 @@ a, .post-item-summary a, li a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: .55rem 0.95rem;
-  border-radius: 10px;
-  font-weight: 600;
+  padding: .65rem 1.05rem;
+  border-radius: 12px;
+  font-weight: 700;
   line-height: 1;
   border: 1px solid transparent;
   text-decoration: none !important;
-  transition: transform .08s ease, box-shadow .18s ease, background-color .18s ease, border-color .18s ease;
+  cursor: pointer;
+  user-select: none;
+  transition: transform .12s cubic-bezier(.2,.9,.2,1), box-shadow .18s ease, background-color .18s ease, border-color .18s ease, opacity .12s ease;
+  will-change: transform, box-shadow;
+  -webkit-tap-highlight-color: transparent;
 }
-.btn:hover { transform: translateY(-1px); }
+.btn:hover { transform: translateY(-3px); }
+.btn:active { transform: translateY(-1px) scale(.997); }
+.btn:focus { outline: none; }
+.btn:focus-visible { box-shadow: 0 0 0 4px rgba(37,99,235,0.18); }
 
 .btn-primary {
-  background: #222;
+  background: linear-gradient(90deg,#222 0%, #444 100%);
   color: #fff !important;
-  border-color: #222;
+  border-color: transparent;
+  box-shadow: 0 6px 20px rgba(34,34,34,0.12);
 }
-.btn-primary:hover { box-shadow: 0 4px 14px rgba(0,0,0,.25); }
+.btn-primary:hover { box-shadow: 0 10px 30px rgba(34,34,34,0.16); opacity: 0.98 }
 
 .btn-outline {
   background: transparent;
-  color: #e5e7eb !important;
-  border-color: #3b3b3b;
+  color: #222 !important;
+  border-color: rgba(34,34,34,0.12);
 }
-.btn-outline:hover { border-color: #6b7280; }
+.btn-outline:hover { border-color: rgba(34,34,34,0.22); background: rgba(0,0,0,0.02); }
 
 .btn-ghost {
   background: transparent;
-  color: #cbd5e1 !important;
-  border-color: #6b7280;
+  color: rgba(34,34,34,0.85) !important;
+  border-color: transparent;
 }
 .btn-ghost:hover {
-  background: rgba(255,255,255,0.03);
+  background: rgba(0,0,0,0.03);
+}
+
+/* Make CTA buttons stack and grow on very small screens */
+@media (max-width: 600px) {
+  .hero-cta { flex-direction: column; gap: .5rem; }
+  .hero-cta .btn { width: 100%; padding: .85rem 1rem; font-size: 1rem; }
 }
 
 /* Form helpers */
