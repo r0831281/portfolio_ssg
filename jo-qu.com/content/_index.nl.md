@@ -16,10 +16,10 @@ draft = false
 
 Ik bouw veilige en performante weboplossingen voor KMO’s. Heldere scope, snelle oplevering en focus op onderhoudbaarheid.
 
-<div style="margin: 1rem 0; display:flex; gap:.75rem; flex-wrap:wrap">
-  <a class="btn" href="/nl/services/" style="padding:.6rem 1rem; border-radius:.5rem; background:#222; color:#fff; text-decoration:none">Diensten</a>
-  <a class="btn" href="/nl/contact/" style="padding:.6rem 1rem; border-radius:.5rem; border:1px solid #222; color:#222; text-decoration:none">Contact</a>
-  <a class="btn" href="/nl/other-projects/" style="padding:.6rem 1rem; border-radius:.5rem; border:1px solid #aaa; color:#222; text-decoration:none">Projecten</a>
+<div class="hero-cta">
+  <a class="btn btn-primary" href="/nl/services/">Diensten</a>
+  <a class="btn btn-outline" href="/nl/contact/">Contact</a>
+  <a class="btn btn-ghost" href="/nl/other-projects/">Projecten</a>
 </div>
 
 ---

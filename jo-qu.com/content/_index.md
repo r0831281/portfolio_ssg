@@ -15,11 +15,10 @@ draft = false
 
 I'm a software developer focused on secure, performant web solutions for SMEs. Clear scope, fast delivery, and long‑term maintainability.
 
-<div style="margin: 1rem 0; display:flex; gap:.75rem; flex-wrap:wrap">
-  <a class="btn" href="/services/" style="padding:.6rem 1rem; border-radius:.5rem; background:#222; color:#fff; text-decoration:none">View Services</a>
-  <a class="btn" href="/contact/" style="padding:.6rem 1rem; border-radius:.5rem; border:1px solid #222; color:#222; text-decoration:none">Contact</a>
-  <a class="btn" href="/other-projects/" style="padding:.6rem 1rem; border-radius:.5rem; border:1px solid #aaa; color:#222; text-decoration:none">Projects</a>
-  
+<div class="hero-cta">
+  <a class="btn btn-primary" href="/services/">View Services</a>
+  <a class="btn btn-outline" href="/contact/">Contact</a>
+  <a class="btn btn-ghost" href="/other-projects/">Projects</a>
 </div>
 
 ---

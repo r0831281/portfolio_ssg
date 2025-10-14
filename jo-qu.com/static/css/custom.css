@@ -279,6 +279,70 @@ a, .post-item-summary a, li a {
   border-left: 4px solid #2563eb;
 }
 
+/* --- Buttons & hero CTA --- */
+.hero-cta {
+  margin: 1rem 0 0.5rem 0;
+  display: flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .55rem 0.95rem;
+  border-radius: 10px;
+  font-weight: 600;
+  line-height: 1;
+  border: 1px solid transparent;
+  text-decoration: none !important;
+  transition: transform .08s ease, box-shadow .18s ease, background-color .18s ease, border-color .18s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+
+.btn-primary {
+  background: #222;
+  color: #fff !important;
+  border-color: #222;
+}
+.btn-primary:hover { box-shadow: 0 4px 14px rgba(0,0,0,.25); }
+
+.btn-outline {
+  background: transparent;
+  color: #e5e7eb !important;
+  border-color: #3b3b3b;
+}
+.btn-outline:hover { border-color: #6b7280; }
+
+.btn-ghost {
+  background: transparent;
+  color: #cbd5e1 !important;
+  border-color: #6b7280;
+}
+.btn-ghost:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+/* Form helpers */
+.form-grid { display: grid; gap: .85rem; max-width: 680px }
+.form-grid label { font-weight: 600; color: #e5e7eb; display:block }
+.form-grid input, .form-grid textarea {
+  width: 100%;
+  padding: .65rem .8rem;
+  border-radius: 10px;
+  border: 1px solid #2d2f36;
+  background: rgba(15,17,21,0.85);
+  color: #e6edf3;
+  outline: none;
+}
+.form-grid input:focus, .form-grid textarea:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79,70,229,0.25);
+}
+.form-grid button.btn { width: fit-content; padding-left: 1.1rem; padding-right: 1.1rem }
+.hidden-field { display:none }
+
 .projects-intro p {
   margin: 0;
   font-size: 1.1rem;

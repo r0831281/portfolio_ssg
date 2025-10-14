@@ -8,10 +8,10 @@
 <link rel="preload" href="{{ "css/custom.css" | relURL }}" as="style">
 <link rel="preload" href="{{ "style.min.2d5d2ffcde52f013a549bfa5809276f3b2004fe888d651603b73546926c3408f.css" | relURL }}" as="style">
 <link rel="preload" href="{{ "code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" | relURL }}" as="style">
-<!-- Load CSS files normally -->
-<link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
+<!-- Load CSS files (theme first, custom last to allow overrides) -->
 <link rel="stylesheet" href="{{ "style.min.2d5d2ffcde52f013a549bfa5809276f3b2004fe888d651603b73546926c3408f.css" | relURL }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ "code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" | relURL }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
 
 
 <!-- SEO Meta Tags -->
