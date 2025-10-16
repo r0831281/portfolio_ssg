@@ -334,19 +334,20 @@ a, .post-item-summary a, li a {
 .btn:focus-visible { box-shadow: 0 0 0 4px rgba(37,99,235,0.18); }
 
 .btn-primary {
-  background: linear-gradient(90deg,#222 0%, #444 100%);
+  background: linear-gradient(90deg,#111 0%, #333 100%);
   color: #fff !important;
   border-color: transparent;
-  box-shadow: 0 6px 20px rgba(34,34,34,0.12);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.20);
 }
 .btn-primary:hover { box-shadow: 0 10px 30px rgba(34,34,34,0.16); opacity: 0.98 }
 
 .btn-outline {
   background: transparent;
-  color: #222 !important;
-  border-color: rgba(34,34,34,0.12);
+  color: #222 !important; /* used outside dark hero areas */
+  border-color: rgba(34,34,34,0.14);
+  transition: color .14s ease, background-color .14s ease, border-color .14s ease;
 }
-.btn-outline:hover { border-color: rgba(34,34,34,0.22); background: rgba(0,0,0,0.02); }
+.btn-outline:hover { border-color: rgba(34,34,34,0.28); background: rgba(0,0,0,0.03); }
 
 .btn-ghost {
   background: transparent;
@@ -355,6 +356,22 @@ a, .post-item-summary a, li a {
 }
 .btn-ghost:hover {
   background: rgba(0,0,0,0.03);
+}
+
+/* Variant for outline buttons placed on dark/gradient hero backgrounds */
+.hero-cta .btn-outline {
+  color: #f9fafb !important; /* near-white for strong contrast */
+  border-color: rgba(255,255,255,0.12);
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+}
+.hero-cta .btn-outline:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.20);
+}
+
+/* Stronger focus ring for accessibility */
+.btn:focus-visible {
+  box-shadow: 0 0 0 4px rgba(99,102,241,0.22); /* indigo focus ring */
 }
 
 /* Make CTA buttons stack and grow on very small screens */
@@ -840,6 +857,42 @@ body {
   /* Keep the overscroll behavior set earlier */
   overscroll-behavior-y: contain;
 }
+
+/* --------------------------------------------------------------------------
+   Strong override for hero CTA buttons
+   - Ensures the Projects (btn-ghost) button uses the same outlined style
+   - Centers the row and gives a consistent max-width so buttons line up
+   - Placed late in the file so it overrides earlier theme rules
+   -------------------------------------------------------------------------- */
+.hero-cta {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: .75rem !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.hero-cta .btn,
+.hero-cta a.btn,
+.hero-cta button.btn {
+  display: block !important;
+  width: 100% !important;
+  max-width: 520px !important;
+  margin: .35rem auto !important;
+  box-sizing: border-box !important;
+  background: rgba(255,255,255,0.02) !important;
+  color: #f9fafb !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  border-radius: 12px !important;
+  text-align: center !important;
+}
+.hero-cta .btn:hover,
+.hero-cta a.btn:hover,
+.hero-cta button.btn:hover {
+  transform: translateY(-3px) !important;
+  background: rgba(255,255,255,0.06) !important;
+  border: 1px solid rgba(255,255,255,0.24) !important;
+}
+
 
 /* Ensure the central content area grows to fill available space */
 main[aria-label="Content"],

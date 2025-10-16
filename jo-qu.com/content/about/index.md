@@ -3,32 +3,34 @@ date = '2025-04-18T08:46:11+02:00'
 title = 'About Me'
 +++
 
-# Hi! My name is Jonas
+# Hi — I'm Jonas Quintiens
 
-<p>I recently graduated from Thomas More with a Bachelor's in Applied Computer Science, specializing in Application Management. Additionally, I work as a system administrator at the <a href="https://mchinfo.be" target="_blank">Medical Center for General Practitioners</a>, where I am involved daily in setting up and supporting a wide range of hardware and software. Together with my colleagues, I am also responsible for maintaining the internal network, VPNs, virtual machines, firewalls, and more. Recently, I've started my own software development business, offering web development, security consulting, and system architecture services.</p>
+I combine hands-on systems administration experience with practical software development to help small businesses and teams build reliable, secure, and maintainable systems. I work as a systems administrator at the <a href="https://mchinfo.be" target="_blank">Medical Center for General Practitioners</a> and run my own software development consultancy focused on web development, security consulting, and system architecture.
 
-<p>You can download my CV here: <a href="/files/CV_Jonas_Quintiens1.pdf" target="_blank">Download CV</a></p>
+You can download my CV here: <a href="/files/CV_Jonas_Quintiens1.pdf" target="_blank">Download CV</a>
 
-## My Journey
+## What I do
 
-Before switching careers, I worked in professional kitchens. I spent years honing my craft, working as a **sous chef in Dubai**, gaining experience in several **fine dining establishments**, and even in a **Michelin-starred restaurant**. Eventually, I worked my way up to become the **head chef of a small restaurant** — a role I loved for its intensity and creativity.
+- Web development: modern, accessible websites and web apps built for performance and maintainability.
+- Security & hardening: risk assessments, basic penetration testing, and practical remediation plans.
+- Systems & infrastructure: network design, VPNs, virtualization, backups and operational runbooks.
+- Architecture & consulting: small-to-medium system design, cloud/on-prem guidance and migration planning.
 
-Then the COVID-19 pandemic hit, and like many in hospitality, I suddenly had more free time than I was used to. During that unexpected pause, I revisited a long-time passion of mine: **computers and the internet**.
+## How I work
 
-I decided to explore whether tech could be more than a hobby, and enrolled in the **Bachelor’s program at Thomas More**. Fast-forward to today — I’ve fully embraced this new path, and I haven’t looked back since.
+I focus on outcome-driven work: understand the problem, propose a pragmatic solution, and deliver a tested result. I prioritize clear documentation, predictable deployments, and maintainable code so you can operate with confidence after the project ends.
 
-### My Hobbies
-- **Gaming** – I'm into story-rich games and anything that gets my competitive side going.
+## Skills & tools
 
-- **Guitar** - When I need to clear my mind after a coding session, I like to jam on my guitar. Depending on the mood, I’ll play anything from **Creedence Clearwater Revival** to **Metallica** — it's my way of unwinding and getting into a different rhythm.
+- System administration: Linux/Windows servers, virtualization, networking, firewalls, VPNs
+- Development: JavaScript/TypeScript, Node.js, HTML/CSS, basic backend services
+- DevOps & tooling: CI/CD, containerization, monitoring, backups
+- Other: security best practices, documentation, client-facing communication
 
-- **Cooking & Baking** – Even though I left the professional kitchen behind, I still love cooking and baking for friends and family. There’s nothing like sharing a homemade meal or dessert to bring people together.
+## Ready to talk?
 
-- **Gardening** – I enjoy getting my hands in the dirt and growing my own food. There’s something incredibly satisfying about harvesting ingredients from the garden and turning them into a fresh meal.
+If you'd like to discuss a project, security review, or a systems audit, let's schedule a short call to scope the work and next steps. Email me at [jonas@jo-qu.com](mailto:jonas@jo-qu.com?subject=Consultation%20request) or use the contact form on the site: <a href="/contact/">Contact</a>
 
+Prefer LinkedIn? <a href="https://www.linkedin.com/in/jonas-quintiens-5838a01aa">Connect on LinkedIn</a>
 
-
-## 🤝 Collaborate?
-
-Interested in collaborating?  
-Feel free to send me a message at [jonas@jo-qu.com](mailto:jonas@jo-qu.com) or connect via [LinkedIn](https://www.linkedin.com/in/jonas-quintiens-5838a01aa).
+If you're ready to move forward, mention "Website/Infra Inquiry" in your message and I'll reply within 48 hours to arrange a free 20–30 minute intro call.

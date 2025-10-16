@@ -2,27 +2,34 @@
 title = 'About Me'
 +++
 
-# Hi! Mijn naam is Jonas
+# Hi — ik ben Jonas Quintiens
 
-<p>Ik ben recent afgestudeerd aan Thomas More met een bachelor in Toegepaste Informatica, gespecialiseerd in Applicatiebeheer. Daarnaast werk ik als systeembeheerder bij het <a href="https://mchinfo.be" target="_blank">Medisch Centrum voor Huisartsen</a>, waar ik dagelijks betrokken ben bij het opzetten en ondersteunen van diverse hardware en software. Samen met mijn collega's ben ik ook verantwoordelijk voor het onderhoud van het interne netwerk, VPN's, virtuele machines, firewalls en meer. Onlangs heb ik mijn eigen softwareontwikkelingsbedrijf opgestart, waar ik webontwikkeling, beveiligingsconsultancy en systeemarchitectuurdiensten aanbied.</p>
+Ik combineer praktijkervaring in systeembeheer met softwareontwikkeling om kleine bedrijven en teams te helpen betrouwbare, veilige en onderhoudsvriendelijke systemen te bouwen. Ik werk deeltijds als systeembeheerder bij het <a href="https://mchinfo.be" target="_blank">Medisch Centrum voor Huisartsen</a> en run daarnaast mijn eigen softwareontwikkelingsbureau met focus op webontwikkeling, beveiligingsconsultancy en systeemarchitectuur.
 
-<p>Je kan mijn CV hier downloaden: <a href="/files/CV_Jonas_Quintiens1.pdf" target="_blank">Download CV</a></p>
+Je kan mijn CV hier downloaden: <a href="/files/CV_Jonas_Quintiens1.pdf" target="_blank">Download CV</a>
 
-## Mijn traject
+## Wat ik aanbied
 
-Voor ik van carrière wisselde, werkte ik in professionele keukens. Jarenlang heb ik mijn vakmanschap aangescherpt, onder andere als **souschef in Dubai**, in verschillende **fine dining zaken** en zelfs in een **Michelin-sterrenrestaurant**. Uiteindelijk werd ik **chef-kok van een klein restaurant** — een rol die ik geweldig vond vanwege de intensiteit en creativiteit.
+- Webontwikkeling: moderne, toegankelijke websites en webapplicaties gericht op prestaties en onderhoudbaarheid.
+- Beveiliging & hardening: risicoanalyse, basis pentests en concrete verbeterplannen.
+- Systemen & infrastructuur: netwerkontwerp, VPN's, virtualisatie, backups en operationele runbooks.
+- Architectuur & advies: ontwerp voor kleine en middelgrote systemen, cloud/on-prem advies en migratieplanning.
 
-Toen kwam de COVID-19-pandemie, en zoals velen in de horeca had ik plots meer vrije tijd. Tijdens die onverwachte pauze herontdekte ik een oude passie: **computers en het internet**.
+## Werkwijze
 
-Ik besloot te onderzoeken of IT meer kon zijn dan een hobby, en schreef me in voor de **bacheloropleiding aan Thomas More**. Fast-forward naar vandaag — ik heb deze nieuwe weg volledig omarmd en heb er geen spijt van.
+Ik werk resultaatgericht: eerst het probleem begrijpen, vervolgens een pragmatische oplossing voorstellen en uiteindelijk een getest resultaat opleveren. Documentatie, voorspelbare deploys en onderhoudsvriendelijke code zijn prioriteiten zodat je na het project zelfstandig verder kunt.
 
-### Mijn hobby's
-- **Gamen** – Ik hou van verhalende games en alles wat mijn competitieve kant prikkelt.
-- **Gitaar** – Na een codeersessie speel ik graag gitaar. Afhankelijk van mijn stemming speel ik alles van **Creedence Clearwater Revival** tot **Metallica** — het helpt me ontspannen en in een ander ritme komen.
-- **Koken & Bakken** – Hoewel ik de professionele keuken achter me heb gelaten, kook en bak ik nog steeds graag voor vrienden en familie. Er gaat niets boven samen genieten van een zelfgemaakte maaltijd of dessert.
-- **Tuinieren** – Ik vind het heerlijk om in de tuin te werken en mijn eigen eten te kweken. Het is enorm bevredigend om ingrediënten uit eigen tuin te oogsten en te verwerken.
+## Vaardigheden & tools
 
-## 🤝 Samenwerken?
+- Systeembeheer: Linux/Windows-servers, virtualisatie, netwerken, firewalls, VPN's
+- Ontwikkeling: JavaScript/TypeScript, Node.js, HTML/CSS, eenvoudige backendservices
+- DevOps & tooling: CI/CD, containerisatie, monitoring, backups
+- Overig: security best practices, documentatie, klantgerichte communicatie
 
-Interesse om samen te werken?
-Stuur gerust een bericht naar [jonas@jo-qu.com](mailto:jonas@jo-qu.com) of neem contact op via [LinkedIn](https://www.linkedin.com/in/jonas-quintiens-5838a01aa).
+## Klaar om te praten?
+
+Wil je een project, security review of systeem-audit bespreken? Laten we een korte afspraak inplannen om scope en vervolgstappen te bepalen. Mail naar [jonas@jo-qu.com](mailto:jonas@jo-qu.com?subject=Consultatie%20aanvraag) of gebruik het contactformulier op de site: <a href="/contact/">Contact</a>
+
+Prefer LinkedIn? <a href="https://www.linkedin.com/in/jonas-quintiens-5838a01aa">Verbind op LinkedIn</a>
+
+Als je direct wilt doorgaan, vermeld dan "Website/Infra Aanvraag" in je bericht en ik reageer binnen 48 uur om een vrijblijvende introductiecall van 20–30 minuten in te plannen.
