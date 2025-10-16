@@ -137,7 +137,10 @@ body, html, input, textarea, button, select {
   color: #444;
 }
 a, .post-item-summary a, li a {
-  white-space: nowrap;
+  /* Allow links to wrap normally so long strings don't force horizontal scrolling */
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: anywhere;
   text-decoration: none;
 }
 @media (max-width: 700px) {
@@ -153,6 +156,15 @@ a, .post-item-summary a, li a {
   .project-card {
     min-height: unset;
     padding-bottom: 1rem;
+  }
+  
+  .project-tiles {
+    gap: 1rem;
+  }
+  
+  .tile {
+    width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -272,6 +284,9 @@ a, .post-item-summary a, li a {
   
   .project-title {
     font-size: 1.2rem;
+    white-space: normal;
+    word-break: break-word;
+    hyphens: auto;
   }
   
   .arrow-icon {
@@ -420,6 +435,54 @@ a, .post-item-summary a, li a {
   
   .stat-number {
     font-size: 2rem;
+  }
+  
+  .stat-label {
+    font-size: 0.8rem;
+  }
+}
+
+/* Additional mobile breakpoints for better responsiveness */
+@media (max-width: 600px) {
+  .projects-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .stat-item {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .stat-number {
+    font-size: 1.8rem;
+  }
+  
+  .stat-label {
+    font-size: 0.85rem;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-intro {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .projects-intro p {
+    font-size: 1rem;
+  }
+  
+  .projects-stats {
+    padding: 0.75rem;
+    margin: 1.5rem 0 2rem 0;
+  }
+  
+  .stat-number {
+    font-size: 1.5rem;
   }
   
   .stat-label {
@@ -712,6 +775,28 @@ a, .post-item-summary a, li a {
 
 /* Mobile form and overscroll fixes */
 @media (max-width: 700px) {
+  /* Ensure containers don't overflow horizontally */
+  .projects-intro,
+  .projects-stats,
+  .project-card,
+  .project-item,
+  .tile {
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* Fix any potential horizontal scroll issues */
+  body {
+    overflow-x: hidden;
+  }
+  
+  /* Make sure flex containers wrap properly */
+  .project-list,
+  .project-tiles {
+    width: 100%;
+  }
+  
   /* Ensure form grid stacks and uses full width on small screens */
   .form-grid {
     max-width: 100%;
