@@ -3,7 +3,10 @@ title = "Home"
 draft = false
 +++
 
-<h1 class="site-title">Jo - Qu</h1>
+<h1 class="site-title visually-hidden">Jo - Qu</h1>
+<a href="/" class="site-logo" aria-label="Jo‑Qu — Home" style="display:inline-block; text-decoration:none;">
+  <img src="/photos/android-chrome-192x192.png" alt="Jo‑Qu logo" width="160" height="48" loading="lazy" style="display:block; max-width:100%; height:auto;">
+</a>
 <p class="site-tagline">Secure & reliable web solutions for SMEs — clear scope, fast delivery, long‑term maintainability.</p>
 
 <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
