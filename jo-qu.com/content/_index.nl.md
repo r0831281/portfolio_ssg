@@ -4,7 +4,6 @@ draft = false
 +++
 
 
-<h1 class="site-title visually-hidden">Jo - Qu</h1>
 <a href="/" class="site-logo" aria-label="Jo‑Qu — Home" style="display:inline-block; text-decoration:none;">
   <img src="/photos/android-chrome-192x192.png" alt="Jo‑Qu logo" width="160" height="48" loading="lazy" style="display:block; max-width:100%; height:auto;">
 </a>
