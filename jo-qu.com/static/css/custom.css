@@ -574,7 +574,10 @@ a, .post-item-summary a, li a {
   transform: translateY(-10px);
   transition: all 0.2s ease;
   z-index: 1000;
-  min-width: 140px;
+  /* Ensure dropdown is wide enough for full language names and prevent wrapping */
+  min-width: 180px;
+  box-sizing: border-box;
+  white-space: nowrap;
   overflow: hidden;
 }
 
@@ -607,6 +610,11 @@ a, .post-item-summary a, li a {
 .lang-option .lang-text {
   font-size: 0.9rem;
   font-weight: 500;
+  /* Prevent language names from breaking across lines; ellipsize if extremely long */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 /* Mobile responsive adjustments */
@@ -626,7 +634,9 @@ a, .post-item-summary a, li a {
   
   .lang-dropdown {
     right: -10px;
-    min-width: 120px;
+    /* allow a bit more room on smaller screens while still preventing awkward wrapping */
+    min-width: 140px;
+    white-space: nowrap;
   }
   
   .lang-option {
