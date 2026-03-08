@@ -6,7 +6,7 @@ draft = false
 
 # Contact
 
-Prefer email? jonas@jo-qu.com
+Prefer email?? jonas@jo-qu.com
 
 Or send a quick message below—I'll reply within 1–2 business days.
 
