@@ -296,6 +296,12 @@
       width: 100%;
     }
 
+    .bot-fallback {
+      color: var(--text-secondary);
+      margin: 0;
+      text-align: center;
+    }
+
     @media (max-width: 768px) {
       .container {
         padding: 1rem;
@@ -338,7 +344,9 @@
 
     <!-- Bot Section -->
     <div class="bot-section">
-      <div id="disinfo-bot-container"></div>
+      <div id="disinfo-bot-container">
+        <p class="bot-fallback">Analyzer loading...</p>
+      </div>
     </div>
 
     <!-- Common Bad-Faith Tactics Section -->
@@ -877,6 +885,10 @@
 
       const copyResponse = (tactic) => {
         const payload = buildSharePayload(tactic);
+        if (!navigator.clipboard) {
+          pushToast('Copy requires HTTPS', 'warn');
+          return;
+        }
         navigator.clipboard.writeText(payload.text).then(() => pushToast('Copied response', 'success'))
           .catch(() => pushToast('Copy failed', 'error'));
       };
@@ -1312,6 +1324,7 @@
         const id = data.tacticName.toLowerCase().replace(/[^a-z0-9\s]/g,'').replace(/\s+/g,'-');
         const url = `${location.origin}${location.pathname}#${id}`;
         const text = `${data.tacticName} – Suggested response:\n"${data.suggestedResponse}"\n\nExplanation: ${data.explanation}\n${url}`;
+        if (!navigator.clipboard) { toast('Copy requires HTTPS','warn'); return; }
         navigator.clipboard.writeText(text).then(()=>toast('Copied response')).catch(()=>toast('Copy failed','error'));
       };
       window.__shareStatic = async (btn) => {
@@ -1330,6 +1343,7 @@
 
   <footer style="text-align:center; color:#64748b; font-size:1rem; margin-top:2rem; padding:2rem 0 1rem 0;">
     Made with <span style="color:#ef4444;">&#10084;&#65039;</span> by Jonas &middot; <a href="https://jo-qu.com" style="color:#2563eb; text-decoration:underline;">@jo-qu.com</a>
-  </footer></footer>
+  </footer>
 
+</body>
 </html>

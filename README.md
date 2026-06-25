@@ -80,7 +80,8 @@ This site is deployed for free using a CI/CD pipeline on **Cloudflare Pages**. T
    ```
    jo-qu.com/public
    ```
-4. **Configure your custom domain** by adding a CNAME record in your DNS settings to point to the Cloudflare Pages subdomain.
+4. **Add the Pages Function secret** `GEMINI_API_KEY` in Cloudflare Pages settings. The Disinfo Defense Kit calls `jo-qu.com/functions/api/analyze.js` through `/api/analyze`.
+5. **Configure your custom domain** by adding a CNAME record in your DNS settings to point to the Cloudflare Pages subdomain.
 
 For more details, see [Cloudflare Pages documentation](https://developers.cloudflare.com/pages/).
 

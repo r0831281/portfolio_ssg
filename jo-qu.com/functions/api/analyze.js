@@ -1,6 +1,8 @@
 // functions/api/analyze.js
 // This file will be deployed as a Cloudflare Pages Function
 
+const GEMINI_MODEL = "gemini-3.5-flash";
+
 // Define the definitions for the AI model to use
 // This object and the generatePrompt function are now located here in the backend.
 const definitions = {
@@ -270,7 +272,9 @@ const processGeminiResponse = (result) => {
   }
 
   try {
-    const jsonString = candidate.content.parts[0].text;
+    const jsonString = candidate.content.parts[0].text.trim()
+      .replace(/^```(?:json)?\s*/i, "")
+      .replace(/\s*```$/i, "");
     const parsedJson = JSON.parse(jsonString);
     
     // Validate the response structure
@@ -321,7 +325,10 @@ export async function onRequest(context) {
   }
 
   if (context.request.method !== 'POST') {
-    return new Response('Method Not Allowed', { status: 405 });
+    return new Response(JSON.stringify({ error: "Method not allowed. Use POST." }), {
+      status: 405,
+      headers: { 'Content-Type': 'application/json', 'Allow': 'POST' },
+    });
   }
 
   try {
@@ -345,60 +352,64 @@ export async function onRequest(context) {
     const payload = {
       contents: chatHistory,
       generationConfig: {
-        responseMimeType: "application/json",
-        responseSchema: {
-          type: "OBJECT",
-          properties: {
-            overallAssessment: {
-              type: "OBJECT",
+        responseFormat: {
+          text: {
+            mimeType: "application/json",
+            schema: {
+              type: "object",
               properties: {
-                tone: { type: "STRING" },
-                primaryIssues: { type: "ARRAY", items: { type: "STRING" } },
-                context: { type: "STRING" },
-                severity: { type: "STRING" },
-                generalQuality: { type: "STRING" }
-              },
-              required: ["tone", "primaryIssues", "context", "severity"]
-            },
-            identifiedTactics: {
-              type: "ARRAY",
-              items: {
-                type: "OBJECT",
-                properties: {
-                  tacticName: { type: "STRING" },
-                  category: { type: "STRING" },
-                  explanation: { type: "STRING" },
-                  exampleFromInput: { type: "STRING" },
-                  suggestedResponse: { type: "STRING" },
-                  confidenceScore: { type: "NUMBER" },
-                  severity: { type: "STRING" },
-                  intent: { type: "STRING" },
-                  impact: { type: "STRING" },
-                  startPosition: { type: "STRING" }
+                overallAssessment: {
+                  type: "object",
+                  properties: {
+                    tone: { type: "string" },
+                    primaryIssues: { type: "array", items: { type: "string" } },
+                    context: { type: "string" },
+                    severity: { type: "string" },
+                    generalQuality: { type: "string" }
+                  },
+                  required: ["tone", "primaryIssues", "context", "severity"]
                 },
-                required: ["tacticName", "explanation", "suggestedResponse", "confidenceScore", "severity"]
-              }
-            },
-            constructiveFeedback: {
-              type: "OBJECT",
-              properties: {
-                strengths: { type: "ARRAY", items: { type: "STRING" } },
-                improvements: { type: "ARRAY", items: { type: "STRING" } },
-                alternatives: { type: "ARRAY", items: { type: "STRING" } },
-                contextualNotes: { type: "ARRAY", items: { type: "STRING" } }
+                identifiedTactics: {
+                  type: "array",
+                  items: {
+                    type: "object",
+                    properties: {
+                      tacticName: { type: "string" },
+                      category: { type: "string" },
+                      explanation: { type: "string" },
+                      exampleFromInput: { type: "string" },
+                      suggestedResponse: { type: "string" },
+                      confidenceScore: { type: "number" },
+                      severity: { type: "string" },
+                      intent: { type: "string" },
+                      impact: { type: "string" },
+                      startPosition: { type: "string" }
+                    },
+                    required: ["tacticName", "explanation", "suggestedResponse", "confidenceScore", "severity"]
+                  }
+                },
+                constructiveFeedback: {
+                  type: "object",
+                  properties: {
+                    strengths: { type: "array", items: { type: "string" } },
+                    improvements: { type: "array", items: { type: "string" } },
+                    alternatives: { type: "array", items: { type: "string" } },
+                    contextualNotes: { type: "array", items: { type: "string" } }
+                  },
+                  required: ["strengths", "improvements", "alternatives"]
+                },
+                summary: { type: "string" }
               },
-              required: ["strengths", "improvements", "alternatives"]
-            },
-            summary: { type: "STRING" }
-          },
-          required: ["overallAssessment", "identifiedTactics", "constructiveFeedback", "summary"]
+              required: ["overallAssessment", "identifiedTactics", "constructiveFeedback", "summary"]
+            }
+          }
         },
         temperature: 0.3, // Lower temperature for more consistent analysis
         maxOutputTokens: 8192 // Allow for detailed responses
       }
     };
 
-    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${GEMINI_API_KEY}`;
+    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 
     let retries = 0;
     const maxRetries = 5;
@@ -407,7 +418,10 @@ export async function onRequest(context) {
     while (retries < maxRetries) {
       const response = await fetch(apiUrl, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'x-goog-api-key': GEMINI_API_KEY
+        },
         body: JSON.stringify(payload)
       });
 
