@@ -71,16 +71,19 @@ This site is deployed for free using a CI/CD pipeline on **Cloudflare Pages**. T
 #### Deploying to Cloudflare Pages
 
 1. **Push your changes to the main branch** of your GitHub (or GitLab) repository.
-2. **Connect your repository to Cloudflare Pages** via the Cloudflare dashboard.
+2. **Connect your repository to Cloudflare Pages** via the Cloudflare dashboard and set the root directory to:
+   ```
+   jo-qu.com
+   ```
 3. **Set the build command** to:
    ```sh
    hugo --minify
    ```
    and the output directory to:
    ```
-   jo-qu.com/public
+   public
    ```
-4. **Add the Pages Function secret** `GEMINI_API_KEY` in Cloudflare Pages settings. The Disinfo Defense Kit calls `jo-qu.com/functions/api/analyze.js` through `/api/analyze`.
+4. **Add the Pages Function secret** `GEMINI_API_KEY` in Cloudflare Pages settings. The Disinfo Defense Kit calls `jo-qu.com/functions/api/analyze.js` through `/api/analyze`. GitHub Secrets are not used by the current deploy setup unless you add a GitHub Actions workflow, so mirror rotated keys in Cloudflare Pages too.
 5. **Configure your custom domain** by adding a CNAME record in your DNS settings to point to the Cloudflare Pages subdomain.
 
 For more details, see [Cloudflare Pages documentation](https://developers.cloudflare.com/pages/).
