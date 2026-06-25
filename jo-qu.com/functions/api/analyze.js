@@ -1,7 +1,7 @@
 // functions/api/analyze.js
 // This file will be deployed as a Cloudflare Pages Function
 
-const GEMINI_MODEL = "gemini-2.5-flash";
+const GEMINI_MODELS = ["gemini-2.5-flash-lite", "gemini-2.5-flash"];
 
 // Define the definitions for the AI model to use
 // This object and the generatePrompt function are now located here in the backend.
@@ -358,36 +358,41 @@ export async function onRequest(context) {
       }
     };
 
-    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
-
-    let retries = 0;
     const maxRetries = 5;
     const baseDelay = 1000; // 1 second
+    let lastError = "Failed to analyze text after multiple retries due to rate limiting or network issues.";
 
-    while (retries < maxRetries) {
-      const response = await fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'x-goog-api-key': GEMINI_API_KEY
-        },
-        body: JSON.stringify(payload)
-      });
+    for (const model of GEMINI_MODELS) {
+      const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
+      let retries = 0;
 
-      if (!response.ok) {
-        if (response.status === 429) { // Too Many Requests
-          const delay = baseDelay * Math.pow(2, retries) + Math.random() * 1000; // Exponential backoff with jitter
-          console.warn(`Rate limit hit. Retrying in ${delay / 1000} seconds...`);
-          await new Promise(resolve => setTimeout(resolve, delay));
-          retries++;
-          continue; // Retry the request
-        } else {
+      while (retries < maxRetries) {
+        const response = await fetch(apiUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'x-goog-api-key': GEMINI_API_KEY
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
           const errorText = await response.text();
-          console.error(`Gemini API error: ${response.status} - ${errorText}`);
+          console.error(`Gemini API error (${model}): ${response.status} - ${errorText}`);
           let details = errorText.substring(0, 500);
           try {
             details = JSON.parse(errorText).error?.message || details;
           } catch (_) {}
+          lastError = details;
+
+          if (response.status === 429 || response.status === 503 || /high demand/i.test(details)) {
+            const delay = baseDelay * Math.pow(2, retries) + Math.random() * 1000; // Exponential backoff with jitter
+            console.warn(`${model} unavailable. Retrying in ${delay / 1000} seconds...`);
+            await new Promise(resolve => setTimeout(resolve, delay));
+            retries++;
+            continue; // Retry the request
+          }
+
           return new Response(JSON.stringify({ 
             error: `Gemini API error: ${response.status}`,
             details
@@ -396,21 +401,23 @@ export async function onRequest(context) {
             headers: { 'Content-Type': 'application/json' },
           });
         }
-      }
 
-      const result = await response.json();
-      const processedResponse = processGeminiResponse(result);
+        const result = await response.json();
+        const processedResponse = processGeminiResponse(result);
+        processedResponse.model = model;
       
-      return new Response(JSON.stringify(processedResponse), {
-        headers: { 
-          'Content-Type': 'application/json',
-          'Cache-Control': 'no-cache' // Prevent caching of analysis results
-        },
-      });
+        return new Response(JSON.stringify(processedResponse), {
+          headers: {
+            'Content-Type': 'application/json',
+            'Cache-Control': 'no-cache' // Prevent caching of analysis results
+          },
+        });
+      }
     }
 
     return new Response(JSON.stringify({ 
-      error: "Failed to analyze text after multiple retries due to rate limiting or network issues." 
+      error: "Failed to analyze text after trying the free Gemini fallback models.",
+      details: lastError
     }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },
