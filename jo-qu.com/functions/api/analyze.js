@@ -96,6 +96,61 @@ const definitions = {
       description: "Reducing a complex topic to an overly simple explanation, omitting important nuances, context, or factors to make a point. This can lead to a misleading representation of reality.",
       example: "Unemployment is just a matter of people not looking hard enough for a job.",
       response: "That's an oversimplification. The reality is more complex, and multiple factors are at play."
+    },
+    "False Dilemma": {
+      description: "Presenting only two choices when more options exist. This pressures people into accepting a preferred position by hiding alternatives.",
+      example: "Either you support this policy completely, or you don't care about public safety.",
+      response: "Those are not the only options. Let's look at the actual tradeoffs and alternatives."
+    },
+    "Poisoning the Well": {
+      description: "Preemptively discrediting a person or source before their argument is heard. This shifts attention from evidence to suspicion.",
+      example: "Before you listen to that report, remember it comes from people who hate our movement.",
+      response: "Let's evaluate the claim and evidence directly instead of dismissing the source upfront."
+    },
+    "Scapegoating": {
+      description: "Blaming a complex problem on a single person or group, often to redirect anger away from structural causes or shared responsibility.",
+      example: "Everything is more expensive because immigrants are taking what belongs to us.",
+      response: "That blames one group for a complex issue. What evidence connects them to the actual cause?"
+    },
+    "Conspiracy Framing": {
+      description: "Framing disagreement or missing evidence as proof of a hidden coordinated plot. This makes the claim difficult to challenge because contrary evidence is treated as part of the cover-up.",
+      example: "The fact that mainstream outlets won't report this proves they are all in on it.",
+      response: "Lack of coverage is not proof of a conspiracy. What verifiable evidence supports the claim?"
+    },
+    "DARVO": {
+      description: "Denying a behavior, attacking the person who raised it, then reversing victim and offender roles. This derails accountability by making the original concern look like an attack.",
+      example: "I did not insult you. You are attacking me by even bringing this up.",
+      response: "Let's stay with the original behavior and whether it happened."
+    },
+    "Sealioning": {
+      description: "Repeatedly making polite-sounding demands for evidence or explanation after the point has already been answered. It exhausts the other person while pretending to be civil inquiry.",
+      example: "I am just asking for proof. Can you explain it again, point by point, with sources, even though you already sent them?",
+      response: "I have answered that. What specific part of the evidence do you dispute?"
+    },
+    "Just Asking Questions": {
+      description: "Smuggling an accusation or insinuation into a leading question while avoiding responsibility for making a clear claim.",
+      example: "Isn't it strange that all these experts are saying the same thing?",
+      response: "A question can still imply a claim. What exactly are you claiming?"
+    },
+    "Moving the Goalposts": {
+      description: "Changing the standard of proof or success after evidence has been provided, so the original challenge can never be satisfied.",
+      example: "That study is not enough. Show me three more, and they need to be from a different country.",
+      response: "That answers your original question. Are you changing the standard?"
+    },
+    "Dog Whistling": {
+      description: "Using coded language that signals a message to an in-group while preserving plausible deniability to others.",
+      example: "We all know what kind of people are ruining this neighborhood.",
+      response: "Can you say plainly what group or behavior you mean?"
+    },
+    "Nutpicking": {
+      description: "Selecting the worst or most fringe example from a group and treating it as representative of the whole group.",
+      example: "Look at this one extreme protester. This proves the whole movement is dangerous.",
+      response: "One bad example does not represent the whole group. What is typical?"
+    },
+    "Impossible Standard": {
+      description: "Demanding unrealistic or unattainable proof before accepting any point, often to avoid engaging with strong available evidence.",
+      example: "Unless you can prove this has never failed anywhere, I will not accept it.",
+      response: "What evidence would actually change your mind?"
     }
   },
   "How to Spot Biased Reporting and Propaganda": {
@@ -138,6 +193,16 @@ const definitions = {
       description: "Taking quotes out of context or only using partial quotes that distort the speaker's intended meaning.",
       example: "Taking 'I think in some cases, this policy could work' and reporting it as 'I think... this policy could work' to show stronger support.",
       response: "Always look for the full context of quotes and be suspicious of partial quotes with ellipses."
+    },
+    "Outrage Bait": {
+      description: "Packaging information to maximize anger, contempt, or tribal identity rather than understanding. It often uses moralized framing, vague enemies, and urgent calls to react.",
+      example: "They don't want you to see this because it exposes everything. Share before it gets deleted!",
+      response: "Strong emotional framing is a cue to slow down. What is the original source and what does it actually show?"
+    },
+    "Source Laundering": {
+      description: "Passing a weak or dubious claim through screenshots, reposts, summaries, or low-quality citations until it appears more credible than the original source supports.",
+      example: "A viral post cites a blog that cites another post that cites an unnamed report, but none link to primary evidence.",
+      response: "What is the original source for the claim, and does it actually support this conclusion?"
     }
   }
 };
@@ -169,6 +234,10 @@ INSTRUCTIONS:
 - Be nuanced - not every strong statement is a bad-faith tactic
 - Check for factual inaccuracies and oversimplifications that may mislead readers
 - Identify statements that present complex issues in overly simple terms
+- Ground every identified tactic in a short quote from the input
+- Separate rhetorical analysis from factual verification. If a factual claim needs live evidence, say what should be checked instead of pretending certainty
+- Prefer 1-5 strongest findings over an exhaustive list of weak matches
+- Use a calm, practical tone. The goal is to help the user respond well, not to dunk on the speaker
 
 PREDEFINED TACTICS AND RESPONSES:
 
@@ -192,10 +261,18 @@ INPUT TEXT TO ANALYZE:
 
 ANALYSIS APPROACH:
 1. Read the entire text for context and overall tone
-2. Identify specific instances of problematic rhetoric
-3. Assess the intent behind each instance (malicious vs. unintentional)
-4. Consider the potential impact on productive discourse
-5. Provide balanced, constructive feedback
+2. Extract the main claim(s), target/audience, emotional framing, and missing context
+3. Identify specific instances of problematic rhetoric, each tied to a quote
+4. Assess whether each issue is likely intentional, possibly unintentional, or unclear
+5. Consider the potential impact on productive discourse
+6. Provide balanced, constructive feedback and a response the user could actually send
+
+CONFIDENCE AND SEVERITY:
+- confidenceScore: 0.90+ only for clear textbook cases, 0.70-0.89 for likely cases, 0.60-0.69 for tentative cases
+- severity "high": directly deceptive, dehumanizing, threatening, or strongly derailing
+- severity "medium": meaningfully distorts or derails the exchange
+- severity "low": minor framing issue, ambiguous intent, or weak signal
+- Do not include findings below 0.60 confidence
 
 RESPONSE FORMAT:
 Return a JSON object with the following structure:
@@ -239,6 +316,8 @@ IMPORTANT GUIDELINES:
 - Provide actionable, specific feedback rather than generic advice
 - Use the predefined tactics as a guide, but be flexible in your analysis
 - If you identify a tactic not in the predefined list, include it as a "Custom" tactic with a detailed explanation of its relevance.
+- If the text contains reasonable criticism mixed with bad rhetoric, acknowledge the reasonable part in constructiveFeedback.strengths
+- If evidence is missing, phrase it as "needs verification" rather than "false" unless the falsehood is obvious and stable
 `;
 
   return prompt;

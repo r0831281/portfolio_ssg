@@ -143,6 +143,55 @@
       border: 1px solid var(--border-color);
     }
 
+    .reference-section {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .reference-section summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      user-select: none;
+    }
+
+    .reference-section summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .reference-section summary h2 {
+      flex: 1;
+      min-width: 0;
+      margin: 0;
+      font-size: 1.25rem;
+    }
+
+    .reference-meta {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      white-space: nowrap;
+    }
+
+    .reference-section summary::after {
+      content: '+';
+      color: var(--primary-color);
+      font-size: 1.4rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .reference-section[open] summary::after {
+      content: '-';
+    }
+
+    .reference-section .tactics-grid,
+    .reference-section > .tactic-description {
+      padding: 0 1.5rem 1.5rem;
+    }
+
     .tactics-grid {
       display: grid;
       gap: 1.5rem;
@@ -324,6 +373,19 @@
       .hero-section, .content-section, .conclusion-section {
         padding: 2rem 1.5rem;
       }
+
+      .reference-section {
+        padding: 0;
+      }
+
+      .reference-section summary {
+        padding: 1rem;
+      }
+
+      .reference-section .tactics-grid,
+      .reference-section > .tactic-description {
+        padding: 0 1rem 1rem;
+      }
       
       .bot-section {
         padding: 1.5rem;
@@ -350,8 +412,11 @@
     </div>
 
     <!-- Common Bad-Faith Tactics Section -->
-    <div class="content-section">
-      <h2>Common Bad-Faith Tactics</h2>
+    <details class="content-section reference-section">
+      <summary>
+        <h2>Common Bad-Faith Tactics</h2>
+        <span class="reference-meta">14 tactics</span>
+      </summary>
       <div class="tactics-grid">
         <div class="tactic-card" id="well-actually">
           <h3 class="tactic-title">Well Actually</h3>
@@ -575,11 +640,14 @@
           </div>
         </div>
       </div>
-    </div>
+    </details>
 
     <!-- Biased Reporting Section -->
-    <div class="content-section">
-      <h2>How to Spot Biased Reporting and Propaganda</h2>
+    <details class="content-section reference-section">
+      <summary>
+        <h2>Biased Reporting and Propaganda</h2>
+        <span class="reference-meta">7 tactics</span>
+      </summary>
       <p class="tactic-description">
         Beyond individual debates, we must also be vigilant about the media we consume. These tactics are often used to shape narratives and create a biased worldview.
       </p>
@@ -675,11 +743,14 @@
           </div>
         </div>
       </div>
-    </div>
+    </details>
 
     <!-- Additional Tactics Section -->
-    <div class="content-section">
-      <h2>Additional Bad-Faith Tactics</h2>
+    <details class="content-section reference-section">
+      <summary>
+        <h2>Additional Bad-Faith Tactics</h2>
+        <span class="reference-meta">18 tactics</span>
+      </summary>
       <div class="tactics-grid">
         <div class="tactic-card" id="selective-quoting">
           <h3 class="tactic-title">Selective Quoting</h3>
@@ -745,8 +816,177 @@
             <strong>Response:</strong> "That's an oversimplification. The reality is more complex, and multiple factors are at play."
           </div>
         </div>
+
+        <div class="tactic-card" id="false-dilemma">
+          <h3 class="tactic-title">False Dilemma</h3>
+          <p class="tactic-description">
+            Presenting only two choices when more options exist. This pressures people into accepting a preferred position by hiding alternatives.
+          </p>
+          <div class="example-text">
+            <strong>Example:</strong> "Either you support this policy completely, or you don't care about public safety."
+          </div>
+          <div class="response-text">
+            <strong>Response:</strong> "Those are not the only options. Let's look at the actual tradeoffs and alternatives."
+          </div>
+        </div>
+
+        <div class="tactic-card" id="poisoning-the-well">
+          <h3 class="tactic-title">Poisoning the Well</h3>
+          <p class="tactic-description">
+            Preemptively discrediting a person or source before their argument is heard. This shifts attention from evidence to suspicion.
+          </p>
+          <div class="example-text">
+            <strong>Example:</strong> "Before you listen to that report, remember it comes from people who hate our movement."
+          </div>
+          <div class="response-text">
+            <strong>Response:</strong> "Let's evaluate the claim and evidence directly instead of dismissing the source upfront."
+          </div>
+        </div>
+
+        <div class="tactic-card" id="scapegoating">
+          <h3 class="tactic-title">Scapegoating</h3>
+          <p class="tactic-description">
+            Blaming a complex problem on a single person or group, often to redirect anger away from structural causes or shared responsibility.
+          </p>
+          <div class="example-text">
+            <strong>Example:</strong> "Everything is more expensive because immigrants are taking what belongs to us."
+          </div>
+          <div class="response-text">
+            <strong>Response:</strong> "That blames one group for a complex issue. What evidence connects them to the actual cause?"
+          </div>
+        </div>
+
+        <div class="tactic-card" id="conspiracy-framing">
+          <h3 class="tactic-title">Conspiracy Framing</h3>
+          <p class="tactic-description">
+            Framing disagreement or missing evidence as proof of a hidden coordinated plot. Contrary evidence is treated as part of the cover-up.
+          </p>
+          <div class="example-text">
+            <strong>Example:</strong> "The fact that mainstream outlets won't report this proves they are all in on it."
+          </div>
+          <div class="response-text">
+            <strong>Response:</strong> "Lack of coverage is not proof of a conspiracy. What verifiable evidence supports the claim?"
+          </div>
+        </div>
+
+        <div class="tactic-card" id="outrage-bait">
+          <h3 class="tactic-title">Outrage Bait</h3>
+          <p class="tactic-description">
+            Packaging information to maximize anger, contempt, or tribal identity rather than understanding.
+          </p>
+          <div class="example-text">
+            <strong>Example:</strong> "They don't want you to see this because it exposes everything. Share before it gets deleted!"
+          </div>
+          <div class="response-text">
+            <strong>Response:</strong> "Strong emotional framing is a cue to slow down. What is the original source and what does it actually show?"
+          </div>
+        </div>
+
+        <div class="tactic-card" id="darvo">
+          <h3 class="tactic-title">DARVO</h3>
+          <p class="tactic-description">
+            Denying a behavior, attacking the person who raised it, then reversing victim and offender roles.
+          </p>
+          <div class="example-text">
+            <strong>Example:</strong> "I did not insult you. You are attacking me by even bringing this up."
+          </div>
+          <div class="response-text">
+            <strong>Response:</strong> "Let's stay with the original behavior and whether it happened."
+          </div>
+        </div>
+
+        <div class="tactic-card" id="sealioning">
+          <h3 class="tactic-title">Sealioning</h3>
+          <p class="tactic-description">
+            Repeatedly making polite-sounding demands for evidence or explanation after the point has already been answered.
+          </p>
+          <div class="example-text">
+            <strong>Example:</strong> "I am just asking for proof. Can you explain it again, point by point, with sources, even though you already sent them?"
+          </div>
+          <div class="response-text">
+            <strong>Response:</strong> "I have answered that. What specific part of the evidence do you dispute?"
+          </div>
+        </div>
+
+        <div class="tactic-card" id="just-asking-questions">
+          <h3 class="tactic-title">Just Asking Questions</h3>
+          <p class="tactic-description">
+            Smuggling an accusation or insinuation into a leading question while avoiding responsibility for making a clear claim.
+          </p>
+          <div class="example-text">
+            <strong>Example:</strong> "Isn't it strange that all these experts are saying the same thing?"
+          </div>
+          <div class="response-text">
+            <strong>Response:</strong> "A question can still imply a claim. What exactly are you claiming?"
+          </div>
+        </div>
+
+        <div class="tactic-card" id="moving-the-goalposts">
+          <h3 class="tactic-title">Moving the Goalposts</h3>
+          <p class="tactic-description">
+            Changing the standard of proof or success after evidence has been provided, so the original challenge can never be satisfied.
+          </p>
+          <div class="example-text">
+            <strong>Example:</strong> "That study is not enough. Show me three more, and they need to be from a different country."
+          </div>
+          <div class="response-text">
+            <strong>Response:</strong> "That answers your original question. Are you changing the standard?"
+          </div>
+        </div>
+
+        <div class="tactic-card" id="dog-whistling">
+          <h3 class="tactic-title">Dog Whistling</h3>
+          <p class="tactic-description">
+            Using coded language that signals a message to an in-group while preserving plausible deniability to others.
+          </p>
+          <div class="example-text">
+            <strong>Example:</strong> "We all know what kind of people are ruining this neighborhood."
+          </div>
+          <div class="response-text">
+            <strong>Response:</strong> "Can you say plainly what group or behavior you mean?"
+          </div>
+        </div>
+
+        <div class="tactic-card" id="nutpicking">
+          <h3 class="tactic-title">Nutpicking</h3>
+          <p class="tactic-description">
+            Selecting the worst or most fringe example from a group and treating it as representative of the whole group.
+          </p>
+          <div class="example-text">
+            <strong>Example:</strong> "Look at this one extreme protester. This proves the whole movement is dangerous."
+          </div>
+          <div class="response-text">
+            <strong>Response:</strong> "One bad example does not represent the whole group. What is typical?"
+          </div>
+        </div>
+
+        <div class="tactic-card" id="impossible-standard">
+          <h3 class="tactic-title">Impossible Standard</h3>
+          <p class="tactic-description">
+            Demanding unrealistic or unattainable proof before accepting any point, often to avoid engaging with strong available evidence.
+          </p>
+          <div class="example-text">
+            <strong>Example:</strong> "Unless you can prove this has never failed anywhere, I will not accept it."
+          </div>
+          <div class="response-text">
+            <strong>Response:</strong> "What evidence would actually change your mind?"
+          </div>
+        </div>
+
+        <div class="tactic-card" id="source-laundering">
+          <h3 class="tactic-title">Source Laundering</h3>
+          <p class="tactic-description">
+            Passing a weak or dubious claim through screenshots, reposts, summaries, or low-quality citations until it appears more credible than the original source supports.
+          </p>
+          <div class="example-text">
+            <strong>Example:</strong> A viral post cites a blog that cites another post that cites an unnamed report, but none link to primary evidence.
+          </div>
+          <div class="response-text">
+            <strong>Response:</strong> "What is the original source for the claim, and does it actually support this conclusion?"
+          </div>
+        </div>
       </div>
-    </div>
+    </details>
 
     <!-- Conclusion Section -->
     <div class="conclusion-section">
@@ -768,6 +1008,31 @@
       const [analysisResult, setAnalysisResult] = React.useState(null);
       const [loading, setLoading] = React.useState(false);
       const [error, setError] = React.useState(null);
+      const [severityFilters, setSeverityFilters] = React.useState({ high: true, medium: true, low: true });
+      const [highConfidenceOnly, setHighConfidenceOnly] = React.useState(false);
+
+      const examples = [
+        {
+          label: 'Gish Gallop',
+          text: "You want renewable energy? What about grid costs, mining for batteries, jobs, China, blackouts, birds killed by turbines, and the fact that climate changed before humans?"
+        },
+        {
+          label: 'Straw Man',
+          text: "So because I asked for better bike lanes, you think every car should be banned and everyone should be forced to cycle in the rain."
+        },
+        {
+          label: 'Biased Headline',
+          text: "DISASTROUS city plan will destroy local businesses, punish families, and hand control to unelected bureaucrats."
+        },
+        {
+          label: 'False Dilemma',
+          text: "Either you back this law exactly as written, or you are siding with criminals and putting families at risk."
+        },
+        {
+          label: 'Conspiracy Frame',
+          text: "The fact that every major outlet ignores this proves they are coordinating to hide the truth from ordinary people."
+        }
+      ];
 
       // Toast utilities
       const pushToast = (msg, variant = 'success') => {
@@ -782,6 +1047,15 @@
         toast.innerHTML = `<span>${msg}</span>`;
         container.appendChild(toast);
         setTimeout(() => { toast.remove(); }, 3800);
+      };
+
+      const copyText = (text, label = 'Copied') => {
+        if (!navigator.clipboard) {
+          pushToast('Copy requires HTTPS', 'warn');
+          return;
+        }
+        navigator.clipboard.writeText(text).then(() => pushToast(label, 'success'))
+          .catch(() => pushToast('Copy failed', 'error'));
       };
 
       // Function to convert tactic name to ID
@@ -815,7 +1089,20 @@
           'Appeal to Emotion': 'appeal-to-emotion',
           'Bandwagon Appeal': 'bandwagon-appeal',
           'Lie': 'lie',
-          'Oversimplification': 'oversimplification'
+          'Oversimplification': 'oversimplification',
+          'False Dilemma': 'false-dilemma',
+          'Poisoning the Well': 'poisoning-the-well',
+          'Scapegoating': 'scapegoating',
+          'Conspiracy Framing': 'conspiracy-framing',
+          'Outrage Bait': 'outrage-bait',
+          'DARVO': 'darvo',
+          'Sealioning': 'sealioning',
+          'Just Asking Questions': 'just-asking-questions',
+          'Moving the Goalposts': 'moving-the-goalposts',
+          'Dog Whistling': 'dog-whistling',
+          'Nutpicking': 'nutpicking',
+          'Impossible Standard': 'impossible-standard',
+          'Source Laundering': 'source-laundering'
         };
         
         // Direct match
@@ -873,6 +1160,39 @@
         }
       };
 
+      const selectedTactics = analysisResult?.identifiedTactics || [];
+      const visibleTactics = selectedTactics.filter((tactic) => {
+        const severity = (tactic.severity || 'low').toLowerCase();
+        const confidence = tactic.confidenceScore || 0;
+        return severityFilters[severity] !== false && (!highConfidenceOnly || confidence >= 0.7);
+      });
+
+      const responseVariants = (response) => ({
+        Calm: response,
+        Firm: `Let's stay on the point: ${response}`,
+        Question: `Can you answer this directly: ${response}`
+      });
+
+      const copyFullAnalysis = () => {
+        if (!analysisResult) return;
+        const lines = [
+          'Disinfo Defense Kit analysis',
+          analysisResult.model ? `Model: ${analysisResult.model}` : null,
+          analysisResult.overallAssessment ? `Tone: ${analysisResult.overallAssessment.tone}` : null,
+          analysisResult.overallAssessment ? `Severity: ${analysisResult.overallAssessment.severity}` : null,
+          analysisResult.summary ? `Summary: ${analysisResult.summary}` : null,
+          '',
+          'Identified issues:',
+          ...(selectedTactics.length ? selectedTactics.map((tactic, index) => [
+            `${index + 1}. ${tactic.tacticName} (${tactic.severity || 'unknown'}, ${Math.round((tactic.confidenceScore || 0) * 100)}% confidence)`,
+            tactic.exampleFromInput ? `Quote: "${tactic.exampleFromInput}"` : null,
+            `Explanation: ${tactic.explanation}`,
+            `Suggested response: "${tactic.suggestedResponse}"`
+          ].filter(Boolean).join('\n')) : ['No specific bad-faith tactics or biased reporting signs were identified.'])
+        ].filter((line) => line !== null);
+        copyText(lines.join('\n\n'), 'Copied full analysis');
+      };
+
       const buildSharePayload = (tactic) => {
         const id = tacticNameToId(tactic.tacticName);
         const base = `${window.location.origin}${window.location.pathname}#${id}`;
@@ -885,12 +1205,7 @@
 
       const copyResponse = (tactic) => {
         const payload = buildSharePayload(tactic);
-        if (!navigator.clipboard) {
-          pushToast('Copy requires HTTPS', 'warn');
-          return;
-        }
-        navigator.clipboard.writeText(payload.text).then(() => pushToast('Copied response', 'success'))
-          .catch(() => pushToast('Copy failed', 'error'));
+        copyText(payload.text, 'Copied response');
       };
 
       const shareResponse = async (tactic) => {
@@ -911,6 +1226,8 @@
       const highlightTactic = (id) => {
         const el = document.getElementById(id);
         if (!el) return;
+        const section = el.closest('details');
+        if (section) section.open = true;
         el.scrollIntoView({ behavior: 'smooth', block: 'center'});
         el.animate([
           { boxShadow: '0 0 0 0 rgba(37,99,235,0.0)' },
@@ -946,6 +1263,31 @@
               Paste any text below to analyze it for common bad-faith tactics and biased reporting.
               The bot supports both <strong>English and Dutch</strong> text and will identify tactics while suggesting responses.
             </p>
+
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '.5rem', marginBottom: '1rem' }}>
+              {examples.map((example) => (
+                <button
+                  key={example.label}
+                  onClick={() => {
+                    setInputText(example.text);
+                    setError(null);
+                    setAnalysisResult(null);
+                  }}
+                  style={{
+                    background: '#f1f5f9',
+                    color: '#0f172a',
+                    border: '1px solid #cbd5e1',
+                    padding: '.45rem .75rem',
+                    borderRadius: '6px',
+                    fontSize: '.8rem',
+                    fontWeight: 600,
+                    cursor: 'pointer'
+                  }}
+                >
+                  Try {example.label}
+                </button>
+              ))}
+            </div>
 
             <textarea
               style={{
@@ -1018,6 +1360,44 @@
                 }}>
                   📊 Analysis Results
                 </h3>
+
+                <div style={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  justifyContent: 'space-between',
+                  gap: '.75rem',
+                  alignItems: 'center',
+                  marginBottom: '1rem'
+                }}>
+                  {analysisResult.model && (
+                    <span style={{
+                      background: '#eff6ff',
+                      color: '#1d4ed8',
+                      border: '1px solid #bfdbfe',
+                      borderRadius: '6px',
+                      padding: '.4rem .6rem',
+                      fontSize: '.8rem',
+                      fontWeight: 600
+                    }}>
+                      Analyzed with {analysisResult.model}
+                    </span>
+                  )}
+                  <button
+                    onClick={copyFullAnalysis}
+                    style={{
+                      background: '#2563eb',
+                      color: '#fff',
+                      border: '1px solid #1d4ed8',
+                      padding: '.5rem .8rem',
+                      borderRadius: '6px',
+                      fontSize: '.8rem',
+                      fontWeight: 600,
+                      cursor: 'pointer'
+                    }}
+                  >
+                    Copy Full Analysis
+                  </button>
+                </div>
                 
                 {/* Overall Assessment */}
                 {analysisResult.overallAssessment && (
@@ -1087,7 +1467,7 @@
                 )}
 
                 {/* Identified Tactics */}
-                {analysisResult.identifiedTactics && analysisResult.identifiedTactics.length === 0 ? (
+                {selectedTactics.length === 0 ? (
                   <p style={{
                     color: '#16a34a',
                     background: '#f0fdf4',
@@ -1106,9 +1486,50 @@
                       color: '#0f172a',
                       margin: '0 0 1rem 0'
                     }}>
-                      🚨 Identified Issues ({analysisResult.identifiedTactics?.length || 0})
+                      🚨 Identified Issues ({visibleTactics.length}/{selectedTactics.length})
                     </h4>
-                    {analysisResult.identifiedTactics?.map((tactic, index) => (
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '.5rem', marginBottom: '1rem' }}>
+                      {['high', 'medium', 'low'].map((severity) => (
+                        <button
+                          key={severity}
+                          onClick={() => setSeverityFilters((current) => ({ ...current, [severity]: !current[severity] }))}
+                          style={{
+                            background: severityFilters[severity] ? '#2563eb' : '#f8fafc',
+                            color: severityFilters[severity] ? '#fff' : '#475569',
+                            border: severityFilters[severity] ? '1px solid #1d4ed8' : '1px solid #cbd5e1',
+                            padding: '.4rem .65rem',
+                            borderRadius: '6px',
+                            fontSize: '.75rem',
+                            fontWeight: 600,
+                            cursor: 'pointer',
+                            textTransform: 'capitalize'
+                          }}
+                        >
+                          {severity}
+                        </button>
+                      ))}
+                      <button
+                        onClick={() => setHighConfidenceOnly((current) => !current)}
+                        style={{
+                          background: highConfidenceOnly ? '#2563eb' : '#f8fafc',
+                          color: highConfidenceOnly ? '#fff' : '#475569',
+                          border: highConfidenceOnly ? '1px solid #1d4ed8' : '1px solid #cbd5e1',
+                          padding: '.4rem .65rem',
+                          borderRadius: '6px',
+                          fontSize: '.75rem',
+                          fontWeight: 600,
+                          cursor: 'pointer'
+                        }}
+                      >
+                        70%+ confidence
+                      </button>
+                    </div>
+                    {visibleTactics.length === 0 && (
+                      <p style={{ color: '#64748b', background: '#f8fafc', padding: '1rem', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                        No issues match the active severity filters.
+                      </p>
+                    )}
+                    {visibleTactics.map((tactic, index) => (
                       <div key={index} style={{
                         background: '#f9fafb',
                         padding: '1.5rem',
@@ -1139,6 +1560,12 @@
                           onMouseOut={(e) => {
                             e.target.style.textDecoration = 'none';
                             e.target.style.color = '#dc2626';
+                          }}
+                          onClick={(e) => {
+                            const id = tacticNameToId(tactic.tacticName);
+                            e.preventDefault();
+                            history.replaceState(null, '', `#${id}`);
+                            highlightTactic(id);
                           }}
                           title="Click to view explanation on page"
                           >
@@ -1197,6 +1624,27 @@
                           <span style={{ fontWeight: '500' }}>Suggested Response:</span>
                           <span style={{ color: '#059669', fontWeight: '500' }}> "{tactic.suggestedResponse}"</span>
                         </p>
+
+                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '.5rem', margin: '.75rem 0' }}>
+                          {Object.entries(responseVariants(tactic.suggestedResponse)).map(([styleName, responseText]) => (
+                            <button
+                              key={styleName}
+                              onClick={() => copyText(responseText, `Copied ${styleName.toLowerCase()} response`)}
+                              style={{
+                                background: '#fff',
+                                color: '#2563eb',
+                                border: '1px solid #93c5fd',
+                                padding: '.4rem .65rem',
+                                borderRadius: '6px',
+                                fontSize: '.7rem',
+                                fontWeight: 600,
+                                cursor: 'pointer'
+                              }}
+                            >
+                              {styleName}
+                            </button>
+                          ))}
+                        </div>
                         
                         {tactic.impact && (
                           <p style={{ color: '#64748b', fontSize: '0.875rem', margin: 0, lineHeight: '1.6' }}>
@@ -1338,6 +1786,16 @@
           window.__copyStatic(btn); toast('Share unsupported – copied','warn');
         }
       };
+      const openHashTarget = () => {
+        const id = decodeURIComponent(location.hash.slice(1));
+        if (!id) return;
+        const target = document.getElementById(id);
+        if (!target) return;
+        const section = target.closest('details');
+        if (section) section.open = true;
+      };
+      window.addEventListener('hashchange', openHashTarget);
+      openHashTarget();
     })();
   </script>
 
