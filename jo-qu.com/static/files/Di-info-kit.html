@@ -859,7 +859,7 @@
 
           if (!response.ok) {
             const errorData = await response.json();
-            throw new Error(`API Error: ${errorData.error || response.statusText}`);
+            throw new Error(`API Error: ${errorData.details || errorData.error || response.statusText}`);
           }
 
           const result = await response.json();

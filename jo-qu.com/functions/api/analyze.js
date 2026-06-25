@@ -1,7 +1,7 @@
 // functions/api/analyze.js
 // This file will be deployed as a Cloudflare Pages Function
 
-const GEMINI_MODEL = "gemini-3.5-flash";
+const GEMINI_MODEL = "gemini-2.5-flash";
 
 // Define the definitions for the AI model to use
 // This object and the generatePrompt function are now located here in the backend.
@@ -352,58 +352,7 @@ export async function onRequest(context) {
     const payload = {
       contents: chatHistory,
       generationConfig: {
-        responseFormat: {
-          text: {
-            mimeType: "application/json",
-            schema: {
-              type: "object",
-              properties: {
-                overallAssessment: {
-                  type: "object",
-                  properties: {
-                    tone: { type: "string" },
-                    primaryIssues: { type: "array", items: { type: "string" } },
-                    context: { type: "string" },
-                    severity: { type: "string" },
-                    generalQuality: { type: "string" }
-                  },
-                  required: ["tone", "primaryIssues", "context", "severity"]
-                },
-                identifiedTactics: {
-                  type: "array",
-                  items: {
-                    type: "object",
-                    properties: {
-                      tacticName: { type: "string" },
-                      category: { type: "string" },
-                      explanation: { type: "string" },
-                      exampleFromInput: { type: "string" },
-                      suggestedResponse: { type: "string" },
-                      confidenceScore: { type: "number" },
-                      severity: { type: "string" },
-                      intent: { type: "string" },
-                      impact: { type: "string" },
-                      startPosition: { type: "string" }
-                    },
-                    required: ["tacticName", "explanation", "suggestedResponse", "confidenceScore", "severity"]
-                  }
-                },
-                constructiveFeedback: {
-                  type: "object",
-                  properties: {
-                    strengths: { type: "array", items: { type: "string" } },
-                    improvements: { type: "array", items: { type: "string" } },
-                    alternatives: { type: "array", items: { type: "string" } },
-                    contextualNotes: { type: "array", items: { type: "string" } }
-                  },
-                  required: ["strengths", "improvements", "alternatives"]
-                },
-                summary: { type: "string" }
-              },
-              required: ["overallAssessment", "identifiedTactics", "constructiveFeedback", "summary"]
-            }
-          }
-        },
+        responseMimeType: "application/json",
         temperature: 0.3, // Lower temperature for more consistent analysis
         maxOutputTokens: 8192 // Allow for detailed responses
       }
@@ -435,9 +384,13 @@ export async function onRequest(context) {
         } else {
           const errorText = await response.text();
           console.error(`Gemini API error: ${response.status} - ${errorText}`);
+          let details = errorText.substring(0, 500);
+          try {
+            details = JSON.parse(errorText).error?.message || details;
+          } catch (_) {}
           return new Response(JSON.stringify({ 
             error: `Gemini API error: ${response.status}`,
-            details: errorText.substring(0, 200) // Limit error details
+            details
           }), {
             status: response.status,
             headers: { 'Content-Type': 'application/json' },
