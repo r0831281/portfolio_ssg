@@ -3,7 +3,9 @@
     <div class="project-header">
       <div class="project-meta">
         <span class="project-type">
-          {{- if eq .Params.type "Opleiding" -}}
+          {{- if or (eq .Params.type "webapps") (eq .Params.type "Webapps") -}}
+            Webapps
+          {{- else if eq .Params.type "Opleiding" -}}
             {{- if eq $.Site.Language.Lang "nl" -}}Opleiding{{- else -}}Education{{- end -}}
           {{- else if eq .Params.type "opleiding" -}}
             {{- if eq $.Site.Language.Lang "nl" -}}Opleiding{{- else -}}Education{{- end -}}

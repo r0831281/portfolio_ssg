@@ -1,6 +1,6 @@
 +++
 title = "Github faces website"
-type = "fun"
+type = "webapps"
 date = "2025-04-27"
 draft = false
 description = "Creative exploitation of GitHub's CSP to display millions of user avatars."

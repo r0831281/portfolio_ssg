@@ -1,6 +1,6 @@
 +++
 title = "FPV interactive Portfolio Poc"
-type = "fun"
+type = "webapps"
 draft = false
 description = "An innovative 3D first-person portfolio experience."
 +++
