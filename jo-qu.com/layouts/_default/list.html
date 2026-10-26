@@ -5,13 +5,15 @@
     </header>
     <main class="page-content" aria-label="Content">
         {{ .Content }}
-        {{ $groups := slice "opleiding" "Opleiding" "personal" "Personal" "fun" "Fun" }}
+        {{ $groups := slice "webapps" "Webapps" "opleiding" "Opleiding" "personal" "Personal" "fun" "Fun" }}
         {{ $allPages := .Pages }}
         {{ range $group := $groups }}
             {{ $pages := where $allPages "Params.type" "==" $group }}
             {{ if gt (len $pages) 0 }}
                 <h2 class="post-year">
-                    {{- if or (eq $group "opleiding") (eq $group "Opleiding") -}}
+                    {{- if or (eq $group "webapps") (eq $group "Webapps") -}}
+                        Webapps
+                    {{- else if or (eq $group "opleiding") (eq $group "Opleiding") -}}
                         {{- if eq $.Site.Language.Lang "nl" -}}Opleiding{{- else -}}Education{{- end -}}
                     {{- else if or (eq $group "fun") (eq $group "Fun") -}}
                         {{- if eq $.Site.Language.Lang "nl" -}}Plezier{{- else -}}Fun{{- end -}}

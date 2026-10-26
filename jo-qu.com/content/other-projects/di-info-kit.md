@@ -1,6 +1,6 @@
 +++
 title = "Disinfo Defense Kit"
-type = "fun"
+type = "webapps"
 date = "2025-08-19"
 draft = false
 description = "Interactive toolkit to recognize and counter common disinformation and bad-faith debate tactics."

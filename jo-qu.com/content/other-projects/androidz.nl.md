@@ -1,6 +1,6 @@
 +++
 title = "andro!dz"
-type = "personal"
+type = "webapps"
 draft = false
 description = "Moderne band website met aangepast CMS, met Firebase backend."
 +++
