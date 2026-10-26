@@ -32,4 +32,4 @@ Een modern boekings- en contentmanagementplatform voor de begeleide vliegvisavon
 - **Security:** DOMPurify-sanitization, inputvalidatie, Firestore Security Rules en rate limiting
 - **Deployment:** Firebase Hosting
 
-[Bezoek het project](https://github.com/r0831281/backcountry_drifters)
+[Bezoek het project](https://backcountry-drifters.com/)

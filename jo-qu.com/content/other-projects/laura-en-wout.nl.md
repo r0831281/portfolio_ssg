@@ -29,5 +29,3 @@ Een QR-gebaseerde RSVP-applicatie voor een huwelijk met een eenvoudige, aangepas
 - **Frontend:** HTML, CSS en JavaScript
 - **Backend:** Cloudflare Workers en Firebase Firestore
 - **Deployment:** Cloudflare Pages
-
-[Bekijk de broncode](https://github.com/r0831281/laura-en-wout)

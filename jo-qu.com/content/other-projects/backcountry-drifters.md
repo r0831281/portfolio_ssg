@@ -32,4 +32,4 @@ A modern booking and content management platform for Backcountry Drifters' guide
 - **Security:** DOMPurify sanitization, input validation, Firestore Security Rules, rate limiting
 - **Deployment:** Firebase Hosting
 
-[Visit the project](https://github.com/r0831281/backcountry_drifters)
+[Visit the project](https://backcountry-drifters.com/)

@@ -29,5 +29,3 @@ A QR-based wedding RSVP application built to give day and evening guests a simpl
 - **Frontend:** HTML, CSS, and JavaScript
 - **Backend:** Cloudflare Workers and Firebase Firestore
 - **Deployment:** Cloudflare Pages
-
-[View the source code](https://github.com/r0831281/laura-en-wout)
