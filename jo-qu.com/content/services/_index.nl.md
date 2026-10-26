@@ -4,28 +4,30 @@ description = "Webontwikkeling, security reviews, integraties en doorlopende sup
 draft = false
 +++
 
-# Diensten
-
 Ik help teams om veilige en betrouwbare software op te leveren. Heldere scope, snelle oplevering en focus op onderhoudbaarheid.
 
 ## Webontwikkeling
-- Moderne, responsive sites en apps
-- Performance en toegankelijkheid eerst
-- Hugo, React, Django, en meer
+- Bouw conversiegerichte websites en webapps met duidelijke structuur en gebruikersflow
+- Lever responsive en toegankelijke interfaces die klaar zijn voor echte gebruikers op elk toestel
+- Oplevering in onderhoudbare stacks zoals Hugo, React en Django
+- **Voorbeeld:** [Disinfo Defense Kit](/nl/other-projects/di-info-kit/) — mobiele, interactieve toolkit met 10+ praktische onderdelen
 
 ## Security Reviews
-- OWASP‑geïnspireerde assessments
-- Threat modeling en concrete verbeteringen
-- Headers, authenticatie en data‑afhandeling
+- Praktische OWASP-georiënteerde reviews met focus op echte risico’s in plaats van checklisten
+- Breng aanvalspaden (authenticatie, sessies, input en data-afhandeling) in kaart met prioriteiten
+- Concrete remediatiepunten die je team snel kan uitvoeren
+- **Voorbeeld:** [GitHub Faces Website](/nl/other-projects/github-faces-website/) — CSP-gericht security experiment met rate limiting, veilige data-afhandeling en performance-guardrails
 
 ## Integraties & Automatisatie
-- Koppelingen (API's, webhooks)
-- Interne dashboards en scripts
-- Migraties en datastromen
+- Koppel tools via API’s en webhooks zodat data automatisch tussen systemen stroomt
+- Bouw scripts en interne utilities die repetitief werk verminderen
+- Voorzie robuuste jobs met validatie, retries en exportklare output
+- **Voorbeeld:** [SilverPages Scraper](/nl/other-projects/silverpages-scraper/) — geautomatiseerde pipeline met 1000+ records/uur en validatiestappen
 
 ## Onderhoud & Support
-- Monitoring en updates
-- Bugfixes en uitbreidingen
-- SLA op aanvraag
+- Houd productiesystemen stabiel met updates, dependency hygiene en monitoring checks
+- Verwerk bugtriage en bugfixes met duidelijke prioriteiten en communicatie
+- Plan en lever iteratieve verbeteringen zonder live werking te verstoren
+- **Resultaat:** doorlopend onderhoud van een meertalig portfolio en projectpagina’s met herbruikbare releaseflows
 
-Plan je graag een gesprek? Gebruik het contactformulier om contact op te nemen.
+<a class="btn btn-primary" href="/nl/contact/">Bespreek je project</a>
