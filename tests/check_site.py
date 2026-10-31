@@ -7,9 +7,10 @@ from urllib.parse import urlsplit, unquote
 
 class Page(HTMLParser):
     def __init__(self):
-        super().__init__(); self.h1=0; self.main=0; self.lang=''; self.ids=set(); self.links=[]; self.missing_alt=0; self.anchors=[]; self.scripts=[]; self.forms=[]; self.controls={}; self.label_ids=set(); self.text=[]
+        super().__init__(); self.h1=0; self.main=0; self.lang=''; self.ids=set(); self.duplicate_ids=[]; self.maintenance=False; self.maintenance_heading=False; self.maintenance_heading_text=[]; self.links=[]; self.missing_alt=0; self.anchors=[]; self.scripts=[]; self.forms=[]; self.controls={}; self.label_ids=set(); self.text=[]
     def handle_data(self,data):
         self.text.append(data)
+        if self.maintenance_heading: self.maintenance_heading_text.append(data)
     def handle_starttag(self, tag, attrs):
         a=dict(attrs)
         if tag=='form': self.forms.append(a)
@@ -20,10 +21,18 @@ class Page(HTMLParser):
         if tag=='h1': self.h1+=1
         if tag=='main': self.main+=1
         if tag=='html': self.lang=a.get('lang','')
-        if 'id' in a: self.ids.add(a['id'])
+        if 'id' in a:
+            if a['id'] in self.ids: self.duplicate_ids.append(a['id'])
+            self.ids.add(a['id'])
+        if tag=='aside' and a.get('id')=='maintenance': self.maintenance=True
+        if tag=='h2' and self.maintenance: self.maintenance_heading=True
         if tag=='img' and 'alt' not in a: self.missing_alt+=1
         for key in ['href','src']:
             if key in a: self.links.append(a[key])
+
+    def handle_endtag(self, tag):
+        if tag=='h2': self.maintenance_heading=False
+        if tag=='aside' and self.maintenance: self.maintenance=False
 
 def check(root):
     pages={}
@@ -34,6 +43,12 @@ def check(root):
     for f,p in pages.items():
         rel=str(f.relative_to(root))
         if rel=='en/index.html':continue # Hugo default-language redirect alias.
+        if p.duplicate_ids:errors.append(f'{rel}: duplicate IDs {p.duplicate_ids}')
+        if rel in ['services/index.html','nl/services/index.html']:
+            expected_heading='Onderhoud en architectuur' if p.lang=='nl' else 'Maintenance and architecture'
+            if ''.join(p.maintenance_heading_text).strip()!=expected_heading:errors.append(f'{rel}: maintenance fragment is not on the maintenance section')
+            for frag in ['web','security','integrations','maintenance']:
+                if frag not in p.ids:errors.append(f'{rel}: missing service fragment {frag}')
         if p.h1!=1:errors.append(f'{rel}: expected one h1, got {p.h1}')
         if p.main!=1:errors.append(f'{rel}: expected one main, got {p.main}')
         if p.lang not in ['en','nl']:errors.append(f'{rel}: unexpected language {p.lang!r}')
@@ -65,7 +80,7 @@ def check(root):
             for forbidden in ['Bestaande software verbeteren','Verbind je tools en verminder het repetitieve werk ertussen']:
                 if forbidden in text:errors.append(f'{rel}: superseded Dutch copy remains: {forbidden}')
             if rel in ['nl/index.html','nl/services/index.html']:
-                for exact in ['Bestaande websoftware verbeteren','Laat je systemen samenwerken en beperk terugkerend handmatig werk.']:
+                for exact in ['Software op maat','Beveiliging van websoftware','Laat je systemen samenwerken en beperk terugkerend handmatig werk.']:
                     if exact not in text:errors.append(f'{rel}: missing exact agreed copy: {exact}')
         for href in p.links:
             u=urlsplit(href)
