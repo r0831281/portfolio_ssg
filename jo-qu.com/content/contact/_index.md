@@ -1,30 +1,9 @@
 +++
 title = "Contact"
-description = "Get in touch for projects, estimates, or collaborations."
+description = "Tell me briefly what you want to improve and what is getting in the way today."
 draft = false
 +++
 
-# Contact
+Include the goal, your current setup and any timing constraints. Please don’t send passwords, API keys or sensitive customer data.
 
-Prefer email?? jonas@jo-qu.com
-
-Or send a quick message below—I'll reply within 1–2 business days.
-
-<form action="https://formspree.io/f/mzzjknzr" method="POST">
-  <div class="form-grid">
-    <label>
-      Name
-      <input type="text" name="name" required>
-    </label>
-    <label>
-      Email
-      <input type="email" name="email" required>
-    </label>
-    <label>
-      Message
-      <textarea name="message" rows="6" required></textarea>
-    </label>
-    <input type="text" name="_gotcha" class="hidden-field" aria-hidden="true">
-    <button type="submit" class="btn btn-primary">Send</button>
-  </div>
-</form>
+[jonas@jo-qu.com](mailto:jonas@jo-qu.com)

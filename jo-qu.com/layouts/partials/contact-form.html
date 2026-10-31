@@ -1,0 +1,15 @@
+{{ $d := index .Site.Data.consultancy .Lang }}
+<section class="contact-form-panel" aria-labelledby="contact-form-title">
+<h2 id="contact-form-title">{{ $d.formTitle }}</h2>
+<p id="contact-required-note" class="form-note">{{ $d.formRequired }}</p>
+{{/* Preserve the original Formspree action, POST method, field names and text honeypot. No AJAX or simulated success. */}}
+<form class="contact-form" action="https://formspree.io/f/mzzjknzr" method="POST" aria-describedby="contact-required-note contact-data-note contact-delivery-note">
+<div class="form-grid">
+<div class="form-field"><label for="contact-name">{{ $d.formName }}</label><input id="contact-name" type="text" name="name" autocomplete="name" required></div>
+<div class="form-field"><label for="contact-email">{{ $d.formEmail }}</label><input id="contact-email" type="email" name="email" autocomplete="email" required></div>
+<div class="form-field"><label for="contact-message">{{ $d.formMessage }}</label><textarea id="contact-message" name="message" rows="6" required></textarea></div>
+<input type="text" name="_gotcha" class="hidden-field" aria-hidden="true" tabindex="-1" autocomplete="off">
+<p id="contact-data-note" class="form-note">{{ $d.contactHint }}</p>
+<button type="submit" class="button">{{ $d.formSubmit }} <span aria-hidden="true">↗</span></button>
+<p id="contact-delivery-note" class="form-note">{{ $d.formDelivery }}</p>
+</div></form></section>

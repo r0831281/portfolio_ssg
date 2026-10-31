@@ -1,10 +1,12 @@
 baseURL = 'https://jo-qu.com'
 languageCode = 'en-us'
 defaultContentLanguage = 'en'
-title = 'jo-qu.com'
+title = 'Jo-Qu'
 theme = 'hugo-blog-awesome'
 
 [params]
+  design = "consultancy"
+  description = "Business websites, integrations and improvements to existing web software for small businesses around Aarschot. Work directly with Jonas Quintiens."
   goToTop = true
   author = { name = "Jonas Quintiens" }
   business = "Web development & security consulting"
@@ -12,12 +14,13 @@ theme = 'hugo-blog-awesome'
 [languages]
   [languages.en]
     languageName = 'English'
+    languageCode = 'en'
     weight = 1
     contentDir = 'content'
     [languages.en.menu]
       [[languages.en.menu.main]]
         identifier = 'about'
-        name = 'About'
+        name = 'Approach'
         url = '/about/'
         weight = 2
       [[languages.en.menu.main]]
@@ -37,12 +40,13 @@ theme = 'hugo-blog-awesome'
         weight = 5
   [languages.nl]
     languageName = 'Nederlands'
+    languageCode = 'nl'
     weight = 2
     contentDir = 'content'
     [languages.nl.menu]
       [[languages.nl.menu.main]]
         identifier = 'about'
-        name = 'Over'
+        name = 'Aanpak'
         url = '/nl/about/'
         weight = 2
       [[languages.nl.menu.main]]
