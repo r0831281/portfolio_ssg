@@ -1,7 +1,7 @@
 +++
 title = "Services"
-description = "Three starting points for small businesses around Aarschot. We define the goal, what is included and the next step before implementation begins."
+description = "Practical services for small businesses in and around Aarschot. We agree on the goal, scope and next steps before work begins."
 draft = false
 +++
 
-Three starting points for small businesses around Aarschot. We define the goal, what is included and the next step before implementation begins.
+Practical services for small businesses in and around Aarschot. We agree on the goal, scope and next steps before work begins.

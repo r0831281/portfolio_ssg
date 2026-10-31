@@ -1,7 +1,7 @@
 +++
 title = "Diensten"
-description = "Drie vertrekpunten voor kleine ondernemingen rond Aarschot. We bepalen het doel, wat inbegrepen is en de volgende stap voordat de implementatie begint."
+description = "Praktische diensten voor kleine ondernemingen in en rond Aarschot. We spreken het doel, de scope en de volgende stappen af voordat het werk begint."
 draft = false
 +++
 
-Drie vertrekpunten voor kleine ondernemingen rond Aarschot. We bepalen het doel, wat inbegrepen is en de volgende stap voordat de implementatie begint.
+Praktische diensten voor kleine ondernemingen in en rond Aarschot. We spreken het doel, de scope en de volgende stappen af voordat het werk begint.
