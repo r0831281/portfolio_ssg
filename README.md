@@ -1,98 +1,45 @@
-# Portfolio Website – Jonas Quintiens
+# Jo-Qu — Independent software consultancy
 
-This repository contains the source code for the personal portfolio website of Jonas Quintiens, built using [Hugo](https://gohugo.io/) (a fast static site generator) and the [hugo-blog-awesome](https://github.com/hugo-sid/hugo-blog-awesome) theme. The site showcases projects, experience, and documents in both English and Dutch.
+This branch is the advisory design alternative for Jo-Qu. It is not deployed. Compare it with the other redesign branches rather than merging the alternatives together.
 
-## Features
+## Stack and build
 
-- **Static site** generated with Hugo for fast performance and easy deployment.
-- **Multilingual support** (English & Dutch).
-- **Custom layouts** and styling.
-- **Project portfolio** with detailed markdown pages.
-- **Static files** for CV, research, and documentation.
-- **Responsive design** using the hugo-blog-awesome theme.
+The Hugo site root is jo-qu.com. Use Hugo Extended 0.147.9 or newer (tested with 0.147.9); the vendored theme includes Sass assets. No npm installation is needed for this redesign's site shell.
 
-## Project Structure
+    cd jo-qu.com
+    hugo --minify
+    hugo server
 
-```
-.
-├── jo-qu.com/                # Main Hugo site directory
-│   ├── content/              # Markdown content (projects, about, internship, etc.)
-│   ├── layouts/              # Custom HTML templates and partials
-│   ├── static/               # Static assets (css, files, images)
-│   ├── themes/               # Hugo themes (hugo-blog-awesome as submodule)
-│   ├── hugo.toml             # Hugo site configuration
-│   └── ...                   # Other Hugo directories/files
-├── README.md                 # This file
-└── .gitignore                # Git ignore rules
-```
+The default language remains English at /, with Dutch at /nl/. Dutch-first is a working review assumption for the local audience, not a confirmed request to change canonical/default routes.
 
-## Getting Started
+## Check the output
 
-### Prerequisites
+From the repository root after building:
 
-- [Hugo](https://gohugo.io/documentation/) (version 0.87.0 or higher recommended)
-- [Git](https://git-scm.com/)
+    python3 tests/check_site.py jo-qu.com/public
 
-### Installation
+This checks generated Hugo HTML structure, language attributes, image alt attributes, local assets and internal anchor targets. See TESTING.md and the separate candidate handoff report for the browser checks already performed and their limitations.
 
-1. **Clone the repository:**
-   ```sh
-   git clone https://github.com/r0831281/portfolio_ssg.git
-   cd portfolio_ssg/jo-qu.com
-   ```
+## Edit the site
 
-2. **Initialize and update submodules (for the theme):**
-   ```sh
-   git submodule update --init --recursive
-   ```
+- jo-qu.com/data/consultancy.json: shared English/Dutch main-page copy.
+- jo-qu.com/layouts/index.html: site-level homepage override. It works with the base template, not merely the vendored theme homepage.
+- jo-qu.com/layouts/_default/baseof.html: page shell, metadata, header and footer; intentionally does not load legacy theme.js or duplicated fingerprint stylesheets.
+- jo-qu.com/layouts/: other templates, partials and Markdown link render hook.
+- jo-qu.com/static/css/consultancy.css: layout tokens, responsive rules and design direction.
+- jo-qu.com/content/other-projects/: preserved historical project articles.
+- jo-qu.com/static/: existing images, documents and standalone applications.
 
-3. **Run the development server:**
-   ```sh
-   hugo server
-   ```
-   The site will be available at [http://localhost:1313](http://localhost:1313).
+The theme at jo-qu.com/themes/hugo-blog-awesome is tracked as ordinary repository files, including local edits. It is not an active Git submodule despite the stale nested .gitmodules file. Do not run a submodule update or replace the theme as part of installing or reviewing this option.
 
-### Editing Content
+## Functional boundaries
 
-- All content is in `jo-qu.com/content/` as Markdown files.
-- To add a new project, create a new `.md` file in `jo-qu.com/content/other-projects/`.
-- For multilingual content, use `.nl.md` for Dutch and `.md` for English.
+Contact preserves the original on-page Formspree POST action, field names and honeypot, with native browser validation and an explained email fallback. No valid enquiry is submitted during QA; Formspree delivery and provider success/error handling remain unverified. No fake success UI is implemented. Existing standalone tools and Cloudflare Pages Functions are preserved; the Disinfo tool's /api/analyze backend is not verified by a static Hugo build. If deployment happens later, keep its existing approved Cloudflare function/secrets configuration; no credentials should be committed.
 
-### Customization
+No remote push, pull request, production deployment or main-branch change is included in this redesign. Follow the parent-coordinated code and QA review before requesting user review or publishing branches through approved GitHub access.
 
-- **Layouts:** Modify HTML templates in `jo-qu.com/layouts/`.
-- **Styling:** Edit CSS in `jo-qu.com/static/css/custom.css`.
-- **Theme:** The site uses the [hugo-blog-awesome](https://github.com/hugo-sid/hugo-blog-awesome) theme (included as a submodule).
+## More context
 
-### Deployment
+REDESIGN.md explains design choices and intentional behaviour changes. TESTING.md summarises validation. Existing project/CV content is owner-authored historical material and was not independently reverified. No new client endorsements, business metrics or team claims were added.
 
-This site is deployed for free using a CI/CD pipeline on **Cloudflare Pages**. The build output is served via Cloudflare's global CDN, and a **Cloudflare Worker** is used for additional edge logic if needed. A custom domain is configured using a **CNAME record** to point to Cloudflare Pages, ensuring zero hosting costs.
-
-#### Deploying to Cloudflare Pages
-
-1. **Push your changes to the main branch** of your GitHub (or GitLab) repository.
-2. **Connect your repository to Cloudflare Pages** via the Cloudflare dashboard and set the root directory to:
-   ```
-   jo-qu.com
-   ```
-3. **Set the build command** to:
-   ```sh
-   hugo --minify
-   ```
-   and the output directory to:
-   ```
-   public
-   ```
-4. **Add the Pages Function secret** `GEMINI_API_KEY` in Cloudflare Pages settings. The Disinfo Defense Kit calls `jo-qu.com/functions/api/analyze.js` through `/api/analyze`. GitHub Secrets are not used by the current deploy setup unless you add a GitHub Actions workflow, so mirror rotated keys in Cloudflare Pages too.
-5. **Configure your custom domain** by adding a CNAME record in your DNS settings to point to the Cloudflare Pages subdomain.
-
-For more details, see [Cloudflare Pages documentation](https://developers.cloudflare.com/pages/).
-
-## License
-
-This project is for personal use. The [hugo-blog-awesome](https://github.com/hugo-sid/hugo-blog-awesome) theme is MIT licensed.
-
-## Author
-
-Jonas Quintiens  
-[Website](https://jo-qu.com)
+The vendored hugo-blog-awesome theme retains its original MIT license. This repository otherwise retains the original personal-use status.

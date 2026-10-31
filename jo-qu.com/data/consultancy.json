@@ -1,0 +1,190 @@
+{
+  "en": {
+    "eyebrow": "For small businesses in and around Aarschot",
+    "title": "Websites and software that move your business forward.",
+    "intro": "A new business website, less manual work or improvements to existing software? At Jo-Qu, you work directly with Jonas on a solution that fits your business.",
+    "cta": "Discuss your project",
+    "secondary": "Explore services",
+    "servicesTitle": "Three ways I can help.",
+    "servicesIntro": "A clearer website, less manual work or software that needs attention. Start with what your business needs, not a list of technologies.",
+    "services": [
+      {
+        "id": "web",
+        "title": "Business websites",
+        "text": "A clear website that explains what you offer and helps customers get in touch.",
+        "detail": "Clear page structure, responsive layouts and accessible user journeys. Built with a maintainable approach; Hugo, React or Django where they fit the work.",
+        "tags": "Your business online"
+      },
+      {
+        "id": "integrations",
+        "title": "Integrations & automation",
+        "text": "Connect your systems and reduce repetitive manual work.",
+        "detail": "APIs, webhooks and focused internal tools for the steps that currently need copying, checking or manual updates. Validation and failure handling are part of the scope.",
+        "tags": "Less manual work"
+      },
+      {
+        "id": "maintenance",
+        "title": "Improve existing web software",
+        "text": "Have your web application reviewed and improved, with attention to security and maintainability.",
+        "detail": "Bug fixes, updates and focused improvements to web applications. I review the existing setup and explain trade-offs before proposing changes.",
+        "tags": "Build on what you have"
+      }
+    ],
+    "processTitle": "Clear scope. Thoughtful delivery.",
+    "process": [
+      [
+        "Understand",
+        "We discuss the problem, your existing systems and the constraints that matter."
+      ],
+      [
+        "Define",
+        "I propose the scope, trade-offs and an approach before implementation begins."
+      ],
+      [
+        "Build & hand over",
+        "Implementation, testing and practical documentation, with maintenance discussed up front."
+      ]
+    ],
+    "personLabel": "Your point of contact",
+    "personTitle": "One developer.\nA direct conversation.",
+    "personText": "I’m Jonas Quintiens, the developer behind Jo-Qu. I work with small businesses on websites, integrations and existing web software. You have a direct line to the person clarifying the scope, implementing the changes and explaining the handover.",
+    "aboutLink": "More about my approach",
+    "workLabel": "Selected independent work",
+    "workTitle": "A closer look at the implementation.",
+    "workText": "Personal projects and experiments, not client endorsements. Explore the decisions and technical details behind the work.",
+    "workLink": "Browse project archive",
+    "projectTitle": "Disinfo Defense Kit",
+    "projectText": "An interactive educational toolkit built as a self-contained HTML experience.",
+    "projectLink": "Read project notes",
+    "contactTitle": "What needs to work better?",
+    "contactIntro": "Tell me briefly what you want to improve and what is getting in the way today.",
+    "contactHint": "Include the goal, your current setup and any timing constraints. Please don’t send passwords, API keys or sensitive customer data.",
+    "emailLabel": "Email Jonas",
+    "emailNote": "Opens your email application. Prefer webmail? Copy this address.",
+    "footer": "Independent websites, integrations and software improvements for small businesses around Aarschot.",
+    "skip": "Skip to content",
+    "menu": "Menu",
+    "home": "Home",
+    "archive": "Project archive",
+    "archiveIntro": "A record of personal projects, educational work and technical experiments. These are not presented as client case studies.",
+    "read": "Read project",
+    "notfound": "Page not found",
+    "notfoundText": "This address does not point to a page. You can return home or get in touch.",
+    "back": "Back to home",
+    "servicesLabel": "Services",
+    "approachLabel": "Approach",
+    "contactLabel": "Contact",
+    "projectLabel": "Projects",
+    "aboutTitle": "A direct line to the developer.",
+    "aboutIntro": "Jo-Qu is my one-person software consultancy for small businesses in and around Aarschot. I focus on practical improvements and a clear working relationship.",
+    "aboutBody": "My work spans web development, security reviews, integrations and system architecture. I look at how software fits into your operations, not just how it looks on release day.",
+    "aboutSub": "What working together looks like",
+    "aboutEnd": "You discuss the work directly with me. I clarify requirements, explain technical trade-offs and document the result. Any ongoing maintenance and support arrangements are agreed as part of the scope.",
+    "servicePageTitle": "Practical help for your website and software.",
+    "servicePageIntro": "Three starting points for small businesses around Aarschot. We define the goal, what is included and the next step before implementation begins.",
+    "additionalTitle": "Security and architecture, where needed.",
+    "additionalText": "Some projects need a closer technical review. I also offer OWASP-informed security reviews, practical remediation priorities and system architecture guidance. These can be scoped separately or alongside implementation.",
+    "formTitle": "Send a project enquiry",
+    "formRequired": "Name, email and message are required.",
+    "formName": "Name",
+    "formEmail": "Email",
+    "formMessage": "Message",
+    "formSubmit": "Send message",
+    "formDelivery": "Your message is sent using Formspree. Prefer email? Use the address alongside this form.",
+    "fallbackTitle": "Prefer email?"
+  },
+  "nl": {
+    "eyebrow": "Voor kleine ondernemingen in en rond Aarschot",
+    "title": "Websites en software die je zaak vooruithelpen.",
+    "intro": "Een nieuwe bedrijfswebsite, minder handmatig werk of bestaande software verbeteren? Bij Jo-Qu werk je rechtstreeks met Jonas aan een oplossing die past bij je onderneming.",
+    "cta": "Bespreek je project",
+    "secondary": "Ontdek de diensten",
+    "servicesTitle": "Drie manieren waarop ik kan helpen.",
+    "servicesIntro": "Een duidelijkere website, minder handmatig werk of software die aandacht nodig heeft. We vertrekken vanuit je onderneming, niet vanuit een lijst technologieën.",
+    "services": [
+      {
+        "id": "web",
+        "title": "Bedrijfswebsites",
+        "text": "Een duidelijke website die je aanbod uitlegt en klanten helpt contact op te nemen.",
+        "detail": "Een heldere paginastructuur, responsive layouts en toegankelijke gebruikersflows. Onderhoudbaar gebouwd, met Hugo, React of Django waar dat past.",
+        "tags": "Je onderneming online"
+      },
+      {
+        "id": "integrations",
+        "title": "Koppelingen & automatisering",
+        "text": "Laat je systemen samenwerken en beperk terugkerend handmatig werk.",
+        "detail": "API’s, webhooks en gerichte interne tools voor stappen die nu kopieerwerk, controles of handmatige updates vragen. Validatie en foutafhandeling horen bij de scope.",
+        "tags": "Minder handmatig werk"
+      },
+      {
+        "id": "maintenance",
+        "title": "Bestaande websoftware verbeteren",
+        "text": "Laat je webapplicatie nakijken en gericht aanpassen, met aandacht voor veiligheid en onderhoudbaarheid.",
+        "detail": "Bugfixes, updates en gerichte verbeteringen aan webapplicaties. Ik bekijk de bestaande opzet en licht de afwegingen toe voordat ik wijzigingen voorstel.",
+        "tags": "Verder met wat er is"
+      }
+    ],
+    "processTitle": "Heldere scope. Doordachte oplevering.",
+    "process": [
+      [
+        "Begrijpen",
+        "We bespreken het probleem, je bestaande systemen en de belangrijkste beperkingen."
+      ],
+      [
+        "Afbakenen",
+        "Ik stel de scope, afwegingen en aanpak voor vóór de implementatie begint."
+      ],
+      [
+        "Bouwen & overdragen",
+        "Implementatie, tests en praktische documentatie. Onderhoud bespreken we vooraf."
+      ]
+    ],
+    "personLabel": "Jouw aanspreekpunt",
+    "personTitle": "Eén ontwikkelaar.\nEen rechtstreeks gesprek.",
+    "personText": "Ik ben Jonas Quintiens, de ontwikkelaar achter Jo-Qu. Ik werk met kleine ondernemingen aan websites, integraties en bestaande websoftware. Je hebt rechtstreeks contact met de persoon die de scope verduidelijkt, de wijzigingen uitvoert en de overdracht toelicht.",
+    "aboutLink": "Meer over mijn aanpak",
+    "workLabel": "Geselecteerd zelfstandig werk",
+    "workTitle": "Een blik op de implementatie.",
+    "workText": "Persoonlijke projecten en experimenten, geen klantenreferenties. Bekijk de keuzes en technische details achter het werk.",
+    "workLink": "Bekijk het projectarchief",
+    "projectTitle": "Disinfo Defense Kit",
+    "projectText": "Een interactieve educatieve toolkit, gebouwd als een zelfstandige HTML-ervaring.",
+    "projectLink": "Lees de projectnotities",
+    "contactTitle": "Wat kan er beter werken?",
+    "contactIntro": "Vertel kort wat je wil verbeteren en waar je vandaag tegenaan loopt.",
+    "contactHint": "Vermeld het doel, je huidige opzet en eventuele timing. Stuur geen wachtwoorden, API-sleutels of gevoelige klantgegevens.",
+    "emailLabel": "Mail Jonas",
+    "emailNote": "Opent je e-mailprogramma. Gebruik je webmail? Kopieer dan dit adres.",
+    "footer": "Onafhankelijke websites, integraties en softwareverbeteringen voor kleine ondernemingen rond Aarschot.",
+    "skip": "Naar de inhoud",
+    "menu": "Menu",
+    "home": "Home",
+    "archive": "Projectarchief",
+    "archiveIntro": "Persoonlijke projecten, opleidingswerk en technische experimenten. Deze worden niet voorgesteld als klantencases.",
+    "read": "Lees het project",
+    "notfound": "Pagina niet gevonden",
+    "notfoundText": "Op dit adres staat geen pagina. Ga naar de startpagina of neem contact op.",
+    "back": "Naar de startpagina",
+    "servicesLabel": "Diensten",
+    "approachLabel": "Aanpak",
+    "contactLabel": "Contact",
+    "projectLabel": "Projecten",
+    "aboutTitle": "Rechtstreeks contact met de ontwikkelaar.",
+    "aboutIntro": "Jo-Qu is mijn eenpersoonsconsultancy voor kleine ondernemingen in en rond Aarschot. Ik richt me op praktische verbeteringen en een duidelijke samenwerking.",
+    "aboutBody": "Mijn werk omvat webontwikkeling, security reviews, integraties en systeemarchitectuur. Ik bekijk hoe software in je werking past, niet alleen hoe ze eruitziet bij de release.",
+    "aboutSub": "Zo werken we samen",
+    "aboutEnd": "Je bespreekt de opdracht rechtstreeks met mij. Ik verduidelijk de vereisten, leg technische afwegingen uit en documenteer het resultaat. Doorlopend onderhoud en support spreken we af als onderdeel van de scope.",
+    "servicePageTitle": "Praktische hulp voor je website en software.",
+    "servicePageIntro": "Drie vertrekpunten voor kleine ondernemingen rond Aarschot. We bepalen het doel, wat inbegrepen is en de volgende stap voordat de implementatie begint.",
+    "additionalTitle": "Security en architectuur waar nodig.",
+    "additionalText": "Sommige projecten vragen een grondigere technische blik. Ik bied ook OWASP-geïnformeerde security reviews, praktische herstelprioriteiten en advies over systeemarchitectuur. Die kunnen apart of samen met de implementatie worden afgebakend.",
+    "formTitle": "Stuur je projectvraag",
+    "formRequired": "Naam, e-mail en bericht zijn verplicht.",
+    "formName": "Naam",
+    "formEmail": "E-mail",
+    "formMessage": "Bericht",
+    "formSubmit": "Verstuur bericht",
+    "formDelivery": "Je bericht wordt verstuurd via Formspree. Liever e-mail? Gebruik het adres bij dit formulier.",
+    "fallbackTitle": "Liever e-mail?"
+  }
+}
