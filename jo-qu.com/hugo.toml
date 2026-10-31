@@ -6,7 +6,7 @@ theme = 'hugo-blog-awesome'
 
 [params]
   design = "consultancy"
-  description = "Business websites, integrations and improvements to existing web software for small businesses around Aarschot. Work directly with Jonas Quintiens."
+  description = "Custom web development, security reviews and integrations for small businesses in and around Aarschot. Work directly with Jonas Quintiens."
   goToTop = true
   author = { name = "Jonas Quintiens" }
   business = "Web development & security consulting"

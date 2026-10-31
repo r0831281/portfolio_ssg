@@ -1,7 +1,7 @@
 +++
 title = "Jo-Qu"
-description = "Een nieuwe bedrijfswebsite, minder handmatig werk of bestaande software verbeteren? Bij Jo-Qu werk je rechtstreeks met Jonas aan een oplossing die past bij je onderneming."
+description = "Een website of webapplicatie laten bouwen, verbeteren of nakijken? Ik werk rechtstreeks met kleine ondernemingen aan software die past bij hun werking."
 draft = false
 +++
 
-Een nieuwe bedrijfswebsite, minder handmatig werk of bestaande software verbeteren? Bij Jo-Qu werk je rechtstreeks met Jonas aan een oplossing die past bij je onderneming.
+Een website of webapplicatie laten bouwen, verbeteren of nakijken? Ik werk rechtstreeks met kleine ondernemingen aan software die past bij hun werking.
