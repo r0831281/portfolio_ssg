@@ -90,7 +90,10 @@
     "formEmail": "Email",
     "formMessage": "Message",
     "formSubmit": "Send message",
-    "formDelivery": "Your message is sent using Formspree. Prefer email? Use the address alongside this form.",
+    "formSending": "Sending…",
+    "formSuccess": "Thanks — your message has been sent.",
+    "formError": "The message could not be sent. Please try again or email me directly.",
+    "formDelivery": "Protected by Cloudflare Turnstile. Prefer email? Use the address alongside this form.",
     "fallbackTitle": "Prefer email?"
   },
   "nl": {
@@ -184,7 +187,10 @@
     "formEmail": "E-mail",
     "formMessage": "Bericht",
     "formSubmit": "Verstuur bericht",
-    "formDelivery": "Je bericht wordt verstuurd via Formspree. Liever e-mail? Gebruik het adres bij dit formulier.",
+    "formSending": "Verzenden…",
+    "formSuccess": "Bedankt — je bericht is verzonden.",
+    "formError": "Het bericht kon niet worden verzonden. Probeer opnieuw of mail me rechtstreeks.",
+    "formDelivery": "Beveiligd met Cloudflare Turnstile. Liever e-mail? Gebruik het adres bij dit formulier.",
     "fallbackTitle": "Liever e-mail?"
   }
 }

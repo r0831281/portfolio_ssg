@@ -6,7 +6,8 @@ document.querySelectorAll(".contact-form").forEach((form) => {
     event.preventDefault();
     button.disabled = true;
     button.setAttribute("aria-busy", "true");
-    status.textContent = "";
+    status.textContent = form.dataset.sending;
+    status.classList.remove("is-error", "is-success");
 
     try {
       const response = await fetch(form.action, {
