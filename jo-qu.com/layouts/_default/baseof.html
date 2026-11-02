@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ if not .IsHome }}{{ .Title }} | {{ end }}Jo-Qu — {{ if eq .Lang "nl" }}Softwareconsultancy{{ else }}Software consultancy{{ end }}</title>
+<meta name="description" content="{{ .Description | default .Site.Params.description }}">
+<link rel="canonical" href="{{ .Permalink }}">{{ range .AllTranslations }}<link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">{{ end }}
+<meta property="og:title" content="{{ .Title }} | Jo-Qu"><meta property="og:description" content="{{ .Description | default .Site.Params.description }}"><meta property="og:type" content="website"><meta property="og:url" content="{{ .Permalink }}">
+<link rel="icon" href="{{ "photos/android-chrome-192x192.png" | relURL }}"><link rel="stylesheet" href="{{ "css/consultancy.css" | relURL }}">
+</head>
+<body class="design-{{ .Site.Params.design }}">
+{{ $d := index .Site.Data.consultancy .Lang }}
+<a class="skip-link" href="#main">{{ $d.skip }}</a>
+{{ partial "header.html" . }}
+<main id="main" tabindex="-1">{{ block "main" . }}{{ end }}</main>
+<footer class="site-footer wrap"><div><a class="wordmark" href="{{ .Site.Home.RelPermalink }}">jo-qu<span aria-hidden="true">.</span></a><p>{{ $d.footer }}</p></div><div><a class="footer-contact" href="{{ .Site.Home.RelPermalink }}contact/">{{ $d.contactLabel }}</a><br><a href="mailto:jonas@jo-qu.com">jonas@jo-qu.com</a><br><a href="https://www.linkedin.com/in/jonas-quintiens-5838a01aa" rel="noopener noreferrer">LinkedIn ↗</a></div><p>Jonas Quintiens</p></footer>
+</body></html>

@@ -1,33 +1,4 @@
-{{- define "main" -}}
-<div class="wrapper list-page">
-    <header class="header">
-        <h1 class="header-title center">{{ .Title }}</h1>
-    </header>
-    <main class="page-content" aria-label="Content">
-        {{ .Content }}
-        {{ $groups := slice "webapps" "Webapps" "opleiding" "Opleiding" "personal" "Personal" "fun" "Fun" }}
-        {{ $allPages := .Pages }}
-        {{ range $group := $groups }}
-            {{ $pages := where $allPages "Params.type" "==" $group }}
-            {{ if gt (len $pages) 0 }}
-                <h2 class="post-year">
-                    {{- if or (eq $group "webapps") (eq $group "Webapps") -}}
-                        Webapps
-                    {{- else if or (eq $group "opleiding") (eq $group "Opleiding") -}}
-                        {{- if eq $.Site.Language.Lang "nl" -}}Opleiding{{- else -}}Education{{- end -}}
-                    {{- else if or (eq $group "fun") (eq $group "Fun") -}}
-                        {{- if eq $.Site.Language.Lang "nl" -}}Plezier{{- else -}}Fun{{- end -}}
-                    {{- else if or (eq $group "personal") (eq $group "Personal") -}}
-                        {{- if eq $.Site.Language.Lang "nl" -}}Persoonlijk{{- else -}}Personal{{- end -}}
-                    {{- else -}}
-                        {{- $group | title -}}
-                    {{- end -}}
-                </h2>
-                {{ range $pages }}
-                    {{ partial "postCard-no-date" . }}
-                {{ end }}
-            {{ end }}
-        {{ end }}
-    </main>
-</div>
-{{- end -}}
+{{ define "main" }}{{ $d := index .Site.Data.consultancy .Lang }}
+{{ if eq .Section "services" }}<section class="wrap page-intro"><p class="eyebrow">{{ $d.servicesLabel }}</p><h1>{{ $d.servicePageTitle }}</h1><p class="lede">{{ $d.servicePageIntro }}</p></section><section class="wrap section">{{ partial "service-grid.html" . }}<aside class="additional-support" id="maintenance"><h2>{{ $d.additionalTitle }}</h2><p>{{ $d.additionalText }}</p></aside></section>{{ partial "process.html" . }}{{ partial "contact-band.html" . }}
+{{ else if eq .Section "contact" }}<section class="wrap page-intro contact-page"><p class="eyebrow">{{ $d.contactLabel }}</p><h1>{{ $d.contactTitle }}</h1><p class="lede">{{ $d.contactIntro }}</p><div class="contact-layout">{{ partial "contact-form.html" . }}<aside class="contact-panel"><h2>{{ $d.fallbackTitle }}</h2><a class="email-address" href="mailto:jonas@jo-qu.com?subject=Project%20inquiry">jonas@jo-qu.com <span aria-hidden="true">↗</span></a><p>{{ $d.emailNote }}</p></aside></div></section>
+{{ else }}<section class="wrap page-intro"><p class="eyebrow">Jo-Qu / {{ $d.projectLabel }}</p><h1>{{ $d.archive }}</h1><p class="lede">{{ $d.archiveIntro }}</p></section><section class="wrap section archive-grid">{{ range .Pages.ByTitle }}<article class="archive-card"><p class="eyebrow">{{ .Params.type | default "Project" }}</p><h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2><p>{{ .Description | default (.Summary | plainify | truncate 160) }}</p><a class="text-link" href="{{ .RelPermalink }}">{{ $d.read }} →</a></article>{{ end }}</section>{{ end }}{{ end }}

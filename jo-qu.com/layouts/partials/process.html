@@ -1,0 +1,1 @@
+{{ $d := index .Site.Data.consultancy .Lang }}<section class="process wrap section"><div class="section-heading"><p class="eyebrow">{{ $d.approachLabel }}</p><h2>{{ $d.processTitle }}</h2></div><ol class="steps">{{ range $d.process }}<li><h3>{{ index . 0 }}</h3><p>{{ index . 1 }}</p></li>{{ end }}</ol></section>

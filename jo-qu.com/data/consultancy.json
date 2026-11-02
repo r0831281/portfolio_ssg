@@ -1,0 +1,190 @@
+{
+  "en": {
+    "eyebrow": "For small businesses in and around Aarschot",
+    "title": "Custom software and web application security.",
+    "intro": "Need a website or web application built, improved or reviewed? I work directly with small businesses on software that fits the way they work.",
+    "cta": "Discuss your project",
+    "secondary": "Explore services",
+    "servicesTitle": "Software and security, tailored to your business.",
+    "servicesIntro": "From a new web application to a focused review of an existing one, we agree on the scope and priorities together.",
+    "services": [
+      {
+        "id": "web",
+        "title": "Custom software",
+        "text": "Websites and web applications that fit the way your business works.",
+        "detail": "From a clear business website to a tailored web application or improvements to existing software. I choose a maintainable approach and use Hugo, React or Django where they fit.",
+        "tags": "Built for your business"
+      },
+      {
+        "id": "security",
+        "title": "Web application security",
+        "text": "I review your web application for security risks and help you address them.",
+        "detail": "An OWASP-informed review can examine authentication, sessions, access control, input validation and data handling, depending on the agreed scope. I explain findings and suggest remediation priorities.",
+        "tags": "Understand the risks"
+      },
+      {
+        "id": "integrations",
+        "title": "Integrations and automation",
+        "text": "Connect your systems and reduce repetitive manual work.",
+        "detail": "APIs, webhooks and focused internal tools for steps that need copying, checking or manual updates. Validation and failure handling are part of the scope.",
+        "tags": "Less manual work"
+      }
+    ],
+    "processTitle": "Clear scope. Thoughtful delivery.",
+    "process": [
+      [
+        "Understand",
+        "We discuss the problem, your existing systems and the constraints that matter."
+      ],
+      [
+        "Define",
+        "I propose the scope, trade-offs and an approach before implementation begins."
+      ],
+      [
+        "Build & hand over",
+        "Implementation, testing and practical documentation, with maintenance discussed up front."
+      ]
+    ],
+    "personLabel": "Your point of contact",
+    "personTitle": "One developer.\nA direct conversation.",
+    "personText": "I’m Jonas Quintiens, the developer behind Jo-Qu. I work directly with small businesses on custom web development, security reviews and integrations. You speak with the person who scopes the work, implements changes and explains the handover.",
+    "aboutLink": "More about my approach",
+    "workLabel": "Outside client work",
+    "workTitle": "A personal side project.",
+    "workText": "Alongside my consultancy, I enjoy building and experimenting on personal projects. These are not client case studies.",
+    "workLink": "Browse project archive",
+    "projectTitle": "Disinfo Defense Kit",
+    "projectText": "A fun educational side project: an interactive toolkit built as a self-contained HTML experience.",
+    "projectLink": "Read project notes",
+    "contactTitle": "What needs to work better?",
+    "contactIntro": "Tell me briefly what you want to improve and what is getting in the way today.",
+    "contactHint": "Include the goal, your current setup and any timing constraints. Please don’t send passwords, API keys or sensitive customer data.",
+    "emailLabel": "Email Jonas",
+    "emailNote": "Opens your email application. Prefer webmail? Copy this address.",
+    "footer": "Custom software, web application security and integrations for small businesses in and around Aarschot.",
+    "skip": "Skip to content",
+    "menu": "Menu",
+    "home": "Home",
+    "archive": "Project archive",
+    "archiveIntro": "A record of personal projects, educational work and technical experiments. These are not presented as client case studies.",
+    "read": "Read project",
+    "notfound": "Page not found",
+    "notfoundText": "This address does not point to a page. You can return home or get in touch.",
+    "back": "Back to home",
+    "servicesLabel": "Services",
+    "approachLabel": "Approach",
+    "contactLabel": "Contact",
+    "projectLabel": "Projects",
+    "aboutTitle": "A direct line to the developer.",
+    "aboutIntro": "Jo-Qu is my one-person software consultancy for small businesses in and around Aarschot. I focus on practical improvements and a clear working relationship.",
+    "aboutBody": "My work spans web development, security reviews, integrations and system architecture. I look at how software fits into your operations, not just how it looks on release day.",
+    "aboutSub": "What working together looks like",
+    "aboutEnd": "You discuss the work directly with me. I clarify requirements, explain technical trade-offs and document the result. Any ongoing maintenance and support arrangements are agreed as part of the scope.",
+    "servicePageTitle": "Custom software and web application security.",
+    "servicePageIntro": "Practical services for small businesses in and around Aarschot. We agree on the goal, scope and next steps before work begins.",
+    "additionalTitle": "Maintenance and architecture",
+    "additionalText": "Existing software may also need bug fixes, updates or architectural guidance. We can agree on these separately or as part of a development or review project.",
+    "formTitle": "Send a project enquiry",
+    "formRequired": "Name, email and message are required.",
+    "formName": "Name",
+    "formEmail": "Email",
+    "formMessage": "Message",
+    "formSubmit": "Send message",
+    "formDelivery": "Your message is sent using Formspree. Prefer email? Use the address alongside this form.",
+    "fallbackTitle": "Prefer email?"
+  },
+  "nl": {
+    "eyebrow": "Voor kleine ondernemingen in en rond Aarschot",
+    "title": "Software op maat en beveiliging van websoftware.",
+    "intro": "Een website of webapplicatie laten bouwen, verbeteren of nakijken? Ik werk rechtstreeks met kleine ondernemingen aan software die past bij hun werking.",
+    "cta": "Bespreek je project",
+    "secondary": "Ontdek de diensten",
+    "servicesTitle": "Software en beveiliging, op maat van je onderneming.",
+    "servicesIntro": "Van een nieuwe webapplicatie tot een gerichte review van bestaande software: we spreken samen de scope en prioriteiten af.",
+    "services": [
+      {
+        "id": "web",
+        "title": "Software op maat",
+        "text": "Websites en webapplicaties die aansluiten op hoe je bedrijf werkt.",
+        "detail": "Van een duidelijke bedrijfswebsite tot een webapplicatie op maat of verbeteringen aan bestaande software. Ik kies een onderhoudbare aanpak, met Hugo, React of Django waar dat past.",
+        "tags": "Gebouwd voor je onderneming"
+      },
+      {
+        "id": "security",
+        "title": "Beveiliging van websoftware",
+        "text": "Ik onderzoek je webapplicatie op beveiligingsrisico’s en help je die gericht aan te pakken.",
+        "detail": "Een OWASP-geïnformeerde review kan, afhankelijk van de afgesproken scope, authenticatie, sessies, toegangscontrole, invoervalidatie en gegevensverwerking bekijken. Ik licht bevindingen toe en stel herstelprioriteiten voor.",
+        "tags": "Krijg zicht op risico’s"
+      },
+      {
+        "id": "integrations",
+        "title": "Koppelingen en automatisering",
+        "text": "Laat je systemen samenwerken en beperk terugkerend handmatig werk.",
+        "detail": "API’s, webhooks en gerichte interne tools voor stappen die nu kopieerwerk, controles of handmatige updates vragen. Validatie en foutafhandeling horen bij de scope.",
+        "tags": "Minder handmatig werk"
+      }
+    ],
+    "processTitle": "Heldere scope. Doordachte oplevering.",
+    "process": [
+      [
+        "Begrijpen",
+        "We bespreken het probleem, je bestaande systemen en de belangrijkste beperkingen."
+      ],
+      [
+        "Afbakenen",
+        "Ik stel de scope, afwegingen en aanpak voor vóór de implementatie begint."
+      ],
+      [
+        "Bouwen & overdragen",
+        "Implementatie, tests en praktische documentatie. Onderhoud bespreken we vooraf."
+      ]
+    ],
+    "personLabel": "Jouw aanspreekpunt",
+    "personTitle": "Eén ontwikkelaar.\nEen rechtstreeks gesprek.",
+    "personText": "Ik ben Jonas Quintiens, de ontwikkelaar achter Jo-Qu. Ik werk rechtstreeks met kleine ondernemingen aan software op maat, beveiligingsreviews en integraties. Je spreekt met de persoon die de opdracht afbakent, wijzigingen uitvoert en de overdracht toelicht.",
+    "aboutLink": "Meer over mijn aanpak",
+    "workLabel": "Naast het klantenwerk",
+    "workTitle": "Een persoonlijk zijproject.",
+    "workText": "Naast mijn consultancy bouw en experimenteer ik graag aan persoonlijke projecten. Dit zijn geen klantencases.",
+    "workLink": "Bekijk het projectarchief",
+    "projectTitle": "Disinfo Defense Kit",
+    "projectText": "Een leuk educatief zijproject: een interactieve toolkit, gebouwd als zelfstandige HTML-ervaring.",
+    "projectLink": "Lees de projectnotities",
+    "contactTitle": "Wat kan er beter werken?",
+    "contactIntro": "Vertel kort wat je wil verbeteren en waar je vandaag tegenaan loopt.",
+    "contactHint": "Vermeld het doel, je huidige opzet en eventuele timing. Stuur geen wachtwoorden, API-sleutels of gevoelige klantgegevens.",
+    "emailLabel": "Mail Jonas",
+    "emailNote": "Opent je e-mailprogramma. Gebruik je webmail? Kopieer dan dit adres.",
+    "footer": "Software op maat, beveiliging van websoftware en integraties voor kleine ondernemingen in en rond Aarschot.",
+    "skip": "Naar de inhoud",
+    "menu": "Menu",
+    "home": "Home",
+    "archive": "Projectarchief",
+    "archiveIntro": "Persoonlijke projecten, opleidingswerk en technische experimenten. Deze worden niet voorgesteld als klantencases.",
+    "read": "Lees het project",
+    "notfound": "Pagina niet gevonden",
+    "notfoundText": "Op dit adres staat geen pagina. Ga naar de startpagina of neem contact op.",
+    "back": "Naar de startpagina",
+    "servicesLabel": "Diensten",
+    "approachLabel": "Aanpak",
+    "contactLabel": "Contact",
+    "projectLabel": "Projecten",
+    "aboutTitle": "Rechtstreeks contact met de ontwikkelaar.",
+    "aboutIntro": "Jo-Qu is mijn eenpersoonsconsultancy voor kleine ondernemingen in en rond Aarschot. Ik richt me op praktische verbeteringen en een duidelijke samenwerking.",
+    "aboutBody": "Mijn werk omvat webontwikkeling, security reviews, integraties en systeemarchitectuur. Ik bekijk hoe software in je werking past, niet alleen hoe ze eruitziet bij de release.",
+    "aboutSub": "Zo werken we samen",
+    "aboutEnd": "Je bespreekt de opdracht rechtstreeks met mij. Ik verduidelijk de vereisten, leg technische afwegingen uit en documenteer het resultaat. Doorlopend onderhoud en support spreken we af als onderdeel van de scope.",
+    "servicePageTitle": "Software op maat en beveiliging van websoftware.",
+    "servicePageIntro": "Praktische diensten voor kleine ondernemingen in en rond Aarschot. We spreken het doel, de scope en de volgende stappen af voordat het werk begint.",
+    "additionalTitle": "Onderhoud en architectuur",
+    "additionalText": "Bestaande software heeft soms ook bugfixes, updates of architectuuradvies nodig. We kunnen die apart afspreken of opnemen in een ontwikkel- of reviewopdracht.",
+    "formTitle": "Stuur je projectvraag",
+    "formRequired": "Naam, e-mail en bericht zijn verplicht.",
+    "formName": "Naam",
+    "formEmail": "E-mail",
+    "formMessage": "Bericht",
+    "formSubmit": "Verstuur bericht",
+    "formDelivery": "Je bericht wordt verstuurd via Formspree. Liever e-mail? Gebruik het adres bij dit formulier.",
+    "fallbackTitle": "Liever e-mail?"
+  }
+}
