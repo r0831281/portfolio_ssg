@@ -1,1 +1,1 @@
-{{ define "main" }}{{ $d := index .Site.Data.consultancy .Lang }}<section class="wrap page-intro"><p class="eyebrow">404</p><h1>{{ $d.notfound }}</h1><p class="lede">{{ $d.notfoundText }}</p><a class="button" href="{{ .Site.Home.RelPermalink }}">{{ $d.back }} →</a></section>{{ end }}
+{{ define "main" }}{{ $d := index .Site.Data.consultancy .Lang }}<section class="wrap page-intro"><p class="eyebrow">404</p><h1>{{ $d.notfound }}</h1><p class="lede">{{ $d.notfoundText }}</p><a class="button" href="{{ .Site.Home.RelPermalink }}">{{ $d.back }}</a></section>{{ end }}
