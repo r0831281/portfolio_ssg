@@ -1,0 +1,26 @@
+.contact-honeypot {
+  position: absolute !important;
+  left: -10000px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+}
+
+.contact-form-status {
+  min-height: 1.5rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.contact-form-status.is-success {
+  color: #86efac;
+}
+
+.contact-form-status.is-error {
+  color: #fca5a5;
+}
+
+.contact-form button[disabled] {
+  cursor: wait;
+  opacity: 0.65;
+}
