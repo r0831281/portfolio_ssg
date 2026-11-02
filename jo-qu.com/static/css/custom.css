@@ -241,19 +241,6 @@ a, .post-item-summary a, li a {
   color: #2563eb!important;
 }
 
-.arrow-icon {
-  width: 20px;
-  height: 20px;
-  transition: transform 0.2s ease;
-  opacity: 0.6;
-  flex-shrink: 0;
-}
-
-.project-card-link:hover .arrow-icon {
-  transform: translateX(4px);
-  opacity: 1;
-}
-
 .project-description {
   margin-top: 0.75rem;
   padding-left: 1.5rem;
@@ -289,10 +276,6 @@ a, .post-item-summary a, li a {
     hyphens: auto;
   }
   
-  .arrow-icon {
-    width: 16px;
-    height: 16px;
-  }
 }
 
 /* Projects page enhancements */
